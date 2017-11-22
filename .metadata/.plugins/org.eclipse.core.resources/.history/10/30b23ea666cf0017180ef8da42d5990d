@@ -1,0 +1,13 @@
+package com.bridgelabz.User.Service;
+
+import java.util.List;
+
+import com.bridgelabz.User.model.User;
+
+public interface UserService {
+	
+	public int createUser(User user);
+	public List loginUser(User user);
+}
+
+

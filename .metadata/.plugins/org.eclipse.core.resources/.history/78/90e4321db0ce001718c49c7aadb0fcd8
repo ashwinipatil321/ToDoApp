@@ -1,0 +1,20 @@
+package com.bridgelabz.User.Controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.bridgelabz.User.Service.UserService;
+
+public class UserController {
+
+	@Autowired
+	UserService userService;
+	
+	@RequestMapping(value = "/register", method = RequestMethod.POST, produces = { MediaType.APPLICATION_JSON_VALUE,
+			MediaType.APPLICATION_XML_VALUE })
+	public ResponseEntity<void> registrationUser()
+	{
+		
+	}
+}

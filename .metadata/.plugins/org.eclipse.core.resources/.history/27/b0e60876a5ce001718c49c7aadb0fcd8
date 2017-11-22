@@ -1,0 +1,16 @@
+package com.bridgelabz.User.DAO;
+
+import com.bridgelabz.User.model.UserDetails;
+
+public class UserDao {
+	public UserDetails login(UserDetails userDetails);
+
+	
+	public UserDetails getUserByEmail(String email);
+
+	UserDetails getUserById(int id);
+	
+	public boolean updateActivation(int id);
+	public boolean updateUser(UserDetails user);
+
+}

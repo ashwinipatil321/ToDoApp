@@ -1,0 +1,12 @@
+package com.bridgelabz.User.Service;
+
+import com.bridgelabz.User.model.UserDetails;
+
+public class UserService {
+	public int createUser(UserDetails user);
+	public UserDetails loginUser(UserDetails user);
+	public UserDetails getUserByEmail(String email);
+	public UserDetails getUserById(int id);
+	public boolean updateActivation(int id);
+	public boolean updateUser(UserDetails user);
+}

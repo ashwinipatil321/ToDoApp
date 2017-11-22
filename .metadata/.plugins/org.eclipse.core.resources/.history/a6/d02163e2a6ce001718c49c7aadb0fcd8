@@ -1,0 +1,6 @@
+package com.bridgelabz.User.Service;
+
+import com.bridgelabz.User.model.UserDetails;
+
+public class UserService {
+	

@@ -1,0 +1,43 @@
+package com.bridgelabz.User.Utility;
+
+import java.util.regex.Pattern;
+
+public class Validation {
+	
+	static String regexName = "[a-zA-Z\\s]{4,}";
+	static String regexEmail = "[a-z0-9]{1,}[@]{1}[a-z]{1,}[.]{1}[a-z]{1,}";
+
+	
+	public static String checkName(String name) {
+		if (Pattern.matches(regexName, name) == false || name == null) {			
+			return "name error";
+		}
+		return "valid";
+	}
+
+	public static String checkemail(String email) {
+		if (Pattern.matches(regexEmail, email) == false || email == "") {
+			return "email error";
+		}
+		return "valid";
+	}
+
+	public static String checkMobileNumber(String mobileNumber) {
+
+		if (mobileNumber.length()!=10) {
+			return "mobileNumber error";
+		}
+		return "valid";
+	}
+
+	public static String checkpassword(String password) {
+
+		if (password.length() < 6) {
+			return "password error";
+		}
+		return "valid";
+	}
+
+}
+
+

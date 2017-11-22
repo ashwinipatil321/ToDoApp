@@ -1,0 +1,10 @@
+package com.bridgelabz.User.DAO;
+
+import java.util.List;
+
+import com.bridgelabz.User.model.User;
+
+public interface UserDao {
+	public int registration(User userDetails) ;
+	public List login(User userDetails);
+}

@@ -1,0 +1,30 @@
+package com.bridgelabz.User.Service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.bridgelabz.User.DAO.UserDao;
+import com.bridgelabz.User.model.User;
+
+@Service
+@Transactional
+public class UserServiceImplemention implements UserService {
+
+	@Autowired
+	UserDao userDao;
+
+	public int createUser(User user) {
+		int id = userDao.registration(user);
+		if (id != 0)
+			return id;
+		else
+			return 0;
+	}
+	public List loginUser(User user) {
+		return userDao.login(user);
+	}
+
+}

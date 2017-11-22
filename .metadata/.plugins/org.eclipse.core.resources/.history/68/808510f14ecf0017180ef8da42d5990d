@@ -1,0 +1,39 @@
+package com.bridgelabz.User.Utility;
+
+import java.util.regex.Pattern;
+
+import javax.servlet.http.HttpSession;
+
+import com.bridgelabz.User.model.User;
+
+public class Validation {
+	static boolean valid = true;
+	
+	static String regexName = "[a-zA-Z\\s]{4,}";
+	static String mobileNumberRegx = "^[0-9]{10}$";
+	static String regexEmail = "[a-z0-9]{1,}[@]{1}[a-z]{1,}[.]{1}[a-z]{1,}";
+	
+	public static boolean isvalidation(User user,HttpSession session) {
+		
+		if (!user.getUserFirstName().matches(regexName) && !user.getUserLastName().matches(regexName)) {
+			session.setAttribute("error", "Please Enter the valid name");
+			valid = false;
+		} 
+		else if(!user.getMobileNumber().matches(mobileNumberRegx)) {
+				session.setAttribute("error", "Please Enter the valid phone number");
+				valid = false;
+			}
+		
+	else if (!user.getEmail().matches(regexEmail)) {
+		session.setAttribute("error", "Entered Email id is not correct.....");
+		valid = false;
+	} 
+	else if(!(user.getPassword().length() < 6))
+	{
+		session.setAttribute("error", "Please enter the length between 8 to 16 charcter long");
+		valid = false;
+		
+	}
+}
+}
+
