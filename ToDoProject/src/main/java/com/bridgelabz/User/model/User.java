@@ -16,7 +16,7 @@ public class User {
 	private String password;
 	private String email;
 	private String mobileNumber;
-	private int Activated;
+	private boolean activated;
 
 	@Column(name = "userFirstName")
 	public String getUserFirstName() {
@@ -68,17 +68,17 @@ public class User {
 	}
 
 	@Column(name = "isActivated")
-	public int getActivated() {
-		return Activated;
+	public boolean getActivated() {
+		return activated;
 	}
 	public void setActivated(int activated) {
-		Activated = activated;
+		activated = activated;
 	}
 	@Override
 	public String toString() {
 		return "UserDetails [UserID=" + UserID + ", userFirstName=" + userFirstName + ", userLastName=" + userLastName
 				+ ", password=" + password + ", email=" + email + ", mobileNumber=" + mobileNumber + ", Activated="
-				+ Activated + "]";
+				+ activated + "]";
 	}
 	
 }

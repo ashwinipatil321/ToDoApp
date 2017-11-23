@@ -43,4 +43,43 @@ public class UserDaoImplemention implements UserDao {
 		}
 		return null;
 	}
+
+	@SuppressWarnings("rawtypes")
+	public User getUserByEmail(String email) {// TODO Auto-generated method
+												// stub
+		Session session = sessionFactory.getCurrentSession();
+		
+		Query query = session.createQuery(" from User where email =:email");
+		query.setParameter("email", email);
+		User result =  (User) query.uniqueResult();
+		if (result != null) {
+			System.out.println("UserObJect "+result);
+			return result;
+		} 
+		System.out.println("UserObJect "+result);
+
+			return null;
+	}
+
+	public User getUserById(int id) {
+		Session session = sessionFactory.getCurrentSession();
+		User user = session.get(User.class, id);
+		return user;
+	}
+
+	public boolean updateActivation(int id) {
+		System.out.println("id:" + id);
+		System.out.println("id found");
+		Session session = sessionFactory.getCurrentSession();
+	
+		Query<?> query = session.createQuery("update User set activated =:activated where id=:id ");
+		query.setParameter("id", id);
+		query.setParameter("activated", true);
+		int i = query.executeUpdate();
+
+		if (i > 0)
+			return true;
+		else
+			return false;
+	}
 }

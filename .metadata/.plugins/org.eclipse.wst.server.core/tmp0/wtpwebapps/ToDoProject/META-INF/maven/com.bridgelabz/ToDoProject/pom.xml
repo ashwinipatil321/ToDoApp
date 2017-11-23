@@ -130,6 +130,18 @@
 			<artifactId>resteasy-client</artifactId>
 			<version>3.0.19.Final</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-jwt</artifactId>
+			<version>1.0.4.RELEASE</version>
+		</dependency>
+		<dependency>
+    <groupId>com.nimbusds</groupId>
+    <artifactId>nimbus-jose-jwt</artifactId>
+    <version>4.39.2</version>
+</dependency>
+		
+		
 	</dependencies>
 	<build>
 		<finalName>ToDoProject</finalName>
