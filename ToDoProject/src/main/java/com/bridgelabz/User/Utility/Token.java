@@ -10,7 +10,7 @@ import io.jsonwebtoken.MissingClaimException;
 public class Token {
 	private static String Key = "mykey";
 
-	public static String generateToken(String email, int id) {
+	public static String generateToken( int id) {
 		String token = "";
 		long currentTime = System.currentTimeMillis();
 		// 2 days

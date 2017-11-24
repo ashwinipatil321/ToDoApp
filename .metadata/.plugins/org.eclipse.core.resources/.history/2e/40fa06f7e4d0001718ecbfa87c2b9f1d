@@ -1,0 +1,16 @@
+package com.bridgelabz.User.Service;
+
+import java.util.List;
+
+import com.bridgelabz.User.model.Note;
+
+@
+public interface NoteServices {
+	public void addNote(Note note);
+
+	public void deleteNote(int noteId);
+
+	public void updateNote(Note updatedNote);
+
+	public List<Note> getallNotes();
+}

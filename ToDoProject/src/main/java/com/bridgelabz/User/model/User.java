@@ -1,4 +1,6 @@
 package com.bridgelabz.User.model;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -79,6 +81,9 @@ public class User {
 		return "UserDetails [UserID=" + UserID + ", userFirstName=" + userFirstName + ", userLastName=" + userLastName
 				+ ", password=" + password + ", email=" + email + ", mobileNumber=" + mobileNumber + ", Activated="
 				+ activated + "]";
+	}
+	public List<Note> getNotes() {
+		return null;
 	}
 	
 }

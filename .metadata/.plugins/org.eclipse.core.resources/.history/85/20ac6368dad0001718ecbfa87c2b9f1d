@@ -1,0 +1,7 @@
+package com.bridgelabz.User.DAO;
+
+
+public class NoteDaoImplemention implements NoteDAO {
+
+	}
+

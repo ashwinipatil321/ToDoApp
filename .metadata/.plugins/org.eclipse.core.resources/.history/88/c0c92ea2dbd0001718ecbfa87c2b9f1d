@@ -1,0 +1,33 @@
+package com.bridgelabz.User.Service;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import com.bridgelabz.User.DAO.NoteDao;
+import com.bridgelabz.User.model.Note;
+import com.bridgelabz.User.model.User;
+
+public class NoteServiceImplemention implements NoteService{
+	@Autowired
+	NoteDao noteDao;
+	public int saveNote(Note note) {
+		return noteDao.saveNote(note);
+	}
+	@Override
+	public boolean updateNote(Note note) {
+		return noteDao.updateNote(note);
+	}
+
+	@Override
+	public boolean deleteNote(Note note) {
+		return noteDao.deleteNote(note);
+	}
+	@Override
+	public List<Note> getAllNotes(User user) {
+		return noteDao.getAllNotes(user);
+	}
+	@Override
+	public Note getNoteById(int noteId) {
+		return noteDao.getNoteById(noteId);
+	}
+}
+
+

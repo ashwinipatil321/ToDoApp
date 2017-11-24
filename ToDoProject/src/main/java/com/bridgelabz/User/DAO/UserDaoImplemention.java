@@ -29,14 +29,14 @@ public class UserDaoImplemention implements UserDao {
 		}
 	}
 
-	public String login(User user) {
+	public User login(User user) {
 		Session session = sessionFactory.getCurrentSession();
 
 		Query<?> query = session
-				.createQuery("select userFirstName from User where email =:email and password =:password");
+				.createQuery("from User where email =:email and password =:password");
 		query.setParameter("email", user.getEmail());
 		query.setParameter("password", user.getPassword());
-		String name = (String) query.uniqueResult();
+		User name =  (User) query.uniqueResult();
 
 		if (name != null) {
 			return name;
@@ -45,10 +45,9 @@ public class UserDaoImplemention implements UserDao {
 	}
 
 	@SuppressWarnings("rawtypes")
-	public User getUserByEmail(String email) {// TODO Auto-generated method
-												// stub
+	public User getUserByEmail(String email) {
 		Session session = sessionFactory.getCurrentSession();
-		
+
 		Query query = session.createQuery(" from User where email =:email");
 		query.setParameter("email", email);
 		User result =  (User) query.uniqueResult();
@@ -58,7 +57,7 @@ public class UserDaoImplemention implements UserDao {
 		} 
 		System.out.println("UserObJect "+result);
 
-			return null;
+		return null;
 	}
 
 	public User getUserById(int id) {
@@ -71,7 +70,7 @@ public class UserDaoImplemention implements UserDao {
 		System.out.println("id:" + id);
 		System.out.println("id found");
 		Session session = sessionFactory.getCurrentSession();
-	
+
 		Query<?> query = session.createQuery("update User set activated =:activated where id=:id ");
 		query.setParameter("id", id);
 		query.setParameter("activated", true);
@@ -81,5 +80,13 @@ public class UserDaoImplemention implements UserDao {
 			return true;
 		else
 			return false;
+	}
+	@Override
+	public void updateUser(User oldUser) {
+		Session session = sessionFactory.getCurrentSession();
+			System.out.println(oldUser);
+			session.saveOrUpdate(oldUser);
+			System.out.println(oldUser);
+		
 	}
 }
