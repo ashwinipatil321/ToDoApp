@@ -15,7 +15,7 @@ public class UserDaoImplemention implements UserDao {
 	@Autowired
 	SessionFactory sessionFactory;
 
-	public boolean registration(User user) {
+	public int registration(User user) {
 		Session session = sessionFactory.getCurrentSession();
 		Query<?> query = session.createQuery("from User where email =:email or mobileNumber = :phone");
 		query.setParameter("email", user.getEmail());
@@ -23,9 +23,9 @@ public class UserDaoImplemention implements UserDao {
 		List<?> list = query.list();
 		if (list != null) {
 			session.save(user);
-			return true;
+			return 1;
 		} else {
-			return false;
+			return 0;
 		}
 	}
 

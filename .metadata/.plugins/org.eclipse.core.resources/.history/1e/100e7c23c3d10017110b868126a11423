@@ -1,0 +1,92 @@
+package com.bridgelabz.User.Controller;
+
+import java.io.IOException;
+import java.util.UUID;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.bridgelabz.User.Service.UserServiceImplemention;
+import com.bridgelabz.User.SocialLogin.FaceBookConnection;
+import com.bridgelabz.User.model.Response;
+import com.bridgelabz.User.model.User;
+
+public class FaceBookLogin {
+	@Autowired
+	private FaceBookConnection faceBookConnection;
+	@Autowired
+	private UserServiceImplemention userServiceImpl;
+
+	@RequestMapping(value="/logInWithFaceBook")
+	public void facebookConnection(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+		String unid=UUID.randomUUID().toString();
+		request.getSession().setAttribute("STATE", unid);
+		String faceBookLogInURL=faceBookConnection.getFaceBookURL(unid);
+
+
+		response.sendRedirect(faceBookLogInURL);
+	}
+	@RequestMapping(value="/connectFaceBook")
+	public void redirectFromfacebook(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		Response myResponse=new Response();
+		String sessionState = (String) request.getSession().getAttribute("STATE");
+		String googlestate = request.getParameter("state");
+
+
+		if (sessionState == null || !sessionState.equals(googlestate)) {
+
+			response.sendRedirect("loginWithFacebook");
+
+		}
+
+		String error = request.getParameter("error");
+
+		if (error != null && error.trim().isEmpty()) {
+
+			response.sendRedirect("userlogin");
+
+		}
+
+		String authCode = request.getParameter("code");
+
+		String fbaccessToken = faceBookConnection.getAccessToken(authCode);
+
+		
+
+	//	JsonNode profile = faceBookConnection.getUserProfile(fbaccessToken);
+	
+		User user = userServiceImpl.getUserByEmailId(profile.get("email").asText());
+
+		//logger.debug("fb img "+ profile.get("picture").get("data").get("url").asText());
+		TokenImpl tokenImpl=new TokenImpl();
+		// get user profile
+		
+		if (user == null) {
+
+			user = new User();
+
+			user.setName(profile.get("name").asText());
+			user.setEmail(profile.get("email").asText());
+			user.setActivated(true);
+			userServiceImpl.insertUser(user);
+			User user1 = userServiceImpl.getUserByEmailId(profile.get("email").asText());
+			String token=tokenImpl.generateToken("login",String.valueOf(user1.getUserID()));
+
+			myResponse.setResponseMessage(token);
+			response.sendRedirect("http://localhost:8080/ToDoNotesApp/#!/home");
+		} else {
+			String token=tokenImpl.generateToken("login",String.valueOf(user.getUserID()));
+			logger.debug(" user is already existin our db");
+			myResponse.setResponseMessage(token);
+			
+			response.sendRedirect("http://localhost:8080/ToDoNotesApp/#!/home");
+
+		}
+
+	}
+
+}

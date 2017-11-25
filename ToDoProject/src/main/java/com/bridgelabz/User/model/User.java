@@ -19,7 +19,15 @@ public class User {
 	private String email;
 	private String mobileNumber;
 	private boolean activated;
-
+	private String profileUrl;
+	
+	@Column(name="profile_url")
+	public String getProfileUrl() {
+		return profileUrl;
+	}
+	public void setProfileUrl(String profileUrl) {
+		this.profileUrl = profileUrl;
+	}
 	@Column(name = "userFirstName")
 	public String getUserFirstName() {
 		return userFirstName;
@@ -73,8 +81,8 @@ public class User {
 	public boolean getActivated() {
 		return activated;
 	}
-	public void setActivated(int activated) {
-		activated = activated;
+	public void setActivated(boolean activated) {
+		activated = this.activated;
 	}
 	@Override
 	public String toString() {
@@ -85,5 +93,4 @@ public class User {
 	public List<Note> getNotes() {
 		return null;
 	}
-	
 }

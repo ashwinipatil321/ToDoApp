@@ -3,7 +3,7 @@ package com.bridgelabz.User.DAO;
 import com.bridgelabz.User.model.User;
 
 public interface UserDao {
-	public boolean registration(User userDetails) ;
+	public int registration(User userDetails) ;
 	public User login(User userDetails);
 	public User getUserByEmail(String email);
 	User getUserById(int id);
