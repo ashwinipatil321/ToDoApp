@@ -12,6 +12,7 @@ import com.bridgelabz.User.model.User;
 
 @Repository
 public class UserDaoImplemention implements UserDao {
+
 	@Autowired
 	SessionFactory sessionFactory;
 
@@ -84,9 +85,9 @@ public class UserDaoImplemention implements UserDao {
 	@Override
 	public void updateUser(User oldUser) {
 		Session session = sessionFactory.getCurrentSession();
-			System.out.println(oldUser);
-			session.saveOrUpdate(oldUser);
-			System.out.println(oldUser);
-		
+		System.out.println(oldUser);
+		session.saveOrUpdate(oldUser);
+		System.out.println(oldUser);
+
 	}
 }

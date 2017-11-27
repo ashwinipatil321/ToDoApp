@@ -257,3 +257,218 @@ Nov 25, 2017 21:05:44.56 [15000:15037:1125/210544.566786:ERROR:browser_gpu_chann
 Nov 25, 2017 21:05:44.62 Created new window in existing browser session.
 Nov 25, 2017 21:07:03.63 [15249:15287:1125/210703.630690:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
 Nov 25, 2017 21:07:03.65 Created new window in existing browser session.
+
+Nov 27, 2017 09:16:56.88 NEW SESSION
+Nov 27, 2017 09:16:56.88 [2701:2701:1127/091656.882723:ERROR:background_mode_manager_aura.cc(13)] Not implemented reached in virtual void BackgroundModeManager::EnableLaunchOnStartup(bool)
+Nov 27, 2017 09:16:58.36 [2701:2701:1127/091658.360378:ERROR:account_info_fetcher.cc(58)] OnGetTokenFailure: Invalid credentials.
+Nov 27, 2017 09:16:58.40 [2701:2701:1127/091658.403238:ERROR:account_tracker.cc(356)] OnGetTokenFailure: Invalid credentials.
+Nov 27, 2017 09:16:58.40 [2701:2701:1127/091658.403263:ERROR:account_tracker.cc(356)] OnGetTokenFailure: Invalid credentials.
+Nov 27, 2017 09:16:59.51 [2701:2701:1127/091659.517126:ERROR:display_info_provider_aura.cc(31)] Not implemented reached in virtual void extensions::DisplayInfoProviderAura::UpdateDisplayUnitInfoForPlatform(const display::Display &, extensions::api::system_display::DisplayUnitInfo *)
+Nov 27, 2017 09:24:11.94 [3858:3895:1127/092411.944322:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Nov 27, 2017 09:24:11.96 Created new window in existing browser session.
+Nov 27, 2017 09:49:20.44 [5032:5070:1127/094920.443964:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Nov 27, 2017 09:49:20.49 Created new window in existing browser session.
+Nov 27, 2017 10:09:06.26 [5552:5589:1127/100906.266297:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Nov 27, 2017 10:09:06.28 Created new window in existing browser session.
+Nov 27, 2017 10:15:38.79 [5874:5911:1127/101538.796571:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Nov 27, 2017 10:15:38.94 Created new window in existing browser session.
+Nov 27, 2017 10:17:11.93 [6115:6152:1127/101711.929731:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Nov 27, 2017 10:17:11.96 Created new window in existing browser session.
+Nov 27, 2017 10:19:08.79 [6330:6367:1127/101908.794998:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Nov 27, 2017 10:19:08.80 Created new window in existing browser session.
+Nov 27, 2017 10:21:18.15 [6551:6588:1127/102118.154577:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Nov 27, 2017 10:21:18.21 Created new window in existing browser session.
+Nov 27, 2017 10:25:04.29 [6800:6837:1127/102504.297608:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Nov 27, 2017 10:25:04.30 Created new window in existing browser session.
+Nov 27, 2017 10:28:31.00 [7037:7074:1127/102831.008451:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Nov 27, 2017 10:28:31.02 Created new window in existing browser session.
+Nov 27, 2017 10:51:13.65 [8149:8186:1127/105113.651764:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Nov 27, 2017 10:51:13.68 Created new window in existing browser session.
+Nov 27, 2017 10:55:56.64 [8421:8458:1127/105556.649289:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Nov 27, 2017 10:55:56.65 Created new window in existing browser session.
+Nov 27, 2017 11:04:33.87 [8876:8913:1127/110433.874419:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Nov 27, 2017 11:04:33.92 Created new window in existing browser session.
+Nov 27, 2017 12:00:47.15 [2773:2773:1127/120047.153526:ERROR:gles2_cmd_decoder.cc(5318)] Error: 3 for Command kBlitFramebufferCHROMIUM
+Nov 27, 2017 12:31:11.03 [2701:2741:1127/123111.036094:ERROR:service_manager.cc(158)] Connection InterfaceProviderSpec prevented service: content_plugin from binding interface: memory_instrumentation::mojom::Coordinator exposed by: content_browser
+Nov 27, 2017 13:00:44.24 [11698:11736:1127/130044.242615:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Nov 27, 2017 13:00:44.25 Created new window in existing browser session.
+Nov 27, 2017 14:47:03.10 [2701:2741:1127/144703.097705:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Nov 27, 2017 14:47:56.74 [2701:2741:1127/144756.744186:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Nov 27, 2017 14:48:29.23 [2701:2741:1127/144829.239223:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Nov 27, 2017 14:48:44.26 [2701:2741:1127/144844.262849:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Nov 27, 2017 14:48:48.07 [2701:2741:1127/144848.072248:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Nov 27, 2017 15:01:55.33 Created new window in existing browser session.
+Nov 27, 2017 15:11:17.72 [14288:14325:1127/151117.721233:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Nov 27, 2017 15:11:17.77 Created new window in existing browser session.
+Nov 27, 2017 15:19:48.88 [14608:14645:1127/151948.881841:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Nov 27, 2017 15:19:48.95 Created new window in existing browser session.
+Nov 27, 2017 15:21:34.46 [14787:14824:1127/152134.465282:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Nov 27, 2017 15:21:34.48 Created new window in existing browser session.
+Nov 27, 2017 15:34:42.23 [15171:15209:1127/153442.235788:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Nov 27, 2017 15:34:42.28 Created new window in existing browser session.
+Nov 27, 2017 15:40:21.87 [15417:15454:1127/154021.874288:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Nov 27, 2017 15:40:21.89 Created new window in existing browser session.
+Nov 27, 2017 15:55:18.07 
+Nov 27, 2017 15:55:18.07 #
+Nov 27, 2017 15:55:18.07 # Fatal process OOM in heap setup
+Nov 27, 2017 15:55:18.07 #
+Nov 27, 2017 15:55:18.07 
+Nov 27, 2017 15:55:18.48 --2017-11-27 15:55:18--  https://clients2.google.com/cr/report
+Nov 27, 2017 15:55:18.78 Resolving clients2.google.com (clients2.google.com)... 172.217.24.238, 2404:6800:4009:800::200e
+Nov 27, 2017 15:55:18.78 Connecting to clients2.google.com (clients2.google.com)|172.217.24.238|:443... connected.
+Nov 27, 2017 15:55:20.68 HTTP request sent, awaiting response... 200 OK
+Nov 27, 2017 15:55:20.68 Length: unspecified [text/html]
+Nov 27, 2017 15:55:20.68 Saving to: ‘/dev/fd/4’
+Nov 27, 2017 15:55:20.68 
+Nov 27, 2017 15:55:20.68 Crash dump id: 53e0197ba39dad63
+Nov 27, 2017 16:10:57.00 [16311:16348:1127/161057.006654:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Nov 27, 2017 16:10:57.01 Created new window in existing browser session.
+Nov 27, 2017 16:12:40.21 
+Nov 27, 2017 16:12:40.21 #
+Nov 27, 2017 16:12:40.21 # Fatal process OOM in heap setup
+Nov 27, 2017 16:12:40.21 #
+Nov 27, 2017 16:12:40.21 
+Nov 27, 2017 16:12:40.22 
+Nov 27, 2017 16:12:40.22 #
+Nov 27, 2017 16:12:40.22 # Fatal process OOM in heap setup
+Nov 27, 2017 16:12:40.22 #
+Nov 27, 2017 16:12:40.22 
+Nov 27, 2017 16:12:40.39 --2017-11-27 16:12:40--  https://clients2.google.com/cr/report
+Nov 27, 2017 16:12:40.47 Resolving clients2.google.com (clients2.google.com)... 172.217.27.206, 2404:6800:4009:800::200e
+Nov 27, 2017 16:12:40.47 Connecting to clients2.google.com (clients2.google.com)|172.217.27.206|:443... connected.
+Nov 27, 2017 16:12:43.57 HTTP request sent, awaiting response... 200 OK
+Nov 27, 2017 16:12:43.57 Length: unspecified [text/html]
+Nov 27, 2017 16:12:43.57 Saving to: ‘/dev/fd/4’
+Nov 27, 2017 16:12:43.57 
+Nov 27, 2017 16:12:43.57 Crash dump id: 0c67bd2acf3bc2ba
+Nov 27, 2017 16:12:43.61 --2017-11-27 16:12:43--  https://clients2.google.com/cr/report
+Nov 27, 2017 16:12:43.69 Resolving clients2.google.com (clients2.google.com)... 216.58.199.142, 2404:6800:4002:803::200e
+Nov 27, 2017 16:12:43.69 Connecting to clients2.google.com (clients2.google.com)|216.58.199.142|:443... connected.
+Nov 27, 2017 16:12:46.97 HTTP request sent, awaiting response... 200 OK
+Nov 27, 2017 16:12:46.97 Length: unspecified [text/html]
+Nov 27, 2017 16:12:46.97 Saving to: ‘/dev/fd/4’
+Nov 27, 2017 16:12:46.97 
+Nov 27, 2017 16:12:46.97 Crash dump id: 6e1dee1c6c26dd87
+Nov 27, 2017 16:12:47.01 --2017-11-27 16:12:47--  https://clients2.google.com/cr/report
+Nov 27, 2017 16:12:47.09 Resolving clients2.google.com (clients2.google.com)... 172.217.26.238, 2404:6800:4002:803::200e
+Nov 27, 2017 16:12:47.09 Connecting to clients2.google.com (clients2.google.com)|172.217.26.238|:443... connected.
+Nov 27, 2017 16:12:50.01 HTTP request sent, awaiting response... 200 OK
+Nov 27, 2017 16:12:50.01 Length: unspecified [text/html]
+Nov 27, 2017 16:12:50.01 Saving to: ‘/dev/fd/4’
+Nov 27, 2017 16:12:50.01 
+Nov 27, 2017 16:12:50.01      0K                                                        3.90M=0s
+Nov 27, 2017 16:12:50.01 
+Nov 27, 2017 16:12:50.01 2017-11-27 16:12:50 (3.90 MB/s) - ‘/dev/fd/4’ saved [16]
+Nov 27, 2017 16:12:50.01 
+Nov 27, 2017 16:12:50.02 
+Nov 27, 2017 16:12:50.02 Crash dump id: 3c2e05f650bb3e1b
+Nov 27, 2017 16:12:50.06 --2017-11-27 16:12:50--  https://clients2.google.com/cr/report
+Nov 27, 2017 16:12:50.13 Resolving clients2.google.com (clients2.google.com)... 172.217.24.238, 2404:6800:4009:800::200e
+Nov 27, 2017 16:12:50.13 Connecting to clients2.google.com (clients2.google.com)|172.217.24.238|:443... connected.
+Nov 27, 2017 16:12:53.02 HTTP request sent, awaiting response... 200 OK
+Nov 27, 2017 16:12:53.02 Length: unspecified [text/html]
+Nov 27, 2017 16:12:53.02 Saving to: ‘/dev/fd/4’
+Nov 27, 2017 16:12:53.02 
+Nov 27, 2017 16:12:53.02 Crash dump id: 02057f65fb1aef2f
+Nov 27, 2017 16:12:53.06 --2017-11-27 16:12:53--  https://clients2.google.com/cr/report
+Nov 27, 2017 16:12:53.19 Resolving clients2.google.com (clients2.google.com)... 172.217.24.238, 2404:6800:4009:800::200e
+Nov 27, 2017 16:12:53.19 Connecting to clients2.google.com (clients2.google.com)|172.217.24.238|:443... connected.
+Nov 27, 2017 16:12:56.44 HTTP request sent, awaiting response... 200 OK
+Nov 27, 2017 16:12:56.44 Length: unspecified [text/html]
+Nov 27, 2017 16:12:56.44 Saving to: ‘/dev/fd/4’
+Nov 27, 2017 16:12:56.44 
+Nov 27, 2017 16:12:56.44      0K                            
+Nov 27, 2017 16:12:56.44   Crash dump id:   103f3b145d4188a9
+Nov 27, 2017 16:12:56.44                         2.35M=0s
+Nov 27, 2017 16:12:56.44 
+Nov 27, 2017 16:12:56.50 --2017-11-27 16:12:56--  https://clients2.google.com/cr/report
+Nov 27, 2017 16:12:56.56 Resolving clients2.google.com (clients2.google.com)... 172.217.26.238, 2404:6800:4002:803::200e
+Nov 27, 2017 16:12:56.57 Connecting to clients2.google.com (clients2.google.com)|172.217.26.238|:443... connected.
+Nov 27, 2017 16:12:59.61 HTTP request sent, awaiting response... 200 OK
+Nov 27, 2017 16:12:59.61 Length: unspecified [text/html]
+Nov 27, 2017 16:12:59.61 Saving to: ‘/dev/fd/4’
+Nov 27, 2017 16:12:59.61 
+Nov 27, 2017 16:12:59.61 Crash dump id: 351685e3ec1f6a13
+Nov 27, 2017 16:12:59.67 --2017-11-27 16:12:59--  https://clients2.google.com/cr/report
+Nov 27, 2017 16:12:59.74 Resolving clients2.google.com (clients2.google.com)... 216.58.220.14, 2404:6800:4009:800::200e
+Nov 27, 2017 16:12:59.74 Connecting to clients2.google.com (clients2.google.com)|216.58.220.14|:443... connected.
+Nov 27, 2017 16:13:02.77 HTTP request sent, awaiting response... 200 OK
+Nov 27, 2017 16:13:02.77 Length: unspecified [text/html]
+Nov 27, 2017 16:13:02.77 Saving to: ‘/dev/fd/4’
+Nov 27, 2017 16:13:02.77 
+Nov 27, 2017 16:13:02.77 Crash dump id: a42e7de307c0b40c
+Nov 27, 2017 16:13:29.25 
+Nov 27, 2017 16:13:29.25 #
+Nov 27, 2017 16:13:29.25 # Fatal process OOM in heap setup
+Nov 27, 2017 16:13:29.25 #
+Nov 27, 2017 16:13:29.25 
+Nov 27, 2017 16:13:29.33 --2017-11-27 16:13:29--  https://clients2.google.com/cr/report
+Nov 27, 2017 16:13:34.42 Resolving clients2.google.com (clients2.google.com)... 172.217.26.238, 2404:6800:4002:803::200e
+Nov 27, 2017 16:13:34.42 Connecting to clients2.google.com (clients2.google.com)|172.217.26.238|:443... connected.
+Nov 27, 2017 16:13:37.11 HTTP request sent, awaiting response... 200 OK
+Nov 27, 2017 16:13:37.11 Length: unspecified [text/html]
+Nov 27, 2017 16:13:37.11 Saving to: ‘/dev/fd/4’
+Nov 27, 2017 16:13:37.11 
+Nov 27, 2017 16:13:37.11 Crash dump id: de99a96de867e57b
+Nov 27, 2017 16:30:27.81 [17163:17201:1127/163027.812578:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Nov 27, 2017 16:30:27.85 Created new window in existing browser session.
+Nov 27, 2017 16:36:51.65 A Parser-blocking, cross site (i.e. different eTLD+1) script, https://contextual.media.net/fcmdynet.js?&cid=8CUSP8IK6&cpcd=6eIptajjYZxU0uyTjt2Ebg%3D%3D&crid=382243897&size=300x600&cc=IN&https=1&vif=1&requrl=https%3A%2F%2Fwww.journaldev.com%2F2676%2Fspring-mvc-interceptor-example-handlerinterceptor-handlerinterceptoradapter&kwrf=http%3A%2F%2Fwww.google.co.in&nse=3&vi=1511780810794046587&lw=1&ugd=4&re=1&hlt=1&dfp=1&rtbs=1, is invoked via document.write. The network request for this script MAY be blocked by the browser in this or a future page load due to poor network connectivity. If blocked in this page load, it will be confirmed in a subsequent console message.See https://www.chromestatus.com/feature/5718547946799104 for more details.
+Nov 27, 2017 16:36:51.65 A Parser-blocking, cross site (i.e. different eTLD+1) script, https://contextual.media.net/fcmdynet.js?&cid=8CUSP8IK6&cpcd=6eIptajjYZxU0uyTjt2Ebg%3D%3D&crid=382243897&size=300x600&cc=IN&https=1&vif=1&requrl=https%3A%2F%2Fwww.journaldev.com%2F2676%2Fspring-mvc-interceptor-example-handlerinterceptor-handlerinterceptoradapter&kwrf=http%3A%2F%2Fwww.google.co.in&nse=3&vi=1511780810794046587&lw=1&ugd=4&re=1&hlt=1&dfp=1&rtbs=1, is invoked via document.write. The network request for this script MAY be blocked by the browser in this or a future page load due to poor network connectivity. If blocked in this page load, it will be confirmed in a subsequent console message.See https://www.chromestatus.com/feature/5718547946799104 for more details.
+Nov 27, 2017 16:36:52.17 [1:15:1127/163652.171274:ERROR:adm_helpers.cc(62)] Failed to query stereo recording.
+Nov 27, 2017 16:37:09.63 [2701:2741:1127/163709.631241:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Nov 27, 2017 16:37:24.67 [2701:2741:1127/163724.670540:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Nov 27, 2017 16:37:39.88 [2701:2741:1127/163739.885748:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Nov 27, 2017 16:37:39.88 [2701:2741:1127/163739.885893:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Nov 27, 2017 16:37:40.79 [2701:2741:1127/163740.799693:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -100
+Nov 27, 2017 16:37:56.28 [2701:2741:1127/163756.286588:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -100
+Nov 27, 2017 16:43:16.65 [1:22:1127/164316.649923:ERROR:adm_helpers.cc(62)] Failed to query stereo recording.
+Nov 27, 2017 16:43:17.54 A Parser-blocking, cross site (i.e. different eTLD+1) script, https://contextual.media.net/fcmdynet.js?&cid=8CUSP8IK6&cpcd=6eIptajjYZxU0uyTjt2Ebg%3D%3D&crid=382243897&size=300x600&cc=IN&https=1&vif=1&requrl=https%3A%2F%2Fwww.journaldev.com%2F2676%2Fspring-mvc-interceptor-example-handlerinterceptor-handlerinterceptoradapter&kwrf=http%3A%2F%2Fwww.google.co.in&nse=3&vi=1511781196262672251&lw=1&ugd=4&re=1&hlt=1&dfp=1&rtbs=1, is invoked via document.write. The network request for this script MAY be blocked by the browser in this or a future page load due to poor network connectivity. If blocked in this page load, it will be confirmed in a subsequent console message.See https://www.chromestatus.com/feature/5718547946799104 for more details.
+Nov 27, 2017 16:43:17.54 A Parser-blocking, cross site (i.e. different eTLD+1) script, https://contextual.media.net/fcmdynet.js?&cid=8CUSP8IK6&cpcd=6eIptajjYZxU0uyTjt2Ebg%3D%3D&crid=382243897&size=300x600&cc=IN&https=1&vif=1&requrl=https%3A%2F%2Fwww.journaldev.com%2F2676%2Fspring-mvc-interceptor-example-handlerinterceptor-handlerinterceptoradapter&kwrf=http%3A%2F%2Fwww.google.co.in&nse=3&vi=1511781196262672251&lw=1&ugd=4&re=1&hlt=1&dfp=1&rtbs=1, is invoked via document.write. The network request for this script MAY be blocked by the browser in this or a future page load due to poor network connectivity. If blocked in this page load, it will be confirmed in a subsequent console message.See https://www.chromestatus.com/feature/5718547946799104 for more details.
+Nov 27, 2017 16:43:17.60 A Parser-blocking, cross site (i.e. different eTLD+1) script, https://contextual.media.net/fcmdynet.js?&cid=8CUSP8IK6&cpcd=6eIptajjYZxU0uyTjt2Ebg%3D%3D&crid=382243897&size=300x600&cc=IN&https=1&vif=1&requrl=https%3A%2F%2Fwww.journaldev.com%2F2676%2Fspring-mvc-interceptor-example-handlerinterceptor-handlerinterceptoradapter&kwrf=http%3A%2F%2Fwww.google.co.in&nse=3&vi=1511781196680025913&lw=1&ugd=4&re=1&hlt=1&dfp=1&rtbs=1, is invoked via document.write. The network request for this script MAY be blocked by the browser in this or a future page load due to poor network connectivity. If blocked in this page load, it will be confirmed in a subsequent console message.See https://www.chromestatus.com/feature/5718547946799104 for more details.
+Nov 27, 2017 16:43:17.60 A Parser-blocking, cross site (i.e. different eTLD+1) script, https://contextual.media.net/fcmdynet.js?&cid=8CUSP8IK6&cpcd=6eIptajjYZxU0uyTjt2Ebg%3D%3D&crid=382243897&size=300x600&cc=IN&https=1&vif=1&requrl=https%3A%2F%2Fwww.journaldev.com%2F2676%2Fspring-mvc-interceptor-example-handlerinterceptor-handlerinterceptoradapter&kwrf=http%3A%2F%2Fwww.google.co.in&nse=3&vi=1511781196680025913&lw=1&ugd=4&re=1&hlt=1&dfp=1&rtbs=1, is invoked via document.write. The network request for this script MAY be blocked by the browser in this or a future page load due to poor network connectivity. If blocked in this page load, it will be confirmed in a subsequent console message.See https://www.chromestatus.com/feature/5718547946799104 for more details.
+Nov 27, 2017 16:43:32.73 [2701:2741:1127/164332.733014:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Nov 27, 2017 16:43:32.73 [2701:2741:1127/164332.733182:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Nov 27, 2017 16:43:47.77 [2701:2741:1127/164347.772281:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Nov 27, 2017 16:43:52.82 [2701:2741:1127/164352.828144:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Nov 27, 2017 16:44:02.98 [2701:2741:1127/164402.987552:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Nov 27, 2017 16:44:07.85 [2701:2741:1127/164407.851377:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Nov 27, 2017 16:44:14.43 A Parser-blocking, cross site (i.e. different eTLD+1) script, https://contextual.media.net/fcmdynet.js?&cid=8CUSP8IK6&cpcd=6eIptajjYZxU0uyTjt2Ebg%3D%3D&crid=382243897&size=300x600&cc=IN&https=1&vif=1&requrl=https%3A%2F%2Fwww.journaldev.com%2F16922%2Fspring-framework&kwrf=http%3A%2F%2Fwww.journaldev.com&nse=3&vi=1511781254905564106&lw=1&ugd=4&re=1&hlt=1&dfp=1&rtbs=1, is invoked via document.write. The network request for this script MAY be blocked by the browser in this or a future page load due to poor network connectivity. If blocked in this page load, it will be confirmed in a subsequent console message.See https://www.chromestatus.com/feature/5718547946799104 for more details.
+Nov 27, 2017 16:44:14.43 A Parser-blocking, cross site (i.e. different eTLD+1) script, https://contextual.media.net/fcmdynet.js?&cid=8CUSP8IK6&cpcd=6eIptajjYZxU0uyTjt2Ebg%3D%3D&crid=382243897&size=300x600&cc=IN&https=1&vif=1&requrl=https%3A%2F%2Fwww.journaldev.com%2F16922%2Fspring-framework&kwrf=http%3A%2F%2Fwww.journaldev.com&nse=3&vi=1511781254905564106&lw=1&ugd=4&re=1&hlt=1&dfp=1&rtbs=1, is invoked via document.write. The network request for this script MAY be blocked by the browser in this or a future page load due to poor network connectivity. If blocked in this page load, it will be confirmed in a subsequent console message.See https://www.chromestatus.com/feature/5718547946799104 for more details.
+Nov 27, 2017 16:44:16.83 A Parser-blocking, cross site (i.e. different eTLD+1) script, https://contextual.media.net/fcmdynet.js?&cid=8CUSP8IK6&cpcd=6eIptajjYZxU0uyTjt2Ebg%3D%3D&crid=382243897&size=300x600&cc=IN&https=1&vif=1&requrl=https%3A%2F%2Fwww.journaldev.com%2F2676%2Fspring-mvc-interceptor-example-handlerinterceptor-handlerinterceptoradapter&kwrf=http%3A%2F%2Fwww.google.co.in&nse=3&vi=1511781256201011705&lw=1&ugd=4&re=1&hlt=1&dfp=1&rtbs=1, is invoked via document.write. The network request for this script MAY be blocked by the browser in this or a future page load due to poor network connectivity. If blocked in this page load, it will be confirmed in a subsequent console message.See https://www.chromestatus.com/feature/5718547946799104 for more details.
+Nov 27, 2017 16:44:16.83 A Parser-blocking, cross site (i.e. different eTLD+1) script, https://contextual.media.net/fcmdynet.js?&cid=8CUSP8IK6&cpcd=6eIptajjYZxU0uyTjt2Ebg%3D%3D&crid=382243897&size=300x600&cc=IN&https=1&vif=1&requrl=https%3A%2F%2Fwww.journaldev.com%2F2676%2Fspring-mvc-interceptor-example-handlerinterceptor-handlerinterceptoradapter&kwrf=http%3A%2F%2Fwww.google.co.in&nse=3&vi=1511781256201011705&lw=1&ugd=4&re=1&hlt=1&dfp=1&rtbs=1, is invoked via document.write. The network request for this script MAY be blocked by the browser in this or a future page load due to poor network connectivity. If blocked in this page load, it will be confirmed in a subsequent console message.See https://www.chromestatus.com/feature/5718547946799104 for more details.
+Nov 27, 2017 16:44:18.04 [2701:2741:1127/164418.042815:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Nov 27, 2017 16:44:23.00 [2701:2741:1127/164423.002574:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Nov 27, 2017 16:44:23.00 [2701:2741:1127/164423.002689:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Nov 27, 2017 16:44:38.47 [2701:2741:1127/164438.473884:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Nov 27, 2017 16:44:51.99 [2701:2741:1127/164451.999437:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Nov 27, 2017 16:44:52.18 [2701:2741:1127/164452.185254:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Nov 27, 2017 16:45:05.30 [2701:2741:1127/164505.303477:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -100
+Nov 27, 2017 16:45:07.20 [2701:2741:1127/164507.208580:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Nov 27, 2017 16:45:22.36 [2701:2741:1127/164522.359913:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Nov 27, 2017 16:45:22.36 [2701:2741:1127/164522.360054:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Nov 27, 2017 16:45:37.39 [2701:2741:1127/164537.399161:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Nov 27, 2017 16:56:09.47 [17898:17935:1127/165609.476575:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Nov 27, 2017 16:56:09.49 Created new window in existing browser session.
+Nov 27, 2017 17:48:50.45 [2701:2701:1127/174850.415425:ERROR:media_internals.cc(103)] Cannot get RenderProcessHost
+Nov 27, 2017 17:48:50.45 [2701:2701:1127/174850.415564:ERROR:media_internals.cc(103)] Cannot get RenderProcessHost
+Nov 27, 2017 17:48:50.45 [2701:2701:1127/174850.415577:ERROR:media_internals.cc(103)] Cannot get RenderProcessHost
+Nov 27, 2017 17:50:13.52 [19705:19742:1127/175013.528683:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Nov 27, 2017 17:50:13.82 Created new window in existing browser session.
+Nov 27, 2017 18:10:20.51 [20401:20438:1127/181020.515459:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Nov 27, 2017 18:10:20.59 Created new window in existing browser session.
+Nov 27, 2017 18:35:06.07 [21081:21118:1127/183506.073377:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Nov 27, 2017 18:35:06.14 Created new window in existing browser session.
+Nov 27, 2017 18:53:41.48 [21547:21584:1127/185341.482501:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Nov 27, 2017 18:53:41.49 Created new window in existing browser session.
+Nov 27, 2017 18:56:03.22 [21667:21705:1127/185603.225046:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Nov 27, 2017 18:56:03.25 Created new window in existing browser session.
+Nov 27, 2017 19:22:49.73 [22447:22485:1127/192249.732073:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Nov 27, 2017 19:22:49.74 Created new window in existing browser session.
+Nov 27, 2017 19:29:30.80 [22690:22728:1127/192930.802642:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Nov 27, 2017 19:29:30.81 Created new window in existing browser session.
+Nov 27, 2017 19:32:26.58 [22917:22954:1127/193226.587501:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Nov 27, 2017 19:32:26.60 Created new window in existing browser session.
+Nov 27, 2017 19:36:51.81 [23150:23187:1127/193651.815945:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Nov 27, 2017 19:36:51.89 Created new window in existing browser session.
+Nov 27, 2017 19:43:55.96 [23460:23497:1127/194355.966702:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Nov 27, 2017 19:43:55.98 Created new window in existing browser session.

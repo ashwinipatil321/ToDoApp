@@ -95,7 +95,7 @@ public class UserController {
 				
 				if (name.getActivated()) {
 					
-					String token = Token.generateToken(user.getUserID());
+					String token = Token.generateToken(name.getUserID());
 					System.out.println(Token.verify(token));
 
 					response.setHeader("login", token);

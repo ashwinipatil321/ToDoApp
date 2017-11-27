@@ -33,6 +33,15 @@ public class Note {
 	@Column(name= "note_modifiedDate")
 	private Date modifiedDate;
 
+	@Column(name = "isArchive")
+	private boolean isArchive;
+
+	@Column(name="emptyTrash")
+	private boolean emptyTrash;
+
+	@Column(name="isPin")
+	private boolean isPin;
+
 	@JsonIgnore
 	@JoinColumn(name="userId")
 	@ManyToOne(cascade = CascadeType.ALL)
@@ -83,6 +92,30 @@ public class Note {
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+
+	public boolean isArchive() {
+		return isArchive;
+	}
+
+	public void setArchive(boolean isArchive) {
+		this.isArchive = isArchive;
+	}
+
+	public boolean isEmptyTrash() {
+		return emptyTrash;
+	}
+
+	public void setEmptyTrash(boolean emptyTrash) {
+		this.emptyTrash = emptyTrash;
+	}
+
+	public boolean isPin() {
+		return isPin;
+	}
+
+	public void setPin(boolean isPin) {
+		this.isPin = isPin;
 	}
 
 	@Override

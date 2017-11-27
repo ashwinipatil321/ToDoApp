@@ -16,10 +16,11 @@ public class NoteServiceImplemention implements NoteServices {
 	private NoteDAO noteDao;
 
 	@Transactional
-	public void addNote(Note note) {
-		noteDao.addNote(note);
+	public int saveNotes(Note note) {
+		int id=noteDao.saveNotes(note);
+		return id;
 	}
-
+	
 	@Transactional
 	public void deleteNote(int noteId) {
 		noteDao.deleteNote(noteId);
@@ -44,5 +45,32 @@ public class NoteServiceImplemention implements NoteServices {
 	@Transactional
 	public Note getNoteById(int noteId) {
 		return noteDao.getNoteById(noteId);
+	}
+
+	@Transactional
+	public boolean updateArchive(int NoteId)
+	{
+		Note noteID = noteDao.getNoteById(NoteId);
+		//noteID.setArchive(true);
+		noteDao.updateArchive(NoteId);
+		return true;
+	}
+
+	@Transactional
+	public boolean updateEmptyTrash(int UserId)
+	{
+		Note userID = noteDao.getNoteById(UserId);
+		userID.setEmptyTrash(true);
+		noteDao.updateEmptyTrash(UserId);
+		return true;
+	}
+
+	@Transactional
+	public boolean updatePin(int noteId)
+	{
+		Note noteID = noteDao.getNoteById(noteId);
+		noteID.setPin(true);
+		noteDao.updatePin(noteId);
+		return true;
 	}
 }
