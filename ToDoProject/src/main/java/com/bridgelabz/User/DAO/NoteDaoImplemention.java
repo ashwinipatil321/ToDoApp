@@ -12,13 +12,13 @@ public class NoteDaoImplemention implements NoteDAO {
 
 	@Autowired
 	private SessionFactory sessionFactory;
-	
+
 	@Autowired
 	NoteDAO noteDAO;
 	public int saveNotes(Note note) {
-		
+
 		Session session = sessionFactory.getCurrentSession();
-	int id=	(int) session.save(note);
+		int id=	(int) session.save(note);
 		return id;
 	}
 
@@ -44,7 +44,7 @@ public class NoteDaoImplemention implements NoteDAO {
 		query.setParameter("noteEditedDate", updatedNote.getModifiedDate());
 		query.setParameter("noteid", updatedNote.getNoteId());
 
-		 query.executeUpdate();
+		query.executeUpdate();
 		System.out.println("query executed successfully...");
 	}
 
@@ -62,56 +62,37 @@ public class NoteDaoImplemention implements NoteDAO {
 		Session session = sessionFactory.openSession();
 		return session.load(Note.class, noteId);
 	}
-	
+
 	@Override
 	public boolean updateArchive(int noteId)
 	{
 		Session session = sessionFactory.getCurrentSession();
-		//Boolean isArchive = (Boolean) session.createQuery("select isArchive from Note where  noteId =:noteId").uniqueResult();
-		
-		Query query = session.createQuery( "UPDATE com.bridgelabz.User.model.Note set isArchive=:isArchive WHERE noteId = :noteid");
+		Query query = session.createQuery( "UPDATE com.bridgelabz.User.model.Note set isArchive=:isArchive WHERE noteId = :noteId");
 		query.setParameter("noteId", noteId);
 		query.setParameter("isArchive", true);
 		query.executeUpdate();
 		System.out.println("query executed successfully...");
 		return true;
-		/*if(isArchive == false)
-		{
-		query.setParameter("isArchive", true);
-		query.executeUpdate();
-		System.out.println("query executed successfully...");
-		return true;
-		}
-		
-		else{
-			
-			query.setParameter("isArchive", false);
-			query.executeUpdate();
-			System.out.println("query executed successfully...");
-			return true;
-		}*/
 	}
-	
+
 	@Override
-	public boolean updateEmptyTrash(int UserId)
+	public boolean updateEmptyTrash(int noteId)
 	{
-		
-		String hqlQuery = "UPDATE com.bridgelabz.User.model.Note set emptyTrash=:emptyTrash WHERE UserId = :UserId";
 		Session session = sessionFactory.getCurrentSession();
+		String hqlQuery = "UPDATE com.bridgelabz.User.model.Note set emptyTrash=:emptyTrash WHERE noteId = :noteId";
 		Query query = session.createQuery(hqlQuery);
-		query.setParameter("userId", UserId);
+		query.setParameter("noteId", noteId);
 		query.setParameter("emptyTrash", true);
 		query.executeUpdate();
 		System.out.println("query executed successfully...");
 		return true;
 	}
-	
+
 	@Override
 	public boolean updatePin(int noteId)
 	{
-		
-		String hqlQuery = "UPDATE com.bridgelabz.User.model.Note set isPin=:isPin WHERE NoteID = :NoteID";
 		Session session = sessionFactory.getCurrentSession();
+		String hqlQuery = "UPDATE com.bridgelabz.User.model.Note set isPin=:isPin WHERE noteId = :noteId";
 		Query query = session.createQuery(hqlQuery);
 		query.setParameter("noteId", noteId);
 		query.setParameter("isPin", true);

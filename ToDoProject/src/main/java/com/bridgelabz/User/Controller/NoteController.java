@@ -25,22 +25,28 @@ public class NoteController {
 
 	@Autowired
 	private NoteServices noteService;
-	
+
 	@Autowired
 	private UserService UserService;
-	
+
 	CustomeResponse myResponse = new CustomeResponse();
 
 	@RequestMapping(value = "/saveNote", method = RequestMethod.POST)
 	public ResponseEntity<CustomeResponse> saveNote(HttpSession session, @RequestBody Note note, HttpServletRequest request,
 			HttpServletResponse response) {
+
 		String token = request.getHeader("accssToken");
 		int id = Token.verify(token);
 		User user = UserService.getUserById(id);
+
 		if (user != null) {
+
 			if (id > 0) {
+
 				boolean isActive = user.getActivated();
+
 				if (isActive ==true && (note.getTitle().length() > 0 || note.getDescription().length() > 0)) {
+					
 					note.setUser(user);
 					CustomeResponse myResponse = new CustomeResponse();
 					Date date = new Date(System.currentTimeMillis());
@@ -51,35 +57,40 @@ public class NoteController {
 					myResponse.setStatus(1);
 					return new ResponseEntity<CustomeResponse>(myResponse, HttpStatus.OK);
 				}
+
 				myResponse.setMessage("User not Activated ");
 				myResponse.setStatus(1);
 				return new ResponseEntity<CustomeResponse>(myResponse, HttpStatus.OK);
-				
+
 			} else
+
 				myResponse.setMessage("Token issue");
 			myResponse.setStatus(1);
 			return new ResponseEntity<CustomeResponse>(myResponse, HttpStatus.OK);
-			
+
 		}
 		myResponse.setMessage("Invalid!!!\n Login To Continue");
 		myResponse.setStatus(1);
 		return new ResponseEntity<CustomeResponse>(myResponse, HttpStatus.OK);
-		
-		
 	}
-	
-	@RequestMapping(value = "/user/deleteNote/{noteId}", method = RequestMethod.DELETE)
-	public ResponseEntity<CustomeResponse> deleteNote(@PathVariable("noteId") int noteId) {
 
-		try {
+	@RequestMapping(value = "/user/deleteNote/{noteId}", method = RequestMethod.DELETE)
+	public ResponseEntity<CustomeResponse> deleteNote(@PathVariable("noteId") int noteId,HttpServletRequest request) {
+
+		String token = request.getHeader("accssToken");
+		int id = Token.verify(token);
+		User user = UserService.getUserById(id);
+
+		if (user != null) {
+
 			noteService.deleteNote(noteId);
 			myResponse.setMessage("Note is deleted");
 			myResponse.setStatus(1);
 			return new ResponseEntity<CustomeResponse>(myResponse, HttpStatus.OK);
 		}
 
-		catch (Exception e) {
-			e.printStackTrace();
+		else{
+
 			myResponse.setMessage("Note is Notdeleted");
 			myResponse.setStatus(-1);
 			return new ResponseEntity<CustomeResponse>(myResponse, HttpStatus.BAD_REQUEST);
@@ -87,17 +98,21 @@ public class NoteController {
 	}
 
 	@RequestMapping(value = "/user/update", method = RequestMethod.POST)
-	public ResponseEntity<CustomeResponse> updateNote(@RequestBody Note note) {
+	public ResponseEntity<CustomeResponse> updateNote(@RequestBody Note note,HttpServletRequest request) {
 
-		try {
+		String token = request.getHeader("accssToken");
+		int id = Token.verify(token);
+		User user = UserService.getUserById(id);
+
+		if (user != null) {
+
 			noteService.updateNote(note);
 			myResponse.setMessage("Note is updated");
 			myResponse.setStatus(1);
 			return new ResponseEntity<CustomeResponse>(myResponse, HttpStatus.OK);
+		}
+		else {
 
-		} catch (Exception e) {
-
-			e.printStackTrace();
 			myResponse.setMessage("Note is not Updated");
 			myResponse.setStatus(-1);
 			return new ResponseEntity<CustomeResponse>(myResponse, HttpStatus.BAD_REQUEST);
@@ -105,27 +120,32 @@ public class NoteController {
 	}
 
 	@RequestMapping(value = "/user/getAllNotes", method = RequestMethod.GET)
-	public ResponseEntity<CustomeResponse> getAllNotes() {
+	public ResponseEntity<CustomeResponse> getAllNotes(HttpServletRequest request) {
 
+		String token = request.getHeader("accssToken");
+		int id = Token.verify(token);
+		User user = UserService.getUserById(id);
 		List<Note> allNotes = null;
-		try {
-			
+
+		if (user != null) {
+
 			allNotes = noteService.getallNotes();
 			System.out.println(allNotes);
 			myResponse.setMessage("Got all the notes");
 			myResponse.setStatus(1);
 			return new ResponseEntity<CustomeResponse>(myResponse, HttpStatus.OK);
-		} catch (Exception e) {
+		}
 
-			e.printStackTrace();
-			myResponse.setMessage("Didn't got the notes ");
-			myResponse.setStatus(-1);
-			return new ResponseEntity<CustomeResponse>(myResponse, HttpStatus.BAD_REQUEST);
+		else {
+
+			myResponse.setMessage("Got all the notes");
+			myResponse.setStatus(1);
+			return new ResponseEntity<CustomeResponse>(myResponse, HttpStatus.CONFLICT);
 		}
 	}
-	
+
 	@RequestMapping(value = "/isArchive/{noteId}", method = RequestMethod.POST)
-	public ResponseEntity<CustomeResponse> updateArchive(@RequestBody Note note, @PathVariable("noteId") int noteId ) {
+	public ResponseEntity<CustomeResponse> updateArchive(@PathVariable("noteId") int noteId ) {
 		CustomeResponse myResponse = new CustomeResponse();
 		try {
 			noteService.updateArchive(noteId);
@@ -142,13 +162,13 @@ public class NoteController {
 		}
 	}
 
-	@RequestMapping(value = "/emptyTrash/{userId", method = RequestMethod.PUT)
-	public ResponseEntity<CustomeResponse> updateEmptyTrash(@RequestBody Note note, @PathVariable("userId") int userId) {
+	@RequestMapping(value = "/emptyTrash/{noteId}", method = RequestMethod.POST)
+	public ResponseEntity<CustomeResponse> updateEmptyTrash( @PathVariable("noteId") int noteId) {
 		CustomeResponse myResponse = new CustomeResponse();
 
 		try {
 
-			noteService.updateEmptyTrash(userId);
+			noteService.updateEmptyTrash(noteId);
 			myResponse.setMessage("Trash is Not Empty...");
 			myResponse.setStatus(1);
 			return new ResponseEntity<CustomeResponse>(myResponse, HttpStatus.OK);
@@ -162,13 +182,11 @@ public class NoteController {
 		}
 	}
 
-
-	@RequestMapping(value = "/isPin/{noteId", method = RequestMethod.POST)
-	public ResponseEntity<CustomeResponse> updatePin(@RequestBody Note note,@PathVariable("noteId") int noteId) {
+	@RequestMapping(value = "/isPin/{noteId}", method = RequestMethod.POST)
+	public ResponseEntity<CustomeResponse> updatePin(@PathVariable("noteId") int noteId) {
 		CustomeResponse myResponse = new CustomeResponse();
 
 		try {
-
 			noteService.updatePin(noteId);
 			myResponse.setMessage("Pin Updated");
 			myResponse.setStatus(1);

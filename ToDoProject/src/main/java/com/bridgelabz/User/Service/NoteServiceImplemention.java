@@ -50,26 +50,20 @@ public class NoteServiceImplemention implements NoteServices {
 	@Transactional
 	public boolean updateArchive(int NoteId)
 	{
-		Note noteID = noteDao.getNoteById(NoteId);
-		//noteID.setArchive(true);
 		noteDao.updateArchive(NoteId);
 		return true;
 	}
 
 	@Transactional
-	public boolean updateEmptyTrash(int UserId)
+	public boolean updateEmptyTrash(int noteId)
 	{
-		Note userID = noteDao.getNoteById(UserId);
-		userID.setEmptyTrash(true);
-		noteDao.updateEmptyTrash(UserId);
+		noteDao.updateEmptyTrash(noteId);
 		return true;
 	}
 
 	@Transactional
 	public boolean updatePin(int noteId)
 	{
-		Note noteID = noteDao.getNoteById(noteId);
-		noteID.setPin(true);
 		noteDao.updatePin(noteId);
 		return true;
 	}

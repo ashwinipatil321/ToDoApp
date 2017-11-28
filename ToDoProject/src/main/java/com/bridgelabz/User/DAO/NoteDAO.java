@@ -13,7 +13,7 @@ public interface NoteDAO {
 	public void updateNote(Note updatedNote);
 	public List<Note> getallNotes();
 	public Note getNoteById(int noteId);
-	public boolean updateArchive(int id);
-	public boolean updateEmptyTrash(int UserId);
-	public boolean updatePin(int note);
+	public boolean updateArchive(int noteId);
+	public boolean updateEmptyTrash(int noteId);
+	public boolean updatePin(int noteId);
 }

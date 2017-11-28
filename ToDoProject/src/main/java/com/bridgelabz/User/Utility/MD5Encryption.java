@@ -6,8 +6,8 @@ import java.security.NoSuchAlgorithmException;
 public class MD5Encryption {
 	public static String encrypt(String plainText) {
 		String cypherText = null;
+		
 		try {
-
 			MessageDigest md = MessageDigest.getInstance("SHA");
 			md.update(plainText.getBytes());
 			byte[] bytes = md.digest();

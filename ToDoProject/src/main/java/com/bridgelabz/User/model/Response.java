@@ -12,7 +12,6 @@ public class Response {
 	}
 
 	public String readEntity(Class<String> class1) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 }

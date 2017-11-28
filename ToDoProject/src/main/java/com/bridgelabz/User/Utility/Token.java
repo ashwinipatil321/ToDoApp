@@ -13,7 +13,6 @@ public class Token {
 	public static String generateToken( int id) {
 		String token = "";
 		long currentTime = System.currentTimeMillis();
-		// 2 days
 		long expireTime = currentTime + (60000 * 60 * 24 * 2);
 		Date date = new Date(currentTime);
 		Date expireDate = new Date(expireTime);

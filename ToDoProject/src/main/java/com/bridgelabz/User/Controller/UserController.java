@@ -57,6 +57,7 @@ public class UserController {
 			String subject = "Verfiy Mail";
 
 			if (found==1) {
+				
 				String url = request.getRequestURL().toString();
 				String token = Token.generateToken(user1.getUserID());
 				url = url.substring(0, url.lastIndexOf('/')) + "/activate/" + token;
@@ -71,11 +72,12 @@ public class UserController {
 				myResponse.setResponseMessage("EmailId and password Aready Existe...!!!");
 				return ResponseEntity.status(HttpStatus.ACCEPTED).body(myResponse);
 			}
+			
 		} else {
+			
 			myResponse.setResponseMessage("Invalid Credantial....!!!");
 			return ResponseEntity.status(HttpStatus.ACCEPTED).body(myResponse);
 		}
-
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
@@ -165,6 +167,7 @@ public class UserController {
 				String to = user.getEmail();
 				String msg = "Click on link to reset password  " + url + "  \n Enter below code in authentication:"
 						+ token;
+				
 				String subject = "Reset Password";
 				url = url.substring(0, url.lastIndexOf('/')) + "/activate/" + token;
 				sendMail.sendMail(to, subject, msg, url);
@@ -180,6 +183,7 @@ public class UserController {
 				return customResponse;
 			}
 		}
+		
 		customResponse.setMessage("Please enter valid emailID");
 		customResponse.setStatus(1);
 		return customResponse;

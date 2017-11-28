@@ -10,7 +10,7 @@ public interface NoteServices {
 	public void deleteNote(int noteId);
 	public void updateNote(Note updatedNote);
 	public List<Note> getallNotes();
-	public boolean updateArchive(int id);
-	public boolean updateEmptyTrash(int UserId);
-	public boolean updatePin(int note);
+	public boolean updateArchive(int noteId);
+	public boolean updateEmptyTrash(int noteId);
+	public boolean updatePin(int noteId);
 }
