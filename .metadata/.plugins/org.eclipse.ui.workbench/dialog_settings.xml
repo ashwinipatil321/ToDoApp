@@ -20,4 +20,11 @@
 			<item value="nav"/>
 		</list>
 	</section>
+	<section name="NewWizardAction">
+		<item value="org.eclipse.wst.css.ui.internal.wizard.NewCSSWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.jboss.tools.jst.web"/>
+			<item value="org.eclipse.wst.web.ui"/>
+		</list>
+	</section>
 </section>

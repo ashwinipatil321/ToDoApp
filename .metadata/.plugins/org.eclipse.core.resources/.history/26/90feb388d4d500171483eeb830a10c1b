@@ -1,0 +1,5 @@
+var app = angular.module('ToDo');
+app.Controller($scope, registerService, $location){
+	
+
+}

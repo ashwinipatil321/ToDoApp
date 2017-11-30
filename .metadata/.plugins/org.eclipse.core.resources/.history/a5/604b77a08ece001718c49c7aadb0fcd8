@@ -1,8 +1,0 @@
-package com.bridgelabz.model;
-
-public class UserModel {
- private int UserID;
- private String password;
- private String UserFirstName;
- private String 
-}

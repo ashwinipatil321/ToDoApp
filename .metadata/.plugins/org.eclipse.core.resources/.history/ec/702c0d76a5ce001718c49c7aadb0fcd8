@@ -1,7 +1,0 @@
-package com.bridgelabz.User.DAO;
-
-import com.bridgelabz.User.model.UserDetails;
-
-public class UserDao {
-	
-}
