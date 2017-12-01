@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;ToDoProject/src/main/webapp/images/download (2)&apos; to &apos;googleimg&apos;" description="Rename resource &apos;download (2)&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/images/download (2)" name="googleimg" stamp="1512101907916" updateReferences="true"/>
+</session>

@@ -1,9 +1,9 @@
 @CHARSET "UTF-8";
 .container{
-	border: 1px solid grey;
+	border: 1px solid #ccc;
 	border-style: groove;
 	border-radius: 2px;
-	background-color: lavender;
+	background-color:#FFFFFF;
 	margin-top: 30px;
 	margin-bottom: 30px;
 	padding-top: 48px;

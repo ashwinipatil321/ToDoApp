@@ -50,13 +50,19 @@
 <!-------------------------   Controllers .js ---------------------------->
 
 <script type="text/javascript" src="controller/loginController.js"></script>
+<script type="text/javascript" src="controller/registerController.js"></script>
+
 <!-------------------------   sevices .js ---------------------------->
 
 <script type="text/javascript" src="services/loginService.js"></script>
+<script type="text/javascript" src="services/registerService.js"></script>
+
 
 <!-------------------------   css  .css ---------------------------->
 
 <link rel="stylesheet" href="css/login.css">
+<link rel="stylesheet" href="css/registrationPage.css">
+
 
 <!-------------------------   custom Directives ---------------------------->
 

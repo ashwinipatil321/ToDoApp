@@ -1,7 +1,7 @@
 //module
 var myApp=angular.module("ToDo",[]);
-//controller
 
+//controller
 var controllers = function($scope){
 
 	$scope.message="angular...";

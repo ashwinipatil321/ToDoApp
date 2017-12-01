@@ -1,0 +1,42 @@
+<form name="userForm" ng-contoller="registerController">
+
+	<h2 align="center">Registration Form</h2>
+	<div class="container">
+		<fieldset>
+			<div class="form-group" ng-class="{ 'has-error': userForm.userFirstName.$dirty && userForm.userFirstName.$error.required }">
+				<label>FirstName</label>
+				 <input type="text" name="userFirstName" 
+					class="form-control" id="userFirstName" placeholder="Enter User first Name"
+					ng-model="user.userFirstName" required />
+			</div>
+			<div class="form-group">
+				<label>lastName</label> <input type="text" name="userLastName"
+					class="form-control" placeholder="Enter User last Name"
+					ng-model="user.userLastName" />
+			</div>
+			<div class="form-group">
+				<label>Email id</label> <input type="email" name="email"
+					id="UserEmail" class="form-control" placeholder="Enter EmailId"
+					required ng-model="user.email" />
+			</div>
+			<div class="form-group">
+				<label>PhoneNumber</label> <input type="number" name="mobileNumber"
+					class="form-control" placeholder="Enter 10 digit mobile Number"
+					required ng-model="user.mobileNumber" />
+			</div>
+
+			<div class="form-group">
+				<label> Password</label> <input type="password" name="password"
+					required class="form-control" placeholder="Enter password"
+					ng-model="user.password" />
+			</div>
+
+			<div class="form-group">
+				<button type="submit" ng-click="registerUser(user)">Register</button>
+			</div>
+			<br>
+			<div class="form-group">
+				<a href="#!/login">Already have an account</a>
+			</div>
+		</fieldset>
+		</from>

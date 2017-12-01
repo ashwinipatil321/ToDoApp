@@ -10,7 +10,7 @@ app.config([ '$stateProvider', '$urlRouterProvider',
 
 	$stateProvider.state('register', {
 		url : '/register',
-		templateUrl : 'htmlpages/RegistrationPage.html',
+		templateUrl : 'htmlpages/registrationPage.html',
 		controller : 'registerController'
 	});
 

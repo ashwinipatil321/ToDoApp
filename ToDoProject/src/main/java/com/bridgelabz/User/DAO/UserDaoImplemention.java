@@ -49,7 +49,7 @@ public class UserDaoImplemention implements UserDao {
 	public User getUserByEmail(String email) {
 		Session session = sessionFactory.getCurrentSession();
 
-		Query query = session.createQuery(" from User where email =:email");
+		Query query = session.createQuery("from User where email =:email");
 		query.setParameter("email", email);
 		User result =  (User) query.uniqueResult();
 		if (result != null) {

@@ -1,0 +1,32 @@
+<div class="container" ng-contoller="loginController">
+	<div class="in">
+		<fieldset>
+			<img src="images/googleimg.svg" alt="Google Logo" class="googleimg" align="left">
+		<h2>Sign in</h2>
+		<h2>to continue to Gmail</h2>
+			<div class="form-group">
+				<div>
+					<br>
+					<div class="form-group">
+						<label>Email Id</label> <input type="email" name="email"
+							placeholder="Enter Email Id" class="form-control" data-ng-model="user.email"
+							required />
+					</div>
+					<br>
+					<div class="form-group">
+						<label>Password:</label> <input type="password" name="userpass"
+							class="form-control" placeholder="Enter Password"
+							data-ng-model="user.password" required />
+					</div>
+					<hr color="black">
+
+					<br> <a href="#!/register">
+						<button type="submit" class="btn btn-primary">Create
+							account</button>
+					</a>
+					<button type="submit" data-ng-click="loginUser(user)" class="btn btn-success">Login</button>
+				</div>
+			</div>
+		</fieldset>
+	</div>
+</div>

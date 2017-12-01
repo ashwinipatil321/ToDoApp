@@ -1,7 +1,0 @@
-package com.bridgelabz.User.Service;
-import java.util.List;
-import com.bridgelabz.User.model.Note;
-public interface NoteService {
-	
-	
-}

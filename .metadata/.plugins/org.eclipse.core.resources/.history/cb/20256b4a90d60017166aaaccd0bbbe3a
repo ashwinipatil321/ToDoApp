@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+.container{
+	border: 1px solid #ccc;
+	border-style: groove;
+	border-radius: 2px;
+	background-color:rgba(0,0,0,.0001;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	padding-top: 48px;
+	padding-left: 40px;
+	padding-right: 40px;
+	max-width: 450px;
+	min-height: 500px;
+}

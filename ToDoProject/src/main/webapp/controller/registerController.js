@@ -1,4 +1,4 @@
-var app = angular.module('TodoApp');
+var app = angular.module('ToDo');
 
 app.controller('registerController', function($scope, registerService,$location){
 

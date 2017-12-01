@@ -7,6 +7,7 @@ toDo.factory('loginService', function($http, $location) {
 	details.loginUser = function(user) {
 		
 		return $http({
+			
 			method : 'POST',
 			url : 'login',
 			data : user
