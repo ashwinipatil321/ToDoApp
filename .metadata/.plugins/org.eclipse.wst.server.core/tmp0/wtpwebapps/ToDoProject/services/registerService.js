@@ -1,5 +1,4 @@
 var toDo = angular.module('ToDo');
-
 toDo.factory('registerService', function($http, $location) {
 
 	var userdetails = {};
@@ -14,5 +13,4 @@ toDo.factory('registerService', function($http, $location) {
 		})
 	}
 	return userdetails;
-
 });

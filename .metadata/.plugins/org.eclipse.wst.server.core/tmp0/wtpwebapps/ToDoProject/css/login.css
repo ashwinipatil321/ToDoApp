@@ -6,19 +6,15 @@
 	border-style:groove;
 	border-radius: 2px;
 	background-color:#FFFFFF;
-	margin-top: 40px;
+	margin-top: 80px;
 	margin-bottom: 40px;
-	padding-top: 30px;
+	padding-top: 5px;
 	padding-left: 40px;
 	padding-right: 40px;
-	padding-bottom: 30px;
-	max-width: 450px;
-	min-height: 500px;
+	padding-bottom: 15px;
+	max-width: 400px;
+	min-height: 400px;
 	box-shadow: 10px 10px 5px #888888;
-}
-
-.signup-fb{
-	border-top: 1px solid #999; padding-top:20px;
 }
 .btn-facebook {
  background: #3B5998;
@@ -48,4 +44,19 @@
 }
 input{
 outline: none;;	
+}
+.btn {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-weight: 200;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 8px 30px;
+    font-size: 12px;
+    line-height: normal;
+    border-radius: 4px;
 }

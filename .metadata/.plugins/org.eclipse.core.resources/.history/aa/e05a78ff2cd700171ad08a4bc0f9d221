@@ -1,0 +1,8 @@
+angular.module('ToDo')
+.controller('UserController', UserController);
+
+ function UserController ($scope) {
+    $scope.project = {
+       comments: 'Comments',    
+    };
+ } 

@@ -906,3 +906,16 @@
 0:0:0:0:0:0:0:1 - - [01/Dec/2017:19:47:11 +0530] "GET /ToDoProject/logInWithFaceBook HTTP/1.1" 302 -
 0:0:0:0:0:0:0:1 - - [01/Dec/2017:19:47:14 +0530] "GET /ToDoProject/connectFaceBook?code=AQD3mV2UxfL2dUMKWefByn4CrcFiz7tFpz8XGfWYjuijMg-TN07PmqOXP-xR-jkO-2Rxt7bvKeQ21i93r0NvKBpToLplH6ApezsZOknOO7PMMpYbbKngu2ohE2sMSxdxY1jVCR9zWaQsQPmdgko_qdCfEQFx-96hBalsqFUNfmJrZ1rPIXRWf_a-1jUDNOdPyh4qjk4ON8gp_a6yztrIO5Ig83JbC5mungXmDGqWrypURwtipJH9o_I9sACWXowQya3weOWI_llXwMY1ByVgKKuZiYOVGKo2zQXbqZH6EKfoahGXq3uBR5DnJveh8PZzJzystIvJ80YN5tyRKokmOPZ5&state=c4174478-f3b3-4315-8b3c-70828d897be2 HTTP/1.1" 500 3696
 0:0:0:0:0:0:0:1 - - [01/Dec/2017:19:47:35 +0530] "GET /ToDoProject/connectFaceBook?code=AQD3mV2UxfL2dUMKWefByn4CrcFiz7tFpz8XGfWYjuijMg-TN07PmqOXP-xR-jkO-2Rxt7bvKeQ21i93r0NvKBpToLplH6ApezsZOknOO7PMMpYbbKngu2ohE2sMSxdxY1jVCR9zWaQsQPmdgko_qdCfEQFx-96hBalsqFUNfmJrZ1rPIXRWf_a-1jUDNOdPyh4qjk4ON8gp_a6yztrIO5Ig83JbC5mungXmDGqWrypURwtipJH9o_I9sACWXowQya3weOWI_llXwMY1ByVgKKuZiYOVGKo2zQXbqZH6EKfoahGXq3uBR5DnJveh8PZzJzystIvJ80YN5tyRKokmOPZ5&state=c4174478-f3b3-4315-8b3c-70828d897be2 HTTP/1.1" 500 3791
+0:0:0:0:0:0:0:1 - - [01/Dec/2017:20:23:27 +0530] "GET /ToDoProject/ HTTP/1.1" 200 3195
+0:0:0:0:0:0:0:1 - - [01/Dec/2017:20:23:27 +0530] "GET /ToDoProject/css/login.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [01/Dec/2017:20:23:27 +0530] "GET /ToDoProject/services/loginService.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [01/Dec/2017:20:23:27 +0530] "GET /ToDoProject/script/TodoApp.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [01/Dec/2017:20:23:27 +0530] "GET /ToDoProject/controller/registerController.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [01/Dec/2017:20:23:27 +0530] "GET /ToDoProject/services/registerService.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [01/Dec/2017:20:23:27 +0530] "GET /ToDoProject/controller/loginController.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [01/Dec/2017:20:23:27 +0530] "GET /ToDoProject/css/registrationPage.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [01/Dec/2017:20:23:27 +0530] "GET /ToDoProject/directives/CustomDirectives.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [01/Dec/2017:20:23:28 +0530] "GET /ToDoProject/htmlpages/Login.html HTTP/1.1" 200 1617
+0:0:0:0:0:0:0:1 - - [01/Dec/2017:20:23:35 +0530] "GET /ToDoProject/htmlpages/registrationPage.html HTTP/1.1" 200 3034
+0:0:0:0:0:0:0:1 - - [01/Dec/2017:20:23:37 +0530] "GET /ToDoProject/ HTTP/1.1" 200 3195
+0:0:0:0:0:0:0:1 - - [01/Dec/2017:20:23:38 +0530] "GET /ToDoProject/htmlpages/registrationPage.html HTTP/1.1" 304 -

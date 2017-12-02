@@ -624,3 +624,20 @@ Dec 01, 2017 17:45:57.15 Created new window in existing browser session.
 Dec 01, 2017 17:50:50.69 NEW SESSION
 Dec 01, 2017 17:50:50.69 [19254:19292:1201/175050.692764:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
 Dec 01, 2017 17:50:50.69 Created new window in existing browser session.
+
+Dec 02, 2017 09:47:00.44 NEW SESSION
+Dec 02, 2017 09:47:00.44 [2624:2664:1202/094700.443272:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Dec 02, 2017 09:48:09.58 [2624:2664:1202/094809.586378:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Dec 02, 2017 10:08:34.31 [3646:3684:1202/100834.317099:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 02, 2017 10:08:34.39 Created new window in existing browser session.
+Dec 02, 2017 10:09:54.05 [3856:3893:1202/100954.055227:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 02, 2017 10:09:54.07 Created new window in existing browser session.
+Dec 02, 2017 11:30:07.18 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Dec 02, 2017 11:31:55.08 [2624:2664:1202/113155.085775:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -100
+Dec 02, 2017 11:45:38.97 [2624:2664:1202/114538.975609:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -100
+Dec 02, 2017 15:13:14.01 [9405:9442:1202/151314.010103:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 02, 2017 15:13:14.07 Created new window in existing browser session.
+Dec 02, 2017 16:33:55.43 [10941:10978:1202/163355.439730:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 02, 2017 16:33:55.45 Created new window in existing browser session.
+Dec 02, 2017 17:11:18.33 [12546:12583:1202/171118.334668:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 02, 2017 17:11:18.35 Created new window in existing browser session.

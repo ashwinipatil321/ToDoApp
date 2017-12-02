@@ -1,0 +1,51 @@
+@CHARSET "UTF-8";
+
+.container {
+	
+	border: 1px solid #F2F2F2;
+	border-style:groove;
+	border-radius: 2px;
+	background-color:#FFFFFF;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	padding-top: 5px;
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-bottom: 15px;
+	max-width: 450px;
+	min-height: 400px;
+	box-shadow: 10px 10px 5px #888888;
+}
+
+.signup-fb{
+	border-top: 1px solid #999; padding-top:10px;
+}
+.btn-facebook {
+ background: #3B5998;
+	color: white;
+}
+.btn-facebook:hover,
+.btn-facebook:focus,
+.btn-facebook:active,
+.btn-facebook.active,
+.open > .dropdown-toggle.btn-facebook {
+  color: #fff;
+  background-color: #3b5998;
+  border-color: #3b5998;
+}
+.btn-google {
+  background: #dd4b39;
+	color: white;
+	}
+.btn-google:hover,
+.btn-google:focus,
+.btn-google:active,
+.btn-google.active,
+.open > .dropdown-toggle.btn-google {
+  color: #fff;
+  background-color: #dd4b39;
+  border-color: #dd4b39;
+}
+input{
+outline: none;;	
+}

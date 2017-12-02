@@ -13,7 +13,17 @@ app.config([ '$stateProvider', '$urlRouterProvider',
 		templateUrl : 'htmlpages/registrationPage.html',
 		controller : 'registerController'
 	});
-
+	$stateProvider.state('forgetpassword', {
+		url : '/forgetpassword',
+		templateUrl : 'htmlpages/forgetpassword.html',
+		controller : 'resetController'
+	});
+	
+	$stateProvider.state('resetPassword', {
+		url : '/resetpassword/:t',
+		templateUrl : 'htmlpages/resetpassword.html',
+		controller : 'resetController'
+	});
 	$urlRouterProvider.otherwise('/login');
 	
 }]);

@@ -2,13 +2,19 @@
 .container{
 	border: 1px solid #ccc;
 	border-style: groove;
-	border-radius: 2px;
+	border-radius: 4px;
 	background-color:#FFFFFF;
-	margin-top: 30px;
-	margin-bottom: 30px;
+	margin-top: 0px;
+	margin-bottom: 60px;
 	padding-top: 48px;
 	padding-left: 40px;
 	padding-right: 40px;
 	max-width: 450px;
 	min-height: 500px;
 }
+/* 
+body{
+	background-color:#CCD1D1;
+	margin:0px;
+	padding:0px;
+} */

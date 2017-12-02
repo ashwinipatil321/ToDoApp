@@ -159,7 +159,6 @@ public class UserController {
 				String to = user.getEmail();
 				String msg = "Click on link to reset password  " + url + "  \n Enter below code in authentication:"
 						+ token;
-				
 				String subject = "Reset Password";
 				url = url.substring(0, url.lastIndexOf('/')) + "/activate/" + token;
 				sendMail.sendMail(to, subject, msg, url);
@@ -171,7 +170,7 @@ public class UserController {
 
 				System.out.println("invalid email");
 				customResponse.setMessage("Please enter valid emailID");
-				customResponse.setStatus(1);
+				customResponse.setStatus(5);
 				return customResponse;
 			}
 		}
@@ -211,7 +210,7 @@ public class UserController {
 		} else {
 
 			customResponse.setMessage("Error in token");
-			customResponse.setStatus(1);
+			customResponse.setStatus(5);
 			return customResponse;
 		}
 	}
