@@ -1434,3 +1434,8 @@
 0:0:0:0:0:0:0:1 - - [02/Dec/2017:19:34:44 +0530] "GET /ToDoProject/directives/CustomDirectives.js HTTP/1.1" 200 1279
 0:0:0:0:0:0:0:1 - - [02/Dec/2017:19:34:44 +0530] "GET /ToDoProject/services/forgotPasswordService.js HTTP/1.1" 200 523
 0:0:0:0:0:0:0:1 - - [02/Dec/2017:19:34:49 +0530] "GET /ToDoProject/htmlpages/registrationPage.html HTTP/1.1" 200 3189
+0:0:0:0:0:0:0:1 - - [02/Dec/2017:19:38:29 +0530] "GET /ToDoProject/ HTTP/1.1" 200 3351
+0:0:0:0:0:0:0:1 - - [02/Dec/2017:19:38:29 +0530] "GET /ToDoProject/css/registrationPage.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [02/Dec/2017:19:38:31 +0530] "GET /ToDoProject/htmlpages/Login.html HTTP/1.1" 200 1872
+0:0:0:0:0:0:0:1 - - [02/Dec/2017:19:38:31 +0530] "GET /ToDoProject/images/googleimg.svg HTTP/1.1" 200 1660
+0:0:0:0:0:0:0:1 - - [02/Dec/2017:19:38:31 +0530] "GET /favicon.ico HTTP/1.1" 404 1081

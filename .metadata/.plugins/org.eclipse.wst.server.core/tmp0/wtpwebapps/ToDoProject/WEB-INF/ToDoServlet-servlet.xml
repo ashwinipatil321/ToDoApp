@@ -70,4 +70,5 @@
 	<mvc:resources location="/htmlpages/" mapping="/htmlpages/**"/>
 	<mvc:resources location="/images/" mapping="/images/**" />
 	
+	
 </beans>

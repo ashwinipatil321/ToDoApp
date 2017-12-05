@@ -7,8 +7,8 @@ app.controller('loginController', function($scope,toastr,loginService, $location
 		var result = loginService.loginUser($scope.user, $scope.error);
 		
 		result.then(function(response) {
-			
-			localStorage.setItem('login',response.headers('login'));
+			console.log("login token ....",response.headers('login'))
+			localStorage.setItem('acessToken',response.headers('login'));
 			$location.path("/home");
 			toastr.success(response.data.responseMessage,'login');
 			

@@ -1,0 +1,49 @@
+var toDoApp = angular.module('toDoApp');
+
+toDoApp.controller('navbarController', function($scope, $location, $state, homeService) {
+
+					var state = $state.current.name;
+
+					if (state == "home") {
+						$scope.navbarBrand = "Fundoo Keep";
+						$scope.navbarBrandColor = 'black';
+					} else if (state == "archive") {
+						$scope.navbarBrand = "Archive";
+						$scope.navbarBrandColor = 'white';
+					}
+
+					if (homeService.isSidebarVisible) {
+						showSidebar();
+					} else {
+						hideSidebar();
+					}
+
+					$scope.toggleSidebar = function() {
+						var sidebarWidth = document
+								.getElementById("sidebar-wrapper").style.width;
+
+						if (sidebarWidth == "270px") {
+							hideSidebar();
+						} else {
+							showSidebar();
+						}
+					}
+
+					function showSidebar() {
+						document.getElementById("sidebar-wrapper").style.width = "270px";
+						document.getElementById("content-wrapper").style.marginLeft = "270px";
+						homeService.isSidebarVisible = true;
+					}
+
+					function hideSidebar() {
+						document.getElementById("sidebar-wrapper").style.width = "0px";
+						document.getElementById("content-wrapper").style.marginLeft = "135px";
+						document.getElementById("content-wrapper").style.marginRight = "135px";
+						homeService.isSidebarVisible = false;
+					}
+
+					$scope.rediretHome = function() {
+						$location.path('/home');
+					}
+
+				});

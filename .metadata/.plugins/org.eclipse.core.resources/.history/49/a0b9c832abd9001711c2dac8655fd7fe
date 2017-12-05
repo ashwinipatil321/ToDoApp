@@ -1,0 +1,41 @@
+
+var toDo = angular.module('ToDo');
+
+toDo.factory('homeService', function($http) {
+	console.log("its coming to service");
+	var notes ={};
+
+
+	notes.saveNote = function(token, note) {
+		console.log(note);
+		return $http({
+			method : 'POST',
+			url : 'saveNote',
+			data : note,
+			headers : {
+				'login' : token
+			}
+		});
+	}
+
+	noteList.showNotes = function(token) {
+		return $http({
+			method : 'POST',
+			url : 'showNotes',
+			headers : {
+				'login' : token
+			}
+		});
+	}
+	noteList.service=function(url,method,token,note){
+		return $http({
+		    method: method,
+		    url: url,
+		    data:note,
+		    headers: {
+		        'login': token
+		    }
+		
+		});
+	}
+});

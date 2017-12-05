@@ -1,0 +1,6 @@
+/* @CHARSET "UTF-8";
+
+.container-fluid{
+	background-color: white;
+	display: inline-block;
+}

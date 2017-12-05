@@ -1,0 +1,15 @@
+var toDoApp = angular.module('ToDo');
+
+toDoApp.controller('navbarController', function($scope, $location, $state) {
+
+	var state = $state.current.name;
+
+	if (state == "home") {
+		$scope.navBrand = "ToDo Keep";
+		$scope.navBrandColor = 'black';
+	} else if (state == "archive") {
+		$scope.navBrand = "Archive";
+		$scope.navBrandColor = 'white';
+	}
+
+});

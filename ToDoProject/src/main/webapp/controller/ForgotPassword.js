@@ -3,7 +3,7 @@ var toDoApp = angular.module('ToDo');
 toDoApp.controller('resetController', function($scope, forgotPasswordService,
 		$location) {
 
-	$scope.sendLink = function (response) {
+	$scope.sendLink = function (user) {
 		console.log('called');
 		var httpSendLink = forgotPasswordService.forgotPassword($scope.user);
 		httpSendLink.then(function(CustomResponse) {

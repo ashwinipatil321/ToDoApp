@@ -1,0 +1,8 @@
+<div class="sidenav" id="mySidenav" style="width: {{width">
+	<br> <br> 
+		<a href="#!/home">Notes</a>
+	<hr color="black">
+		<a href="#!/archive">Archive</a>
+	 	<a href="#!/trash">Trash</a>
+	<hr color="black">
+</div>

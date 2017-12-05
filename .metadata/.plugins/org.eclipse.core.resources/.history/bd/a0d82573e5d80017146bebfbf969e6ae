@@ -1,0 +1,6 @@
+/* @CHARSET "UTF-8";
+
+.navbar navbar-inverse {
+	background-color: white;
+	display: inline-block;
+}

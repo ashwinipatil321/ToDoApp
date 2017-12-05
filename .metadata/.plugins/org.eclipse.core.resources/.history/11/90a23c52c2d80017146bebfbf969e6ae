@@ -1,0 +1,8 @@
+@CHARSET "UTF-8";
+div#forget {
+	background-color: #ccccff;
+	margin-top: 50px;
+	max-width: 300px;
+		max-hight: 300px;
+	padding-bottom: 50px;
+}

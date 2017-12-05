@@ -1,0 +1,48 @@
+
+var toDo = angular.module('ToDo');
+
+toDo.factory('homeService', function($http) {
+	console.log("its coming to service");
+	
+	var notes ={};
+
+
+	notes.saveNote = function(method,url, note) {
+		console.log(note);
+		console.log(token)
+		return $http({
+			method : method,
+			url : url,
+			data : note,
+			headers : {
+				'token' : localStorage.getItem('acessToken')
+			}
+		});
+	}
+
+	notes.getAllNotes= function(token) {
+		return $http({
+			method : 'GET',
+			url : 'user/getAllNotes',
+			headers : {
+				headers : {
+					'token' : localStorage.getItem('acessToken')
+				}
+			}
+		});
+	}
+	
+	notes.service=function(url,method,token,note){
+		return $http({
+		    method: method,
+		    url: url,
+		    data:note,
+		    headers: {
+		        'login': token
+		    }
+		
+		});
+	}
+	
+	return notes;
+});

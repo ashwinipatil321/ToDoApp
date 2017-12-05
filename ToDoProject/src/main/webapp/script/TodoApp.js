@@ -20,10 +20,18 @@ app.config([ '$stateProvider', '$urlRouterProvider',
 	});
 	
 	$stateProvider.state('resetPassword', {
-		url : '/resetpassword/:t',
+		url : '/resetpassword',
 		templateUrl : 'htmlpages/resetpassword.html',
 		controller : 'resetController'
 	});
+
+	$stateProvider.state('home', {
+		url : '/home',
+		templateUrl : 'htmlpages/home.html',
+		controller : 'homeController'
+	});
+	
+	
 	$urlRouterProvider.otherwise('/login');
 	
 }]);

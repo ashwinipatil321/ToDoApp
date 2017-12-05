@@ -1,8 +1,0 @@
-package com.bridgelabz.User.SocialLogin;
-
-public class FaceBookConnection {
-	private static final String faceBookClientId="1347872695339978";
-	private static final String faceBookSecretId="1f1b14eca45bf9dfb71dc3408ea8cd8b";
-	public static final String Redirect_URI = "http://localhost:8080/ToDoProject/connectFaceBook";
-
-}

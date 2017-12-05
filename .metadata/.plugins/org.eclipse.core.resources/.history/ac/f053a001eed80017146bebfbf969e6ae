@@ -1,0 +1,36 @@
+/* .toggle-button {
+	background-color: black;
+}
+
+.navbar-toggle {
+	background-color: transparent;
+	display: inline-block;
+}
+
+.icon-bar {
+	background-color: #333;
+}
+
+#btn-signout {
+	margin-right: 25px;
+}
+
+.navbar-padding {
+	padding-left: 20px;
+	padding-right: 20px;
+	height: 50px;
+}
+
+.searchbar {
+	margin-top: 8px;
+	
+}
+
+.ul-nav{
+	width: 1000px;
+}
+
+.searchbar-li {
+	margin-left: 100px;
+	width: 50%;
+} */

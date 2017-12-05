@@ -1,0 +1,33 @@
+<nav class="navbar navbar-light" style="background-color: F8B40B;">
+
+	<div class="row">
+
+		<div class="col-sm-1">
+			  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+</div>
+
+		</div>
+
+		<div class="col-sm-3">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#!/home"><font 
+					size="5" font="Product Sans" style="color: {{navBrandColor}}"><b>{{navBrand}}</font></a>
+			</div>
+
+		</div>
+		<div class="col-sm-1" id="searchbtn">
+			<span  href="#!/search" class="glyphicon glyphicon-search" style="font-size: '25px';color:{{navColor}}"></span>
+		</div>
+
+		<div class="col-sm-3">
+			<input  href="#!/search" type="text" id="searchbox" placeholder="search"
+				class="nav navbar-nav">
+		</div>
+		<div id="navbar" class="navbar-collapse  collapse">
+		
+		
+		<div class="col-sm-3">
+			<ul class="nav navbar-nav navbar-right">
+
+        </ul>
+        </div>

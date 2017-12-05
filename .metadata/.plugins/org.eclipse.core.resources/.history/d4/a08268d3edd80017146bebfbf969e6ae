@@ -1,0 +1,15 @@
+<nav class="navbar navbar-light" style="background-color: #F8B40B;">
+	<div class="row">
+		<div class="col-sm-1">
+			<span style="font-size: 30px; cursor: pointer" onclick="openNav()">&#9776;</span>
+		</div>
+	</div>
+
+
+	</div>
+	<div class="col-sm-3">
+			<input href="" type="text" id="searchbox" placeholder="search"
+			class="nav navbar-nav">
+	</div>
+
+</nav>

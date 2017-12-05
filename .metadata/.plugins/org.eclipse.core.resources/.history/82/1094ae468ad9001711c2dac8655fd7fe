@@ -1,0 +1,69 @@
+<div>
+  <nav style=" background-color: #FFB42E" class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+
+          <a class="navbar-brand" >TODO NOTES</a>
+        </div>
+          <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control input-lg"  placeholder="Search">
+            </div>
+         
+          </form>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Link</a></li>
+            <li class="dropdown" data-uib-dropdown>
+              <a href="logout" class="dropdown-toggle" data-uib-dropdown-toggle data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu" data-uib-dropdown-menu>
+                <li><a></a></li>
+                <li><a></a></li>
+                <li><a></a></li>
+                <li role="separator" class="divider"></li>
+                <li><input type="button" data-ng-click="signout()" value="signout"></li>
+              </ul>
+            </li>
+          </ul>
+     
+</div>
+      </nav>
+</div>
+
+  <div class="card">
+		<div class="col-lg-3 col-md-3" >
+		</div>
+		<div id="note"  id="note" data-ng-click="show()" data-ng-blur="hide()" class=" col-sm-10 col-md-6 col-xs-10 col-lg-4">
+		<div contenteditable="true" id="note-title" data-text="Title" data-ng-model="note.title"></div>
+			
+			 <div id="take-note" contenteditable="true" data-text="description" data-ng-model="note.description"></div> 	
+				    <div class="note-icons" data-ng-show="newnote">
+					<img data-ng-src="images/archive.svg"> 
+					<img data-ng-src="images/reminder.svg">
+					<img data-ng-src="images/colors.svg"> 
+					<img data-ng-src="images/collaborator.svg"> 
+				<div role="button" data-ng-click="addNote()"
+						class=" btn-done pull-right">DONE</div>
+				</div>				
+	</div>
+	</div>
+	
+	
+	<div id="note-container"
+		class=" col-sm-12 col-md-12 col-xs-12 col-lg-12">
+		<div class="col-lg-1 col-md-1 hidden-sm"></div>
+		<div class="col-md-10 col-sm-12 col-xs-12 col-lg-10">
+<h4>Others:</h4>
+  
+   <div class="card" data-ng-repeat="note in notes |filter:{trash:false} ">
+      <h4 class="card-title" data-ng-bind-html="note.title"></h4>
+      <p class="card-text" data-ng-bind-html="note.description"></p>
+      <button data-ng-click="deleteNote(note)" class="btn">Delete</button> 
+  </div>
+  </div>
+  </div>
+ 
+  
+
+  
+	

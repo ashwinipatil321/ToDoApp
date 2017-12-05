@@ -1,0 +1,10 @@
+var todoApp = angular.module('ToDo');
+todoApp.directive('topNavBar', function() {
+	return{
+		templateUrl : 'htmlpages/TopNavBar.html'
+	}
+});
+
+
+
+

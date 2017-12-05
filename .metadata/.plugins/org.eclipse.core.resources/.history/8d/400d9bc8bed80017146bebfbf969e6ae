@@ -1,0 +1,13 @@
+<top-nav-bar></top-nav-bar>
+<br>
+<br>
+<br>
+<side-nav-bar></side-nav-bar>
+<div class="container-fluid">
+	<div class="main" id="main" style="margin-left: {{leftmargin">
+		<br>
+		<div class="col-lg-1"></div>
+
+		<div class="col-lg-10 col-md-10"></div>
+	</div>
+</div>

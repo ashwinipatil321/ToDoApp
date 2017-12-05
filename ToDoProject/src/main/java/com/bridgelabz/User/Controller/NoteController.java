@@ -31,11 +31,11 @@ public class NoteController {
 
 	CustomeResponse myResponse = new CustomeResponse();
 
-	@RequestMapping(value = "/saveNote", method = RequestMethod.POST)
-	public ResponseEntity<CustomeResponse> saveNote(HttpSession session, @RequestBody Note note, HttpServletRequest request,
+	@RequestMapping(value = "user/saveNote", method = RequestMethod.POST)
+	public ResponseEntity<CustomeResponse> saveNote(@RequestBody Note note, HttpServletRequest request,
 			HttpServletResponse response) {
 
-		String token = request.getHeader("accssToken");
+		String token = request.getHeader("token");
 		int id = Token.verify(token);
 		User user = UserService.getUserById(id);
 
@@ -77,7 +77,7 @@ public class NoteController {
 	@RequestMapping(value = "/user/deleteNote/{noteId}", method = RequestMethod.DELETE)
 	public ResponseEntity<CustomeResponse> deleteNote(@PathVariable("noteId") int noteId,HttpServletRequest request) {
 
-		String token = request.getHeader("accssToken");
+		String token = request.getHeader("token");
 		int id = Token.verify(token);
 		User user = UserService.getUserById(id);
 
@@ -100,7 +100,7 @@ public class NoteController {
 	@RequestMapping(value = "/user/update", method = RequestMethod.POST)
 	public ResponseEntity<CustomeResponse> updateNote(@RequestBody Note note,HttpServletRequest request) {
 
-		String token = request.getHeader("accssToken");
+		String token = request.getHeader("token");
 		int id = Token.verify(token);
 		User user = UserService.getUserById(id);
 
@@ -120,10 +120,12 @@ public class NoteController {
 	}
 
 	@RequestMapping(value = "/user/getAllNotes", method = RequestMethod.GET)
-	public ResponseEntity<CustomeResponse> getAllNotes(HttpServletRequest request) {
+	public ResponseEntity<List<Note>> getAllNotes(HttpServletRequest request) {
 
-		String token = request.getHeader("accssToken");
+		String token = request.getHeader("token");
+		System.out.println("hiiiiiiiiii"+token);
 		int id = Token.verify(token);
+		System.out.println(id);
 		User user = UserService.getUserById(id);
 		List<Note> allNotes = null;
 
@@ -133,14 +135,14 @@ public class NoteController {
 			System.out.println(allNotes);
 			myResponse.setMessage("Got all the notes");
 			myResponse.setStatus(1);
-			return new ResponseEntity<CustomeResponse>(myResponse, HttpStatus.OK);
+			return new ResponseEntity<List<Note>>(allNotes, HttpStatus.OK);
 		}
 
 		else {
 
 			myResponse.setMessage("Got all the notes");
 			myResponse.setStatus(1);
-			return new ResponseEntity<CustomeResponse>(myResponse, HttpStatus.CONFLICT);
+			return new ResponseEntity<List<Note>>(HttpStatus.CONFLICT);
 		}
 	}
 
