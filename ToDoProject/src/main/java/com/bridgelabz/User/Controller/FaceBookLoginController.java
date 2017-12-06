@@ -16,10 +16,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RestController
 public class FaceBookLoginController {
-	
+
 	@Autowired
 	private FaceBookConnection faceBookConnection;
-	
+
 	@Autowired
 	private UserService userService;
 
@@ -31,10 +31,10 @@ public class FaceBookLoginController {
 		String faceBookLogInURL=faceBookConnection.getFaceBookURL(unid);
 		response.sendRedirect(faceBookLogInURL);
 	}
-	
+
 	@RequestMapping(value="/connectFaceBook")
 	public void redirectFromfacebook(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		
+
 		String sessionState = (String) request.getSession().getAttribute("STATE");
 		String googlestate = request.getParameter("state");
 		System.out.println("in connect facebook");
@@ -57,14 +57,14 @@ public class FaceBookLoginController {
 		String fbaccessToken = faceBookConnection.getAccessToken(authCode);
 		JsonNode profileData = faceBookConnection.getUserProfile(fbaccessToken);
 		ObjectMapper om = new ObjectMapper();
-		
+
 		System.out.println(profileData);
 		String fbName = profileData.get("name").asText();
 		System.out.println(fbName);
 		User user = userService.getUserByEmail(profileData.get("email").asText());
 		System.out.println(user);
 		if (user == null) {
-			
+
 			User fbUser = new User();
 			fbUser.setUserFirstName(fbName);
 			fbUser.setEmail(profileData.get("email").asText());
@@ -76,12 +76,12 @@ public class FaceBookLoginController {
 			String token = Token.generateToken(id);
 			response.setHeader("login", token);
 			System.out.println("Login with FB done!!");
-			
+			response.sendRedirect("http://localhost:8080/ToDoProject/#!/home");
 		} 
-	 else {
-		 
-		 System.out.println("User is Already Exits in DataBase....");
-	}
-	
+		else {
+
+			System.out.println("User is Already Exits in DataBase....");
+			response.sendRedirect("http://localhost:8080/ToDoProject/#!/home");
+		}
 	}
 }

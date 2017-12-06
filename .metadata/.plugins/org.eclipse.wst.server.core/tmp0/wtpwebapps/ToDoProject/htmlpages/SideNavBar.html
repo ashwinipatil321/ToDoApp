@@ -1,5 +1,15 @@
-<div class="sidenav" style="width:{{width}}">
-<br>
-<br>
-<a href="#!/home">Notes</a>
+<div class="SideNavigation" id="sideToggle">
+	<ul>
+		<li><a href="#!/home">Notes</a></li>
+		<li><a href="#!/reminder">Reminder</a></li>
+		<hr id="break">
+		<div><span id="font">Labels<a id="font" data-ng-click="openLabelList()">Edit</a></span></div>
+		<div data-ng-repeat="label in labels">
+			<a id="labelList" ui-sref=".labels({id: label.labelName})">{{label.labelName}}</a>
+		</div>
+		<a id="font" data-ng-click="openLabelList()">create new label</a>
+		<hr id="break">
+		<li><a href="#!/trash">Trash</a></li>
+		<li><a href="#!/archive">Archive</a></li>
+	</ul>
 </div>

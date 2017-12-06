@@ -1,0 +1,43 @@
+
+<nav class="navbar navbar-default">
+	<div class="container-fluid" style="background-color: #FFB42E" id="topBarColor">
+		<ul class="nav navbar-nav">
+		
+			<li><i class="glyphicons glyphicons-show-lines"></i></li>
+			<li id="main">
+				<span ng-click="toggleSideBar()" class="span-a" cursor: pointer">&#9776;</span>
+			</li>
+			<li><h3>Fundoo Keep</h3></li>
+			
+			<li>
+				<span class="glyphicon glyphicon-search"  style="top: 25px; margin-left:10px;"></span>
+			</li>
+			
+			<li>
+				<div class="form-group" id="search-div">
+					<input type="text" ng-model="searchText" class="form-control search-bar" placeholder="Search" ui-sref="searchbar">
+				</div>
+			</li>
+		</ul>
+		
+		<ul class="nav navbar-nav navbar-right">
+			<li><a href="#">Link</a></li>
+			<li class="dropdown" data-uib-dropdown><a href="logout"
+				class="dropdown-toggle" data-uib-dropdown-toggle
+				data-toggle="dropdown" role="button" aria-haspopup="true"
+				aria-expanded="false">Dropdown <span class="caret"></span></a>
+				<ul class="dropdown-menu" data-uib-dropdown-menu>
+					<li><a></a></li>
+					<li><a></a></li>
+					<li><a></a></li>
+					<li role="separator" class="divider"></li>
+					<li><input type="button" data-ng-click="signout()"
+						value="logout"></li>
+				</ul></li>
+				
+		</ul>
+	</div>
+</nav>
+
+ 
+

@@ -79,6 +79,10 @@
 <link rel="stylesheet" href="css/registrationPage.css">
 <link rel="stylesheet" href="css/forgetpassword.css">
 <link rel="stylesheet" href="css/Home.css">
+<link rel="stylesheet" href="css/TopNavBar.css">
+<link rel="stylesheet" href="css/SideNavBar.css">
+
+
 
 
 

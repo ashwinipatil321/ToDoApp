@@ -75,12 +75,11 @@ public class GoogleLoginController {
 			user.setEmail(profile.get("email").asText());
 			user.setActivated(true);
 			userService.createUser(user);
-			response.sendRedirect("http://localhost:8080/ToDoProject/");
-
+			response.sendRedirect("http://localhost:8080/ToDoProject/#!/home");
 		} 
 		
 		else {
-			response.sendRedirect("http://localhost:8080/ToDoProject/");
+			response.sendRedirect("http://localhost:8080/ToDoProject/#!/home");
 			System.out.println("User is Already Exits in DataBase....");
 		}
 	}

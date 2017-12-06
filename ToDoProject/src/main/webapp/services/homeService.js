@@ -6,7 +6,7 @@ toDo.factory('homeService', function($http) {
 	var notes = {};
 
 	notes.service = function(method, url, note) {
-		console.log(note);
+		console.log("service",note);
 		console.log(localStorage.getItem('acessToken'))
 		return $http({
 			method : method,
@@ -29,6 +29,23 @@ toDo.factory('homeService', function($http) {
 			}
 		});
 	}
+	
+	//DELETE NOTE
+	notes.deleteNotes = function(note) {
+		console.log("inside delete function" + note.noteId);
+		console.log("inside delete function" + JSON.stringify(note));
 
+		return $http({
+			method : 'DELETE',
+			data:note,
+			url : 'user/deleteNote',			
+			headers : {
+				'token' : localStorage.getItem('acessToken')
+			},
+			
+		})
+	}
 	return notes;
 });
+
+

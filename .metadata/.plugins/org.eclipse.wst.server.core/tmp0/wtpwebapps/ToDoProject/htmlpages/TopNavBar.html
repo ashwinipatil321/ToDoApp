@@ -1,17 +1,25 @@
 
-<nav style="background-color: #FFB42E" class="navbar navbar-default">
-	<div class="container-fluid">
-		<!-- Brand and toggle get grouped for better mobile display -->
-		<div class="navbar-header">
-
-			<a class="navbar-brand">TODO NOTES</a>
-		</div>
-		<form class="navbar-form navbar-left" role="search">
-			<div class="form-group">
-				<input type="text" class="form-control input-lg"
-					placeholder="Search">
-			</div>
-		</form>
+<nav class="navbar navbar-default">
+	<div class="container-fluid" style="background-color: #FFB42E">
+		<ul class="nav navbar-nav">
+		
+			<li><i class="glyphicons glyphicons-show-lines"></i></li>
+			<li id="main">
+				<span ng-click="toggleSideBar()" class="span-a" cursor: pointer">&#9776;</span>
+			</li>
+			<li><h3>Fundoo Keep</h3></li>
+			
+			<li>
+				<span class="glyphicon glyphicon-search"  style="top: 25px; margin-left:10px;"></span>
+			</li>
+			
+			<li>
+				<div class="form-group" id="search-div">
+					<input type="text" ng-model="searchText" class="form-control search-bar" placeholder="Search" ui-sref="searchbar">
+				</div>
+			</li>
+		</ul>
+		
 		<ul class="nav navbar-nav navbar-right">
 			<li><a href="#">Link</a></li>
 			<li class="dropdown" data-uib-dropdown><a href="logout"

@@ -34,7 +34,7 @@ public class NoteController {
 	@RequestMapping(value = "user/saveNote", method = RequestMethod.POST)
 	public ResponseEntity<CustomeResponse> saveNote(@RequestBody Note note, HttpServletRequest request,
 			HttpServletResponse response) {
-
+System.out.println("inside save");
 		String token = request.getHeader("token");
 		int id = Token.verify(token);
 		User user = UserService.getUserById(id);
@@ -46,7 +46,7 @@ public class NoteController {
 				boolean isActive = user.getActivated();
 
 				if (isActive ==true && (note.getTitle().length() > 0 || note.getDescription().length() > 0)) {
-					
+					 System.out.println("inside notes....");
 					note.setUser(user);
 					CustomeResponse myResponse = new CustomeResponse();
 					Date date = new Date(System.currentTimeMillis());
@@ -74,16 +74,16 @@ public class NoteController {
 		return new ResponseEntity<CustomeResponse>(myResponse, HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "/user/deleteNote/{noteId}", method = RequestMethod.DELETE)
-	public ResponseEntity<CustomeResponse> deleteNote(@PathVariable("noteId") int noteId,HttpServletRequest request) {
-
+	@RequestMapping(value = "user/deleteNote", method = RequestMethod.DELETE)
+	public ResponseEntity<CustomeResponse> deleteNote(@RequestBody Note note,HttpServletRequest request) {
+		System.out.println("id in delete note........"+note.getNoteId());
 		String token = request.getHeader("token");
 		int id = Token.verify(token);
 		User user = UserService.getUserById(id);
 
 		if (user != null) {
 
-			noteService.deleteNote(noteId);
+			noteService.deleteNote(note.getNoteId());
 			myResponse.setMessage("Note is deleted");
 			myResponse.setStatus(1);
 			return new ResponseEntity<CustomeResponse>(myResponse, HttpStatus.OK);

@@ -1,3 +1,5 @@
 attrNamesToIgnore=
 eclipse.preferences.version=1
+elementNamesToIgnore=
 ignoreAttrNames=false
+ignoreElementNames=false
