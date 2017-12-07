@@ -51,7 +51,7 @@ public class UserController {
 			int found = userService.createUser(user);
 
 			User user1 = userService.getUserByEmail(email);
-			System.out.println(user1.getUserID());
+			System.out.println(user1.getUserId());
 
 			String to = email;
 			String msg = "click link to verfiy your account ";
@@ -60,7 +60,7 @@ public class UserController {
 			if (found==1) {
 				
 				String url = request.getRequestURL().toString();
-				String token = Token.generateToken(user1.getUserID());
+				String token = Token.generateToken(user1.getUserId());
 				url = url.substring(0, url.lastIndexOf('/')) + "/activate/" + token;
 				sendMail.sendMail(to, subject, msg, url);
 				System.out.println(Token.verify(token));
@@ -95,7 +95,7 @@ public class UserController {
 				
 				if (name.getActivated()) {
 					
-					String token = Token.generateToken(name.getUserID());
+					String token = Token.generateToken(name.getUserId());
 					System.out.println(Token.verify(token));
 
 					response.setHeader("login", token);
@@ -152,7 +152,7 @@ public class UserController {
 			User userbyEmail = userService.getUserByEmail(email);
 			if (userbyEmail != null) {
 
-				String token = Token.generateToken(userbyEmail.getUserID());
+				String token = Token.generateToken(userbyEmail.getUserId());
 				String url = request.getRequestURL().toString().replace("/forgotpassword", "") + "/resetpassword/"
 						+ token;
 				response.setHeader("reset", token);

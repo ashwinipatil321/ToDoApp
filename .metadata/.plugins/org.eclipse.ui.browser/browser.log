@@ -749,3 +749,37 @@ Dec 06, 2017 19:48:12.61 [4349:4386:1206/194812.611123:ERROR:browser_gpu_channel
 Dec 06, 2017 19:48:12.65 Created new window in existing browser session.
 Dec 06, 2017 20:15:57.71 [5322:5359:1206/201557.715242:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
 Dec 06, 2017 20:15:57.77 Created new window in existing browser session.
+
+Dec 07, 2017 09:47:16.42 NEW SESSION
+Dec 07, 2017 09:47:16.42 [3002:3042:1207/094716.424948:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -100
+Dec 07, 2017 10:02:33.18 [3002:3042:1207/100233.183869:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Dec 07, 2017 10:05:00.35 [4307:4344:1207/100500.349773:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 07, 2017 10:05:00.37 Created new window in existing browser session.
+Dec 07, 2017 10:23:50.77 [5294:5331:1207/102350.776865:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 07, 2017 10:23:50.79 Created new window in existing browser session.
+Dec 07, 2017 10:26:16.62 [3002:3002:1207/102616.626553:ERROR:CONSOLE(409)] "Uncaught (in promise) TypeError: Cannot read property 'indexOf' of null", source: chrome-devtools://devtools/bundled/inspector.js (409)
+Dec 07, 2017 10:26:21.85 [3002:3002:1207/102621.859809:ERROR:media_internals.cc(103)] Cannot get RenderProcessHost
+Dec 07, 2017 10:26:21.86 [3002:3002:1207/102621.860136:ERROR:media_internals.cc(103)] Cannot get RenderProcessHost
+Dec 07, 2017 10:26:21.86 [3002:3002:1207/102621.860261:ERROR:media_internals.cc(103)] Cannot get RenderProcessHost
+Dec 07, 2017 10:27:42.88 [5812:5849:1207/102742.889051:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 07, 2017 10:27:42.93 Created new window in existing browser session.
+Dec 07, 2017 11:46:18.35 [7667:7704:1207/114618.358520:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -100
+Dec 07, 2017 11:57:40.20 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Dec 07, 2017 11:58:19.17 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Dec 07, 2017 12:30:45.30 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+
+Dec 07, 2017 13:04:15.30 NEW SESSION
+Dec 07, 2017 13:04:15.30 [2377:2415:1207/130415.301958:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Dec 07, 2017 13:05:13.07 [2377:2415:1207/130513.076614:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Dec 07, 2017 13:11:24.32 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Dec 07, 2017 13:11:58.88 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Dec 07, 2017 13:12:40.79 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Dec 07, 2017 14:48:09.47 [2377:2377:1207/144809.470973:ERROR:CONSOLE(409)] "Uncaught (in promise) TypeError: Cannot read property 'indexOf' of null", source: chrome-devtools://devtools/bundled/inspector.js (409)
+Dec 07, 2017 15:30:31.35 [2453:2453:1207/153031.351774:ERROR:gles2_cmd_decoder.cc(5318)] Error: 3 for Command kBlitFramebufferCHROMIUM
+Dec 07, 2017 15:58:03.31 [2377:2415:1207/155803.311093:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -100
+Dec 07, 2017 15:58:17.13 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Dec 07, 2017 15:59:01.19 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Dec 07, 2017 16:09:20.19 [2377:2415:1207/160920.193000:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -100
+Dec 07, 2017 16:10:17.50 [2377:2415:1207/161017.502010:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -100
+Dec 07, 2017 16:36:43.48 [7023:7060:1207/163643.480491:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 07, 2017 16:36:43.50 Created new window in existing browser session.

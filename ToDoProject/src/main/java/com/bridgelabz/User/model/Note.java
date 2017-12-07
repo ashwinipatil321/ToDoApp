@@ -3,12 +3,16 @@ import java.util.Date;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GeneratorType;
 import org.hibernate.annotations.GenericGenerator;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -17,8 +21,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Table(name="NoteTable")
 public class Note {
 	@Id
-	@GenericGenerator(name = "id", strategy = "increment")
-	@GeneratedValue(generator = "id")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int noteId;
 
 	@Column(name = "note_title")
@@ -44,8 +47,9 @@ public class Note {
 
 	@JsonIgnore
 	@JoinColumn(name="userId")
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.LAZY, cascade ={CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})	
 	private User user;
+	
 	public int getNoteId() {
 		return noteId;
 	}

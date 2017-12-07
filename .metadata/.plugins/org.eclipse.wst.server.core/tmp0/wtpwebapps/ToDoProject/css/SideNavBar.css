@@ -1,61 +1,42 @@
-.SideNavigation{
-    height: 100%;
-    background-color:#fff;
+#sidebar-wrapper{
+	height: 100%;
+    width: 250px;
     position: absolute;
-   	width: 0;
-    z-index: 1;
-    top: 0;
+    z-index: 2;
     left: 0;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
-    margin-top: 68px;
+    color: rgba(0,0,0,.2);
 }
 
-.SideNavigation li{
-	
-    /* display: inline-block; */
-    line-height: 40px;
-    vertical-align: top;
-    width: 176px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-     list-style-type:none;
-     margin-right: 20px;
+#sidebar-wrapper li:hover {
+    background-color: #e0dede;
 }
 
-.SideNavigation a {
-    padding: 5px 5px 5px 32px;
+
+#sidebar-wrapper a {
+    padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 15px;
-    color: black;
-    
+    color: #818181;
+    display: block;
     transition: 0.3s;
 }
 
-.SideNavigation a:hover {
-    color: #f1f1f1;
-}
+ #sidebar-wrapper a:hover {
+     background-color: #e0dede;
+} 
 
 @media screen and (max-height: 450px) {
-  .SideNavigation {padding-top: 15px;}
-  .SideNavigation a {font-size: 18px;}
+  #sidebar-wrapper {padding-top: 15px;}
+  #sidebar-wrapper a {font-size: 18px;}
 }
 
-.break {
-	margin: 0 0 0 0;
-}
-
-#span {
-	display: inline-flex;
-	font-size: 20px;
-}
-
-#labelList {
-	font-size: 15px;
-}
-
-#font {
-	font-size: 15px;
+.label-span{
+	padding: 8px 8px 8px 32px;
+    font-size: 15px;
+    color: black;
+    display: block;
+    transition: 0.3s;
 }

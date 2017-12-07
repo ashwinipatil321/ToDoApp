@@ -20,7 +20,6 @@
 <fullyQualifiedTypeName name="io.jsonwebtoken.MissingClaimException"/>
 <fullyQualifiedTypeName name="org.apache.http.HttpResponse"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
-<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
 <fullyQualifiedTypeName name="io.jsonwebtoken.Jwts"/>
 <fullyQualifiedTypeName name="io.jsonwebtoken.SignatureAlgorithm"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
@@ -34,4 +33,11 @@
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
 <fullyQualifiedTypeName name="java.sql.Date"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
+<fullyQualifiedTypeName name="javax.persistence.ManyToOne"/>
+<fullyQualifiedTypeName name="javax.persistence.OneToMany"/>
+<fullyQualifiedTypeName name="javax.persistence.FetchType"/>
+<fullyQualifiedTypeName name="javax.persistence.CascadeType"/>
+<fullyQualifiedTypeName name="org.hibernate.annotations.GeneratorType"/>
+<fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
 </qualifiedTypeNameHistroy>

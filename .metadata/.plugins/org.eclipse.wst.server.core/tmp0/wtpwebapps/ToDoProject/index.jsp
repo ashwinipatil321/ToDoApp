@@ -43,8 +43,7 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet"
-	href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
 <link rel="stylesheet"
 	href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +54,6 @@
 <!-------------------------   Script .js ---------------------------->
 
 <script type="text/javascript" src="script/TodoApp.js"></script>
-<script type="text/javascript" src="script/home.js"></script>
 
 <!-------------------------   Controllers .js ---------------------------->
 
@@ -81,6 +79,7 @@
 <link rel="stylesheet" href="css/Home.css">
 <link rel="stylesheet" href="css/TopNavBar.css">
 <link rel="stylesheet" href="css/SideNavBar.css">
+<link rel="stylesheet" href="css/card.css">
 
 
 

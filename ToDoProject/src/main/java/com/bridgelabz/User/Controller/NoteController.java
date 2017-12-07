@@ -74,16 +74,16 @@ System.out.println("inside save");
 		return new ResponseEntity<CustomeResponse>(myResponse, HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "user/deleteNote", method = RequestMethod.DELETE)
-	public ResponseEntity<CustomeResponse> deleteNote(@RequestBody Note note,HttpServletRequest request) {
-		System.out.println("id in delete note........"+note.getNoteId());
+	@RequestMapping(value = "user/deleteNote/{noteId}", method = RequestMethod.DELETE)
+	public ResponseEntity<CustomeResponse> deleteNote(@PathVariable("noteId") int noteId, HttpServletRequest request) {
+		System.out.println("id in delete note........"+noteId);
 		String token = request.getHeader("token");
 		int id = Token.verify(token);
 		User user = UserService.getUserById(id);
 
 		if (user != null) {
 
-			noteService.deleteNote(note.getNoteId());
+			noteService.deleteNote(noteId);
 			myResponse.setMessage("Note is deleted");
 			myResponse.setStatus(1);
 			return new ResponseEntity<CustomeResponse>(myResponse, HttpStatus.OK);

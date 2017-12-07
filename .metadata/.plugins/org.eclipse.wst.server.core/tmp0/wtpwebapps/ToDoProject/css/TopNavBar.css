@@ -43,10 +43,13 @@ ul{
 .search-bar{
 	padding-right: 350px;
 	margin-top: 18px;
+	margin-bottom: 18px;
 	border: none;
 }
 
-#search-div{
+.search-div{
+	padding-right: 100px;
+	padding-right: 350px;
 }
 
 .navigationTop{
@@ -61,8 +64,13 @@ ul{
 .profile-picture{
 	width: 150px;
     height: 150px;
+     margin-top: -100px;
 }
-
+.profile-pic {
+    height: 40px;
+    width: 40px;
+    margin-top: -101px;
+}
 .image{
 			background-repeat: no-repeat;
 		    background-position: 50%;

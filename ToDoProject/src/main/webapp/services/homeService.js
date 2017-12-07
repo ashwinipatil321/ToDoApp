@@ -38,7 +38,7 @@ toDo.factory('homeService', function($http) {
 		return $http({
 			method : 'DELETE',
 			data:note,
-			url : 'user/deleteNote',			
+			url : 'user/deleteNote/' + note.noteId,		
 			headers : {
 				'token' : localStorage.getItem('acessToken')
 			},

@@ -10,14 +10,14 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 
 	$scope.toggleSideBar = function() {
 
-		var width = $('#sideToggle').width();
+		var width = $('#sidebar-wrapper').width();
 		console.log(width);
 		if (width == '250') {
-			document.getElementById("sideToggle").style.width = "0px";
-			document.getElementById("container-main").style.marginLeft = "250px";
+			document.getElementById("sidebar-wrapper").style.width = "0px";
+			document.getElementById("container-main").style.marginLeft = "270px";
 		} else {
-			document.getElementById("sideToggle").style.width = "250px";
-			document.getElementById("container-main").style.marginLeft = "0px";
+			document.getElementById("sidebar-wrapper").style.width = "250px";
+			document.getElementById("container-main").style.marginLeft = "350px";
 		}
 	}
 	
@@ -54,14 +54,68 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		});
 	}
 	
+	$scope.toggleSideBar = function() {
+
+		var width = $('#sidebar-wrapper').width();
+		console.log(width);
+		if (width == '270') {
+			document.getElementById("sidebar-wrapper").style.width = "0px";
+			document.getElementById("content-wrapper-inside").style.marginLeft = "150px";
+		} else {
+			document.getElementById("sidebar-wrapper").style.width = "270px";
+			document.getElementById("content-wrapper-inside").style.marginLeft = "300px";
+		}
+
+	}
+	$scope.newnote = false;
+
+	$scope.show = function() {
+		$scope.newnote = true;
+	}
+
+	$scope.hide = function() {
+		$scope.newnote = false;
+	}
 	getAllNotes();
+	
 	$scope.deleteNotes = function(note) {
-		console.log("note id" + note.id);
+		console.log("note id" + note.noteId);
 		var notes = homeService.deleteNotes(note);
 		notes.then(function(response) {
-			console.log("delete sucess")
+			console.log("delete sucessfully....")
+		
 		}),function(response) {
 			$scope.error = response.data.message;
 		};
+	}
+	
+	$scope.ListView = true;
+
+	$scope.ListViewToggle = function() {
+		if ($scope.ListView == true) {
+			$scope.ListView = false;
+			listGrideView();
+		} else {
+			$scope.ListView = true;
+			listGrideView();
+		}
+	}
+
+	listGrideView();
+
+	function listGrideView() {
+		if ($scope.ListView) {
+			var element = document
+					.getElementsByClassName('card');
+			for (var i = 0; i < element.length; i++) {
+				element[i].style.width = "900px";
+			}
+		} else {
+			var element = document
+					.getElementsByClassName('card');
+			for (var i = 0; i < element.length; i++) {
+				element[i].style.width = "300px";
+			}
+		}
 	}
 });
