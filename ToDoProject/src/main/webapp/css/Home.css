@@ -23,9 +23,7 @@
      }
     }    
   }
-  .navbar-brand {
- color:black;
-  }
+  
   .navbar-nav>li>a {
     color: #fff;
   }
@@ -70,11 +68,17 @@
 	margin-bottom:20px;
 	background-color: white;
 	box-shadow: 0px 1px 2px black;
+	margin:25px;
+	heght:0px;
 	
 /* 	margin-left: 20%; */
 }
 
-
+.dropdown inline
+{
+	padding-bottom: 10px;
+	width: 10px;
+}
 [contentEditable=true]:empty:not(:focus):before{
     content:attr(data-text)
 }
@@ -181,7 +185,6 @@ body {
 
   .btn {
       padding: 10px 20px;
-      background-color: #333;
       color: #f1f1f1;
       border-radius: 0;
       transition: .2s;

@@ -31,6 +31,7 @@ toDo.factory('homeService', function($http) {
 	}
 	
 	//DELETE NOTE
+	
 	notes.deleteNotes = function(note) {
 		console.log("inside delete function" + note.noteId);
 		console.log("inside delete function" + JSON.stringify(note));
@@ -43,6 +44,23 @@ toDo.factory('homeService', function($http) {
 				'token' : localStorage.getItem('acessToken')
 			},
 			
+		})
+	}
+	// Add To Archieve
+	
+	notes.noteArchive = function(note) {
+		
+		console.log("inside login archive service method");
+		
+		return $http({
+			
+			method : 'POST',
+			
+			url : 'isArchive/'+note.noteId,
+			
+			headers : {
+				'token' : localStorage.getItem('acessToken')
+			}
 		})
 	}
 	return notes;

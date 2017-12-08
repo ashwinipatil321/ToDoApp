@@ -1,0 +1,197 @@
+
+<top-nav-bar></top-nav-bar>
+<side-nav-bar></side-nav-bar>
+<!-- <div class="container-fluid" id="container-main"> -->
+
+
+<!-- 	<div class="col-lg-1"></div>
+
+	<div class="col-lg-10 col-md-10">
+
+		<div class="row">
+			<div class="col-lg-3 col-md-3"></div>
+			<div id="note" class="col-sm-6 col-md-8 col-xs-6 col-lg-5">
+
+				<div contenteditable="true" id="note-title" data-text="Title"
+					data-ng-model="note.title"></div>
+
+				<div id="take-note" contenteditable="true" data-text="take a note"
+					data-ng-model="note.description"></div>
+				<div class="note-icons">
+					<img src="images/archive.svg"> <img src="images/reminder.svg">
+					<img src="images/colors.svg"> <img
+						src="images/collaborator.svg">
+					<div role="button" data-ng-click="saveNote()"
+						class=" btn-done pull-right">DONE</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+< <div id="note-container" class=" col-sm-12 col-md-12 col-xs-12 ">
+	<div class="col-lg-1 col-md-1 "></div>
+	<div class="col-md-10 col-sm-12 col-xs-12 col-lg-10">
+
+		<div class="card" data-ng-repeat="note in notes">
+			<span class="border border-dark"></span>
+			<div class="col-lg-3 col-md-3"></div>
+			<div id="note" class="col-sm-6 col-md-8 col-xs-6 col-lg-5">
+
+				<h4 class="card-title" data-ng-bind-html="note.title"></h4>
+				<p class="card-text" data-ng-bind-html="note.description"></p>
+				<div class="note-icons">
+					<img src="images/archive.svg"> <img src="images/reminder.svg">
+					<img src="images/colors.svg"> <img
+						src="images/collaborator.svg">
+						<img data-ng-src="images/colorpallet.svg" data-toggle="dropdown"
+								width="22" height="22">
+					<img class="pull-right" src="images/pinned.svg" width="22"
+						height="22">
+						<div class="dropdown inline pull-right">
+							<img data-ng-src='images/more.svg' width="19px" height="19px"
+								data-toggle="dropdown">
+				<button data-ng-click="deleteNotes(note)" class="btn">Delete</button>
+				</div>
+				</div>
+			
+				<h4 data-ng-show="pinnedNotes.length">Pinned:</h4>
+
+				<div class="card" data-ng-repeat="note in notes | filter : {trash : false,pinned:true,archive:false}| filter:searchFilter as pinnedNotes ">
+					<h4 class="card-title" data-ng-bind-html="note.title"></h4>
+
+					<img class="pull-right" src="images/pinned.svg" width="22"
+						height="22">
+					<p class="card-text" data-ng-bind-html="note.description"></p>
+					<div class="note-icons">
+						<img src="images/archive.svg" data-ng-click="addToArchive(note.noteId)"> 
+							<img data-ng-src="images/reminder.png">
+						<div class="dropup inline ">
+							<img data-ng-src="images/colorpallet.svg" data-toggle="dropdown"
+								width="22" height="22">
+						</div>
+						<img src="images/collaborator.svg">
+						<div class="dropdown inline pull-right">
+							<img data-ng-src='images/more.svg' width="19px" height="19px"
+								data-toggle="dropdown">
+							<ul class="dropdown-menu">
+								<li><a href="#!/home"
+									data-ng-click="updateTotrash(note.noteId)">Delete</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> -->
+ 
+	<!-- <div class="col-lg-1 col-md-1"></div> -->
+
+
+<!-- 	<div id="note-container"
+		class=" col-sm-12 col-md-12 col-xs-12 col-lg-12">
+		<div class="col-lg-1 col-md-1 hidden-sm"></div>
+		<div class="col-md-10 col-sm-12 col-xs-12 col-lg-10">
+			<h4 data-ng-show="pinnedNotes.length">Others:</h4>
+
+			<div class="card"
+				data-ng-repeat="note in notes | filter :  {trash : false,pinned:false,archive:false} | filter:searchFilter ">
+				<h4 class="card-title" data-ng-bind-html="note.title"></h4>
+				<img class="pull-right" src="images/unpinned.svg" width="22"
+					height="22">
+				<p class="card-text" data-ng-bind-html="note.description"></p>
+				<div class="note-icons">
+					<img data-ng-src="images/archive.svg"
+						data-ng-click="addToArchive(note)"> <img
+						data-ng-src="images/reminder.svg">
+					<div class="dropup inline ">
+						<img data-ng-src="images/colorpallet.svg" data-toggle="dropdown"
+							width="22" height="22">
+
+
+					</div>
+					<img data-ng-src="images/collaborator.svg">
+					<div class="dropdown inline pull-right">
+						<img data-ng-src='images/more.svg' width="19px" height="19px"
+							data-toggle="dropdown">
+						<ul class="dropdown-menu">
+							<li><a href="#!/user/home"
+								data-ng-click="updateTotrash(note.noteId)">Delete</a></li>
+						</ul>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-1 col-md-1"></div>
+
+</div> -->
+
+<div class="container-fluid" id="container-main">
+	<div class="main" id="main" style="margin-left: {{leftmargin}}">
+		<br>
+		<div class="col-lg-1"></div>
+
+		<div class="col-lg-10 col-md-10">
+
+			<!-----------------------Take note  ------------------------>
+			<div class="row">
+				<div class="col-lg-3 col-md-3"></div>
+				<div id="note" class=" col-sm-12 col-md-7 col-xs-12 col-lg-4"
+					ng-click="show()" ng-blur="hide()"
+					style="padding-bottom: 20px; width: 600px">
+
+					<div ng-model="note.title" ng-bind="note.title"
+						contenteditable="true" data-text="Title" ng-show="showDiv"></div>
+					</br> 
+					<div ng-bind="note.description" ng-model="note.description"
+						contenteditable="true" data-text="Take a note" ></div>
+					</br>
+					<div ng-show="showDiv">
+					
+						<a class="dropdown">
+							<img src="images/reminder.svg" data-toggle="dropdown">
+					
+						<ul class="dropdown-menu">
+							<div class="input-group date"
+								data-datetimepicker="datetimepicker"
+								data-date-format="MM/DD/YYYY hh:mm A/PM">
+								<input id="mypicker" class="form-control" type="text"
+									placeholder="click here" ng-click="datetimepicker()" /> <span
+									class="input-group-addon"> <span id="mypicker"
+									class="glyphicon glyphicon-calendar"> </span>
+								</span>
+							</div>
+						</ul>
+						</a> 
+
+						<img src="images/collaborator.svg">
+						
+							<a class="btn-group dropup colorDiv" uib-dropdown>
+							<img id="dropdown" class="dropdown-toggle" data-toggle="dropdown"
+								alt="color" src="images/colourPalate.svg" uib-dropdown-toggle
+								height="20px">
+							<ul class="dropdown-menu" uib-dropdown-menu role="menu"
+								aria-labelledby="btn-append-to-body"
+								style="background-color: #f9fbff">
+								<a ng-repeat="color in colors" role="menuitem"> <img
+									ng-click="note.color=color.color;updateNote(note)"
+									ng-src="{{color.path}}" height="40px">
+								</a>
+							</ul>
+						</a>
+<!-- 						<input ng-show="false" id="image" type='file' ng-model-instant ng-model="file" onchange="angular.element(this).scope().imageUpload(this)" />					<div class="note-icons">
+ -->						
+						 <img ng-src="images/image.svg" ng-click="openImageUploader(note)" width="22" height="22">
+					     <img src="images/archive.svg">
+						<button class="right" data-ng-click="saveNote(note)">DONE</button>
+					</div>
+				</div>
+			</div>
+</div>
+</div>
+</div>
+			<br>
+

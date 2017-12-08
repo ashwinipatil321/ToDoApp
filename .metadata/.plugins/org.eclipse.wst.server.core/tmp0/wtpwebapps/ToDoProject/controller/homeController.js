@@ -2,6 +2,9 @@ var todoApp = angular.module('ToDo');
 todoApp.controller('homeController', function($scope, toastr, $interval,homeService,
 		loginService,$state,$http,$location) {
 	
+	
+
+	
 	$scope.signout = function() {
 
 		localStorage.removeItem('token');
@@ -54,19 +57,6 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		});
 	}
 	
-	$scope.toggleSideBar = function() {
-
-		var width = $('#sidebar-wrapper').width();
-		console.log(width);
-		if (width == '270') {
-			document.getElementById("sidebar-wrapper").style.width = "0px";
-			document.getElementById("content-wrapper-inside").style.marginLeft = "150px";
-		} else {
-			document.getElementById("sidebar-wrapper").style.width = "270px";
-			document.getElementById("content-wrapper-inside").style.marginLeft = "300px";
-		}
-
-	}
 	$scope.newnote = false;
 
 	$scope.show = function() {
@@ -118,4 +108,19 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 			}
 		}
 	}
+	
+	$scope.addToArchive = function(note) {
+		console.log()
+
+		var notes = homeService.noteArchive(note);
+		
+		notes.then(function(response) {
+			console.log("hai");
+			getAllNotes();
+		}, function(response) {			
+			getAllNotes();
+		});
+		getAllNotes();
+	}
+	getAllNotes();
 });

@@ -5,6 +5,7 @@
 .card-title{
 	padding-bottom:8px;
 	font-size: 19px;
+	    margin: 25px;
 }
 .card-text{
 	padding-bottom:8px;
@@ -19,11 +20,6 @@
 }
 
 
-#searchbtn{
-	top:20px;
-	width:1%;
-	padding-right: 2px;
-}
 
 #searchbox{
     width: 100%;
@@ -47,7 +43,7 @@ margin-right: 5px;
 .profile-pic{
 	height: 40px;
 	width:40px;
-	margin-top: -101px;
+	margin-top:-30px;
 }
 
 .navbar-default{
@@ -56,9 +52,9 @@ margin-right: 5px;
 }
 
 .navbar-default input{
-	margin-top: 12px;
+	margin-top: 8px;
     margin-bottom: initial;
-    height: 50px;
+    height: 45px;
     width: 600px;
 }
 

@@ -30,7 +30,11 @@ app.config([ '$stateProvider', '$urlRouterProvider',
 		templateUrl : 'htmlpages/home.html',
 		controller : 'homeController'
 	});
-	
+	$stateProvider.state('archive', {
+		url : '/archive',
+		templateUrl : 'htmlpages/archive.html',
+		controller : 'homeController'
+	});
 	
 	$urlRouterProvider.otherwise('/login');
 	

@@ -1,0 +1,11 @@
+<div id="sidebar-wrapper">
+    <a href="" data-ng-click="redirectToHome()">Notes</a>
+    <a href="" data-ng-click="redirectToReminder()">Reminders</a>
+    <hr>
+    <span class="label-span">Labels</span>
+    <a data-ng-repeat="label in labels | orderBy : '-labelId'" href="" data-ng-click="redirectToLabel(label.labelName)">{{label.labelName}}</a>
+    <a href="" data-target="#create-label" data-toggle="modal">Create new label</a>
+    <hr>
+    <a href="#!/archive">Archive</a>
+    <a href="" data-ng-click="">Trash</a>
+</div>

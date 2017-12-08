@@ -149,6 +149,7 @@ System.out.println("inside save");
 	@RequestMapping(value = "/isArchive/{noteId}", method = RequestMethod.POST)
 	public ResponseEntity<CustomeResponse> updateArchive(@PathVariable("noteId") int noteId ) {
 		CustomeResponse myResponse = new CustomeResponse();
+		System.out.println("in archive backend");
 		try {
 			noteService.updateArchive(noteId);
 			myResponse.setMessage("Archive is updated");
