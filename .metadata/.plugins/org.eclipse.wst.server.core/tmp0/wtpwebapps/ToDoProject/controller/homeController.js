@@ -1,8 +1,13 @@
 var todoApp = angular.module('ToDo');
-todoApp.controller('homeController', function($scope, toastr, $interval,homeService,
+todoApp.controller('homeController', function($scope, toastr, $interval,homeService,$filter,
 		loginService,$state,$http,$location) {
 	
-	
+	 $scope.noteFilter = null;
+	   
+	    $scope.searchFilter = function (note) {
+	        var re = new RegExp($scope.nameFilter, 'i');
+	        return !$scope.nameFilter || re.test(note.title) || re.test(note.description);
+	    };
 
 	
 	$scope.signout = function() {
@@ -122,5 +127,58 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		});
 		getAllNotes();
 	}
+	
+	$scope.addToTrash = function(note) {
+		console.log("hiiiiiiii")
+
+		var notes = homeService.noteTrashService(note);
+		
+		notes.then(function(response) {
+			console.log("hai");
+			getAllNotes();
+		}, function(response) {			
+			getAllNotes();
+		});
+		getAllNotes();
+	}
+	
+	/*$scope.emptyTrash = function() {
+
+		var notes = homeService.noteTrashUpdate(note);
+		notes.then(function(response) {
+
+			getNotes();
+
+		}, function(response) {
+
+			console.log(response.data);
+			getNotes();
+
+			$scope.error = response.data;
+
+		});
+	}*/
+
+
+	$scope.emptyTrash = function() {
+
+
+
+		var notes = homeService.noteTrashUpdate(note);
+		notes.then(function(response) {
+
+			getNotes();
+
+		}, function(response) {
+
+			console.log(response.data);
+			getNotes();
+
+			$scope.error = response.data;
+
+		});
+	}
+	
+	
 	getAllNotes();
 });

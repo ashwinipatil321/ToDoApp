@@ -1,0 +1,36 @@
+
+<top-nav-bar></top-nav-bar>
+<side-nav-bar></side-nav-bar>
+<div class="container-fluid" id="container-main">
+
+<!-- 	<div id="note-container"
+		class=" col-sm-12 col-md-12 col-xs-12 col-lg-12"> -->
+		<div class="col-lg-1 col-md-1 hidden-sm"></div>
+		<div class="col-md-10 col-sm-12 col-xs-12 col-lg-10">
+		<div id="note" class="col-sm-6 col-md-8 col-xs-6 col-lg-4">
+			<div class="card" data-ng-repeat="note in notes | filter : {archive:true} ">
+				<h4 class="card-title" data-ng-bind-html="note.title"></h4>
+				<img class="pull-right" src="images/unpinned.svg" width="22"
+					height="22">
+				<p class="card-text" data-ng-bind-html="note.description"></p>
+				<div class="note-icons">
+					<span data-ng-click="addToArchive(note)"><img
+						data-ng-src="images/archive.svg"></span> <img
+						data-ng-src="images/reminder.svg">
+					<div class="dropup inline ">
+						<img data-ng-src="images/colorpallet.svg" data-toggle="dropdown"
+							width="22" height="22">
+					</div>
+					<img data-ng-src="images/collaborator.svg">
+					<div class="dropdown inline pull-right">
+						<img data-ng-src='images/more.svg' width="19px" height="19px"
+							data-toggle="dropdown">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+	
+	<div class="col-lg-1 col-md-1"></div>

@@ -36,6 +36,12 @@ app.config([ '$stateProvider', '$urlRouterProvider',
 		controller : 'homeController'
 	});
 	
+	$stateProvider.state('trash', {
+		url : '/trash',
+		templateUrl : 'htmlpages/trash.html',
+		controller : 'homeController'
+	});
+	
 	$urlRouterProvider.otherwise('/login');
 	
 }]);

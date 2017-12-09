@@ -3,8 +3,6 @@ import java.sql.Date;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -166,12 +164,12 @@ System.out.println("inside save");
 	}
 
 	@RequestMapping(value = "/emptyTrash/{noteId}", method = RequestMethod.POST)
-	public ResponseEntity<CustomeResponse> updateEmptyTrash( @PathVariable("noteId") int noteId) {
+	public ResponseEntity<CustomeResponse>  UpdateNoteToTrash( @PathVariable("noteId") int noteId) {
 		CustomeResponse myResponse = new CustomeResponse();
 
 		try {
 
-			noteService.updateEmptyTrash(noteId);
+			noteService. UpdateNoteToTrash(noteId);
 			myResponse.setMessage("Trash is Not Empty...");
 			myResponse.setStatus(1);
 			return new ResponseEntity<CustomeResponse>(myResponse, HttpStatus.OK);
@@ -182,6 +180,24 @@ System.out.println("inside save");
 			myResponse.setMessage("Trash is Empty");
 			myResponse.setStatus(-1);
 			return new ResponseEntity<CustomeResponse>(myResponse, HttpStatus.BAD_REQUEST);
+		}
+	}
+
+	@RequestMapping(value = "/noteEmpty", method = RequestMethod.DELETE)
+	public ResponseEntity<CustomeResponse> emptyTrash(HttpServletRequest request) {
+		CustomeResponse myResponse = new CustomeResponse();
+		try {
+			String id = (String) request.getAttribute("userid");
+			noteService.emptyTrash(Integer.valueOf(id));
+			myResponse.setMessage("sucessFully cleared Trash");
+			myResponse.setStatus(1);
+			return new ResponseEntity<CustomeResponse>(myResponse, HttpStatus.OK);
+		} catch (Exception e) {													
+
+			e.printStackTrace();
+			myResponse.setMessage("some error occured ");
+			myResponse.setStatus(-1);
+			return new ResponseEntity<CustomeResponse>(myResponse, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 

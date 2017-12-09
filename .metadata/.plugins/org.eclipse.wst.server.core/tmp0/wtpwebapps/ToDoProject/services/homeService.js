@@ -46,6 +46,7 @@ toDo.factory('homeService', function($http) {
 			
 		})
 	}
+	
 	// Add To Archieve
 	
 	notes.noteArchive = function(note) {
@@ -56,13 +57,47 @@ toDo.factory('homeService', function($http) {
 			
 			method : 'POST',
 			
-			url : 'isArchive/'+note.noteId,
+			url : 'isArchive/'+ note.noteId,
 			
 			headers : {
 				'token' : localStorage.getItem('acessToken')
 			}
 		})
 	}
+	
+	// Add To Trash
+	
+notes.noteTrashService = function(note) {
+		
+		console.log("inside login Trash service method");
+		
+		return $http({
+			
+			method : 'POST',
+			
+			url : 'emptyTrash/'+ note.noteId,
+			
+			headers : {
+				'token' : localStorage.getItem('acessToken')
+			}
+		})
+	}
+
+notes.noteTrashUpdate = function(note) {
+	
+	console.log("inside login Trash service method");
+	
+	return $http({
+		
+		method : 'DELETE',
+		
+		url : 'emptyTrash',
+		
+		headers : {
+			'token' : localStorage.getItem('acessToken')
+		}
+	})
+}
 	return notes;
 });
 

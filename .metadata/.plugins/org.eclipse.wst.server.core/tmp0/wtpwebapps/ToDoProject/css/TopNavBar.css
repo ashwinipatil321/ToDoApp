@@ -12,6 +12,7 @@ height:30px;
 
 #TopNavBar input {
 	length: 100px;
+	
 }
 
 #main {
@@ -47,11 +48,13 @@ height:30px;
 	margin-top: 18px;
 	margin-bottom: 18px;
 	border: none;
+	width: 700px;
 }
 
 .search-div{
 	padding-right: 100px;
 	padding-right: 350px;
+	
 }
 
 .navigationTop{

@@ -55,9 +55,14 @@ public class NoteServiceImplemention implements NoteServices {
 	}
 
 	@Transactional
-	public boolean updateEmptyTrash(int noteId)
+	public void emptyTrash(int userId) {
+		
+		noteDao.emptyTrash(userId);
+	}
+	@Transactional
+	public boolean UpdateNoteToTrash(int noteId)
 	{
-		noteDao.updateEmptyTrash(noteId);
+		noteDao.UpdateNoteToTrash(noteId);
 		return true;
 	}
 

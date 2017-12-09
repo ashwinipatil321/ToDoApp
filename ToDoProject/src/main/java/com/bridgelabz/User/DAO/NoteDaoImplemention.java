@@ -1,4 +1,5 @@
 package com.bridgelabz.User.DAO;
+import java.util.Iterator;
 import java.util.List;
 import javax.persistence.Query;
 import org.hibernate.Session;
@@ -75,7 +76,7 @@ public class NoteDaoImplemention implements NoteDAO {
 		return true;
 	}
 
-	@Override
+	/*@Override
 	public boolean updateEmptyTrash(int noteId)
 	{
 		Session session = sessionFactory.getCurrentSession();
@@ -86,8 +87,42 @@ public class NoteDaoImplemention implements NoteDAO {
 		query.executeUpdate();
 		System.out.println("query executed successfully...");
 		return true;
+	}*/
+	@Override
+	public boolean UpdateNoteToTrash(int noteId) {
+		
+		Session session = sessionFactory.getCurrentSession();
+		String hql = "UPDATE com.bridgelabz.User.model.Note  set emptyTrash=:emptyTrash WHERE noteId = :noteId";
+		Query query = session.createQuery(hql);
+		query.setParameter("emptyTrash",true);
+		query.setParameter("noteId",noteId);
+		query.executeUpdate();
+		return true;
+		
 	}
 
+	
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@Override
+	public void emptyTrash(int userId) {
+		
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("FROM  com.bridgelabz.User.model.Note where userId = :userid ");
+		query.setParameter("userid", userId);
+		List<Note> ls = query.getResultList();
+		 Iterator itr = ls.iterator();
+		 
+		 while (itr.hasNext()) {
+		  Note note = (Note) itr.next();
+		  if(note.isEmptyTrash() == true)
+		  {
+		  session.delete(note);
+		  }	
+		}
+	}
+	
+	
+	
 	@Override
 	public boolean updatePin(int noteId)
 	{
