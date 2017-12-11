@@ -17,7 +17,9 @@ toDo.factory('homeService', function($http) {
 			}
 		});
 	}
-
+	
+// get all notes
+	
 	notes.getAllNotes = function() {
 		console.log(localStorage.getItem('acessToken'))
 
@@ -29,9 +31,9 @@ toDo.factory('homeService', function($http) {
 			}
 		});
 	}
-	
+
 	//DELETE NOTE
-	
+
 	notes.deleteNotes = function(note) {
 		console.log("inside delete function" + note.noteId);
 		console.log("inside delete function" + JSON.stringify(note));
@@ -43,61 +45,62 @@ toDo.factory('homeService', function($http) {
 			headers : {
 				'token' : localStorage.getItem('acessToken')
 			},
-			
+
 		})
 	}
-	
+
 	// Add To Archieve
-	
+
 	notes.noteArchive = function(note) {
-		
+
 		console.log("inside login archive service method");
-		
+
 		return $http({
-			
+
 			method : 'POST',
-			
+
 			url : 'isArchive/'+ note.noteId,
-			
-			headers : {
-				'token' : localStorage.getItem('acessToken')
-			}
-		})
-	}
-	
-	// Add To Trash
-	
-notes.noteTrashService = function(note) {
-		
-		console.log("inside login Trash service method");
-		
-		return $http({
-			
-			method : 'POST',
-			
-			url : 'emptyTrash/'+ note.noteId,
-			
+
 			headers : {
 				'token' : localStorage.getItem('acessToken')
 			}
 		})
 	}
 
-notes.noteTrashUpdate = function(note) {
+	// Add To Trash
+
+	notes.noteTrashService = function(note) {
+
+		console.log("inside login Trash service method");
+
+		return $http({
+
+			method : 'POST',
+
+			url : 'emptyTrash/'+ note.noteId,
+
+			headers : {
+				'token' : localStorage.getItem('acessToken')
+			}
+		})
+	}
+
+	//Restore note to Notes
 	
-	console.log("inside login Trash service method");
-	
-	return $http({
-		
-		method : 'DELETE',
-		
-		url : 'emptyTrash',
-		
-		headers : {
-			'token' : localStorage.getItem('acessToken')
-		}
-	})
-}
+	notes.updateNotes = function(note){
+		console.log("inside login Trash service method");
+
+		return $http({
+
+			method : 'POST',
+			data:note,
+			url : 'user/update',
+
+			headers : {
+				'token' : localStorage.getItem('acessToken')
+			}
+		})
+	}
 	return notes;
 });
 

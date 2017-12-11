@@ -34,19 +34,11 @@ public class NoteDaoImplemention implements NoteDAO {
 	}
 
 	@Override
-	public void updateNote(Note updatedNote) {
 
-		String hql = "UPDATE com.bridgelabz.User.model.Note set note_title=:title,note_description=:description,note_cretedDate=:noteCreatedDate,note_modifiedDate=:noteEditedDate WHERE noteId = :noteid";
+	public void updateNote(Note note) {
+
 		Session session = sessionFactory.getCurrentSession();
-		Query query = session.createQuery(hql);
-		query.setParameter("title", updatedNote.getTitle());
-		query.setParameter("description", updatedNote.getDescription());
-		query.setParameter("noteCreatedDate", updatedNote.getCreatedDate());
-		query.setParameter("noteEditedDate", updatedNote.getModifiedDate());
-		query.setParameter("noteid", updatedNote.getNoteId());
-
-		query.executeUpdate();
-		System.out.println("query executed successfully...");
+		session.saveOrUpdate(note);
 	}
 
 	@SuppressWarnings("unchecked")
@@ -76,18 +68,6 @@ public class NoteDaoImplemention implements NoteDAO {
 		return true;
 	}
 
-	/*@Override
-	public boolean updateEmptyTrash(int noteId)
-	{
-		Session session = sessionFactory.getCurrentSession();
-		String hqlQuery = "UPDATE com.bridgelabz.User.model.Note set emptyTrash=:emptyTrash WHERE noteId = :noteId";
-		Query query = session.createQuery(hqlQuery);
-		query.setParameter("noteId", noteId);
-		query.setParameter("emptyTrash", true);
-		query.executeUpdate();
-		System.out.println("query executed successfully...");
-		return true;
-	}*/
 	@Override
 	public boolean UpdateNoteToTrash(int noteId) {
 		

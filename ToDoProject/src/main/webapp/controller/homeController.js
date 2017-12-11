@@ -9,12 +9,15 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 	        return !$scope.nameFilter || re.test(note.title) || re.test(note.description);
 	    };
 
-	
+	//logout
+	    
 	$scope.signout = function() {
 
 		localStorage.removeItem('token');
 		$location.path("/login");
 	}
+	
+	//side nav bar
 
 	$scope.toggleSideBar = function() {
 
@@ -28,6 +31,8 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 			document.getElementById("container-main").style.marginLeft = "350px";
 		}
 	}
+	
+	// add the notes
 	
 	$scope.saveNote =function(){
 		var message= homeService.service('POST','user/saveNote',$scope.note);
@@ -45,6 +50,7 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 			console.log("some thing happening");
 		});
 	}
+	// gets the all notes
 	
 	var getAllNotes = function() {
 
@@ -73,6 +79,8 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 	}
 	getAllNotes();
 	
+	//delete the notes
+	
 	$scope.deleteNotes = function(note) {
 		console.log("note id" + note.noteId);
 		var notes = homeService.deleteNotes(note);
@@ -95,7 +103,8 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 			listGrideView();
 		}
 	}
-
+//list view of notes
+	
 	listGrideView();
 
 	function listGrideView() {
@@ -114,6 +123,8 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		}
 	}
 	
+	// add notes to archive
+	
 	$scope.addToArchive = function(note) {
 		console.log()
 
@@ -127,6 +138,8 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		});
 		getAllNotes();
 	}
+	
+	// add note to trash
 	
 	$scope.addToTrash = function(note) {
 		console.log("hiiiiiiii")
@@ -142,43 +155,26 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		getAllNotes();
 	}
 	
-	/*$scope.emptyTrash = function() {
+	//restore notes to notes
+	
+	$scope.restoreToNotes = function(note) {
 
-		var notes = homeService.noteTrashUpdate(note);
+		note.emptyTrash = false;
+		console.log(note)
+		var notes = homeService.updateNotes(note);
 		notes.then(function(response) {
 
-			getNotes();
+			getAllNotes();
 
 		}, function(response) {
 
 			console.log(response.data);
-			getNotes();
-
-			$scope.error = response.data;
-
-		});
-	}*/
-
-
-	$scope.emptyTrash = function() {
-
-
-
-		var notes = homeService.noteTrashUpdate(note);
-		notes.then(function(response) {
-
-			getNotes();
-
-		}, function(response) {
-
-			console.log(response.data);
-			getNotes();
+			getAllNotes();
 
 			$scope.error = response.data;
 
 		});
 	}
-	
-	
+
 	getAllNotes();
 });

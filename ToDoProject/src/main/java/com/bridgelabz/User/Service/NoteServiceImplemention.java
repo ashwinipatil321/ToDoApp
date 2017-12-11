@@ -28,13 +28,15 @@ public class NoteServiceImplemention implements NoteServices {
 
 	@Transactional
 	public void updateNote(Note updatedNote) {
-
-		Note persistedNote = noteDao.getNoteById(updatedNote.getNoteId());
-		Date toDay = new Date();
+		  System.out.println("it was updating");
+        Note persistedNote = noteDao.getNoteById(updatedNote.getNoteId());
+		Date toDay= new Date();
 		updatedNote.setModifiedDate(toDay);
 		updatedNote.setCreatedDate(persistedNote.getCreatedDate());
 		noteDao.updateNote(updatedNote);
+		
 	}
+
 
 	@Transactional
 	public List<Note> getallNotes() {

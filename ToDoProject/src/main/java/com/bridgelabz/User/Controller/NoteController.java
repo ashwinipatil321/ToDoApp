@@ -95,25 +95,23 @@ System.out.println("inside save");
 		}
 	}
 
-	@RequestMapping(value = "/user/update", method = RequestMethod.POST)
-	public ResponseEntity<CustomeResponse> updateNote(@RequestBody Note note,HttpServletRequest request) {
-
-		String token = request.getHeader("token");
-		int id = Token.verify(token);
-		User user = UserService.getUserById(id);
-
-		if (user != null) {
-
+	@RequestMapping(value = "user/update", method = RequestMethod.POST)
+	public ResponseEntity<CustomeResponse> updateNote(@RequestBody Note note) {
+		CustomeResponse myResponse = new CustomeResponse();
+		try {
+			
+            System.out.println("in update controller");
 			noteService.updateNote(note);
 			myResponse.setMessage("Note is updated");
 			myResponse.setStatus(1);
 			return new ResponseEntity<CustomeResponse>(myResponse, HttpStatus.OK);
-		}
-		else {
 
+		} catch (Exception e) {
+
+			e.printStackTrace();
 			myResponse.setMessage("Note is not Updated");
 			myResponse.setStatus(-1);
-			return new ResponseEntity<CustomeResponse>(myResponse, HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<CustomeResponse>(myResponse, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 
