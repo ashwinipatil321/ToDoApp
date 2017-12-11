@@ -1,0 +1,10 @@
+	</div>
+			<div class="col-md-4">
+				<br>Pinned:<br>
+			</div>
+				<note-details state="statePinnedNote" notes="notes"></note-details>
+			<div  class="col-md-4">
+				<br>Others:<br>
+			</div>
+				<note-details state="stateUnPinnedNote" notes="notes"></note-details>
+		</div>>

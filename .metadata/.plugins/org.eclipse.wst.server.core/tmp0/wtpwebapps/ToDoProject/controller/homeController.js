@@ -1,4 +1,5 @@
 var todoApp = angular.module('ToDo');
+
 todoApp.controller('homeController', function($scope, toastr, $interval,homeService,$filter,
 		loginService,$state,$http,$location) {
 	
@@ -9,7 +10,18 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 	        return !$scope.nameFilter || re.test(note.title) || re.test(note.description);
 	    };
 
-	//logout
+	    $scope.view = '';
+		$scope.statePinnedNote ={
+				pin:true,
+		}
+		
+		$scope.stateUnPinnedNote ={
+				pin:false,
+		}
+	    
+	    
+	    
+//logout
 	    
 	$scope.signout = function() {
 
@@ -17,7 +29,7 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		$location.path("/login");
 	}
 	
-	//side nav bar
+//side nav bar
 
 	$scope.toggleSideBar = function() {
 
@@ -32,7 +44,7 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		}
 	}
 	
-	// add the notes
+// add the notes
 	
 	$scope.saveNote =function(){
 		var message= homeService.service('POST','user/saveNote',$scope.note);
@@ -50,7 +62,8 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 			console.log("some thing happening");
 		});
 	}
-	// gets the all notes
+	
+// gets the all notes
 	
 	var getAllNotes = function() {
 
@@ -79,7 +92,7 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 	}
 	getAllNotes();
 	
-	//delete the notes
+//delete the notes
 	
 	$scope.deleteNotes = function(note) {
 		console.log("note id" + note.noteId);
@@ -103,6 +116,7 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 			listGrideView();
 		}
 	}
+	
 //list view of notes
 	
 	listGrideView();
@@ -126,6 +140,10 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 	// add notes to archive
 	
 	$scope.addToArchive = function(note) {
+		
+		if(note.archive==false)
+			{
+			note.archive=true;
 		console.log()
 
 		var notes = homeService.noteArchive(note);
@@ -137,21 +155,42 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 			getAllNotes();
 		});
 		getAllNotes();
+			}
+		else
+			{
+			note.archive= false;
+			console.log(note)
+			var notes = homeService.updateNotes(note);
+			notes.then(function(response) {
+
+				getAllNotes();
+
+			}, function(response) {
+
+				console.log(response.data);
+				getAllNotes();
+				$scope.error = response.data;
+
+			});
+			getAllNotes();
+			}
 	}
 	
 	// add note to trash
 	
 	$scope.addToTrash = function(note) {
-		console.log("hiiiiiiii")
-
+		
 		var notes = homeService.noteTrashService(note);
 		
 		notes.then(function(response) {
-			console.log("hai");
+			
 			getAllNotes();
-		}, function(response) {			
+			
+		}, function(response) {	
+			
 			getAllNotes();
 		});
+		
 		getAllNotes();
 	}
 	
@@ -175,6 +214,4 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 
 		});
 	}
-
-	getAllNotes();
 });

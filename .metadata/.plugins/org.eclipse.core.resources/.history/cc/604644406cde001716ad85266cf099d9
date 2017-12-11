@@ -1,0 +1,107 @@
+<top-nav-bar></top-nav-bar>
+<side-nav-bar></side-nav-bar>
+<div class="container-fluid" id="container-main">
+	<div class="col-lg-1"></div>
+	
+
+		
+			<div class="col-lg-3 col-md-3"></div>
+			<div id="note" class="col-sm-6 col-md-8 col-xs-6 col-lg-5">
+
+				<div contenteditable="true" id="note-title" data-text="Title"
+					data-ng-model="note.title"></div>
+
+				<div id="take-note" contenteditable="true" data-text="take a note"
+					data-ng-model="note.description"></div>
+				<div class="note-icons">
+					<img src="images/reminder.svg"> <img src="images/colors.svg">
+					<img src="images/collaborator.svg">
+					<div role="button" data-ng-click="saveNote()"
+						class=" btn-done pull-right">DONE</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+	<div id="note-container"
+		class=" col-sm-12 col-md-12 col-xs-12 col-lg-8">
+		<div class="col-lg-1 col-md-1 hidden-sm"></div>
+			<div class="card" data-ng-repeat="note in notes  | filter : {archive:false,emptyTrash:false,pin:true} as filtered">
+				<h4>Pinned</h4>
+				<span class="border border-dark"></span>
+				<div class="col-lg-3 col-md-3"></div>
+				<div id="note" class="col-sm-6 col-md-8 col-xs-6 col-lg-4">
+					<h4 class="card-title" data-ng-bind-html="note.title"></h4>
+					<p class="card-text" data-ng-bind-html="note.description"></p>
+
+					<div class="note-icons">
+
+						<span data-ng-click="addToArchive(note)"><img
+							src="images/archive.svg"> </span> <img src="images/reminder.svg">
+					<div style="float: right">
+					<span style="cursor: pointer"
+						data-ng-click="note.pin=false; updateNote(note)">
+						 <img alt="pin" style="height: 17px" src="images/pinned.svg"></img>
+					</span>
+					</div>
+						<img src="images/colors.svg"> <img
+							src="images/collaborator.svg"> <img
+							data-ng-src="images/colorpallet.svg" data-toggle="dropdown"
+							width="22" height="22">
+						<div class="dropdown inline pull-right">
+							<img data-ng-src='images/more.svg' width="19px" height="19px"
+								data-toggle="dropdown">
+							<ul class="dropdown-menu">
+								<li><span data-ng-click="addToTrash(note)">
+								<a href="#!/trash">Delete note</a></span></li>
+							</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			<div class="col-lg-1 col-md-1"></div>
+		</div>
+		
+
+<div class='row'>
+	<div id="note-container"
+		class=" col-sm-12 col-md-12 col-xs-12 col-lg-8">
+		<h4>others:</h4>
+		<div class="col-lg-1 col-md-1 hidden-sm"></div>
+			<div class="card" data-ng-repeat="note in notes  | filter : {archive:false,emptyTrash:true,pin:false} as filtered">
+				<span class="border border-dark"></span>
+				<div class="col-lg-3 col-md-3"></div>
+				
+				<div id="note" class="col-sm-6 col-md-8 col-xs-6 col-lg-4">
+					<h4 class="card-title" data-ng-bind-html="note.title"></h4>
+					<p class="card-text" data-ng-bind-html="note.description"></p>
+
+					<div class="note-icons">
+						<span data-ng-click="addToArchive(note)">
+						
+						<img src="images/archive.svg"> </span> 
+						<img src="images/reminder.svg">
+					
+						<span style="cursor: pointer" data-ng-click="note.pin=false; updateNote(note)">
+						 <img alt="pin" style="height: 17px" src="images/unpinned.svg"></img>
+						</span>
+				
+						<img src="images/colors.svg"> 
+						<img src="images/collaborator.svg">
+						<img data-ng-src="images/colorpallet.svg" data-toggle="dropdown" width="22" height="22">
+						<div class="dropdown inline pull-right">
+						<img data-ng-src='images/more.svg' width="19px" height="19px" data-toggle="dropdown">
+							<ul class="dropdown-menu">
+								<li><span data-ng-click="addToTrash(note)">
+								<a href="#!/trash">Delete note</a></span></li>
+							</ul>
+					</div>
+						</div>
+					</div>
+				</div>
+			<div class="col-lg-1 col-md-1"></div>
+		</div>
+	</div>
+	

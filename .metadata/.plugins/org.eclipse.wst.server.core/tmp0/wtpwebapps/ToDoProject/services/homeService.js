@@ -88,6 +88,7 @@ toDo.factory('homeService', function($http) {
 	//Restore note to Notes
 	
 	notes.updateNotes = function(note){
+		
 		console.log("inside login Trash service method");
 
 		return $http({
@@ -97,6 +98,7 @@ toDo.factory('homeService', function($http) {
 			url : 'user/update',
 
 			headers : {
+				
 				'token' : localStorage.getItem('acessToken')
 			}
 		})
