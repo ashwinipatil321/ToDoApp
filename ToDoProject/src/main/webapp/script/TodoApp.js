@@ -1,4 +1,5 @@
 var app = angular.module('ToDo', ['ui.router','ui.bootstrap', 'ngSanitize','ui.bootstrap.datepicker','toastr']);
+
 app.config([ '$stateProvider', '$urlRouterProvider',
 	function($stateProvider, $urlRouterProvider) {
 

@@ -1,25 +1,25 @@
 var todoApp = angular.module('ToDo');
 
-todoApp.controller('homeController', function($scope, toastr, $interval,homeService,$filter,
+todoApp.controller('homeController', function($scope, toastr, $interval,homeService,$filter, $uibModal,
 		loginService,$state,$http,$location) {
-	
-	 $scope.noteFilter = null;
-	   
-	    $scope.searchFilter = function (note) {
-	        var re = new RegExp($scope.nameFilter, 'i');
-	        return !$scope.nameFilter || re.test(note.title) || re.test(note.description);
-	    };
 
-	    
-//logout
-	    
+	$scope.noteFilter = null;
+
+	$scope.searchFilter = function (note) {
+		var re = new RegExp($scope.nameFilter, 'i');
+		return !$scope.nameFilter || re.test(note.title) || re.test(note.description);
+	};
+
+
+//	logout
+
 	$scope.signout = function() {
 
 		localStorage.removeItem('token');
 		$location.path("/login");
 	}
-	
-//side nav bar
+
+//	side nav bar
 
 	$scope.toggleSideBar = function() {
 
@@ -33,9 +33,9 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 			document.getElementById("container-main").style.marginLeft = "350px";
 		}
 	}
-	
-// add the notes
-	
+
+//	add the notes
+
 	$scope.saveNote =function(){
 		var message= homeService.service('POST','user/saveNote',$scope.note);
 		console.log("its coming here");
@@ -46,20 +46,20 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 			getAllNotes();
 
 		},function(response){
-			
+
 			getAllNotes();
 			$scope.note={};
 			console.log("some thing happening");
 		});
 	}
-	
-// gets the all notes
-	
+
+//	gets the all notes
+
 	var getAllNotes = function() {
 
 		var notes = homeService.getAllNotes();
 		console.log("in this function");
-		
+
 		notes.then(function(response) {
 			console.log("in coming here also");
 
@@ -70,7 +70,7 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 			$scope.error = response.data.message;
 		});
 	}
-	
+
 	$scope.newnote = false;
 
 	$scope.show = function() {
@@ -81,20 +81,20 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		$scope.newnote = false;
 	}
 	getAllNotes();
-	
-//delete the notes
-	
+
+//	delete the notes
+
 	$scope.deleteNotes = function(note) {
 		console.log("note id" + note.noteId);
 		var notes = homeService.deleteNotes(note);
 		notes.then(function(response) {
 			console.log("delete sucessfully....")
-		
+
 		}),function(response) {
 			$scope.error = response.data.message;
 		};
 	}
-	
+
 	$scope.ListView = true;
 
 	$scope.ListViewToggle = function() {
@@ -106,48 +106,48 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 			listGrideView();
 		}
 	}
-	
-//list view of notes
-	
+
+//	list view of notes
+
 	listGrideView();
 
 	function listGrideView() {
 		if ($scope.ListView) {
 			var element = document
-					.getElementsByClassName('card');
+			.getElementsByClassName('card');
 			for (var i = 0; i < element.length; i++) {
 				element[i].style.width = "900px";
 			}
 		} else {
 			var element = document
-					.getElementsByClassName('card');
+			.getElementsByClassName('card');
 			for (var i = 0; i < element.length; i++) {
 				element[i].style.width = "300px";
 			}
 		}
 	}
-	
-	// add notes to archive
-	
-	$scope.addToArchive = function(note) {
-		
-		if(note.archive==false)
-			{
-			note.archive=true;
-		console.log()
 
-		var notes = homeService.noteArchive(note);
-		
-		notes.then(function(response) {
-			console.log("hai");
+	// add notes to archive
+
+	$scope.addToArchive = function(note) {
+
+		if(note.archive==false)
+		{
+			note.archive=true;
+			console.log()
+
+			var notes = homeService.noteArchive(note);
+
+			notes.then(function(response) {
+				console.log("hai");
+				getAllNotes();
+			}, function(response) {			
+				getAllNotes();
+			});
 			getAllNotes();
-		}, function(response) {			
-			getAllNotes();
-		});
-		getAllNotes();
-			}
+		}
 		else
-			{
+		{
 			note.archive= false;
 			console.log(note)
 			var notes = homeService.updateNotes(note);
@@ -163,18 +163,18 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 
 			});
 			getAllNotes();
-			}
+		}
 	}
-	
+
 	// add note to trash
-	
+
 	$scope.addToTrash = function(note) {
-		
+
 		var notes;
 		if(note.emptyTrash==false)
-			{
+		{
 			notes = homeService.noteTrashService(note.noteId, true);
-			}
+		}
 		else{
 			notes = homeService.noteTrashService(note.noteId, false);
 		}
@@ -184,11 +184,11 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 			getAllNotes();
 
 		});
-		}
-	
-	
+	}
+
+
 	//restore notes to notes
-	
+
 	$scope.restoreToNotes = function(note) {
 
 		note.emptyTrash = false;
@@ -207,23 +207,33 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 
 		});
 	}
-	
+
 	//pin and unpinned
-	
-$scope.addTopin = function(note) {
-			var notes;
-			if(note.pin==false)
-				{
-				notes = homeService.addTopin(note.noteId, true);
-				}else{
-					notes = homeService.addTopin(note.noteId, false);
-				}
 
-				notes.then(function(response) {
+	$scope.addTopin = function(note) {
+		var notes;
+		if(note.pin==false)
+		{
+			notes = homeService.addTopin(note.noteId, true);
+		}else{
+			notes = homeService.addTopin(note.noteId, false);
+		}
 
-					getAllNotes();
+		notes.then(function(response) {
 
-				});
-				}
-	
+			getAllNotes();
+
+		});
+	}
+
+	//Edit note
+
+	$scope.showModal = function(note) {
+		
+		modalInstance = $uibModal.open({
+			templateUrl : 'htmlpages/showDialog.html',
+			scope : $scope,
+			size : 'md'
+		});
+	};
 });
