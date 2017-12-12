@@ -34,7 +34,6 @@ public class NoteDaoImplemention implements NoteDAO {
 	}
 
 	@Override
-
 	public void updateNote(Note note) {
 
 		Session session = sessionFactory.getCurrentSession();
@@ -52,7 +51,7 @@ public class NoteDaoImplemention implements NoteDAO {
 	}
 	@Override
 	public Note getNoteById(int noteId) {
-		Session session = sessionFactory.openSession();
+		Session session = sessionFactory.getCurrentSession();
 		return session.load(Note.class, noteId);
 	}
 
@@ -68,7 +67,7 @@ public class NoteDaoImplemention implements NoteDAO {
 		return true;
 	}
 
-	@Override
+/*	@Override
 	public boolean UpdateNoteToTrash(int noteId) {
 		
 		Session session = sessionFactory.getCurrentSession();
@@ -100,19 +99,5 @@ public class NoteDaoImplemention implements NoteDAO {
 		  }	
 		}
 	}
-	
-	
-	
-	@Override
-	public boolean updatePin(int noteId)
-	{
-		Session session = sessionFactory.getCurrentSession();
-		String hqlQuery = "UPDATE com.bridgelabz.User.model.Note set isPin=:isPin WHERE noteId = :noteId";
-		Query query = session.createQuery(hqlQuery);
-		query.setParameter("noteId", noteId);
-		query.setParameter("isPin", true);
-		query.executeUpdate();
-		System.out.println("query executed successfully...");
-		return true;
-	}
+	*/
 }

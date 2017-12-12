@@ -10,16 +10,6 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 	        return !$scope.nameFilter || re.test(note.title) || re.test(note.description);
 	    };
 
-	    $scope.view = '';
-		$scope.statePinnedNote ={
-				pin:true,
-		}
-		
-		$scope.stateUnPinnedNote ={
-				pin:false,
-		}
-	    
-	    
 	    
 //logout
 	    
@@ -180,19 +170,22 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 	
 	$scope.addToTrash = function(note) {
 		
-		var notes = homeService.noteTrashService(note);
-		
+		var notes;
+		if(note.emptyTrash==false)
+			{
+			notes = homeService.noteTrashService(note.noteId, true);
+			}
+		else{
+			notes = homeService.noteTrashService(note.noteId, false);
+		}
+
 		notes.then(function(response) {
-			
+
 			getAllNotes();
-			
-		}, function(response) {	
-			
-			getAllNotes();
+
 		});
-		
-		getAllNotes();
-	}
+		}
+	
 	
 	//restore notes to notes
 	
@@ -214,4 +207,23 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 
 		});
 	}
+	
+	//pin and unpinned
+	
+$scope.addTopin = function(note) {
+			var notes;
+			if(note.pin==false)
+				{
+				notes = homeService.addTopin(note.noteId, true);
+				}else{
+					notes = homeService.addTopin(note.noteId, false);
+				}
+
+				notes.then(function(response) {
+
+					getAllNotes();
+
+				});
+				}
+	
 });

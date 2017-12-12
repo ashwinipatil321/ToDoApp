@@ -69,7 +69,7 @@ toDo.factory('homeService', function($http) {
 
 	// Add To Trash
 
-	notes.noteTrashService = function(note) {
+	notes.noteTrashService = function(noteid,emptyTrash) {
 
 		console.log("inside login Trash service method");
 
@@ -77,7 +77,7 @@ toDo.factory('homeService', function($http) {
 
 			method : 'POST',
 
-			url : 'emptyTrash/'+ note.noteId,
+			url : 'emptyTrash/'+ noteid,
 
 			headers : {
 				'token' : localStorage.getItem('acessToken')
@@ -99,6 +99,26 @@ toDo.factory('homeService', function($http) {
 
 			headers : {
 				
+				'token' : localStorage.getItem('acessToken')
+			}
+		})
+	}
+	
+// add pin and un pin
+	
+	notes.addTopin = function(noteid, pin) {
+
+		console.log("inside login archive service method");
+
+		return $http({
+
+			method : 'POST',
+
+			url : 'isPin/'+ noteid,
+			
+			data : pin,
+
+			headers : {
 				'token' : localStorage.getItem('acessToken')
 			}
 		})

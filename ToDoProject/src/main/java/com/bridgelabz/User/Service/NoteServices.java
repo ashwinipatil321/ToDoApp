@@ -11,9 +11,6 @@ public interface NoteServices {
 	public void updateNote(Note updatedNote);
 	public List<Note> getallNotes();
 	public boolean updateArchive(int noteId);
-	public boolean UpdateNoteToTrash(int noteId);
-	public boolean updatePin(int noteId);
-	public void emptyTrash(int userId) ;
-	
-
+	public void UpdateNoteToTrash(int noteId,boolean isEmptyTrash);
+	public void updatePin(int noteId, boolean isPinned);
 }

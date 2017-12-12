@@ -1,4 +1,0 @@
-@CHARSET "UTF-8";
-.navbar-nav {
-    margin: 100.5px -15px;
-}
