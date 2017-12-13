@@ -884,3 +884,86 @@ Dec 12, 2017 18:55:48.22 [6866:6866:1212/185548.222026:ERROR:media_internals.cc(
 Dec 12, 2017 18:55:48.22 [6866:6866:1212/185548.222182:ERROR:media_internals.cc(103)] Cannot get RenderProcessHost
 Dec 12, 2017 19:19:47.44 [18779:18816:1212/191947.449120:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
 Dec 12, 2017 19:19:47.47 Created new window in existing browser session.
+
+Dec 13, 2017 10:23:49.22 NEW SESSION
+Dec 13, 2017 10:23:49.22 [2988:2988:1213/102349.220725:ERROR:gles2_cmd_decoder.cc(5318)] Error: 3 for Command kBlitFramebufferCHROMIUM
+Dec 13, 2017 11:09:34.80 [2916:2916:1213/110934.807294:ERROR:CONSOLE(417)] "Uncaught (in promise) TypeError: Cannot read property '_revealViewportNode' of null", source: chrome-devtools://devtools/bundled/data_grid/data_grid_module.js (417)
+Dec 13, 2017 11:09:41.43 [2988:2988:1213/110941.439809:ERROR:gles2_cmd_decoder.cc(17652)] [.DisplayCompositor-0x2a795e371500]GL ERROR :GL_INVALID_OPERATION : glCreateAndConsumeTextureCHROMIUM: invalid mailbox name
+Dec 13, 2017 11:09:41.44 [2988:2988:1213/110941.439861:ERROR:gles2_cmd_decoder.cc(9709)] [.DisplayCompositor-0x2a795e371500]RENDER WARNING: texture bound to texture unit 0 is not renderable. It maybe non-power-of-2 and have incompatible texture filtering.
+Dec 13, 2017 11:25:30.57 [5341:5378:1213/112530.566531:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 13, 2017 11:25:30.60 Created new window in existing browser session.
+Dec 13, 2017 12:09:27.12 [2916:2956:1213/120927.126569:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Dec 13, 2017 12:15:08.99 [6894:6931:1213/121508.996897:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 13, 2017 12:15:09.03 Created new window in existing browser session.
+Dec 13, 2017 12:23:23.65 [2916:2956:1213/122323.657104:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Dec 13, 2017 12:30:46.07 [7540:7577:1213/123046.078879:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 13, 2017 12:30:46.16 Created new window in existing browser session.
+Dec 13, 2017 12:40:52.67 [8069:8106:1213/124052.676172:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 13, 2017 12:40:52.70 Created new window in existing browser session.
+Dec 13, 2017 13:23:16.14 [2988:2988:1213/132316.140242:ERROR:gles2_cmd_decoder.cc(17652)] [.DisplayCompositor-0x2a795e371500]GL ERROR :GL_INVALID_OPERATION : glCreateAndConsumeTextureCHROMIUM: invalid mailbox name
+Dec 13, 2017 13:23:16.14 [2988:2988:1213/132316.140302:ERROR:gles2_cmd_decoder.cc(9709)] [.DisplayCompositor-0x2a795e371500]RENDER WARNING: texture bound to texture unit 0 is not renderable. It maybe non-power-of-2 and have incompatible texture filtering.
+Dec 13, 2017 13:23:16.14 [2988:2988:1213/132316.140346:ERROR:gles2_cmd_decoder.cc(17652)] [.DisplayCompositor-0x2a795e371500]GL ERROR :GL_INVALID_OPERATION : glCreateAndConsumeTextureCHROMIUM: invalid mailbox name
+Dec 13, 2017 13:23:16.14 [2988:2988:1213/132316.140398:ERROR:gles2_cmd_decoder.cc(9709)] [.DisplayCompositor-0x2a795e371500]RENDER WARNING: texture bound to texture unit 0 is not renderable. It maybe non-power-of-2 and have incompatible texture filtering.
+Dec 13, 2017 14:55:11.82 [2916:2956:1213/145511.820446:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Dec 13, 2017 14:55:12.25 [2916:2956:1213/145512.254439:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -100
+Dec 13, 2017 15:09:53.28 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Dec 13, 2017 15:10:14.44 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Dec 13, 2017 15:10:37.64 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Dec 13, 2017 15:11:24.59 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Dec 13, 2017 15:14:44.49 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Dec 13, 2017 15:15:05.57 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Dec 13, 2017 15:15:18.08 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Dec 13, 2017 15:15:38.74 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Dec 13, 2017 15:15:54.41 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Dec 13, 2017 15:16:14.54 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Dec 13, 2017 15:27:03.12 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Dec 13, 2017 15:27:07.98 
+Dec 13, 2017 15:27:07.98 (eog:11145): EOG-WARNING **: Failed to open file '/home/bridgeit/.cache/thumbnails/normal/2218db4aabe94cc8850493ca9fc2c9dd.png': No such file or directory
+Dec 13, 2017 15:27:56.24 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Dec 13, 2017 15:30:13.59 [11426:11463:1213/153013.588983:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 13, 2017 15:30:13.63 Created new window in existing browser session.
+Dec 13, 2017 15:46:32.23 [12000:12037:1213/154632.234589:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 13, 2017 15:46:32.26 Created new window in existing browser session.
+Dec 13, 2017 15:50:13.13 [2916:2916:1213/155013.138843:ERROR:latency_info.cc(155)] RenderWidgetHostImpl::OnSwapCompositorFrame, LatencyInfo vector size 105 is too big.
+Dec 13, 2017 15:50:43.48 [2916:2916:1213/155043.485796:ERROR:CONSOLE(417)] "Uncaught (in promise) TypeError: Cannot read property '_revealViewportNode' of null", source: chrome-devtools://devtools/bundled/data_grid/data_grid_module.js (417)
+Dec 13, 2017 15:54:42.56 [2916:2956:1213/155442.566064:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Dec 13, 2017 15:57:43.20 [12581:12618:1213/155743.202376:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 13, 2017 15:57:43.21 Created new window in existing browser session.
+Dec 13, 2017 16:14:17.00 A Parser-blocking, cross site (i.e. different eTLD+1) script, https://assets.adobedtm.com/d0cc0600946eb3957f703b9fe43c3590597a8c2c/mbox-contents-95c6a4d9c82a8d20476522984666120b54192e9b.js, is invoked via document.write. The network request for this script MAY be blocked by the browser in this or a future page load due to poor network connectivity. If blocked in this page load, it will be confirmed in a subsequent console message.See https://www.chromestatus.com/feature/5718547946799104 for more details.
+Dec 13, 2017 16:14:17.00 A Parser-blocking, cross site (i.e. different eTLD+1) script, https://assets.adobedtm.com/d0cc0600946eb3957f703b9fe43c3590597a8c2c/mbox-contents-95c6a4d9c82a8d20476522984666120b54192e9b.js, is invoked via document.write. The network request for this script MAY be blocked by the browser in this or a future page load due to poor network connectivity. If blocked in this page load, it will be confirmed in a subsequent console message.See https://www.chromestatus.com/feature/5718547946799104 for more details.
+Dec 13, 2017 16:14:17.66 A Parser-blocking, cross site (i.e. different eTLD+1) script, https://www.googleadservices.com/pagead/conversion.js, is invoked via document.write. The network request for this script MAY be blocked by the browser in this or a future page load due to poor network connectivity. If blocked in this page load, it will be confirmed in a subsequent console message.See https://www.chromestatus.com/feature/5718547946799104 for more details.
+Dec 13, 2017 16:14:17.66 A Parser-blocking, cross site (i.e. different eTLD+1) script, https://www.googleadservices.com/pagead/conversion.js, is invoked via document.write. The network request for this script MAY be blocked by the browser in this or a future page load due to poor network connectivity. If blocked in this page load, it will be confirmed in a subsequent console message.See https://www.chromestatus.com/feature/5718547946799104 for more details.
+Dec 13, 2017 16:15:38.42 [2916:2916:1213/161538.421040:ERROR:CONSOLE(417)] "Uncaught (in promise) TypeError: Cannot read property '_revealViewportNode' of null", source: chrome-devtools://devtools/bundled/data_grid/data_grid_module.js (417)
+Dec 13, 2017 16:25:16.46 A Parser-blocking, cross site (i.e. different eTLD+1) script, https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js, is invoked via document.write. The network request for this script MAY be blocked by the browser in this or a future page load due to poor network connectivity. If blocked in this page load, it will be confirmed in a subsequent console message.See https://www.chromestatus.com/feature/5718547946799104 for more details.
+Dec 13, 2017 16:25:16.46 A Parser-blocking, cross site (i.e. different eTLD+1) script, https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js, is invoked via document.write. The network request for this script MAY be blocked by the browser in this or a future page load due to poor network connectivity. If blocked in this page load, it will be confirmed in a subsequent console message.See https://www.chromestatus.com/feature/5718547946799104 for more details.
+Dec 13, 2017 16:25:16.46 A Parser-blocking, cross site (i.e. different eTLD+1) script, https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-resource.min.js, is invoked via document.write. The network request for this script MAY be blocked by the browser in this or a future page load due to poor network connectivity. If blocked in this page load, it will be confirmed in a subsequent console message.See https://www.chromestatus.com/feature/5718547946799104 for more details.
+Dec 13, 2017 16:25:16.46 A Parser-blocking, cross site (i.e. different eTLD+1) script, https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-route.min.js, is invoked via document.write. The network request for this script MAY be blocked by the browser in this or a future page load due to poor network connectivity. If blocked in this page load, it will be confirmed in a subsequent console message.See https://www.chromestatus.com/feature/5718547946799104 for more details.
+Dec 13, 2017 16:25:16.46 A Parser-blocking, cross site (i.e. different eTLD+1) script, https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-cookies.min.js, is invoked via document.write. The network request for this script MAY be blocked by the browser in this or a future page load due to poor network connectivity. If blocked in this page load, it will be confirmed in a subsequent console message.See https://www.chromestatus.com/feature/5718547946799104 for more details.
+Dec 13, 2017 16:25:16.46 A Parser-blocking, cross site (i.e. different eTLD+1) script, https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-sanitize.min.js, is invoked via document.write. The network request for this script MAY be blocked by the browser in this or a future page load due to poor network connectivity. If blocked in this page load, it will be confirmed in a subsequent console message.See https://www.chromestatus.com/feature/5718547946799104 for more details.
+Dec 13, 2017 16:25:16.46 A Parser-blocking, cross site (i.e. different eTLD+1) script, https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-touch.min.js, is invoked via document.write. The network request for this script MAY be blocked by the browser in this or a future page load due to poor network connectivity. If blocked in this page load, it will be confirmed in a subsequent console message.See https://www.chromestatus.com/feature/5718547946799104 for more details.
+Dec 13, 2017 16:25:16.46 A Parser-blocking, cross site (i.e. different eTLD+1) script, https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-animate.min.js, is invoked via document.write. The network request for this script MAY be blocked by the browser in this or a future page load due to poor network connectivity. If blocked in this page load, it will be confirmed in a subsequent console message.See https://www.chromestatus.com/feature/5718547946799104 for more details.
+Dec 13, 2017 16:26:09.57 [2916:2956:1213/162609.574632:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Dec 13, 2017 16:44:33.65 [2916:2916:1213/164433.657704:ERROR:CONSOLE(417)] "Uncaught (in promise) TypeError: Cannot read property '_revealViewportNode' of null", source: chrome-devtools://devtools/bundled/data_grid/data_grid_module.js (417)
+Dec 13, 2017 16:46:01.74 [14311:14348:1213/164601.745416:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 13, 2017 16:46:01.81 Created new window in existing browser session.
+Dec 13, 2017 16:49:37.25 [14629:14666:1213/164937.258436:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 13, 2017 16:49:37.30 Created new window in existing browser session.
+Dec 13, 2017 16:51:16.17 [14833:14870:1213/165116.178286:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 13, 2017 16:51:16.22 Created new window in existing browser session.
+Dec 13, 2017 16:52:32.50 [2916:2956:1213/165232.505821:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -100
+Dec 13, 2017 16:56:00.97 [2916:2956:1213/165600.975354:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -100
+Dec 13, 2017 16:56:12.99 [2916:2956:1213/165612.994768:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -100
+Dec 13, 2017 17:29:17.92 [2916:2956:1213/172917.926005:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Dec 13, 2017 17:42:41.19 [16438:16475:1213/174241.193549:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 13, 2017 17:42:41.27 Created new window in existing browser session.
+Dec 13, 2017 17:57:55.95 [2916:2956:1213/175755.957189:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Dec 13, 2017 18:01:08.07 [2916:2956:1213/180108.078174:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -100
+Dec 13, 2017 18:09:12.93 [2916:2916:1213/180912.939348:ERROR:CONSOLE(417)] "Uncaught (in promise) TypeError: Cannot read property '_revealViewportNode' of null", source: chrome-devtools://devtools/bundled/data_grid/data_grid_module.js (417)
+Dec 13, 2017 19:20:59.17 [2916:2956:1213/192059.177471:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Dec 13, 2017 19:30:11.38 [2916:2916:1213/193011.386622:ERROR:background_mode_manager_aura.cc(13)] Not implemented reached in virtual void BackgroundModeManager::EnableLaunchOnStartup(bool)
+Dec 13, 2017 19:30:12.88 [2916:2916:1213/193012.880933:ERROR:account_info_fetcher.cc(58)] OnGetTokenFailure: Invalid credentials.
+Dec 13, 2017 19:30:12.92 [2916:2916:1213/193012.920312:ERROR:account_tracker.cc(356)] OnGetTokenFailure: Invalid credentials.
+Dec 13, 2017 19:30:12.92 [2916:2916:1213/193012.920330:ERROR:account_tracker.cc(356)] OnGetTokenFailure: Invalid credentials.
+Dec 13, 2017 19:30:14.90 [2916:2916:1213/193014.904923:ERROR:display_info_provider_aura.cc(31)] Not implemented reached in virtual void extensions::DisplayInfoProviderAura::UpdateDisplayUnitInfoForPlatform(const display::Display &, extensions::api::system_display::DisplayUnitInfo *)
+Dec 13, 2017 19:40:43.98 [19793:19830:1213/194043.983049:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 13, 2017 19:40:44.68 Created new window in existing browser session.

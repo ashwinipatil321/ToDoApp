@@ -14,4 +14,5 @@ public interface NoteDAO {
 	public List<Note> getallNotes();
 	public Note getNoteById(int noteId);
 	public boolean updateArchive(int noteId);
+	public boolean updateTrash(int noteId);
 }

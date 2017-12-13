@@ -98,10 +98,13 @@ public class NoteController {
 
 	@RequestMapping(value = "user/update", method = RequestMethod.POST)
 	public ResponseEntity<CustomeResponse> updateNote(@RequestBody Note note) {
+		System.out.println(note);
 		CustomeResponse myResponse = new CustomeResponse();
 		try {
 			
             System.out.println("in update controller");
+            Note oldNote=noteService.getNoteById(note.getNoteId());
+            note.setUser(oldNote.getUser());
 			noteService.updateNote(note);
 			myResponse.setMessage("Note is updated");
 			myResponse.setStatus(1);
@@ -120,7 +123,7 @@ public class NoteController {
 	public ResponseEntity<List<Note>> getAllNotes(HttpServletRequest request) {
 
 		String token = request.getHeader("token");
-		System.out.println("hiiiiiiiiii"+token);
+	
 		int id = Token.verify(token);
 		System.out.println(id);
 		User user = UserService.getUserById(id);
@@ -163,25 +166,25 @@ public class NoteController {
 	}
 
 	@RequestMapping(value = "/emptyTrash/{noteId}", method = RequestMethod.POST)
-	public ResponseEntity<CustomeResponse>  UpdateNoteToTrash( @PathVariable("noteId") int noteId, @RequestBody boolean isEmptyTrash) {
+	public ResponseEntity<CustomeResponse>  UpdateNoteToTrash( @PathVariable("noteId") int noteId) {
 		CustomeResponse myResponse = new CustomeResponse();
 
+		System.out.println("in trash backend");
 		try {
-
-			noteService. UpdateNoteToTrash(noteId,isEmptyTrash);
-			myResponse.setMessage("Trash is Not Empty...");
+			noteService.updateTrash(noteId);
+			myResponse.setMessage("Trash is updated");
 			myResponse.setStatus(1);
 			return new ResponseEntity<CustomeResponse>(myResponse, HttpStatus.OK);
 
 		} catch (Exception e) {
 
 			e.printStackTrace();
-			myResponse.setMessage("Trash is Empty");
+			myResponse.setMessage("Trash is not Updated");
 			myResponse.setStatus(-1);
 			return new ResponseEntity<CustomeResponse>(myResponse, HttpStatus.BAD_REQUEST);
 		}
 	}
-
+	
 	@RequestMapping(value = "/isPin/{noteId}", method = RequestMethod.POST)
 	public ResponseEntity<CustomeResponse> updatePin(@PathVariable("noteId") int noteId, @RequestBody boolean isPinned) {
 		CustomeResponse myResponse = new CustomeResponse();

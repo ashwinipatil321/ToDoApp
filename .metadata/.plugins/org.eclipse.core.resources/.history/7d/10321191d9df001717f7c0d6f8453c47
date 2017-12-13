@@ -1,0 +1,43 @@
+
+
+
+<!-- <div id="note-container"
+	class=" col-sm-12 col-md-12 col-xs-12 col-lg-12">
+	<div class="col-lg-1 col-md-1 hidden-sm"></div>
+	 	<div class="col-md-10 col-sm-12 col-xs-12 col-lg-10">  -->
+
+
+	<div id="note" class="col-sm-6 col-md-8 col-xs-6 col-lg-8">
+		<span data-ng-click="addTopin(note)"> <img class="pull-right"
+			src="images/pinned.svg" width="22" height="22"></span>
+		<h4 class="card-title" data-ng-bind-html="note.title" contenteditable="true" ></h4>
+		<p class="card-text" data-ng-bind-html="note.description" contenteditable="true" "></p>
+
+		<div class="note-icons">
+			<span data-ng-click="addToArchive(note)"><img
+				src="images/archive.svg"> </span> <img src="images/reminder.svg">
+			<img src="images/colors.svg"> <img
+				src="images/collaborator.svg"> <img
+				data-ng-src="images/colorpallet.svg" data-toggle="dropdown"
+				width="22" height="22">
+
+			<div class="dropdown inline pull-right">
+				<img data-ng-src='images/more.svg' width="19px" height="19px"
+					data-toggle="dropdown">
+				<ul class="dropdown-menu">
+					<li><span data-ng-click="addToTrash(note)"><a
+							href="#!/trash">Delete note</a></span></li>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+			<div style="float: right">
+				<div>
+					<div class="dropdown" style="float: right">
+						<div class="btn-group dropup colorDiv"></div>
+						<span data-ng-click="updateNote(note)">DONE</span>
+					</div>
+				</div>
+			</div>
+			</div>

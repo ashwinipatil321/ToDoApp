@@ -10,7 +10,62 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		return !$scope.nameFilter || re.test(note.title) || re.test(note.description);
 	};
 
+	//colors added in notes 
+	
+	$scope.AddNoteColor = "#ffffff";
 
+	$scope.addNoteColorChange = function(color) {
+		$scope.AddNoteColor = color;
+	}
+
+	$scope.colors = [
+
+	{
+		"color" : '#ffffff',
+		"path" : 'images/white.png'
+	}, {
+		"color" : '#e74c3c',
+		"path" : 'images/Red.png'
+	}, {
+		"color" : '#ff8c1a',
+		"path" : 'images/orange.png'
+	}, {
+		"color" : '#fcff77',
+		"path" : 'images/lightyellow.png'
+	}, {
+		"color" : '#80ff80',
+		"path" : 'images/green.png'
+	}, {
+		"color" : '#99ffff',
+		"path" : 'images/skyblue.png'
+	}, {
+		"color" : '#0099ff',
+		"path" : 'images/blue.png'
+	}, {
+		"color" : '#9966ff',
+		"path" : 'images/purple.png'
+	}, {
+		"color" : '#ff99cc',
+		"path" : 'images/pink.png'
+	}, {
+		"color" : '#d9b38c',
+		"path" : 'images/brown.png'
+	}, {
+		"color" : '#bfbfbf',
+		"path" : 'images/grey.png'
+	} ];
+
+	if ($state.current.name == "home") {
+		$scope.topNavBarColor = "#ffbb33";
+		$scope.navBarHeading = "Fundoo Keep";
+	} else if ($state.current.name == "archive") {
+		$scope.topNavBarColor = "#669999";
+		$scope.navBarHeading = "Archive";
+	} else if ($state.current.name == "trash") {
+		$scope.topNavBarColor = "#636363";
+		$scope.navBarHeading = "Trash";
+	}
+	
 //	logout
 
 	$scope.signout = function() {
@@ -94,7 +149,22 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 			$scope.error = response.data.message;
 		};
 	}
-
+	
+//update notes
+	
+	$scope.updateNotes = function(note) {
+		console.log("inside update notes")
+		console.log(note);
+		var a = homeService.updateNotes(note);
+		
+		a.then(function(response) {
+			
+			getAllNotes
+			
+			}, function(response) {
+		});
+	}
+	
 	$scope.ListView = true;
 
 	$scope.ListViewToggle = function() {
@@ -168,22 +238,42 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 
 	// add note to trash
 
-	$scope.addToTrash = function(note) {
+	$scope.addToTrash= function(note) {
 
-		var notes;
 		if(note.emptyTrash==false)
 		{
-			notes = homeService.noteTrashService(note.noteId, true);
-		}
-		else{
-			notes = homeService.noteTrashService(note.noteId, false);
-		}
+			note.emptyTrash=true;
+			console.log()
 
-		notes.then(function(response) {
+			var notes = homeService.noteTrash(note);
 
+			notes.then(function(response) {
+				console.log("hai");
+				getAllNotes();
+			}, function(response) {			
+				getAllNotes();
+			});
 			getAllNotes();
+		}
+		else
+		{
+			note.emptyTrash= false;
+			console.log(note)
+			
+			var notes = homeService.updateNotes(note);
+			notes.then(function(response) {
 
-		});
+				getAllNotes();
+
+			}, function(response) {
+
+				console.log(response.data);
+				getAllNotes();
+				$scope.error = response.data;
+
+			});
+			getAllNotes();
+		}
 	}
 
 

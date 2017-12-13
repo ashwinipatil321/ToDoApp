@@ -69,17 +69,18 @@ toDo.factory('homeService', function($http) {
 
 	// Add To Trash
 
-	notes.noteTrashService = function(noteid,emptyTrash) {
+	notes.noteTrash =function(note) {
 
-		console.log("inside login Trash service method");
+		console.log("inside login archive service method");
 
 		return $http({
 
 			method : 'POST',
 
-			url : 'emptyTrash/'+ noteid,
+			url : 'emptyTrash/'+ note.noteId,
 
 			headers : {
+				
 				'token' : localStorage.getItem('acessToken')
 			}
 		})
@@ -125,5 +126,3 @@ toDo.factory('homeService', function($http) {
 	}
 	return notes;
 });
-
-

@@ -1,11 +1,15 @@
 package com.bridgelabz.User.DAO;
-import java.util.Iterator;
 import java.util.List;
+import java.util.logging.LogManager;
+
 import javax.persistence.Query;
+
+import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
 import com.bridgelabz.User.model.Note;
 
 @Repository
@@ -16,6 +20,8 @@ public class NoteDaoImplemention implements NoteDAO {
 
 	@Autowired
 	NoteDAO noteDAO;
+	
+
 	public int saveNotes(Note note) {
 
 		Session session = sessionFactory.getCurrentSession();
@@ -35,7 +41,7 @@ public class NoteDaoImplemention implements NoteDAO {
 
 	@Override
 	public void updateNote(Note note) {
-
+		System.out.println("noteId=" + note.getNoteId() + ", title=" + note.getTitle() + ", description=" + note.getDescription() + ", createdDate="+ note.getCreatedDate() + ", modifiedDate=" + note.getModifiedDate());
 		Session session = sessionFactory.getCurrentSession();
 		session.saveOrUpdate(note);
 	}
@@ -67,37 +73,16 @@ public class NoteDaoImplemention implements NoteDAO {
 		return true;
 	}
 
-/*	@Override
-	public boolean UpdateNoteToTrash(int noteId) {
-		
+	@Override
+	public boolean updateTrash(int noteId)
+	{
 		Session session = sessionFactory.getCurrentSession();
-		String hql = "UPDATE com.bridgelabz.User.model.Note  set emptyTrash=:emptyTrash WHERE noteId = :noteId";
-		Query query = session.createQuery(hql);
-		query.setParameter("emptyTrash",true);
-		query.setParameter("noteId",noteId);
+		Query query = session.createQuery( "UPDATE com.bridgelabz.User.model.Note set emptyTrash=:emptyTrash WHERE noteId = :noteId");
+		query.setParameter("noteId", noteId);
+		query.setParameter("emptyTrash", true);
 		query.executeUpdate();
+		System.out.println("query executed successfully...");
 		return true;
-		
 	}
 
-	
-	@SuppressWarnings({ "unchecked", "rawtypes" })
-	@Override
-	public void emptyTrash(int userId) {
-		
-		Session session = sessionFactory.getCurrentSession();
-		Query query = session.createQuery("FROM  com.bridgelabz.User.model.Note where userId = :userid ");
-		query.setParameter("userid", userId);
-		List<Note> ls = query.getResultList();
-		 Iterator itr = ls.iterator();
-		 
-		 while (itr.hasNext()) {
-		  Note note = (Note) itr.next();
-		  if(note.isEmptyTrash() == true)
-		  {
-		  session.delete(note);
-		  }	
-		}
-	}
-	*/
 }
