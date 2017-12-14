@@ -10,6 +10,12 @@
     heght: 55%;
     width: 55%;
 }
+
+.dropup .dropdown-menu, .navbar-fixed-bottom .dropdown .dropdown-menu {
+    top: auto;
+    bottom: 100%;
+    margin-bottom: 2px;
+    height: 90px;
 }
 
 .card-title{

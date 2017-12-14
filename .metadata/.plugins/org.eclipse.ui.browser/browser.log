@@ -994,3 +994,5 @@ Dec 14, 2017 12:31:34.59 [3062:3102:1214/123134.598222:ERROR:ssl_client_socket_i
 Dec 14, 2017 14:52:51.81 NEW SESSION
 Dec 14, 2017 14:52:51.81 [9950:9989:1214/145251.816725:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
 Dec 14, 2017 14:52:51.87 Created new window in existing browser session.
+Dec 14, 2017 16:12:59.78 [12052:12089:1214/161259.788268:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 14, 2017 16:12:59.86 Created new window in existing browser session.

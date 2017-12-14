@@ -6,8 +6,8 @@
 	<div id="noteDialog" class="col-sm-6 col-md-8 col-xs-6 col-lg-8">
 		<span data-ng-click="addTopin(note)"> <img class="pull-right"
 			src="images/pinned.svg" width="22" height="22"></span>
-		<h4 class="card-title" ng-model="note.title" contenteditable="true" ></h4>
-		<p class="card-text" ng-model="note.description " contenteditable="true"></p>
+		<h4 class="card-title" data-ng-model="note.title" contenteditable="true" ></h4>
+		<p class="card-text" data-ng-model="note.description " contenteditable="true"></p>
 
 		<div class="note-icons">
 			<span data-ng-click="addToArchive(note)"><img
@@ -29,8 +29,7 @@
 				<img data-ng-src='images/more.svg' width="19px" height="19px"
 					data-toggle="dropdown">
 				<ul class="dropdown-menu">
-					<li><span data-ng-click="addToTrash(note)"><a
-							href="#!/trash">Delete note</a></span></li>
+					<li><span data-ng-click="addToTrash(note)">Delete note</a></span></li>
 				</ul>
 			</div>
 

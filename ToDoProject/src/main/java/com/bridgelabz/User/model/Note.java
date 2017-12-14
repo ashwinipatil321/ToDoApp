@@ -35,7 +35,10 @@ public class Note {
 
 	@Column(name= "note_modifiedDate")
 	private Date modifiedDate;
-
+ 
+	@Column(name= "reminderDate")
+	private Date reminder;
+	
 	@Column(name = "isArchive")
 	private boolean isArchive;
 
@@ -93,6 +96,14 @@ public class Note {
 		this.modifiedDate = modifiedDate;
 	}
 
+	public Date getReminder() {
+		return reminder;
+	}
+
+	public void setReminder(Date reminder) {
+		this.reminder = reminder;
+	}
+
 	public User getUser() {
 		return user;
 	}
@@ -137,6 +148,7 @@ public class Note {
 	}
 	
 	public void copy(Note note){
+		
 		this.color = note.getColor();
 		this.description = note.getDescription();
 		this.emptyTrash = note.isEmptyTrash();

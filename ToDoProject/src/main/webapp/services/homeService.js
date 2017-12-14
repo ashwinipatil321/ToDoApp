@@ -6,7 +6,8 @@ toDo.factory('homeService', function($http) {
 	var notes = {};
 
 	notes.service = function(method, url, note) {
-		console.log("service",note);
+
+		console.log("service", note);
 		console.log(localStorage.getItem('acessToken'))
 		return $http({
 			method : method,
@@ -17,13 +18,30 @@ toDo.factory('homeService', function($http) {
 			}
 		});
 	}
-	
-// get all notes
-	
+
+	notes.saveNotes = function(note) {
+
+		return $http({
+
+			method : "POST",
+			url : 'user/saveNote',
+			data : note,
+
+			headers : {
+
+				'token' : localStorage.getItem('acessToken')
+			}
+		})
+	}
+
+	// get all notes
+
 	notes.getAllNotes = function() {
+
 		console.log(localStorage.getItem('acessToken'))
 
 		return $http({
+
 			method : 'GET',
 			url : 'user/getAllNotes',
 			headers : {
@@ -32,16 +50,18 @@ toDo.factory('homeService', function($http) {
 		});
 	}
 
-	//DELETE NOTE
+	// DELETE NOTE
 
 	notes.deleteNotes = function(note) {
+
 		console.log("inside delete function" + note.noteId);
-		console.log("inside delete function" + JSON.stringify(note));
 
 		return $http({
+
 			method : 'DELETE',
-			data:note,
-			url : 'user/deleteNote/' + note.noteId,		
+			data : note,
+			url : 'user/deleteNote/' + note.noteId,
+
 			headers : {
 				'token' : localStorage.getItem('acessToken')
 			},
@@ -59,7 +79,7 @@ toDo.factory('homeService', function($http) {
 
 			method : 'POST',
 
-			url : 'isArchive/'+ note.noteId,
+			url : 'isArchive/' + note.noteId,
 
 			headers : {
 				'token' : localStorage.getItem('acessToken')
@@ -69,7 +89,7 @@ toDo.factory('homeService', function($http) {
 
 	// Add To Trash
 
-	notes.noteTrash =function(note) {
+	notes.noteTrash = function(note) {
 
 		console.log("inside login archive service method");
 
@@ -77,36 +97,36 @@ toDo.factory('homeService', function($http) {
 
 			method : 'POST',
 
-			url : 'emptyTrash/'+ note.noteId,
+			url : 'emptyTrash/' + note.noteId,
 
 			headers : {
-				
+
 				'token' : localStorage.getItem('acessToken')
 			}
 		})
 	}
 
-	//Restore note to Notes
-	
-	notes.updateNotes = function(note){
-		
+	// Restore note to Notes
+
+	notes.updateNotes = function(note) {
+
 		console.log("inside login Trash service method");
 
 		return $http({
 
 			method : 'POST',
-			data:note,
+			data : note,
 			url : 'user/update',
 
 			headers : {
-				
+
 				'token' : localStorage.getItem('acessToken')
 			}
 		})
 	}
-	
-// add pin and un pin
-	
+
+	// add pin and unpin
+
 	notes.addTopin = function(noteid, pin) {
 
 		console.log("inside login archive service method");
@@ -115,11 +135,28 @@ toDo.factory('homeService', function($http) {
 
 			method : 'POST',
 
-			url : 'isPin/'+ noteid,
-			
+			url : 'isPin/' + noteid,
+
 			data : pin,
 
 			headers : {
+
+				'token' : localStorage.getItem('acessToken')
+			}
+		})
+	}
+
+	// get User
+
+	notes.getUser = function() {
+
+		return $http({
+
+			method : "GET",
+			url : 'getUser',
+
+			headers : {
+
 				'token' : localStorage.getItem('acessToken')
 			}
 		})

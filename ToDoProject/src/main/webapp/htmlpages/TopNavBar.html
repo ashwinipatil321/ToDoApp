@@ -49,12 +49,14 @@
 										</div>
 										<div class="col-sm-1"></div>
 									</div>
-									<li>{{user.userFirstName}} {{user.userLastName}} <br>
-										{{user.email}}
+									<li>{{User.firstName}} <br>
+										{{User.email}}
+									
 										<div>
 											<li role="separator" class="divider"></li>
-											<button style="float: right" data-ng-click="signout()">logout</button>
+											<button style="float: left" data-ng-click="signout()">logout</button>
 										</div>
+									
 									</li>
 								</ul>
 

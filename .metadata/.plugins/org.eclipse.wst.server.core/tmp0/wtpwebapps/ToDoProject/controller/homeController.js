@@ -16,6 +16,7 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 
 	$scope.addNoteColorChange = function(color) {
 		$scope.AddNoteColor = color;
+		console.log(color);
 	}
 
 	$scope.colors = [
@@ -276,7 +277,6 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		}
 	}
 
-
 	//restore notes to notes
 
 	$scope.restoreToNotes = function(note) {
@@ -366,4 +366,33 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
             }
 		});
 	};
+	
+	// Make a copy
+	
+	$scope.copy = function(note) {
+		
+		
+		var notes = homeService.saveNotes(note);
+		
+		notes.then(function(response) {
+			
+			getAllNotes();
+			
+		}, function(response) {
+			
+		});
+	}
+	
+	getUser();
+
+	function getUser() {
+		var a = homeService.getUser();
+		a.then(function(response) {
+			$scope.User = response.data;
+			console.log(response.data);
+		}, function(response) {
+			// console.log("Not Found");
+		});
+	}
+
 });

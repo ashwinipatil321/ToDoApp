@@ -33,6 +33,7 @@ public class UserController {
 	Response myResponse = new Response();
 	Validation validation = new Validation();
 	CustomeResponse customResponse = new CustomeResponse();
+	Token tokenObject= new Token();
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public ResponseEntity<Response> registrationUser(@RequestBody User user, HttpServletRequest request,
@@ -60,10 +61,10 @@ public class UserController {
 			if (found==1) {
 				
 				String url = request.getRequestURL().toString();
-				String token = Token.generateToken(user1.getUserId());
+				String token = tokenObject.generateToken(user1.getUserId());
 				url = url.substring(0, url.lastIndexOf('/')) + "/activate/" + token;
 				sendMail.sendMail(to, subject, msg, url);
-				System.out.println(Token.verify(token));
+				System.out.println(tokenObject.verify(token));
 				response.setHeader("register", token);
 				myResponse.setResponseMessage("Register Sucessfully..!!!");
 				return ResponseEntity.status(HttpStatus.ACCEPTED).body(myResponse);
@@ -86,7 +87,8 @@ public class UserController {
 		
 		@SuppressWarnings("unused")
 		String password = user.getPassword();
-		
+		String passwordEncrypt = MD5Encryption.encrypt(password);
+		user.setPassword(passwordEncrypt);
 			User name = userService.loginUser(user);
 			
 			System.out.println(name);
@@ -95,9 +97,8 @@ public class UserController {
 				
 				if (name.getActivated()) {
 					
-					String token = Token.generateToken(name.getUserId());
-					System.out.println(Token.verify(token));
-
+					String token = tokenObject.generateToken(name.getUserId());
+					System.out.println(tokenObject.verify(token));
 					response.setHeader("login", token);
 					myResponse.setResponseMessage("login successful!!!");
 					return ResponseEntity.status(HttpStatus.ACCEPTED).body(myResponse);
@@ -114,13 +115,13 @@ public class UserController {
 				return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(myResponse);
 			}
 		} 
-
+	
 	@RequestMapping(value = "/activate/{jwt:.+}", method = RequestMethod.GET)
 	public ResponseEntity<Response> activate(@PathVariable("jwt") String jwt, HttpSession session,
 			HttpServletRequest request) {
 
 		System.out.println(jwt);
-		int id = Token.verify(jwt);
+		int id = tokenObject.verify(jwt);
 
 		if (id > 0) {
 
@@ -152,7 +153,7 @@ public class UserController {
 			User userbyEmail = userService.getUserByEmail(email);
 			if (userbyEmail != null) {
 
-				String token = Token.generateToken(userbyEmail.getUserId());
+				String token = tokenObject.generateToken(userbyEmail.getUserId());
 				String url = request.getRequestURL().toString().replace("/forgotpassword", "") + "/resetpassword/"
 						+ token;
 				response.setHeader("reset", token);
@@ -186,7 +187,7 @@ public class UserController {
 
 		if (token != null) {
 
-			int userId = Token.verify(token);
+			int userId = tokenObject.verify(token);
 			User oldUser = userService.getUserById(userId);
 			oldUser.setPassword(password);
 			String passwordEncrypt = MD5Encryption.encrypt(password);
