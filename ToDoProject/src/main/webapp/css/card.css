@@ -1,6 +1,16 @@
 @CHARSET "UTF-8";
 @CHARSET "UTF-8";
-
+#noteDialog
+{
+	 padding: 15px;
+    margin-bottom: 20px;
+    background-color: white;
+    box-shadow: 0px 1px 2px black;
+    margin: 5px;
+    heght: 55%;
+    width: 55%;
+}
+}
 
 .card-title{
 	padding-bottom:8px;
@@ -11,16 +21,15 @@
 	padding-bottom:8px;
 	font-size: 17px;
 }
-/* #searchbox{
-  
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-
-} */
+#note {
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: white;
+    box-shadow: 0px 1px 2px black;
+    margin: 5px;
+    heght: 0px;
+	 width:24.333%;
+}
 
 .col-sm-1{
 	width:3%;

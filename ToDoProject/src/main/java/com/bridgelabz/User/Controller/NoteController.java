@@ -103,8 +103,7 @@ public class NoteController {
 		try {
 			
             System.out.println("in update controller");
-            Note oldNote=noteService.getNoteById(note.getNoteId());
-            note.setUser(oldNote.getUser());
+           
 			noteService.updateNote(note);
 			myResponse.setMessage("Note is updated");
 			myResponse.setStatus(1);
@@ -170,7 +169,9 @@ public class NoteController {
 		CustomeResponse myResponse = new CustomeResponse();
 
 		System.out.println("in trash backend");
+		
 		try {
+			
 			noteService.updateTrash(noteId);
 			myResponse.setMessage("Trash is updated");
 			myResponse.setStatus(1);

@@ -135,6 +135,16 @@ public class Note {
 	public void setColor(String color) {
 		this.color = color;
 	}
+	
+	public void copy(Note note){
+		this.color = note.getColor();
+		this.description = note.getDescription();
+		this.emptyTrash = note.isEmptyTrash();
+		this.isArchive = note.isArchive();
+		this.isPin = note.isPin();
+		this.modifiedDate = note.getModifiedDate();
+		this.title = note.getTitle();
+	}
 
 	@Override
 	public String toString() {

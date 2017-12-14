@@ -5,6 +5,11 @@
 	href="https://unpkg.com/angular-toastr/dist/angular-toastr.css" />
 
 <!------------------------- angular  ---------------------------->
+
+
+
+<script src = "https://connect.facebook.net/en_US/sdk.js"></script>
+
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
 <script

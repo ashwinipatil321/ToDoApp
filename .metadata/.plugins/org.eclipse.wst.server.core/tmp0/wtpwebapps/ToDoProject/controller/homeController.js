@@ -326,4 +326,44 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 			size : 'md'
 		});
 	};
+	
+	// social share
+	
+	$scope.fbShareInit = function(note) {
+		
+		FB.init({
+			
+			appId : '1347872695339978',
+			status : true,
+			cookie : true,
+			xfbml : true,
+			version : 'v2.4'
+		});
+
+		FB.ui({
+			
+			method : 'share_open_graph',
+			
+			action_type : 'og.likes',
+			
+			action_properties : JSON.stringify({
+				
+				object : {
+					
+					'og:title' : note.title,
+					'og:description' : note.description
+				}
+			})
+		},function(response) {
+			
+            if (!response || response.error) {
+            	
+             alert('Error while posting data');
+             
+            } else {
+            	
+            	alert('posting completed Successfully');
+            }
+		});
+	};
 });

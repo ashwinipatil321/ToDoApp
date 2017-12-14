@@ -6,20 +6,20 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="" key="selection"/>
+		<item value="showModal" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="showModal"/>
+			<item value="note"/>
+			<item value="showD"/>
+			<item value="showMod"/>
+			<item value="showModel"/>
+			<item value="done"/>
 			<item value="&quot;modal-dialog modal-md"/>
 			<item value="getAllNotes"/>
-			<item value="addToArchive"/>
-			<item value="delete"/>
-			<item value="btn"/>
-			<item value="sidebav"/>
-			<item value="    border-color"/>
-			<item value="clonsole"/>
 		</list>
 		<list key="replacehistory">
 			<item value="console"/>
@@ -29,7 +29,7 @@
 		<item value="338" key="DIALOG_WIDTH"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		<item value="406" key="DIALOG_HEIGHT"/>
-		<item value="94" key="DIALOG_X_ORIGIN"/>
-		<item value="157" key="DIALOG_Y_ORIGIN"/>
+		<item value="547" key="DIALOG_X_ORIGIN"/>
+		<item value="271" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

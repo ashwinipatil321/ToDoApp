@@ -967,3 +967,30 @@ Dec 13, 2017 19:30:12.92 [2916:2916:1213/193012.920330:ERROR:account_tracker.cc(
 Dec 13, 2017 19:30:14.90 [2916:2916:1213/193014.904923:ERROR:display_info_provider_aura.cc(31)] Not implemented reached in virtual void extensions::DisplayInfoProviderAura::UpdateDisplayUnitInfoForPlatform(const display::Display &, extensions::api::system_display::DisplayUnitInfo *)
 Dec 13, 2017 19:40:43.98 [19793:19830:1213/194043.983049:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
 Dec 13, 2017 19:40:44.68 Created new window in existing browser session.
+Dec 13, 2017 19:45:52.02 [2916:2956:1213/194552.020979:ERROR:upload_data_presenter.cc(75)] Not implemented reached in virtual void extensions::RawDataPresenter::FeedNext(const net::UploadElementReader &)
+Dec 13, 2017 19:46:19.77 [2916:2956:1213/194619.773280:ERROR:upload_data_presenter.cc(75)] Not implemented reached in virtual void extensions::RawDataPresenter::FeedNext(const net::UploadElementReader &)
+Dec 13, 2017 19:46:23.41 [2916:2956:1213/194623.410793:ERROR:upload_data_presenter.cc(75)] Not implemented reached in virtual void extensions::RawDataPresenter::FeedNext(const net::UploadElementReader &)
+
+Dec 14, 2017 09:28:10.60 NEW SESSION
+Dec 14, 2017 09:28:10.60 [3062:3062:1214/092810.600114:ERROR:background_mode_manager_aura.cc(13)] Not implemented reached in virtual void BackgroundModeManager::EnableLaunchOnStartup(bool)
+Dec 14, 2017 09:28:12.72 [3062:3062:1214/092812.725000:ERROR:account_tracker.cc(356)] OnGetTokenFailure: Invalid credentials.
+Dec 14, 2017 09:28:12.72 [3062:3062:1214/092812.725033:ERROR:account_tracker.cc(356)] OnGetTokenFailure: Invalid credentials.
+Dec 14, 2017 09:28:24.75 [3062:3062:1214/092824.755356:ERROR:display_info_provider_aura.cc(31)] Not implemented reached in virtual void extensions::DisplayInfoProviderAura::UpdateDisplayUnitInfoForPlatform(const display::Display &, extensions::api::system_display::DisplayUnitInfo *)
+Dec 14, 2017 09:28:52.91 [3433:3471:1214/092852.911955:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 14, 2017 09:28:52.97 Created new window in existing browser session.
+Dec 14, 2017 09:29:06.52 [3590:3627:1214/092906.521349:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 14, 2017 09:29:06.60 Created new window in existing browser session.
+Dec 14, 2017 10:42:22.39 [3062:3062:1214/104222.397769:ERROR:latency_info.cc(155)] RenderWidgetHostImpl::OnSwapCompositorFrame, LatencyInfo vector size 233 is too big.
+Dec 14, 2017 10:42:52.43 [3134:3134:1214/104252.433289:ERROR:gles2_cmd_decoder.cc(17652)] [.DisplayCompositor-0x339f54306500]GL ERROR :GL_INVALID_OPERATION : glCreateAndConsumeTextureCHROMIUM: invalid mailbox name
+Dec 14, 2017 10:42:52.43 [3134:3134:1214/104252.433368:ERROR:gles2_cmd_decoder.cc(9709)] [.DisplayCompositor-0x339f54306500]RENDER WARNING: texture bound to texture unit 0 is not renderable. It maybe non-power-of-2 and have incompatible texture filtering.
+Dec 14, 2017 10:42:52.43 [3134:3134:1214/104252.433422:ERROR:gles2_cmd_decoder.cc(17652)] [.DisplayCompositor-0x339f54306500]GL ERROR :GL_INVALID_OPERATION : glCreateAndConsumeTextureCHROMIUM: invalid mailbox name
+Dec 14, 2017 10:42:52.43 [3134:3134:1214/104252.433459:ERROR:gles2_cmd_decoder.cc(9709)] [.DisplayCompositor-0x339f54306500]RENDER WARNING: texture bound to texture unit 0 is not renderable. It maybe non-power-of-2 and have incompatible texture filtering.
+Dec 14, 2017 10:52:07.07 [3062:3102:1214/105207.077676:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Dec 14, 2017 10:52:22.16 [3062:3102:1214/105222.165220:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Dec 14, 2017 11:00:51.04 [3134:3134:1214/110051.045395:ERROR:gles2_cmd_decoder.cc(5318)] Error: 3 for Command kBlitFramebufferCHROMIUM
+Dec 14, 2017 12:06:45.96 [3062:3102:1214/120645.960988:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Dec 14, 2017 12:31:34.59 [3062:3102:1214/123134.598222:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+
+Dec 14, 2017 14:52:51.81 NEW SESSION
+Dec 14, 2017 14:52:51.81 [9950:9989:1214/145251.816725:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 14, 2017 14:52:51.87 Created new window in existing browser session.

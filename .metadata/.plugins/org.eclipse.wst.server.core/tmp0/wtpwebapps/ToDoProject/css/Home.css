@@ -110,7 +110,7 @@ body {
   margin: 0 auto;
 }
 .note {
-  width: 100%;
+  width: -275px%;
   padding: 8px;
   box-sizing: border-box;
 }
