@@ -301,7 +301,9 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 	//pin and unpinned
 
 	$scope.addTopin = function(note) {
+		
 		var notes;
+		
 		if(note.pin==false)
 		{
 			notes = homeService.addTopin(note.noteId, true);
@@ -371,7 +373,6 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 	
 	$scope.copy = function(note) {
 		
-		
 		var notes = homeService.saveNotes(note);
 		
 		notes.then(function(response) {
@@ -386,6 +387,7 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 	getUser();
 
 	function getUser() {
+		
 		var a = homeService.getUser();
 		a.then(function(response) {
 			$scope.User = response.data;
@@ -394,6 +396,7 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 			// console.log("Not Found");
 		});
 	}
+	
 // Add Reminder
 	
 	$scope.AddReminder = '';
@@ -425,8 +428,9 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 			console.log($scope.reminder);
 			note.reminder = $scope.reminder;
 			console.log("hinside reminder",note);
+			
 			$scope.updateNotes(note);
-			$toastr.$scope("reminder me");
+			
 			$scope.reminder = "";
 		}
 	}
@@ -435,8 +439,40 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		
 		note.reminder = null;
 		$scope.updateNotes(note);
-		$toster
-		
+		toastr.success('Remainder check notes!!!'+"title:"+note.title+"\n "+"desription:"+note.description);
 	}
+	
+//compare date with 
+	
+	function remainderCheck() {
+		
+		$interval(function() {
+			var currentDate = $filter('date')(new Date(),
+					'MM/dd/yyyy h:mm a');
+			console.log("currentDate::::" + currentDate);
+			var i = 0;
+			for (i; i < $scope.note.length; i++) {
+				console.log($scope.notes);
+				var dateString2 = (new Date(
+						$scope.note[i].reminder));
+				
+				var dateString3 = $filter('date')(
+						new Date(dateString2),
+						'MM/dd/yyyy h:mm a');
+				if (dateString3 === currentDate) {
+					$scope.mypicker = dateString2;
+					console.log("reminder !!!!! ");
+					toastr.success('Remainder check notes!!!'+note);
+					$scope.note[i].reminder = true;
+					var token = localStorage.getItem('acessToken');
+					var notes1 = homeService.updateNotes(token,
+							$scope.note[i]);
+				} else {
+					console.log("no remainder");
+				}
+			}
+		}, 20000);
+	}
+	remainderCheck();
 	
 });

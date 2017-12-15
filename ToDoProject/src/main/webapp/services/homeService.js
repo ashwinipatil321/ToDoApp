@@ -145,6 +145,22 @@ toDo.factory('homeService', function($http) {
 			}
 		})
 	}
+	
+	notes.updateNote = function(token, note) {
+		
+		console.log("IN SERVICE");
+		return $http({
+
+			method : 'POST',
+			data : note,
+			url : 'user/update',
+
+			headers : {
+
+				'token' : localStorage.getItem('acessToken')
+			}
+		});
+	}
 
 	// get User
 
