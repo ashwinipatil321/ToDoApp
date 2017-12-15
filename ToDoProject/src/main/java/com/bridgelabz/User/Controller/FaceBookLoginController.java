@@ -1,15 +1,23 @@
 package com.bridgelabz.User.Controller;
+
 import java.io.IOException;
 import java.util.UUID;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.token.TokenService;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bridgelabz.User.Service.UserService;
 import com.bridgelabz.User.SocialLogin.FaceBookConnection;
 import com.bridgelabz.User.Utility.Token;
+import com.bridgelabz.User.model.Response;
 import com.bridgelabz.User.model.User;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -23,17 +31,18 @@ public class FaceBookLoginController {
 	@Autowired
 	private UserService userService;
 
-	@RequestMapping(value="/logInWithFaceBook")
+	@RequestMapping(value = "/logInWithFaceBook")
 	public void facebookConnection(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-		String unid=UUID.randomUUID().toString();
+		String unid = UUID.randomUUID().toString();
 		request.getSession().setAttribute("STATE", unid);
-		String faceBookLogInURL=faceBookConnection.getFaceBookURL(unid);
+		String faceBookLogInURL = faceBookConnection.getFaceBookURL(unid);
 		response.sendRedirect(faceBookLogInURL);
 	}
 
-	@RequestMapping(value="/connectFaceBook")
-	public void redirectFromfacebook(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	@RequestMapping(value = "/connectFaceBook")
+	public void redirectFromfacebook(HttpServletRequest request, HttpServletResponse response, HttpSession session)
+			throws IOException {
 
 		String sessionState = (String) request.getSession().getAttribute("STATE");
 		String googlestate = request.getParameter("state");
@@ -63,9 +72,11 @@ public class FaceBookLoginController {
 		System.out.println(fbName);
 		User user = userService.getUserByEmail(profileData.get("email").asText());
 		System.out.println(user);
+		User fbUser = new User();
+		String token = null;
+		Token tokens = new Token();
 		if (user == null) {
 
-			User fbUser = new User();
 			fbUser.setUserFirstName(fbName);
 			fbUser.setEmail(profileData.get("email").asText());
 			fbUser.setActivated(true);
@@ -73,15 +84,28 @@ public class FaceBookLoginController {
 			System.out.println(u);
 			fbUser.setProfileUrl(u);
 			int id = userService.createUser(fbUser);
-			String token = Token.generateToken(id);
-			response.setHeader("login", token);
+			token = tokens.generateToken(id);
+			session.setAttribute("token", token);
 			System.out.println("Login with FB done!!");
-			response.sendRedirect("http://localhost:8080/ToDoProject/#!/home");
-		} 
-		else {
+			response.sendRedirect("http://localhost:8080/ToDoProject/#!/dummy");
+		} else {
 
 			System.out.println("User is Already Exits in DataBase....");
-			response.sendRedirect("http://localhost:8080/ToDoProject/#!/home");
+			String url = om.readTree(profileData.toString()).get("picture").get("data").get("url").asText();
+			fbUser.setProfileUrl(url);
+			token = tokens.generateToken(fbUser.getUserId());
+			session.setAttribute("token", token);
+			userService.updateUser(fbUser);
+			response.sendRedirect("http://localhost:8080/ToDoProject/#!/dummy");
 		}
+	}
+
+	@RequestMapping(value = "/dummy", method = RequestMethod.GET)
+	public ResponseEntity<?> getToken(HttpSession session) {
+		Response response = new Response();
+		String token = (String) session.getAttribute("token");
+		response.setResponseMessage(token);
+		session.removeAttribute("token");
+		return new ResponseEntity<Response>(response, HttpStatus.OK);
 	}
 }

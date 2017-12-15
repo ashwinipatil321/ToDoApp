@@ -29,7 +29,9 @@ public class NoteServiceImplemention implements NoteServices {
 	@Transactional
 	public void updateNote(Note note) {
 		 Note oldNote=noteDao.getNoteById(note.getNoteId());
-		 oldNote.copy(note);
+		 oldNote.setColor(note.getColor());
+		 oldNote.setReminder(note.getReminder());
+		 oldNote.setArchive(note.isArchive());
 		 noteDao.updateNote(oldNote);
 	}
 

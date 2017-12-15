@@ -1,12 +1,12 @@
-var toDo = angular.module('ToDo');
-toDo.controller('dummyController',function($location,dummyService){
-	var dummyService =dummyService.service();
-	dummyService.then(function(response){
-		localStorage.setItem('token',response.data.message);
-		$location.path('/home');
-	},function(response){
-		$scope.error="some thing went wrong Please Try again!!";
-		$location.path('/login');
+var todo = angular.module('ToDo');
+
+todo.controller('dummyController', function($scope, dummyService, $location) {
+	console.log("CALLING");
+	var user = dummyService.acessToken($scope.user, $scope.error);
+	user.then(function(response) {
+		console.log("Got");
+		localStorage.setItem('acessToken', response.data.responseMessage);
+		console.log(response.data);
+		$location.path('home');
 	});
-	dummyService();
-});
+})

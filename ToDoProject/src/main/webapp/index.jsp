@@ -66,6 +66,7 @@
 <script type="text/javascript" src="controller/registerController.js"></script>
 <script type="text/javascript" src="controller/ForgotPassword.js"></script>
 <script type="text/javascript" src="controller/homeController.js"></script>
+<script type="text/javascript" src="controller/dummyController.js"></script>
 
 
 <!-------------------------   sevices .js ---------------------------->
@@ -75,6 +76,7 @@
 <script type="text/javascript" src="services/forgotPasswordService.js"></script>
 <script type="text/javascript" src="services/homeService.js"></script>
 
+<script type="text/javascript" src="services/dummyService.js"></script>
 
 <!-------------------------   css  .css ---------------------------->
 

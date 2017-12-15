@@ -43,6 +43,20 @@ app.config([ '$stateProvider', '$urlRouterProvider',
 		controller : 'homeController'
 	});
 	
-	$urlRouterProvider.otherwise('/login');
+	$stateProvider.state('reminder', {
+		
+		url : '/reminder',
+		templateUrl : 'htmlpages/reminder.html',
+		controller : 'homeController'
+			
+	});
 	
+	$stateProvider.state('dummy', {
+		
+		url : '/dummy',
+		controller : 'dummyController'
+			
+	});
+	
+	$urlRouterProvider.otherwise('/login');
 }]);

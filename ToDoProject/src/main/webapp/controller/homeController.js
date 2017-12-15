@@ -160,7 +160,7 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		
 		a.then(function(response) {
 			
-			getAllNotes
+			getAllNotes();
 			
 			}, function(response) {
 		});
@@ -394,5 +394,49 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 			// console.log("Not Found");
 		});
 	}
+// Add Reminder
+	
+	$scope.AddReminder = '';
+	$scope.openAddReminder = function() {
+		
+		$('#datepicker').datetimepicker();
+		
+		$scope.AddReminder = $('#datepicker').val();
+	}
+	
+	// reminder
+	
+	$scope.reminder = "";
+	$scope.openReminder = function(note) {
+		
+		$('.reminder').datetimepicker();
+		
+		var id = '#datepicker' + note.noteId;
+		
+		$scope.reminder = $(id).val();
 
+		if ($scope.reminder === "" || $scope.reminder === undefined) {
+			
+			console.log(note);
+			console.log($scope.reminder);
+			
+		} else {
+			
+			console.log($scope.reminder);
+			note.reminder = $scope.reminder;
+			console.log("hinside reminder",note);
+			$scope.updateNotes(note);
+			$toastr.$scope("reminder me");
+			$scope.reminder = "";
+		}
+	}
+	
+	$scope.removeReminder = function(note) {
+		
+		note.reminder = null;
+		$scope.updateNotes(note);
+		$toster
+		
+	}
+	
 });

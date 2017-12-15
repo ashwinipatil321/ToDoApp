@@ -1,0 +1,10 @@
+var toDo = angular.module('ToDo');
+
+toDo.factory('homeService', function($http) {
+	var dummy = {};
+
+	return $http({
+		method : 'get',
+		url : 'dummy'
+	});
+});

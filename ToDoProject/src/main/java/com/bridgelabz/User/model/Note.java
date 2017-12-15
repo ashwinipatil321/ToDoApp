@@ -37,7 +37,7 @@ public class Note {
 	private Date modifiedDate;
  
 	@Column(name= "reminderDate")
-	private Date reminder;
+	private String reminder;
 	
 	@Column(name = "isArchive")
 	private boolean isArchive;
@@ -96,11 +96,11 @@ public class Note {
 		this.modifiedDate = modifiedDate;
 	}
 
-	public Date getReminder() {
+	public String getReminder() {
 		return reminder;
 	}
 
-	public void setReminder(Date reminder) {
+	public void setReminder(String reminder) {
 		this.reminder = reminder;
 	}
 
