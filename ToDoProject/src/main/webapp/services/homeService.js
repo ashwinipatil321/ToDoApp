@@ -177,5 +177,19 @@ toDo.factory('homeService', function($http) {
 			}
 		})
 	}
+	
+	notes.changeProfile = function(User) {
+		
+		return $http({
+			
+
+			method : "POST",
+			url : 'user/profileChange',
+			headers : {
+				'token' : localStorage.getItem('accessToken')
+			},
+			data : User
+		})
+	}
 	return notes;
 });

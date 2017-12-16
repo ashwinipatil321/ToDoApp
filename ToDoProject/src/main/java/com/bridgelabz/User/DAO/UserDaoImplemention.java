@@ -17,6 +17,7 @@ public class UserDaoImplemention implements UserDao {
 	SessionFactory sessionFactory;
 
 	public int registration(User user) {
+		
 		Session session = sessionFactory.getCurrentSession();
 		Query<?> query = session.createQuery("from User where email =:email or mobileNumber = :phone");
 		query.setParameter("email", user.getEmail());
@@ -47,6 +48,7 @@ public class UserDaoImplemention implements UserDao {
 
 	@SuppressWarnings("rawtypes")
 	public User getUserByEmail(String email) {
+		
 		Session session = sessionFactory.getCurrentSession();
 
 		Query query = session.createQuery("from User where email =:email");

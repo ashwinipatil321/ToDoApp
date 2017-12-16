@@ -1,4 +1,4 @@
-var todo = angular.module('ToDo');
+/*var todo = angular.module('ToDo');
 
 todo.factory('dummyService', function($http, $location) {
 	
@@ -14,4 +14,4 @@ todo.factory('dummyService', function($http, $location) {
 		})
 	}
 return dummy;
-})
+})*/

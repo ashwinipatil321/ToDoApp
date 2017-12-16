@@ -59,7 +59,10 @@ height:30px;
 	padding-right: 350px;
 	
 }
-
+.open>.dropdown-menu {
+    display: block;
+    width: initial;
+}
 .navigationTop{
 	margin: 20px;
 }
@@ -68,7 +71,10 @@ height:30px;
 	padding-right: 65px;
 	height : 250px;
 }
-
+.btn dropdown-toggle
+{
+	width: 50%;
+}
 .profile-picture{
 	width: 200px;
     height: 200px;
@@ -80,9 +86,23 @@ height:30px;
     margin-top: -101px;
 }
 .image{
-			background-repeat: no-repeat;
-		    background-position: 50%;
-		    border-radius: 50%;
-		    width: 100px;
-		    height: 100px;
+		background-repeat: no-repeat;
+		background-position: 50%;
+		border-radius: 50%;
+		width: 100px;
+		height: 100px;
+		
 		}
+		.input-menu {
+	margin: 0 auto;
+	align-items: center;
+	font-size: 12px;
+	padding: 4px 0;
+	position: relative;
+	transition: background-color .218s ease-in-out, box-shadow .218s
+		ease-in-out;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	background: inherit;
+	visibility: hidden;
+}

@@ -35,9 +35,9 @@ public class NoteController {
 	public ResponseEntity<CustomeResponse> saveNote(@RequestBody Note note, HttpServletRequest request,
 			HttpServletResponse response) {
 
-		Token tokenObject = new Token();
+		//Token tokenObject = new Token();
 		String token = request.getHeader("token");
-		int id = tokenObject.verify(token);
+		int id = Token.verify(token);
 		User user = UserService.getUserById(id);
 
 		if (user != null) {
@@ -79,9 +79,9 @@ public class NoteController {
 	public ResponseEntity<CustomeResponse> deleteNote(@PathVariable("noteId") int noteId, HttpServletRequest request) {
 		System.out.println("id in delete note........" + noteId);
 
-		Token tokenObject = new Token();
+		//Token tokenObject = new Token();
 		String token = request.getHeader("token");
-		int id = tokenObject.verify(token);
+		int id = Token.verify(token);
 		User user = UserService.getUserById(id);
 
 		if (user != null) {
@@ -125,9 +125,9 @@ public class NoteController {
 	@RequestMapping(value = "/user/getAllNotes", method = RequestMethod.GET)
 	public ResponseEntity<List<Note>> getAllNotes(HttpServletRequest request) {
 
-		Token tokenObject = new Token();
+		//Token tokenObject = new Token();
 		String token = request.getHeader("token");
-		int id = tokenObject.verify(token);
+		int id = Token.verify(token);
 		User user = UserService.getUserById(id);
 		List<Note> allNotes = null;
 
@@ -210,12 +210,12 @@ public class NoteController {
 	}
 
 	@RequestMapping(value = "/getUser", method = RequestMethod.GET)
-	public ResponseEntity<Response> getUser(HttpServletRequest request) {
+	public ResponseEntity<?> getUser(HttpServletRequest request) {
 
 		Response response = new Response();
-		Token tokenObject = new Token();
+		//Token tokenObject = new Token();
 		String token = request.getHeader("token");
-		int id = tokenObject.verify(token);
+		int id = Token.verify(token);
 		User user = UserService.getUserById(id);
 
 		if (user == null) {
@@ -225,7 +225,7 @@ public class NoteController {
 			response.setResponseMessage("");
 			response.setEmail(user.getEmail());
 			response.setFirstName(user.getUserFirstName());
-			return new ResponseEntity<Response>(response, HttpStatus.OK);
+			return new ResponseEntity<User>(user, HttpStatus.OK);
 		}
 	}
 }

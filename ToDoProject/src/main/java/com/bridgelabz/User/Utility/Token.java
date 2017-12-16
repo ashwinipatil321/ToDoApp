@@ -8,9 +8,9 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.MissingClaimException;
 
 public class Token {
-	private  String Key = "mykey";
+	static	private  String Key = "mykey";
 
-	public  String generateToken( int id) {
+	public static String generateToken( int id) {
 		String token = "";
 		long currentTime = System.currentTimeMillis();
 		long expireTime = currentTime + (60000 * 60 * 24 * 2);
@@ -21,7 +21,7 @@ public class Token {
 		System.out.println("Token :: " + token);
 		return token;
 	}
-	public  int verify(String jwt) throws ExpiredJwtException {
+	public static int verify(String jwt) throws ExpiredJwtException {
 		try {
 			Claims claims = Jwts.parser().setSigningKey(Key).parseClaimsJws(jwt).getBody();
 			if (claims.isEmpty())

@@ -1,5 +1,7 @@
 package com.bridgelabz.User.Controller;
 
+import java.io.IOException;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -33,7 +35,7 @@ public class UserController {
 	Response myResponse = new Response();
 	Validation validation = new Validation();
 	CustomeResponse customResponse = new CustomeResponse();
-	Token tokenObject= new Token();
+	//Token tokenObject= new Token();
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public ResponseEntity<Response> registrationUser(@RequestBody User user, HttpServletRequest request,
@@ -61,10 +63,10 @@ public class UserController {
 			if (found==1) {
 				
 				String url = request.getRequestURL().toString();
-				String token = tokenObject.generateToken(user1.getUserId());
+				String token = Token.generateToken(user1.getUserId());
 				url = url.substring(0, url.lastIndexOf('/')) + "/activate/" + token;
 				sendMail.sendMail(to, subject, msg, url);
-				System.out.println(tokenObject.verify(token));
+				System.out.println(Token.verify(token));
 				response.setHeader("register", token);
 				myResponse.setResponseMessage("Register Sucessfully..!!!");
 				return ResponseEntity.status(HttpStatus.ACCEPTED).body(myResponse);
@@ -85,10 +87,12 @@ public class UserController {
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public ResponseEntity<Response> loginUser(@RequestBody User user, HttpServletResponse response) {
 		
-		@SuppressWarnings("unused")
 		String password = user.getPassword();
+		
 		String passwordEncrypt = MD5Encryption.encrypt(password);
+		
 		user.setPassword(passwordEncrypt);
+		
 			User name = userService.loginUser(user);
 			
 			System.out.println(name);
@@ -97,8 +101,8 @@ public class UserController {
 				
 				if (name.getActivated()) {
 					
-					String token = tokenObject.generateToken(name.getUserId());
-					System.out.println(tokenObject.verify(token));
+					String token = Token.generateToken(name.getUserId());
+					System.out.println(Token.verify(token));
 					response.setHeader("login", token);
 					myResponse.setResponseMessage("login successful!!!");
 					return ResponseEntity.status(HttpStatus.ACCEPTED).body(myResponse);
@@ -121,7 +125,7 @@ public class UserController {
 			HttpServletRequest request) {
 
 		System.out.println(jwt);
-		int id = tokenObject.verify(jwt);
+		int id = Token.verify(jwt);
 
 		if (id > 0) {
 
@@ -137,6 +141,7 @@ public class UserController {
 				return ResponseEntity.status(HttpStatus.ACCEPTED).body(myResponse);
 			}
 		}
+		
 		myResponse.setResponseMessage("user not valid!!!!");
 		return ResponseEntity.status(HttpStatus.ACCEPTED).body(myResponse);
 	}
@@ -151,9 +156,10 @@ public class UserController {
 		if (valid == true) {
 
 			User userbyEmail = userService.getUserByEmail(email);
+			
 			if (userbyEmail != null) {
 
-				String token = tokenObject.generateToken(userbyEmail.getUserId());
+				String token = Token.generateToken(userbyEmail.getUserId());
 				String url = request.getRequestURL().toString().replace("/forgotpassword", "") + "/resetpassword/"
 						+ token;
 				response.setHeader("reset", token);
@@ -187,7 +193,7 @@ public class UserController {
 
 		if (token != null) {
 
-			int userId = tokenObject.verify(token);
+			int userId = Token.verify(token);
 			User oldUser = userService.getUserById(userId);
 			oldUser.setPassword(password);
 			String passwordEncrypt = MD5Encryption.encrypt(password);
@@ -214,6 +220,20 @@ public class UserController {
 			customResponse.setStatus(5);
 			return customResponse;
 		}
+	}
+	
+	@RequestMapping(value = "/user/profileChange", method = RequestMethod.POST)
+	public ResponseEntity<String> changeProfile(@RequestBody User user, HttpServletRequest request)
+			throws IOException {
+		
+		int userid = (int) request.getAttribute("userId");
+		
+		if (userid == 0) {
+			
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("");
+		}
+		userService.updateUser(user);
+		return ResponseEntity.ok("");
 	}
 
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)

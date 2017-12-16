@@ -80,17 +80,22 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 	$scope.toggleSideBar = function() {
 
 		var width = $('#sidebar-wrapper').width();
+		
 		console.log(width);
+		
 		if (width == '250') {
+			
 			document.getElementById("sidebar-wrapper").style.width = "0px";
 			document.getElementById("container-main").style.marginLeft = "270px";
+			
 		} else {
+			
 			document.getElementById("sidebar-wrapper").style.width = "250px";
 			document.getElementById("container-main").style.marginLeft = "350px";
 		}
 	}
 
-//	add the notes
+//add the notes
 
 	$scope.saveNote =function(){
 		var message= homeService.service('POST','user/saveNote',$scope.note);
@@ -475,4 +480,59 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 	}
 	remainderCheck();
 	
+// uploading images
+	
+	$scope.imageSrc = "";
+
+	$scope.$on("fileProgress", function(e, progress) {
+		$scope.progress = progress.loaded / progress.total;
+	});
+
+	$scope.openImageUploader = function(type) {
+		$scope.type = type;
+		$('#imageuploader').trigger('click');
+	}
+
+	$scope.changeProfile = function(user) {
+
+		var a = homeService.changeProfile(user);
+
+		a.then(function(response) {
+
+		}, function(response) {
+
+		});
+	}
+
+	$scope.removeImage = function() {
+		$scope.AddNoteBox = false;
+		$scope.addimg = undefined;
+	}
+
+	$scope.type = {};
+	$scope.type.noteImage = '';
+
+	$scope
+			.$watch(
+					'imageSrc',
+					function(newimg, oldimg) {
+						
+						if ($scope.imageSrc != '') {
+							
+							if ($scope.type === 'input') {
+								
+								$scope.addimg = $scope.imageSrc;
+							} else if ($scope.type === 'user') {
+								
+								$scope.User.profileUrl = $scope.imageSrc;
+								$scope
+										.changeProfile($scope.User);
+							} else {
+								
+								$scope.type.noteImage = $scope.imageSrc;
+								$scope.updateNotes($scope.type);
+							}
+						}
+					});
+
 });

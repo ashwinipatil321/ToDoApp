@@ -20,6 +20,7 @@
 			</li>
 		</ul>
 		<div>
+
 			<ul class="nav navbar-nav navbar-left">
 				<li data-ng-click="ListViewToggle()" id="list-gride-View"
 					class="navigationTop"><img data-ng-if="!ListView"
@@ -29,51 +30,36 @@
 				</li>
 				</div>	
 					<div class="imagedropdown">
-					<div id="navbar"
-						class="navbar-collapse  collapse  hidden-sm hidden-xs"></div>
-					<div>
-						<ul class="nav navbar-nav navbar-right">
-							<li class="dropdown " style="width: 200%" style="hight: 150%">
-								<img data-ng-src="images/profile.jpg"
-								class="img-circle profile-pic dropdown-toggle"
-								data-toggle="dropdown" alt="ashwini">
+					<span class="btn dropdown-toggle" id="menu1" type="button" data-toggle="dropdown" style="float: right;margin:5px">
+						<img alt="{{User.firstName.charAt(0)}}" class="img-circle" ng-src="{{User.profileUrl}}" height="50px">
+					</span>
+					
+					<ul class="dropdown-menu profile" role="menu" style="background-color: white; padding-left: 10px" aria-labelledby="menu1">
+						<li     style="height: 150px;width: 200px;">
+						
+						<img align="middle" alt="{{User.firstName.charAt(0)}}" ng-src="{{User.profileUrl}}" ng-click="openImageUploader('user')" height="100px" class="img-circle">
+						
+						<!-- <img alt="ChangeProfile" ng-click="openImageUploader(User)" src="" height="20px"> -->
+						
+						 <input id="imageuploader" ng-show="false"  type="file" ng-file-select="onFileSelect($files)" ng-model="imageSrc">
+					
+						</li><br>
+						<li>
+						{{User.firstName}} 
+								<br>
+						{{User.email}}
+						<div>
+						<button style="float: left" ng-click="sigb">logout</button>
+						</div>
+						</li>
+					</ul>
+				
+				</div>
+		</nav>
+	
 
-								<ul class="dropdown-menu profile-dropdown">
-									<div class="row">
-										<img data-ng-src="images/profile.jpg"
-											class="img-circle col-sm-6" alt="Ashwini" width="100"
-											height="80" data-ng-click="openImageUploader(user,'user')">
-										<div class="col-sm-6">
-											<font size="5px"><b>{{}}</b></font>
+		
 
-										</div>
-										<div class="col-sm-1"></div>
-									</div>
-									<li>{{User.firstName}} <br>
-										{{User.email}}
-									
-										<div>
-											<li role="separator" class="divider"></li>
-											<button style="float: left" data-ng-click="signout()">logout</button>
-										</div>
-									
-									</li>
-								</ul>
-
-							</li>
-						</ul>
-					</div>
-			</div>
-		</div>
-</nav>
-<!-- <ul class="nav navbar-nav navbar-right">
-			<li ng-click="ListViewToggle()" id="list-gride-View"
-				class="navigationTop"><img ng-if="!ListView" height="30px"
-				alt="gride" src="images/gridlist.svg"> <img ng-if="ListView"
-				height="30px" alt="list" src="images/list1.png"></li>
-			<li>
-		</ul>
-		 -->
 
 
 

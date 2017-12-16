@@ -74,9 +74,9 @@ public class FaceBookLoginController {
 		System.out.println(user);
 		User fbUser = new User();
 		String token = null;
-		Token tokens = new Token();
+		//Token tokens = new Token();
 		if (user == null) {
-
+			
 			fbUser.setUserFirstName(fbName);
 			fbUser.setEmail(profileData.get("email").asText());
 			fbUser.setActivated(true);
@@ -84,7 +84,7 @@ public class FaceBookLoginController {
 			System.out.println(u);
 			fbUser.setProfileUrl(u);
 			int id = userService.createUser(fbUser);
-			token = tokens.generateToken(id);
+			token = Token.generateToken(id);
 			session.setAttribute("token", token);
 			System.out.println("Login with FB done!!");
 			response.sendRedirect("http://localhost:8080/ToDoProject/#!/dummy");
@@ -93,7 +93,8 @@ public class FaceBookLoginController {
 			System.out.println("User is Already Exits in DataBase....");
 			String url = om.readTree(profileData.toString()).get("picture").get("data").get("url").asText();
 			fbUser.setProfileUrl(url);
-			token = tokens.generateToken(fbUser.getUserId());
+			System.out.println("------------------------------>" + url);
+			token = Token.generateToken(user.getUserId());
 			session.setAttribute("token", token);
 			userService.updateUser(fbUser);
 			response.sendRedirect("http://localhost:8080/ToDoProject/#!/dummy");

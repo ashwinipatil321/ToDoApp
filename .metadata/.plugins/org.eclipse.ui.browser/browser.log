@@ -1034,3 +1034,68 @@ Dec 15, 2017 16:58:30.67 [2633:2688:1215/165830.676544:ERROR:browser_gpu_channel
 Dec 15, 2017 16:58:30.74 Created new window in existing browser session.
 Dec 15, 2017 17:16:03.12 [3352:3389:1215/171603.125036:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
 Dec 15, 2017 17:16:03.16 Created new window in existing browser session.
+
+Dec 16, 2017 10:01:15.51 NEW SESSION
+Dec 16, 2017 10:01:15.51 [3107:3147:1216/100115.517611:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -100
+Dec 16, 2017 10:04:20.25 [3558:3596:1216/100420.250706:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 16, 2017 10:04:20.29 Created new window in existing browser session.
+Dec 16, 2017 10:08:54.18 [3770:3808:1216/100854.189790:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 16, 2017 10:08:54.20 Created new window in existing browser session.
+Dec 16, 2017 10:09:46.95 [3974:4011:1216/100946.952193:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 16, 2017 10:09:46.98 Created new window in existing browser session.
+Dec 16, 2017 10:15:31.47 [4295:4332:1216/101531.472435:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 16, 2017 10:15:31.49 Created new window in existing browser session.
+Dec 16, 2017 10:18:45.31 [3107:3147:1216/101845.313112:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Dec 16, 2017 10:18:50.43 [3107:3147:1216/101850.433189:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Dec 16, 2017 10:32:58.57 [4673:4711:1216/103258.572237:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 16, 2017 10:32:58.60 Created new window in existing browser session.
+Dec 16, 2017 10:42:38.62 [4836:4874:1216/104238.624240:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 16, 2017 10:42:38.65 Created new window in existing browser session.
+Dec 16, 2017 10:43:22.16 [5040:5077:1216/104322.160314:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 16, 2017 10:43:22.22 Created new window in existing browser session.
+Dec 16, 2017 10:50:49.96 [5403:5440:1216/105049.963423:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 16, 2017 10:50:50.06 Created new window in existing browser session.
+Dec 16, 2017 11:22:57.82 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Dec 16, 2017 11:23:04.13 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Dec 16, 2017 11:50:11.98 [3107:3147:1216/115011.983355:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -100
+Dec 16, 2017 11:50:11.99 [3107:3147:1216/115011.999338:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -100
+Dec 16, 2017 11:57:05.19 [6566:6604:1216/115705.199714:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 16, 2017 11:57:05.24 Created new window in existing browser session.
+Dec 16, 2017 11:58:22.34 [6733:6771:1216/115822.348987:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 16, 2017 11:58:22.37 Created new window in existing browser session.
+Dec 16, 2017 11:59:07.72 [6890:6927:1216/115907.727773:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 16, 2017 11:59:07.75 Created new window in existing browser session.
+Dec 16, 2017 12:07:43.87 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Dec 16, 2017 12:09:59.87 [3107:3147:1216/120959.869959:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Dec 16, 2017 12:12:22.54 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Dec 16, 2017 12:12:49.36 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Dec 16, 2017 12:13:48.49 [7312:7350:1216/121348.494166:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 16, 2017 12:13:48.51 Created new window in existing browser session.
+Dec 16, 2017 12:20:25.61 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Dec 16, 2017 12:22:00.96 [3107:3147:1216/122200.964533:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Dec 16, 2017 12:22:36.78 [3107:3147:1216/122236.782299:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -100
+Dec 16, 2017 12:29:35.94 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Dec 16, 2017 12:32:31.47 [3107:3147:1216/123231.473900:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Dec 16, 2017 12:51:26.37 [8598:8635:1216/125126.370687:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 16, 2017 12:51:26.42 Created new window in existing browser session.
+Dec 16, 2017 12:56:43.00 [8992:9029:1216/125643.000713:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 16, 2017 12:56:43.05 Created new window in existing browser session.
+Dec 16, 2017 13:15:35.99 [9745:9782:1216/131535.995933:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 16, 2017 13:15:36.02 Created new window in existing browser session.
+Dec 16, 2017 13:33:32.12 [10150:10187:1216/133332.123760:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 16, 2017 13:33:32.17 Created new window in existing browser session.
+Dec 16, 2017 14:49:48.13 [10748:10785:1216/144948.131902:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 16, 2017 14:49:48.17 Created new window in existing browser session.
+Dec 16, 2017 14:50:13.00 [10837:10874:1216/145013.009671:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 16, 2017 14:50:13.35 Created new window in existing browser session.
+Dec 16, 2017 15:00:54.93 [3107:3147:1216/150054.930948:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Dec 16, 2017 15:26:32.41 [3107:3147:1216/152632.410984:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Dec 16, 2017 15:37:59.41 [3107:3147:1216/153759.418836:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Dec 16, 2017 15:38:19.21 [3107:3147:1216/153819.217005:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+Dec 16, 2017 15:38:19.83 [3107:3147:1216/153819.835501:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -100
+Dec 16, 2017 15:49:12.97 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Dec 16, 2017 15:56:28.34 [11963:12000:1216/155628.343208:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Dec 16, 2017 15:56:28.40 Created new window in existing browser session.
+Dec 16, 2017 16:00:52.53 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Dec 16, 2017 16:06:10.76 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Dec 16, 2017 16:18:06.88 [3107:3147:1216/161806.887460:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -100

@@ -15,16 +15,22 @@ public class UserServiceImplemention implements UserService {
 	UserDao userDao;
 
 	public int createUser(User user) {
+		
 		int found = userDao.registration(user);
+		
 		if (found==1)
+			
 			return found;
+		
 		else
+			
 			return found;
 	}
 
 	public User loginUser(User user) {
 		return userDao.login(user);
 	}
+	
 	public User getUserByEmail(String email) {
 		User result =  userDao.getUserByEmail(email);
 		return result;
@@ -37,6 +43,7 @@ public class UserServiceImplemention implements UserService {
 	public boolean updateActivation(int id) {
 		return userDao.updateActivation(id);
 	}
+	
 	@Override
 	public void updateUser(User oldUser) {
 		userDao.updateUser(oldUser);
