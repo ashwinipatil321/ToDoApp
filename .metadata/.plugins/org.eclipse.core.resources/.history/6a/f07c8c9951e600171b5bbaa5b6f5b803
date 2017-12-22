@@ -1,0 +1,10 @@
+package com.bridgelabz.User.DAO;
+
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class LabelDaoImp {
+	@Autowired
+	private SessionFactory sessionFactory;
+
+}

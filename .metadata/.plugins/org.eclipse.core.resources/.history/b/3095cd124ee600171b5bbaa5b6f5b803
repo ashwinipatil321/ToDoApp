@@ -1,0 +1,24 @@
+package com.bridgelabz.User.Service;
+
+import java.util.Set;
+
+import com.bridgelabz.User.model.NoteLabel;
+import com.bridgelabz.User.model.User;
+
+public interface UserService {
+	
+	public int createUser(User user);
+	public User loginUser(User user);
+	public  User getUserByEmail(String email) ;
+	public User getUserById(int id);
+	public boolean updateActivation(int id);
+	public void updateUser(User user);
+	public int addLabel(NoteLabel label);
+	public boolean deleteLable(NoteLabel label);
+	public boolean updateLable(NoteLabel label);
+	public Set<NoteLabel> getAllLabels(int userId);
+public List<User> getUserList();
+
+}
+
+

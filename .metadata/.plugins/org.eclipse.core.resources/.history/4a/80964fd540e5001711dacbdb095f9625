@@ -1,0 +1,106 @@
+/* .SideNavigation {
+    height: 100%;
+    width: 0px;
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    background-color: #e8e8e8;
+    overflow-x: hidden; 
+    transition: 0.2s;
+    padding-top: 65px;
+  margin-top:69px; 
+}
+
+.SideNavigation a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #20201F;
+    display: block;
+}
+
+.SideNavigation a:hover {
+   background-color: #d3d7cf;
+}
+
+
+
+#main {
+     transition: margin-left .5s;
+ 
+}
+
+@media screen and (max-width: 1264px) {
+  .SideNavigation {
+ 	 z-index: 1110;	
+ 	 
+  } */
+  
+  
+  .SideNavigation{
+  
+    height: 100%;
+    background-color:#fff;
+    position: absolute;
+   	width: 0;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    margin-top: 68px;
+}
+
+.SideNavigation li{
+	
+    /* display: inline-block; */
+    line-height: 40px;
+    vertical-align: top;
+    width: 176px;
+    white-space: nowrap;
+  
+    
+     list-style-type:none;
+     margin-right: 20px;
+}
+
+.SideNavigation a {
+    padding: 5px 5px 5px 32px;
+    text-decoration: none;
+    font-size: 15px;
+    color: black;
+    
+    transition: 0.3s;
+}
+
+.SideNavigation a:hover {
+   background-color: #d3d7cf;
+}
+
+.SideNavigation a:hover {
+    color: #f1f1f1;
+}
+
+@media screen and (max-height: 450px) {
+  .SideNavigation {padding-top: 15px;}
+  .SideNavigation a {font-size: 18px;}
+}
+
+.break {
+	margin: 0 0 0 0;
+}
+
+#span {
+	display: inline-flex;
+	font-size: 20px;
+}
+
+#labelList {
+	font-size: 15px;
+}
+
+#font {
+	font-size: 15px;
+}

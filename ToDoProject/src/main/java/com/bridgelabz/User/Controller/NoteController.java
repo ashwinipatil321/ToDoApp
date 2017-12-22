@@ -2,6 +2,8 @@ package com.bridgelabz.User.Controller;
 
 import java.sql.Date;
 import java.util.List;
+import java.util.Set;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -106,7 +108,7 @@ public class NoteController {
 		CustomeResponse myResponse = new CustomeResponse();
 		try {
 
-			System.out.println("in update controller");
+			System.out.println("in update controller"+note.getTitle() +" " +note.getDescription());
 
 			noteService.updateNote(note);
 			myResponse.setMessage("Note is updated");
@@ -228,4 +230,6 @@ public class NoteController {
 			return new ResponseEntity<User>(user, HttpStatus.OK);
 		}
 	}
+	
 }
+

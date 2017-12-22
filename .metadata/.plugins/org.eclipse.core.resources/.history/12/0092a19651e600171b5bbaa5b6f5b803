@@ -1,0 +1,5 @@
+package com.bridgelabz.User.DAO;
+
+public class LabelDaoImp {
+
+}

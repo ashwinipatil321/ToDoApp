@@ -1,7 +1,7 @@
 var todoApp = angular.module('ToDo');
 
 todoApp.controller('homeController', function($scope, toastr, $interval,homeService,$filter, $uibModal,
-		loginService,$state,$http,$location) {
+		loginService,$state,$http,$location,fileReader) {
 
 	$scope.noteFilter = null;
 
@@ -9,7 +9,14 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		var re = new RegExp($scope.nameFilter, 'i');
 		return !$scope.nameFilter || re.test(note.title) || re.test(note.description);
 	};
-
+	
+	$(document).ready(function(){
+		
+	    $("button").click(function(){
+	        $("#toggleNote").toggle();
+	    });
+	});
+	
 	//colors added in notes 
 	
 	$scope.AddNoteColor = "#ffffff";
@@ -58,14 +65,16 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 
 	if ($state.current.name == "home") {
 		$scope.topNavBarColor = "#ffbb33";
-		$scope.navBarHeading = "Fundoo Keep";
 	} else if ($state.current.name == "archive") {
 		$scope.topNavBarColor = "#669999";
-		$scope.navBarHeading = "Archive";
 	} else if ($state.current.name == "trash") {
 		$scope.topNavBarColor = "#636363";
-		$scope.navBarHeading = "Trash";
 	}
+	else if ($state.current.name == "reminder") {
+		$scope.topNavBarColor = "#669999";
+	} else if ($state.current.name == "searchbar") {
+		$scope.topNavBarColor = "#3e50b4";
+}
 	
 //	logout
 
@@ -76,24 +85,23 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 	}
 
 //	side nav bar
-
+	$scope.defaultMargin = function() {
+		document.getElementById("sideToggle").style.width = "250px";
+		document.getElementById("content-wrapper").style.marginLeft = "350px";
+	}
+	
 	$scope.toggleSideBar = function() {
 
-		var width = $('#sidebar-wrapper').width();
-		
+		var width = $('#sideToggle').width();
 		console.log(width);
-		
 		if (width == '250') {
-			
-			document.getElementById("sidebar-wrapper").style.width = "0px";
-			document.getElementById("container-main").style.marginLeft = "270px";
-			
+			document.getElementById("sideToggle").style.width = "0px";
+			document.getElementById("content-wrapper").style.marginLeft = "270px";
 		} else {
-			
-			document.getElementById("sidebar-wrapper").style.width = "250px";
-			document.getElementById("container-main").style.marginLeft = "350px";
+			document.getElementById("sideToggle").style.width = "250px";
+			document.getElementById("content-wrapper").style.marginLeft = "350px";
 		}
-	}
+}
 
 //add the notes
 
@@ -159,7 +167,7 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 //update notes
 	
 	$scope.updateNotes = function(note) {
-		console.log("inside update notes")
+		console.log("inside update controller",note.noteId)
 		console.log(note);
 		var a = homeService.updateNotes(note);
 		
@@ -205,8 +213,9 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 
 	// add notes to archive
 
-	$scope.addToArchive = function(note) {
+	/*$scope.addToArchive = function(note) {
 
+		console.log("inside the Archieve...")
 		if(note.archive==false)
 		{
 			note.archive=true;
@@ -281,7 +290,46 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 			getAllNotes();
 		}
 	}
+*/
+	
+	
+	$scope.addToArchive = function(note) {
+		note.archive = true;
+		note.pin = false;
+		var a = homeService.updateNotes(note);
 
+		a.then(function(response) {
+			getAllNotes();
+		}, function(response) {
+		});
+	}
+
+	/* unarchive notes */
+	
+	$scope.unarchiveNote = function(note) {
+		note.archive= false;
+		note.pin = false;
+		var a = homeService.updateNotes(note);
+		a.then(function(response) {
+			getAllNotes();
+		}, function(response) {
+		});
+	}
+
+	/* trash notes */
+	
+	$scope.addToTrash = function(note) {
+		note.archive = false;
+		note.pin = false;
+		note.emptyTrash = true;
+		var a = homeService.updateNotes(note);
+
+		a.then(function(response) {
+			getNotes();
+		}, function(response) {
+		});
+	}
+	 
 	//restore notes to notes
 
 	$scope.restoreToNotes = function(note) {
@@ -327,11 +375,15 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 
 	$scope.showModal = function(note) {
 		
+		$scope.note=note;
+		
 		modalInstance = $uibModal.open({
+			
 			templateUrl : 'htmlpages/showDialog.html',
 			scope : $scope,
 			size : 'md'
 		});
+		
 	};
 	
 	// social share
@@ -456,10 +508,10 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 					'MM/dd/yyyy h:mm a');
 			console.log("currentDate::::" + currentDate);
 			var i = 0;
-			for (i; i < $scope.note.length; i++) {
+			for (i; i < $scope.notes.length; i++) {
 				console.log($scope.notes);
 				var dateString2 = (new Date(
-						$scope.note[i].reminder));
+						$scope.notes[i].reminder));
 				
 				var dateString3 = $filter('date')(
 						new Date(dateString2),
@@ -476,7 +528,7 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 					console.log("no remainder");
 				}
 			}
-		}, 20000);
+		}, 200000);
 	}
 	remainderCheck();
 	
@@ -495,6 +547,7 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 
 	$scope.changeProfile = function(user) {
 
+		console.log("change profile",user)
 		var a = homeService.changeProfile(user);
 
 		a.then(function(response) {
@@ -516,23 +569,17 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 			.$watch(
 					'imageSrc',
 					function(newimg, oldimg) {
-						
 						if ($scope.imageSrc != '') {
-							
 							if ($scope.type === 'input') {
-								
 								$scope.addimg = $scope.imageSrc;
 							} else if ($scope.type === 'user') {
-								
-								$scope.User.profileUrl = $scope.imageSrc;
+								$scope.User.profileImage = $scope.imageSrc;
 								$scope
 										.changeProfile($scope.User);
 							} else {
-								
 								$scope.type.noteImage = $scope.imageSrc;
 								$scope.updateNotes($scope.type);
 							}
 						}
-					});
-
+});
 });

@@ -1,0 +1,19 @@
+package com.bridgelabz.User.Controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.web.bind.annotation.RestController;
+
+import com.bridgelabz.User.Service.UserService;
+import com.bridgelabz.User.model.CustomeResponse;
+
+@RestController
+public class LabelController {
+	
+	@Autowired
+	private UserService UserService;
+	CustomeResponse myResponse = new CustomeResponse();
+
+	
+
+}

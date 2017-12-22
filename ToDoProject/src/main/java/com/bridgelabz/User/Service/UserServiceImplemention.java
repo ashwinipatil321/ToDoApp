@@ -1,10 +1,13 @@
 package com.bridgelabz.User.Service;
 
+import java.util.Set;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.bridgelabz.User.DAO.UserDao;
+import com.bridgelabz.User.model.NoteLabel;
 import com.bridgelabz.User.model.User;
 
 @Service
@@ -46,6 +49,7 @@ public class UserServiceImplemention implements UserService {
 	
 	@Override
 	public void updateUser(User oldUser) {
+		System.out.println("inside the update user:"+oldUser);;
 		userDao.updateUser(oldUser);
 }
 }

@@ -24,10 +24,12 @@ public class User {
 	private String email;
 	private String mobileNumber;
 	private boolean activated;
-	private String profileUrl;
 	
 	@Lob
 	@Column(name="profile_url",columnDefinition="LONGBLOB")
+	private String profileUrl;
+	
+
 	public String getProfileUrl() {
 		return profileUrl;
 	}
@@ -101,7 +103,5 @@ public class User {
 				+ ", password=" + password + ", email=" + email + ", mobileNumber=" + mobileNumber + ", activated="
 				+ activated + ", profileUrl=" + profileUrl + "]";
 	}
-	
-	
 	
 }

@@ -1,0 +1,43 @@
+<div class="SideNavigation" id="sideToggle">
+<br>
+<br>
+<div class="col-sm-3 col-md-1 col-lg-5"></div>
+<!-- <img src="images/notes.svg" height="25px"> --><a href="#!/home">Notes</a><img alt="asds" src="images/notes.svg">
+<img src="images/reminder.svg" height="25px"><a href="#!/reminder">Remainder</a>
+<hr>
+
+<div class="row">
+<a href="#!/home">Lables</a>
+<a  ng-click="Labelmodal()" style="font-size: 19px">Edit</a>
+
+</div>
+<div ng-repeat="label in user.labels">
+
+<a ui-sref="labels({labelName:label.labelName})">
+<img ng-src="images/label.svg" >{{label.labelName}}</a></div>
+
+<hr color="black">
+<img src="images/archive.svg" height="25px"><a href="#!/archive">Archive</a>
+<img src="images/trash.svg" height="25px"><a href="#!/trash">Trash</a>
+<hr color="black">
+<a href="#!/home">Settings</a>
+</div>
+
+
+
+<!-- <div class="SideNavigation" id="sideToggle">
+<img src="images/notes.svg" height="25px"><a href="#!/home">Notes</a>
+<img src="images/reminder.svg" height="25px"><a href="#!/reminder">Remainder</a>
+	<br>
+	<div class="row">
+	<span class="label-span">Labels</span> 
+	<a  ng-click="Labelmodal()" style="font-size: 19px">Edit</a>
+	</div>
+	<div ng-repeat="label in user.labels">
+	<a ui-sref="labels({labelName:label.labelName})">
+<img ng-src="images/label.svg" >Create new label</a></div>
+	<br>
+	
+	<a href="#!/archive">Archive</a>
+	 <a href="#!/trash" data-ng-click="">Trash</a>
+</div> -->

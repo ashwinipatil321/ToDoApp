@@ -1,0 +1,44 @@
+#sidebar-wrapper{
+	height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    color: rgba(0,0,0,.2);
+        font-size: 19px;
+}
+
+#sidebar-wrapper li:hover {
+    background-color: #e0dede;
+}
+
+
+#sidebar-wrapper a {
+	
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 19px;
+    color: #434141;
+    display: block;
+    transition: 0.3s;
+}
+
+ #sidebar-wrapper a:hover {
+     background-color: #e0dede;
+} 
+
+@media screen and (max-height: 450px) {
+  #sidebar-wrapper {padding-top: 15px;}
+  #sidebar-wrapper a {font-size: 18px;}
+}
+
+.label-span{
+	padding: 8px 8px 8px 32px;
+    font-size: 15px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+}

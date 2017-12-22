@@ -1,0 +1,126 @@
+<div>
+	<top-nav-bar></top-nav-bar>
+	<side-nav-bar></side-nav-bar>
+</div>
+<div id="content-wrapper">
+
+			 <div class="container" id="content-wrapper-inside"> 
+			
+				<div id="note-input" class="form-group">
+
+				<input ng-show="false" id="image" type='file' ng-model-instant
+					ng-model="file"
+					onchange="angular.element(this).scope().imageUpload(this)" />
+				<div class="card col-md-4 a"
+					data-ng-repeat="note in notes | filter : searchText"
+					class="container" style="background-color: {{note.color}};">
+
+					<!-- Pinned note -->
+
+					<div style="float: right">
+						<span style="cursor: pointer" data-ng-click="addTopin(note)">
+							<img class="pull-right" src="images/pinned.svg" height="17px"></img>
+						</span>
+					</div>
+
+					<!--Edit Notes-->
+
+					<div data-ng-click="showModal(note)">
+						<a><img data-ng-src="{{note.noteImage}}" style="width: 100%" /></a>
+
+						<div contenteditable="true" ng-bind-html="note.title"></div>
+						<br>
+						<div contenteditable="true" ng-bind-html="note.description"></div>
+					</div>
+
+					<!-- SHOW REMINDER -->
+
+					<div id="reminder" ng-if="note.reminder!=null">
+						{{note.reminder}}<span class="closebtn"
+							data-ng-click="removeReminder(note)">&#x274C;</span>
+					</div>
+
+					<div class="moreOptions">
+						<div class="dropdown" style="float: left">
+							<div class="dropdown inline">
+
+								<!--INPUT REMINDER  -->
+								<span class="btn dropdown-toggle" id="menu2"
+									data-toggle="dropdown"> <img alt="reminder"
+									src="images/reminder.svg" height="17px">
+								</span>
+
+								<ul class="dropdown-menu" role="menu" aria-labelledby="menu2">
+									<li><input type="text"
+										ng-attr-id="datepicker{{note.noteId}}" class="reminder"></li>
+									<li>
+										<button ng-click="openReminder(note)">
+											<span class="glyphicon glyphicon-calendar"></span>
+										</button>
+									</li>
+								</ul>
+
+								<!-- ADD COLLABRATOR -->
+
+								<img src="images/collaborator.svg" height="25px">
+
+								<!-- ADD COLORS WITH COLORPALLETES -->
+
+								<div class="btn-group dropup colorDiv" uib-dropdown>
+									<img id="dropdown" class="dropdown-toggle"
+										data-toggle="dropdown" alt="color"
+										src="images/colorpallet.svg" uib-dropdown-toggle height="20px">
+
+									<!----ADD MORE OPTIONS -->
+
+									<ul class="dropdown-menu" uib-dropdown-menu role="menu"
+										aria-labelledby="btn-append-to-body"
+										style="background-color: #f9fbff">
+
+										<a data-ng-repeat="color in colors" role="menuitem"> <img
+											data-ng-src="{{color.path}}" height="25px"
+											data-ng-click="note.color =color.color;updateNotes(note)">
+										</a>
+									</ul>
+								</div>
+
+								<!-- ADD IMAGE -->
+
+								<img alt="image" src="images/image.svg" height="20px"
+									aria-label="Image Upload" ng-click="openImageUploader(note)">
+
+								<!-- ADD ARCHIVE -->
+
+								<span data-ng-click="addToArchive(note)"> <img
+									src="images/archive.svg" height="25px">
+								</span>
+
+								<!-- ADD MORE OPTIONS -->
+
+								<div style="float: left">
+									<span class="btn dropdown-toggle" id="menu1"
+										data-toggle="dropdown"> <span
+										class="glyphicon glyphicon-option-vertical"></span></span>
+
+									<ul class="dropdown-menu multi-level" role="menu"
+										aria-labelledby="menu1">
+
+										<li><a data-ng-click="addToTrash(note)">Trash</a></li>
+
+										<!-- Make a copy -->
+
+										<li><a data-ng-click="copy(note) ">Make a Copy</a></li>
+
+										<!-- SOCIAL SHARE -->
+
+										<li><a data-ng-click="fbShareInit(note)">Share</a></li>
+
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+</div>

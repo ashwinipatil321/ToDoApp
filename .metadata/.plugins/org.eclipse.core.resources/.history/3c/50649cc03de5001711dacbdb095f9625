@@ -1,0 +1,43 @@
+<div class="SideNavigation" id="sideToggle">
+<br>
+<br>
+<div class="col-sm-3 col-md-1 col-lg-5"></div>
+
+<img src="images/notes.svg" height="25px"><a href="#!/home">Notes</a></div>
+
+<img src="images/reminder.svg" height="25px"><a href="#!/reminder">Remainder</a>
+</div>
+<hr>
+
+<div class="row">
+<a href="#!/home">Labels</a>
+<a  ng-click="Labelmodal()" style="font-size: 19px">Edit</a>
+</div>
+
+<div ng-repeat="label in user.labels">
+
+<a ui-sref="labels({labelName:label.labelName})">
+<img ng-src="images/label.svg" >{{label.labelName}}</a></div>
+<div>
+<hr color="black">
+<img src="images/archive.svg" height="25px"><a href="#!/archive">Archive</a></div>
+<div>
+<img src="images/trash.svg" height="25px"><a href="#!/trash">Trash</a></div>
+<div>
+<hr color="black">
+<a href="#!/home">Settings</a>
+</div>
+
+
+
+<!-- 
+<div id="sidebar-wrapper">
+	<a href="#!/home" data-ng-click="redirectToHome()">Notes</a> 
+	<a href="#!/reminder" >Reminders</a>
+	<br>
+	<span class="label-span">Labels</span> 
+	<a href="">Create new label</a>
+	<br>
+	<a href="#!/archive">Archive</a>
+	 <a href="#!/trash" data-ng-click="">Trash</a>
+</div> -->

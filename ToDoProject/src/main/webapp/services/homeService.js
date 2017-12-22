@@ -63,13 +63,14 @@ toDo.factory('homeService', function($http) {
 			url : 'user/deleteNote/' + note.noteId,
 
 			headers : {
+				
 				'token' : localStorage.getItem('acessToken')
 			},
 
 		})
 	}
 
-	// Add To Archieve
+/*	// Add To Archieve
 
 	notes.noteArchive = function(note) {
 
@@ -82,6 +83,7 @@ toDo.factory('homeService', function($http) {
 			url : 'isArchive/' + note.noteId,
 
 			headers : {
+			
 				'token' : localStorage.getItem('acessToken')
 			}
 		})
@@ -104,13 +106,13 @@ toDo.factory('homeService', function($http) {
 				'token' : localStorage.getItem('acessToken')
 			}
 		})
-	}
+	}*/
 
 	// Restore note to Notes
 
 	notes.updateNotes = function(note) {
 
-		console.log("inside login Trash service method");
+		console.log("inside update service method" ,note.noteId);
 
 		return $http({
 
@@ -183,10 +185,10 @@ toDo.factory('homeService', function($http) {
 		return $http({
 			
 
-			method : "POST",
+			method : 'POST',
 			url : 'user/profileChange',
 			headers : {
-				'token' : localStorage.getItem('accessToken')
+				'token' : localStorage.getItem('acessToken')
 			},
 			data : User
 		})

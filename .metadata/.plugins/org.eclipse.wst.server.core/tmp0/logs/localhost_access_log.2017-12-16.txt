@@ -1498,3 +1498,4 @@
 0:0:0:0:0:0:0:1 - - [16/Dec/2017:16:33:53 +0530] "GET /ToDoProject/user/getAllNotes HTTP/1.1" 200 1756
 0:0:0:0:0:0:0:1 - - [16/Dec/2017:16:35:01 +0530] "POST /ToDoProject/user/update HTTP/1.1" 200 51
 0:0:0:0:0:0:0:1 - - [16/Dec/2017:16:35:01 +0530] "GET /ToDoProject/user/getAllNotes HTTP/1.1" 200 1761
+0:0:0:0:0:0:0:1 - - [16/Dec/2017:16:51:56 +0530] "GET /ToDoProject/css/TopNavBar.css HTTP/1.1" 304 -

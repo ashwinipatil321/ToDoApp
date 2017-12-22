@@ -4,16 +4,35 @@
 <link rel="stylesheet"
 	href="https://unpkg.com/angular-toastr/dist/angular-toastr.css" />
 
+<link
+	href="bower_components/angular-image-preloader/dist/angular-image-preloader.min.js" />
+
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet"
+	href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <!------------------------- angular  ---------------------------->
-
-
-
-<script src = "https://connect.facebook.net/en_US/sdk.js"></script>
 
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
+
+
+<script src="bower_components/angular-base64/angular-base64.min.js"></script>
+<script
+	src="bower_components/angular-base64-upload/dist/angular-base64-upload.min.js"></script>
+<script src="bower_components/ng-file-upload/ng-file-upload.min.js"></script>
+
+<script src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+
 <script type="text/javascript"
 	src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
 
@@ -25,6 +44,7 @@
 
 <script
 	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-sanitize.js"></script>
+<script src="https://connect.facebook.net/enUS/all.js"></script>
 <script type="text/javascript"
 	src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js"></script>
 <script
@@ -41,20 +61,6 @@
 	src="https://unpkg.com/angular-toastr/dist/angular-toastr.tpls.js"></script>
 
 
-
-<!------------------------- responsive bootstrap ---------------------------->
-
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<link rel="stylesheet"
-	href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.min.css">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-<script src="https://connect.facebook.net/enUS/all.js"></script>
 
 <!-------------------------   Script .js ---------------------------->
 
@@ -77,6 +83,8 @@
 <script type="text/javascript" src="services/homeService.js"></script>
 
 <script type="text/javascript" src="services/dummyService.js"></script>
+<script type="text/javascript" src="script/scripts.js"></script>
+
 
 <!-------------------------   css  .css ---------------------------->
 

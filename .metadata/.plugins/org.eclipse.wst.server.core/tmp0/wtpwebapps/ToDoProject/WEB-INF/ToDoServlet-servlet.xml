@@ -69,5 +69,7 @@
 	<mvc:resources location="/script/" mapping="/script/**"/>
 	<mvc:resources location="/services/" mapping="/services/**"/>
 	<mvc:resources location="/htmlpages/" mapping="/htmlpages/**"/>
-	<mvc:resources location="/images/" mapping="/images/**" />
+	<mvc:resources location="/images/" mapping="/images/**" />	
+	<mvc:resources location="/bower_components/" mapping="/bower_components/**" />
+	
 </beans>

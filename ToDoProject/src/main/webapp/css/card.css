@@ -1,16 +1,5 @@
 @CHARSET "UTF-8";
 @CHARSET "UTF-8";
-#noteDialog
-{
-	 padding: 15px;
-    margin-bottom: 20px;
-    background-color: white;
-    box-shadow: 0px 1px 2px black;
-    margin: 5px;
-    heght: 55%;
-    width: 55%;
-}
-
 .dropup .dropdown-menu, .navbar-fixed-bottom .dropdown .dropdown-menu {
     top: auto;
     bottom: 100%;
@@ -28,15 +17,6 @@
 	font-size: 17px;
 }
 
-#note {
-    padding: 15px;
-    margin-bottom: 20px;
-    background-color: white;
-    box-shadow: 0px 1px 2px black;
-    margin: 5px;
-    heght: 0px;
-	 width:30.333%;
-}
 
 .col-sm-1{
 	width:3%;
@@ -54,8 +34,9 @@ margin-right: 5px;
 }
 
 .navbar-default{
-	padding:7px;
-	background:#fb0;
+	margin:0px;
+	height:65px;
+	
 }
 
 .navbar-default input{
@@ -77,4 +58,65 @@ margin-right: 5px;
 .modal {
   text-align: center;
   padding: 0!important;
+}
+
+
+#noteContainer {
+	transition: 0.3s;
+	background-color: #cccccc;
+	margin-left: 250px;
+	height: 100%;
+	padding-top: 7%;
+	padding-bottom: auto;
+	overflow-y:auto
+}
+
+.note {
+	transition: 0.5s;
+	padding: 16px;
+	margin-left: 250px;
+	margin-right: 250px;
+	margin-top: 10px;
+	margin-left: 20%;
+}
+
+#note {
+	padding: 10px;
+	background-color: white;
+	box-shadow: 0px 1px 2px black;
+
+	/* 	margin-left: 20%; */
+}
+
+#ng-scope {
+	background-color: #cccccc;
+	display: inline-block;
+	height: 100%;
+}
+
+[contentEditable=true]:empty:not(:focus ):before {
+	content: attr(data-text)
+}
+
+#note-body:focus {
+	outline: none;
+}
+
+#note-body, #note-title {
+	padding: 5px;
+}
+
+#note-title:focus {
+	outline: none;
+}
+
+.note-icons>img {
+	height: 17px;
+	width: 20px;
+	margin-right: 5px;
+}
+
+.note-icons {
+	padding-left: 10px;
+	padding-bottom: 5px;
 }

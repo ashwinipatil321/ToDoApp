@@ -1,210 +1,184 @@
-.navbar-default {
-  background-color: #FFB42E;
-  border: none;
-  box-shadow: 0 1px 1px rgba(0,0,0,.175);
-  .btn-default {
-    color: #26d9d9;
-    &:hover {
-      background-color: #bdf3f3;
-    }
-  }
-  
-#sidebarbtn{
-	font-size: 25px;
-	padding:8px;
+#content-wrapper-inside {
+	margin: 0 auto;
+	transition: 0.5s;
+	height: 148px;
 	
 }
- .dropdown-menu {
-    border: none;
-    box-shadow: 0 1px 1px rgba(0,0,0,.175);
-    li>a {
-      &:hover {
-      background-color: #bdf3f3;
-     }
-    }    
-  }
-  
-  .navbar-nav>li>a {
-    color: #fff;
-  }
-  .navbar-nav>.active>a {
-    color: #26d9d9;
-    background-color: #fff;
-  }
-  .navbar-nav>.active>a:focus {
-    color: #26d9d9;
-    background-color: #fff;
-  }
-  .navbar-nav>.active>a:hover {
-    color: #26d9d9;
-    background-color: #bdf3f3;
-  }
-  .navbar-nav>.open>a {
-    color: #26d9d9;
-    background-color: #fff;
-  }  
-  .navbar-nav>.open>a:focus {
-    color: #26d9d9;
-    background-color: #fff;
-  } 
-  .navbar-nav>.open>a:hover {
-    color: #26d9d9;
-    background-color: #bdf3f3;
-  } 
-  .navbar-toggle {
-    border-color: #fff;
-    .icon-bar {
-      background-color: #fff;
-    }
-    &:hover {
-      background-color: #bdf3f3;
-    }
-  }
+
+.input-menu {
+	margin: 0 auto;
+	align-items: center;
+	font-size: 12px;
+	padding: 4px 0;
+	position: relative;
+	transition: background-color .218s ease-in-out, box-shadow .218s
+		ease-in-out;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	background: inherit;
+	visibility: hidden;
 }
 
+#note-input-div {
+	margin: 5 auto;
+	margin-top: 20px;
+}
 
-#note{
-	padding:15px;
-	margin-bottom:20px;
+#note-title-input {
+	outline: 0px;
+	font-size: 24px;
+	min-height: 43px;
+	padding: 10px 5px;
+	transition: box-shadow .218s transition-property: box-shadow,
+		background-color;
+	transition-duration: 0.218s, 0.218s;
+	transition-timing-function: ease-in-out, ease-in;
+	transition-delay: initial, initial;
+	color: rgba(0, 0, 0, .54);
+	font-family: 'Roboto Condensed', arial, sans-serif;
+	font-size: 17px;
+	font-weight: bold;
+	line-height: 23px;
+	box-sizing: border-box;
+	white-space: pre-wrap;class="card col-md-4 a
+	word-wrap: break-word;
+	border: solid transparent;
+	border-width: 0 0 0 4px;
+	margin: 0 auto;
+	float: none;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	background: inherit;
+}
+
+[contenteditable]:empty:not (:focus ):before {
+	content: attr(data-text);
+	color: grey;
+	display: inline-block;
+}
+
+.card {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	transition: 0.3s;
+	border-radius: 5px;
 	background-color: white;
-	box-shadow: 0px 1px 2px black;
-	margin:5px;
-	heght:0px;
-	
-/* 	margin-left: 20%; */
+	width: 300px;
+	font-weight: 100;
+	margin: 15px;
+	padding: 20px;
+	word-break: break-all;
 }
 
-.dropdown inline
-{
-	padding-bottom: 10px;
-	width: 10px;
-}
-[contentEditable=true]:empty:not(:focus):before{
-    content:attr(data-text)
+.card:hover {
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-
-#take-note:focus  {
-
-	outline: none;
+.moreOptions {
+	visibility: hidden;
 }
 
-#take-note,#note-title{
-	padding: 5px;
-}
-#note-title:focus{
-
-	outline: none;
-}
-@width: 240px;
-@gap: 16px;
-@padding: 32px; // extra padding from body
-
-body {
-  background-color: #e8e8e8;
-  //padding: 32px 16px;
-  padding: 16px;
-}
-.notes {
-  //max-width: @width*4 + @gap*5 + @padding; 
-  margin: 0 auto;
-}
-.note {
-  width: -275px%;
-  padding: 8px;
-  box-sizing: border-box;
+.card:hover .moreOptions {
+	visibility: visible;
 }
 
-@media screen and (min-width: (@width*2 + @gap*3 + @padding)) {
-  .note {
-    width: 50%;
-  }
-}
-@media screen and (min-width: (@width*3 + @gap*4 + @padding)) {
-  .note {
-    width: 33.3%;
-  }
-}
-@media screen and (min-width: (@width*4 + @gap*5 + @padding)) {
-  .note {
-    width: 25%;
-  }
+.container {
+	padding: 2px 16px;
+	margin-left:100px;
 }
 
-.note-inner {
-  padding-top:10px;
-  background-color: #fff;
-  min-height: 4em;
-  border-radius: 2px;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.2),0 1px 5px 0 rgba(0,0,0,0.12);
-  transition: box-shadow 0.2s;
+.test[placeholder]:empty:before {
+	content: attr(placeholder);
+	border: 0px;
+	outline: 0px;
+	/*  color: #555; */
 }
-.note:hover .note-inner {
-  box-shadow: 0 2px 15px rgba(0,0,0,0.30);
+
+img {
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+.desc {
+	border: 0px;
+	outline: 0px;
+}
+
+[contenteditable]:focus {
+	outline: 0px solid transparent;
 }
 
 .dropdown-submenu {
-    position: relative;
+	position: relative;
 }
 
 .dropdown-submenu>.dropdown-menu {
-    top: 0;
-    left: 100%;
-    margin-top: -6px;
-    margin-left: -1px;
-    -webkit-border-radius: 0 6px 6px 6px;
-    -moz-border-radius: 0 6px 6px;
-    border-radius: 0 6px 6px 6px;
+	top: 0;
+	left: 100%;
+	margin-top: -6px;
+	margin-left: -1px;
+	border-radius: 0 6px 6px 6px;
 }
 
 .dropdown-submenu:hover>.dropdown-menu {
-    display: block;
+	display: block;
 }
 
 .dropdown-submenu>a:after {
-    display: block;
-   
-    float: right;
-    width: 0;
-    height: 0;
-    border-color: transparent;
-    border-style: solid;
-    border-width: 5px 0 5px 5px;
-    border-left-color: #ccc;
-    margin-top: 5px;
-    margin-right: -10px;
+	display: block;
+	content: " ";
+	float: right;
+	width: 0;
+	height: 0;
+	border-color: transparent;
+	border-style: solid;
+	border-width: 5px 0 5px 5px;
+	border-left-color: #ccc;
+	margin-top: 5px;
+	margin-right: -10px;
 }
 
 .dropdown-submenu:hover>a:after {
-    border-left-color: #fff;
+	border-left-color: black;
 }
 
 .dropdown-submenu.pull-left {
-    float: none;
+	float: none;
+}
+.modal-dialog
+{
+	margin-top:300px;
 }
 
-  .btn {
-      padding: 10px 20px;
-      color: #f1f1f1;
-      border-radius: 0;
-      transition: .2s;
-  }
-.note-icons > img{
+.dropdown-submenu.pull-left>.dropdown-menu {
+	left: -100%;
+	margin-left: 10px;
+	border-radius: 6px 0 6px 6px;
+}
 
-	height: 22px;
-	width:22px;
-	margin-right:5px;
-} 
-  .crl{
-  background-color: green;
-  }
-  .space{
-  margin-right: -15px;
-margin-left: 30px;
-  }
+.dropdown-submenu-item {
+	padding: 3px 20px;
+	cursor: pointer;
+}
 
-@media (min-width: 768px) {
-  .navbar {
-      border-radius: 0;
-  }
+.dropdown-submenu-item:hover {
+	background: rgba(0, 0, 0, .2);
+}
+
+.takeNote {
+	height: 33px;
+	width: 397px;
+	padding-top: 2px;
+	margin-top: 33px;
+}
+
+.note-icons>img {
+	
+	    height: 40px;
+    width: 32px;
+	margin-right: 5px;
+}
+
+.toggleNote {
+	background-color: white;
+	width: 800px;
 }

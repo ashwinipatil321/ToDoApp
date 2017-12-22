@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -35,10 +36,10 @@ public class Note {
 
 	@Column(name= "note_modifiedDate")
 	private Date modifiedDate;
- 
+
 	@Column(name= "reminderDate")
 	private String reminder;
-	
+
 	@Column(name = "isArchive")
 	private boolean isArchive;
 
@@ -47,15 +48,19 @@ public class Note {
 
 	@Column(name="isPin")
 	private boolean isPin;
-	
+
 	@Column(name="colors")
 	private String color;
 
+	@Lob
+	@Column(name="noteImage",columnDefinition="LONGBLOB")
+	private String	noteImage;
+	
 	@JsonIgnore
 	@JoinColumn(name="userId")
 	@ManyToOne(fetch = FetchType.LAZY, cascade ={CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})	
 	private User user;
-	
+
 	public int getNoteId() {
 		return noteId;
 	}
@@ -78,6 +83,14 @@ public class Note {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public String getNoteImage() {
+		return noteImage;
+	}
+
+	public void setNoteImage(String noteImage) {
+		this.noteImage = noteImage;
 	}
 
 	public Date getCreatedDate() {
@@ -120,7 +133,7 @@ public class Note {
 		this.isArchive = isArchive;
 	}
 
-	
+
 	public boolean isEmptyTrash() {
 		return emptyTrash;
 	}
@@ -136,8 +149,8 @@ public class Note {
 	public void setPin(boolean isPin) {
 		this.isPin = isPin;
 	}
-	
-	
+
+
 
 	public String getColor() {
 		return color;
@@ -146,9 +159,9 @@ public class Note {
 	public void setColor(String color) {
 		this.color = color;
 	}
-	
+
 	public void copy(Note note){
-		
+
 		this.color = note.getColor();
 		this.description = note.getDescription();
 		this.emptyTrash = note.isEmptyTrash();

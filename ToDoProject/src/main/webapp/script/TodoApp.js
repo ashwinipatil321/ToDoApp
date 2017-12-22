@@ -44,18 +44,20 @@ app.config([ '$stateProvider', '$urlRouterProvider',
 	});
 	
 	$stateProvider.state('reminder', {
-		
 		url : '/reminder',
 		templateUrl : 'htmlpages/reminder.html',
 		controller : 'homeController'
 			
 	});
-	
 	$stateProvider.state('dummy', {
-		
 		url : '/dummy',
 		controller : 'dummyController'
 			
+	});
+	$stateProvider.state('searchbar', {
+		url : '/searchbar',
+		templateUrl : 'htmlpages/searchbar.html',
+		controller : 'homeController'
 	});
 	
 	$urlRouterProvider.otherwise('/login');

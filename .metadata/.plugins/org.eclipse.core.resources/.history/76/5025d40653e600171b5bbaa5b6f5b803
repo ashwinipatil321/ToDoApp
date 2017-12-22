@@ -1,0 +1,60 @@
+package com.bridgelabz.User.DAO;
+
+import java.util.List;
+import java.util.Set;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.bridgelabz.User.model.NoteLabel;
+
+
+public class LabelDaoImp implements LabelDao {
+	
+	@Autowired
+	private SessionFactory sessionFactory;
+	
+	@Override
+	public void addLabel(NoteLabel label) {
+		
+		Session session=sessionFactory.getCurrentSession();
+		session.save(label);
+		
+		}
+	
+/*	public boolean updateLable(NoteLabel label) {
+			
+			Session session=sessionFactory.getCurrentSession();
+			session.saveOrUpdate(label);
+		}
+		
+	
+	@Override
+	    public boolean deleteLable(NoteLabel label) {
+			
+		Session session = sessionFactory.getCurrentSession();
+		Note persistedNote = session.load(NoteLabel.class, labelId);
+		if (persistedNote != null) {
+			session.delete(persistedNote);
+		}	
+		}
+
+		public Set<NoteLabel> getAllLabels(int userId) {
+			
+			Session session=sessionFactory.getCurrentSession();
+			User user=session.get(User.class,userId);
+			Set<NoteLabel> label=user.get();
+			System.out.println(label);
+			session.close();
+			return label;
+		}
+		
+
+		@Override
+		public List<User> getUserList() {
+		
+	  
+		}
+*/
+}

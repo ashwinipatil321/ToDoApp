@@ -2,6 +2,7 @@ package com.bridgelabz.User.DAO;
 
 import java.util.List;
 
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -25,8 +26,11 @@ public class UserDaoImplemention implements UserDao {
 		List<?> list = query.list();
 		if (list != null) {
 			session.save(user);
+			
 			return 1;
+			
 		} else {
+			
 			return 0;
 		}
 	}
@@ -90,6 +94,5 @@ public class UserDaoImplemention implements UserDao {
 		System.out.println(oldUser);
 		session.saveOrUpdate(oldUser);
 		System.out.println(oldUser);
-
 	}
 }

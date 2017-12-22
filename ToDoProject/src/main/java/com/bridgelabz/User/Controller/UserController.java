@@ -225,10 +225,11 @@ public class UserController {
 	@RequestMapping(value = "/user/profileChange", method = RequestMethod.POST)
 	public ResponseEntity<String> changeProfile(@RequestBody User user, HttpServletRequest request)
 			throws IOException {
+	
+		String token = request.getHeader("token");
+		int id = Token.verify(token);
 		
-		int userid = (int) request.getAttribute("userId");
-		
-		if (userid == 0) {
+		if (id == 0) {
 			
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("");
 		}
