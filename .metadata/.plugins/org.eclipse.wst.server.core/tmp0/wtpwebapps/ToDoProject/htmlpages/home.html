@@ -104,11 +104,12 @@
 
 									<!-- SHOW REMINDER -->
 
-									<div id="reminder" ng-if="note.reminder!=null">
+									<div id="reminder" ng-if="note.reminder!=null" style="padding-bottom: 25px;>
 										{{note.reminder}}<span class="closebtn"
 											data-ng-click="removeReminder(note)">&#x274C;</span>
 									</div>
-
+									
+							<div class="moreOptions"> 
 									<div class="note-icon"
 										style="float: left; float: initial; width: 320px; margin: -20px;">
 
@@ -191,8 +192,8 @@
 						</div>
 					</div>
 				</div>
-				<div class='row' data-ng-show="others.length"
-					style="width: 1020px; word-break: break-all;">
+				
+				<div class='row' data-ng-show="others.length" style="width: 1020px; word-break: break-all;">
 					<h4>others</h4>
 					<div>
 						<input ng-show="false" id="image" type='file' ng-model-instant
@@ -204,6 +205,7 @@
 							class="container" style="background-color: {{note.color}}">
 
 							<!-- Pinned note -->
+							
 							<div style="margin: 5px">
 								<div style="float: right">
 									<span style="cursor: pointer" data-ng-click="addTopin(note)">
@@ -211,6 +213,7 @@
 										height="17px"></img>
 									</span>
 								</div>
+
 
 								<!--Edit Notes-->
 
@@ -227,15 +230,15 @@
 
 								<!-- SHOW REMINDER -->
 
-								<div id="reminder" ng-if="note.reminder!=null">
+								<div id="reminder" ng-if="note.reminder!=null" style="padding-bottom: 25px;>
 									{{note.reminder}}<span class="closebtn"
 										data-ng-click="removeReminder(note)">&#x274C;</span>
 								</div>
 
-								<!-- <div class="moreOptions"> -->
+							<div class="moreOptions"> 
 								<div class="note-icon"
 									style="float: left; float: initial; width: 320px; margin: -20px;">
-									<!-- <div class="dropdown inline"> -->
+								
 
 									<!--INPUT REMINDER  -->
 
@@ -318,7 +321,6 @@
 					</div>
 				</div>
 			</div>
-
 		</div>
 
 

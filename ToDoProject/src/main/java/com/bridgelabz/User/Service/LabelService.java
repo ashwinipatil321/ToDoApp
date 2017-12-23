@@ -1,16 +1,19 @@
-package com.bridgelabz.User.Service;
+/*package com.bridgelabz.User.Service;
+
+import java.util.List;
 
 import org.springframework.stereotype.Service;
 
 import com.bridgelabz.User.model.NoteLabel;
+import com.bridgelabz.User.model.User;
 
 @Service
 public interface LabelService {
 
 	public void addLabel(NoteLabel label);
-/*	public boolean deleteLable(NoteLabel label);
-	public boolean updateLable(NoteLabel label);
-	public Set<NoteLabel> getAllLabels(int userId);
-	public List<User> getUserList();*/
-
-}
+	NoteLabel getLabelByName(String labelName);
+	public List<NoteLabel> getLabels(User user);
+	public boolean deleteLabelById(int id);
+	boolean editLabel(NoteLabel label);
+	}
+*/

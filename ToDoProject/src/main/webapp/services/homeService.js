@@ -181,17 +181,51 @@ toDo.factory('homeService', function($http) {
 	}
 	
 	notes.changeProfile = function(User) {
-		
+		console.log("change profile",User)
+
 		return $http({
 			
 
 			method : 'POST',
 			url : 'user/profileChange',
 			headers : {
+				
 				'token' : localStorage.getItem('acessToken')
 			},
 			data : User
 		})
+	}
+	
+	notes.getLabelNotes = function(labelName) {
+		
+		return $http({
+	
+			method : "GET",
+			
+			url : "getLabelNotes/" + labelName,
+			
+			headers : {
+
+				'token' : localStorage.getItem('acessToken')
+			}
+		})
+}
+	notes.saveLabel = function(label) {
+		
+	console.log("inside the save label....");
+		
+		return $http({
+			
+			method : "POST",
+			
+			url : 'saveLabel',
+			
+			headers : {
+				
+				'token' : localStorage.getItem('acessToken')
+			},
+			data : label
+})
 	}
 	return notes;
 });

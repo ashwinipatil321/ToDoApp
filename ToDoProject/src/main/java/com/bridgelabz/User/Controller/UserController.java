@@ -221,11 +221,10 @@ public class UserController {
 			return customResponse;
 		}
 	}
-	
 	@RequestMapping(value = "/user/profileChange", method = RequestMethod.POST)
 	public ResponseEntity<String> changeProfile(@RequestBody User user, HttpServletRequest request)
 			throws IOException {
-	
+	System.out.println("inside profile change ");
 		String token = request.getHeader("token");
 		int id = Token.verify(token);
 		

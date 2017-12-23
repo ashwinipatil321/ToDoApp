@@ -1,47 +1,56 @@
-package com.bridgelabz.User.Service;
-
-import java.util.Set;
+/*package com.bridgelabz.User.Service;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import com.bridgelabz.User.DAO.LabelDao;
 import com.bridgelabz.User.model.NoteLabel;
+import com.bridgelabz.User.model.User;
 
 
 @Service
 public class LabelServiceImp implements LabelService {
-	
+
 	@Autowired 
 	LabelDao labelDao;
-	
+
 
 	@Transactional
 	public void addLabel(NoteLabel label) {
-		
+
 		labelDao.addLabel(label);
 	}
 
-/*	public boolean deleteLable(NoteLabel label) {
-		return userDao.deleteLable(label);
+	@Transactional
+	public NoteLabel getLabelByName(String labelName)
+	{
+		return labelDao.getLabelByName(labelName);
 	}
 
-	public boolean updateLable(NoteLabel label) {
-		// TODO Auto-generated method stub
-		return userDao.updateLable(label);
+	@Transactional
+	public List<NoteLabel> getLabels(User user)
+	{
+		return labelDao.getLabels(user);
 	}
 
-	public Set<NoteLabel> getAllLabels(int userId) {
-		// TODO Auto-generated method stub
-		return userDao.getAllLabels(userId);
+	@Transactional
+	public boolean deleteLabelById(int id) {
+		labelDao.deletelabelById(id);
+		return true;
 	}
-
-
-	public List<UserDetails> getUserList() {
-		
-		return userDao.getUserList();*/
-	}
-
 	
+	@Transactional
+	public boolean editLabel(NoteLabel label) {
+		labelDao.editLabel(label);
+		return true;
+	}
 }
+
+
+
+
+
+
+
+*/

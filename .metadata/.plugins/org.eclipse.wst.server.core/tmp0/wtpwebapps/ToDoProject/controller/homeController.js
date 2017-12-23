@@ -9,16 +9,16 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		var re = new RegExp($scope.nameFilter, 'i');
 		return !$scope.nameFilter || re.test(note.title) || re.test(note.description);
 	};
-	
+
 	$(document).ready(function(){
-		
-	    $("button").click(function(){
-	        $("#toggleNote").toggle();
-	    });
+
+		$("button").click(function(){
+			$("#toggleNote").toggle();
+		});
 	});
-	
+
 	//colors added in notes 
-	
+
 	$scope.AddNoteColor = "#ffffff";
 
 	$scope.addNoteColorChange = function(color) {
@@ -28,40 +28,40 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 
 	$scope.colors = [
 
-	{
-		"color" : '#ffffff',
-		"path" : 'images/white.png'
-	}, {
-		"color" : '#e74c3c',
-		"path" : 'images/Red.png'
-	}, {
-		"color" : '#ff8c1a',
-		"path" : 'images/orange.png'
-	}, {
-		"color" : '#fcff77',
-		"path" : 'images/lightyellow.png'
-	}, {
-		"color" : '#80ff80',
-		"path" : 'images/green.png'
-	}, {
-		"color" : '#99ffff',
-		"path" : 'images/skyblue.png'
-	}, {
-		"color" : '#0099ff',
-		"path" : 'images/blue.png'
-	}, {
-		"color" : '#9966ff',
-		"path" : 'images/purple.png'
-	}, {
-		"color" : '#ff99cc',
-		"path" : 'images/pink.png'
-	}, {
-		"color" : '#d9b38c',
-		"path" : 'images/brown.png'
-	}, {
-		"color" : '#bfbfbf',
-		"path" : 'images/grey.png'
-	} ];
+		{
+			"color" : '#ffffff',
+			"path" : 'images/white.png'
+		}, {
+			"color" : '#e74c3c',
+			"path" : 'images/Red.png'
+		}, {
+			"color" : '#ff8c1a',
+			"path" : 'images/orange.png'
+		}, {
+			"color" : '#fcff77',
+			"path" : 'images/lightyellow.png'
+		}, {
+			"color" : '#80ff80',
+			"path" : 'images/green.png'
+		}, {
+			"color" : '#99ffff',
+			"path" : 'images/skyblue.png'
+		}, {
+			"color" : '#0099ff',
+			"path" : 'images/blue.png'
+		}, {
+			"color" : '#9966ff',
+			"path" : 'images/purple.png'
+		}, {
+			"color" : '#ff99cc',
+			"path" : 'images/pink.png'
+		}, {
+			"color" : '#d9b38c',
+			"path" : 'images/brown.png'
+		}, {
+			"color" : '#bfbfbf',
+			"path" : 'images/grey.png'
+		} ];
 
 	if ($state.current.name == "home") {
 		$scope.topNavBarColor = "#ffbb33";
@@ -74,8 +74,8 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		$scope.topNavBarColor = "#669999";
 	} else if ($state.current.name == "searchbar") {
 		$scope.topNavBarColor = "#3e50b4";
-}
-	
+	}
+
 //	logout
 
 	$scope.signout = function() {
@@ -89,7 +89,7 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		document.getElementById("sideToggle").style.width = "250px";
 		document.getElementById("content-wrapper").style.marginLeft = "350px";
 	}
-	
+
 	$scope.toggleSideBar = function() {
 
 		var width = $('#sideToggle').width();
@@ -101,9 +101,9 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 			document.getElementById("sideToggle").style.width = "250px";
 			document.getElementById("content-wrapper").style.marginLeft = "350px";
 		}
-}
+	}
 
-//add the notes
+//	add the notes
 
 	$scope.saveNote =function(){
 		var message= homeService.service('POST','user/saveNote',$scope.note);
@@ -163,22 +163,22 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 			$scope.error = response.data.message;
 		};
 	}
-	
-//update notes
-	
+
+//	update notes
+
 	$scope.updateNotes = function(note) {
 		console.log("inside update controller",note.noteId)
 		console.log(note);
 		var a = homeService.updateNotes(note);
-		
+
 		a.then(function(response) {
-			
+
 			getAllNotes();
-			
-			}, function(response) {
+
+		}, function(response) {
 		});
 	}
-	
+
 	$scope.ListView = true;
 
 	$scope.ListViewToggle = function() {
@@ -274,7 +274,7 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		{
 			note.emptyTrash= false;
 			console.log(note)
-			
+
 			var notes = homeService.updateNotes(note);
 			notes.then(function(response) {
 
@@ -290,8 +290,32 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 			getAllNotes();
 		}
 	}
-*/
-	
+	 */
+
+	$scope.saveLabel = function(label) {
+		
+		console.log("save label " + label);
+		
+		var data = {};
+		
+		if (label === undefined) {
+			
+			data.labelName = $scope.newLabel;
+		} else {
+			
+			data.labelName = label.labelName;
+		}
+		console.log("save label data " + label);
+		var saveLabel = homeService.saveLabel(data);
+		saveLabel.then(function(response) {
+			getUser();
+			$scope.labels = response.data;
+		}, function(response) {
+			if (response.status == '400')
+				$location.path('/login')
+		});
+	}
+
 	
 	$scope.addToArchive = function(note) {
 		note.archive = true;
@@ -304,8 +328,8 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		});
 	}
 
-	/* unarchive notes */
-	
+	/* unarchive notes 
+
 	$scope.unarchiveNote = function(note) {
 		note.archive= false;
 		note.pin = false;
@@ -317,7 +341,7 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 	}
 
 	/* trash notes */
-	
+
 	$scope.addToTrash = function(note) {
 		note.archive = false;
 		note.pin = false;
@@ -329,7 +353,7 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		}, function(response) {
 		});
 	}
-	 
+
 	//restore notes to notes
 
 	$scope.restoreToNotes = function(note) {
@@ -354,9 +378,9 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 	//pin and unpinned
 
 	$scope.addTopin = function(note) {
-		
+
 		var notes;
-		
+
 		if(note.pin==false)
 		{
 			notes = homeService.addTopin(note.noteId, true);
@@ -374,24 +398,49 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 	//Edit note
 
 	$scope.showModal = function(note) {
-		
+
 		$scope.note=note;
-		
+
 		modalInstance = $uibModal.open({
-			
+
 			templateUrl : 'htmlpages/showDialog.html',
 			scope : $scope,
 			size : 'md'
 		});
-		
+
 	};
-	
+
+
+	$scope.showModal = function(note) {
+
+		$scope.note=note;
+
+		modalInstance = $uibModal.open({
+
+			templateUrl : 'htmlpages/showDialog.html',
+			scope : $scope,
+			size : 'md'
+		});
+
+	};
+
+	$scope.showLabelList = function() {
+
+		modalInstance = $uibModal.open({
+
+			templateUrl : 'htmlpages/label-list.html',
+			scope : $scope,
+			windowClass : 'app-modal-window',
+		});
+
+	};
+
 	// social share
-	
+
 	$scope.fbShareInit = function(note) {
-		
+
 		FB.init({
-			
+
 			appId : '1347872695339978',
 			status : true,
 			cookie : true,
@@ -400,51 +449,51 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		});
 
 		FB.ui({
-			
+
 			method : 'share_open_graph',
-			
+
 			action_type : 'og.likes',
-			
+
 			action_properties : JSON.stringify({
-				
+
 				object : {
-					
+
 					'og:title' : note.title,
 					'og:description' : note.description
 				}
 			})
 		},function(response) {
-			
-            if (!response || response.error) {
-            	
-             alert('Error while posting data');
-             
-            } else {
-            	
-            	alert('posting completed Successfully');
-            }
+
+			if (!response || response.error) {
+
+				alert('Error while posting data');
+
+			} else {
+
+				alert('posting completed Successfully');
+			}
 		});
 	};
-	
+
 	// Make a copy
-	
+
 	$scope.copy = function(note) {
-		
+
 		var notes = homeService.saveNotes(note);
-		
+
 		notes.then(function(response) {
-			
+
 			getAllNotes();
-			
+
 		}, function(response) {
-			
+
 		});
 	}
-	
+
 	getUser();
 
 	function getUser() {
-		
+
 		var a = homeService.getUser();
 		a.then(function(response) {
 			$scope.User = response.data;
@@ -453,69 +502,69 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 			// console.log("Not Found");
 		});
 	}
-	
-// Add Reminder
-	
+
+//	Add Reminder
+
 	$scope.AddReminder = '';
 	$scope.openAddReminder = function() {
-		
+
 		$('#datepicker').datetimepicker();
-		
+
 		$scope.AddReminder = $('#datepicker').val();
 	}
-	
+
 	// reminder
-	
+
 	$scope.reminder = "";
 	$scope.openReminder = function(note) {
-		
+
 		$('.reminder').datetimepicker();
-		
+
 		var id = '#datepicker' + note.noteId;
-		
+
 		$scope.reminder = $(id).val();
 
 		if ($scope.reminder === "" || $scope.reminder === undefined) {
-			
+
 			console.log(note);
 			console.log($scope.reminder);
-			
+
 		} else {
-			
+
 			console.log($scope.reminder);
 			note.reminder = $scope.reminder;
 			console.log("hinside reminder",note);
-			
+
 			$scope.updateNotes(note);
-			
+
 			$scope.reminder = "";
 		}
 	}
-	
+
 	$scope.removeReminder = function(note) {
-		
+
 		note.reminder = null;
 		$scope.updateNotes(note);
 		toastr.success('Remainder check notes!!!'+"title:"+note.title+"\n "+"desription:"+note.description);
 	}
-	
-//compare date with 
-	
+
+//	compare date with 
+
 	function remainderCheck() {
-		
+
 		$interval(function() {
 			var currentDate = $filter('date')(new Date(),
-					'MM/dd/yyyy h:mm a');
+			'MM/dd/yyyy h:mm a');
 			console.log("currentDate::::" + currentDate);
 			var i = 0;
 			for (i; i < $scope.notes.length; i++) {
 				console.log($scope.notes);
 				var dateString2 = (new Date(
 						$scope.notes[i].reminder));
-				
+
 				var dateString3 = $filter('date')(
 						new Date(dateString2),
-						'MM/dd/yyyy h:mm a');
+				'MM/dd/yyyy h:mm a');
 				if (dateString3 === currentDate) {
 					$scope.mypicker = dateString2;
 					console.log("reminder !!!!! ");
@@ -531,9 +580,9 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		}, 200000);
 	}
 	remainderCheck();
-	
-// uploading images
-	
+
+//	uploading images
+
 	$scope.imageSrc = "";
 
 	$scope.$on("fileProgress", function(e, progress) {
@@ -566,20 +615,20 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 	$scope.type.noteImage = '';
 
 	$scope
-			.$watch(
-					'imageSrc',
-					function(newimg, oldimg) {
-						if ($scope.imageSrc != '') {
-							if ($scope.type === 'input') {
-								$scope.addimg = $scope.imageSrc;
-							} else if ($scope.type === 'user') {
-								$scope.User.profileImage = $scope.imageSrc;
-								$scope
-										.changeProfile($scope.User);
-							} else {
-								$scope.type.noteImage = $scope.imageSrc;
-								$scope.updateNotes($scope.type);
-							}
-						}
-});
+	.$watch(
+			'imageSrc',
+			function(newimg, oldimg) {
+				if ($scope.imageSrc != '') {
+					if ($scope.type === 'input') {
+						$scope.addimg = $scope.imageSrc;
+					} else if ($scope.type === 'user') {
+						$scope.User.profileUrl = $scope.imageSrc;
+						$scope
+						.changeProfile($scope.User);
+					} else {
+						$scope.type.noteImage = $scope.imageSrc;
+						$scope.updateNotes($scope.type);
+					}
+				}
+			});
 });

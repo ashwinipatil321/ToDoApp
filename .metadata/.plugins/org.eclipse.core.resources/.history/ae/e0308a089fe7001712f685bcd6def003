@@ -1,0 +1,33 @@
+package com.bridgelabz.User.DAO;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import com.bridgelabz.User.model.NoteLabel;
+import com.bridgelabz.User.model.User;
+
+
+
+@Repository
+public class LabelDaoImp implements LabelDao {
+
+	@Autowired
+	private SessionFactory sessionFactory;
+
+	@Autowired
+	User user;
+
+	@Override
+	public void addLabel(NoteLabel label) {
+
+		Session session=sessionFactory.getCurrentSession();
+		session.save(label);
+
+	}
+
+	@Override
+	public 	NoteLabel getLabelByName(String labelName)
+	{
+		return null;
+	}
+}

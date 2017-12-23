@@ -1,0 +1,14 @@
+package com.bridgelabz.User.DAO;
+
+import java.util.List;
+
+import com.bridgelabz.User.model.NoteLabel;
+import com.bridgelabz.User.model.User;
+
+public interface LabelDao {
+	
+	public void addLabel(NoteLabel label);
+	public NoteLabel getLabelByName(String labelName);
+	public List<NoteLabel> getLabels(User user);
+	public void deletelabelById(int id);
+}
