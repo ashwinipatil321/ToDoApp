@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import com.bridgelabz.User.DAO.NoteDAO;
 import com.bridgelabz.User.model.Note;
+import com.bridgelabz.User.model.NoteLabel;
+import com.bridgelabz.User.model.User;
 
 @Service
 public class NoteServiceImplemention implements NoteServices {
@@ -72,5 +74,35 @@ public class NoteServiceImplemention implements NoteServices {
 		Note note = noteDao.getNoteById(noteId);
 		note.setPin(isPinned);
 		noteDao.updateNote(note);
+	}
+
+	@Transactional
+	public void addLabel(NoteLabel label) {
+
+		noteDao.addLabel(label);
+	}
+
+	@Transactional
+	public NoteLabel getLabelByName(String labelName)
+	{
+		return noteDao.getLabelByName(labelName);
+	}
+
+	@Transactional
+	public List<NoteLabel> getLabels(User user)
+	{
+		return noteDao.getLabels(user);
+	}
+
+	@Transactional
+	public boolean deleteLabelById(int id) {
+		noteDao.deletelabelById(id);
+		return true;
+	}
+	
+	@Transactional
+	public boolean editLabel(NoteLabel label) {
+		noteDao.editLabel(label);
+		return true;
 	}
 }

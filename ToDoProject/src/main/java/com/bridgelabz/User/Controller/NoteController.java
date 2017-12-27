@@ -1,9 +1,6 @@
 package com.bridgelabz.User.Controller;
-
 import java.sql.Date;
 import java.util.List;
-import java.util.Set;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +16,7 @@ import com.bridgelabz.User.Service.UserService;
 import com.bridgelabz.User.Utility.Token;
 import com.bridgelabz.User.model.CustomeResponse;
 import com.bridgelabz.User.model.Note;
+import com.bridgelabz.User.model.NoteLabel;
 import com.bridgelabz.User.model.Response;
 import com.bridgelabz.User.model.User;
 
@@ -77,7 +75,7 @@ public class NoteController {
 		return new ResponseEntity<CustomeResponse>(myResponse, HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "user/deleteNote/{noteId}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "note/deleteNote/{noteId}", method = RequestMethod.DELETE)
 	public ResponseEntity<CustomeResponse> deleteNote(@PathVariable("noteId") int noteId, HttpServletRequest request) {
 		System.out.println("id in delete note........" + noteId);
 
@@ -229,6 +227,93 @@ public class NoteController {
 			response.setFirstName(user.getUserFirstName());
 			return new ResponseEntity<User>(user, HttpStatus.OK);
 		}
+	}
+
+	@RequestMapping(value = "/note/addLabels", method = RequestMethod.POST)
+	public ResponseEntity<Response> addLabels(@RequestBody NoteLabel labels ,HttpServletRequest request)
+	{
+		System.out.println("inside save labels controller.....");
+		Response response = new Response();
+		try {
+
+			if (!(labels.getLabelName() == "" || labels.getLabelName() == null)) {
+				NoteLabel labelObj=noteService.getLabelByName(labels.getLabelName());
+				if(labelObj == null)
+				{
+					String token = request.getHeader("token");
+					int id = Token.verify(token);
+					User user = UserService.getUserById(id);
+					labels.setUser(user);
+					noteService.addLabel(labels);
+					response.setResponseMessage("label save successfully.....");
+					return ResponseEntity.ok(response);
+				}
+				else{
+
+					response.setResponseMessage("your label is already exist....");
+					return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
+				}
+			}
+			response.setResponseMessage("label can note be empty");
+			return ResponseEntity.ok(response);
+		}
+		catch (Exception e) {
+
+			return ResponseEntity.status(HttpStatus.BAD_GATEWAY).body(response);		
+		}
+	}
+	
+	@RequestMapping(value = "/note/getLabelAllLabels", method = RequestMethod.GET)
+	public List<NoteLabel> getLabels( HttpServletRequest request) {
+
+		System.out.println("inside the labels.......");
+
+	String	token = request.getHeader("token");
+	int	id = Token.verify(token);
+
+		User user = UserService.getUserById(id);
+		List<NoteLabel> allLabels = noteService.getLabels(user);
+		System.out.println("list of note label "+allLabels);
+		return allLabels;
+	}
+	
+	
+	
+		@RequestMapping(value = "/note/deleteLabels/{id}", method = RequestMethod.DELETE)
+		public ResponseEntity<Response> deleteLabel(@PathVariable int id) {
+			Response response = new Response();
+
+			boolean isDeleted = noteService.deleteLabelById(id);
+			if (isDeleted) {
+				response.setResponseMessage("deleted successfully");
+				return ResponseEntity.ok(response);
+			} else {
+				response.setResponseMessage("unable to delete");
+				return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
+			}
+	}
+		
+		@RequestMapping(value = "/note/editLabel", method = RequestMethod.POST)
+		public ResponseEntity<Response> editLabel(@RequestBody NoteLabel label, HttpServletRequest request) {
+			
+			System.out.println("inside the edit controller");
+			Response response = new Response();
+
+			 String token = request.getHeader("token");
+			int id = Token.verify(token);
+			User user = UserService.getUserById(id);
+			label.setUser(user);
+			System.out.println("edited label name " + label.getLabelName());
+			boolean isEdited;
+			
+			isEdited = noteService.editLabel(label);
+			if (isEdited) {
+				response.setResponseMessage(" Notes are edited successfull.....");
+				return ResponseEntity.ok(response);
+			} else {
+				response.setResponseMessage("Notes editing is not possible.....");
+				return ResponseEntity.status(HttpStatus.BAD_GATEWAY).body(response);
+			}
 	}
 	
 }

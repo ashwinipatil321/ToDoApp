@@ -64,15 +64,23 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		} ];
 
 	if ($state.current.name == "home") {
+		
 		$scope.topNavBarColor = "#ffbb33";
+		
 	} else if ($state.current.name == "archive") {
+		
 		$scope.topNavBarColor = "#669999";
+		
 	} else if ($state.current.name == "trash") {
+		
 		$scope.topNavBarColor = "#636363";
 	}
 	else if ($state.current.name == "reminder") {
+		
 		$scope.topNavBarColor = "#669999";
+		
 	} else if ($state.current.name == "searchbar") {
+		
 		$scope.topNavBarColor = "#3e50b4";
 	}
 
@@ -85,7 +93,9 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 	}
 
 //	side nav bar
+	
 	$scope.defaultMargin = function() {
+		
 		document.getElementById("sideToggle").style.width = "250px";
 		document.getElementById("content-wrapper").style.marginLeft = "350px";
 	}
@@ -139,13 +149,11 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 			$scope.error = response.data.message;
 		});
 	}
-
 	$scope.newnote = false;
 
 	$scope.show = function() {
 		$scope.newnote = true;
 	}
-
 	$scope.hide = function() {
 		$scope.newnote = false;
 	}
@@ -180,7 +188,6 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 	}
 
 	$scope.ListView = true;
-
 	$scope.ListViewToggle = function() {
 		if ($scope.ListView == true) {
 			$scope.ListView = false;
@@ -197,8 +204,7 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 
 	function listGrideView() {
 		if ($scope.ListView) {
-			var element = document
-			.getElementsByClassName('card');
+			var element = document.getElementsByClassName('card');
 			for (var i = 0; i < element.length; i++) {
 				element[i].style.width = "900px";
 			}
@@ -211,94 +217,14 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		}
 	}
 
-	// add notes to archive
 
-	/*$scope.addToArchive = function(note) {
-
-		console.log("inside the Archieve...")
-		if(note.archive==false)
-		{
-			note.archive=true;
-			console.log()
-
-			var notes = homeService.noteArchive(note);
-
-			notes.then(function(response) {
-				console.log("hai");
-				getAllNotes();
-			}, function(response) {			
-				getAllNotes();
-			});
-			getAllNotes();
-		}
-		else
-		{
-			note.archive= false;
-			console.log(note)
-			var notes = homeService.updateNotes(note);
-			notes.then(function(response) {
-
-				getAllNotes();
-
-			}, function(response) {
-
-				console.log(response.data);
-				getAllNotes();
-				$scope.error = response.data;
-
-			});
-			getAllNotes();
-		}
-	}
-
-	// add note to trash
-
-	$scope.addToTrash= function(note) {
-
-		if(note.emptyTrash==false)
-		{
-			note.emptyTrash=true;
-			console.log()
-
-			var notes = homeService.noteTrash(note);
-
-			notes.then(function(response) {
-				console.log("hai");
-				getAllNotes();
-			}, function(response) {			
-				getAllNotes();
-			});
-			getAllNotes();
-		}
-		else
-		{
-			note.emptyTrash= false;
-			console.log(note)
-
-			var notes = homeService.updateNotes(note);
-			notes.then(function(response) {
-
-				getAllNotes();
-
-			}, function(response) {
-
-				console.log(response.data);
-				getAllNotes();
-				$scope.error = response.data;
-
-			});
-			getAllNotes();
-		}
-	}
-	 */
-
-	$scope.saveLabel = function(label) {
+	$scope.saveLabel = function(label){
 		
 		console.log("save label " + label);
 		
 		var data = {};
 		
-		if (label === undefined) {
+		if (label == undefined) {
 			
 			data.labelName = $scope.newLabel;
 		} else {
@@ -308,6 +234,8 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		console.log("save label data " + label);
 		var saveLabel = homeService.saveLabel(data);
 		saveLabel.then(function(response) {
+			
+			console.log("its coming here......")
 			getUser();
 			$scope.labels = response.data;
 		}, function(response) {
@@ -315,8 +243,25 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 				$location.path('/login')
 		});
 	}
-
 	
+	$scope.deleteLabel = function(label) {
+	
+		homeService.deleteLabel(label);
+		getlabels();
+    }
+	
+	var getlabels = function() {
+		var httpGetLabels = homeService.getLabelAllLabels();
+		httpGetLabels.then(function(response) {
+			console.log("data labels",httpGetLabels)
+			console.log("response data "+response.data);
+			$scope.labels = response.data;
+		}, function(response) {
+			if (response.status == '400')
+				$location.path('/login')
+		});
+	}
+
 	$scope.addToArchive = function(note) {
 		note.archive = true;
 		note.pin = false;
@@ -328,7 +273,7 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		});
 	}
 
-	/* unarchive notes 
+	/* unarchive notes */
 
 	$scope.unarchiveNote = function(note) {
 		note.archive= false;
@@ -343,13 +288,14 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 	/* trash notes */
 
 	$scope.addToTrash = function(note) {
+		
 		note.archive = false;
 		note.pin = false;
 		note.emptyTrash = true;
 		var a = homeService.updateNotes(note);
 
 		a.then(function(response) {
-			getNotes();
+			getAllNotes();
 		}, function(response) {
 		});
 	}
@@ -411,21 +357,17 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 	};
 
 
-	$scope.showModal = function(note) {
+	$scope.editLabel = function(label) {
+		
+		console.log("inside edit labels....");
+		homeService.editLabel(label);
+		getlabels();
+	}
 
-		$scope.note=note;
-
-		modalInstance = $uibModal.open({
-
-			templateUrl : 'htmlpages/showDialog.html',
-			scope : $scope,
-			size : 'md'
-		});
-
-	};
-
+	//open list of labels
+	
 	$scope.showLabelList = function() {
-
+		getlabels();
 		modalInstance = $uibModal.open({
 
 			templateUrl : 'htmlpages/label-list.html',
@@ -503,7 +445,7 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		});
 	}
 
-//	Add Reminder
+	//	Add Reminder
 
 	$scope.AddReminder = '';
 	$scope.openAddReminder = function() {
@@ -631,4 +573,5 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 					}
 				}
 			});
+	getlabels();
 });

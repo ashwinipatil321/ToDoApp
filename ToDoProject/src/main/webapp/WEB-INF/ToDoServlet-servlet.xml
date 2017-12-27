@@ -26,6 +26,7 @@
 			<list>
 				<value>com.bridgelabz.User.model.User</value>
 				<value>com.bridgelabz.User.model.Note</value>
+				<value>com.bridgelabz.User.model.NoteLabel</value>
 			</list>
 		</property>
 

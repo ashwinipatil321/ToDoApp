@@ -60,7 +60,7 @@ toDo.factory('homeService', function($http) {
 
 			method : 'DELETE',
 			data : note,
-			url : 'user/deleteNote/' + note.noteId,
+			url : 'note/deleteNote/'+ note.noteId,
 
 			headers : {
 				
@@ -69,44 +69,6 @@ toDo.factory('homeService', function($http) {
 
 		})
 	}
-
-/*	// Add To Archieve
-
-	notes.noteArchive = function(note) {
-
-		console.log("inside login archive service method");
-
-		return $http({
-
-			method : 'POST',
-
-			url : 'isArchive/' + note.noteId,
-
-			headers : {
-			
-				'token' : localStorage.getItem('acessToken')
-			}
-		})
-	}
-
-	// Add To Trash
-
-	notes.noteTrash = function(note) {
-
-		console.log("inside login archive service method");
-
-		return $http({
-
-			method : 'POST',
-
-			url : 'emptyTrash/' + note.noteId,
-
-			headers : {
-
-				'token' : localStorage.getItem('acessToken')
-			}
-		})
-	}*/
 
 	// Restore note to Notes
 
@@ -181,6 +143,7 @@ toDo.factory('homeService', function($http) {
 	}
 	
 	notes.changeProfile = function(User) {
+		
 		console.log("change profile",User)
 
 		return $http({
@@ -210,22 +173,64 @@ toDo.factory('homeService', function($http) {
 			}
 		})
 }
+	
 	notes.saveLabel = function(label) {
-		
-	console.log("inside the save label....");
+
+		return $http({
+
+			method : 'POST',
+			url : 'note/addLabels',
+			data : label,
+
+			headers : {
+
+				'token' : localStorage.getItem('acessToken')
+			}
+		})
+	}
+	
+	notes.deleteLabel = function(label) {
 		
 		return $http({
 			
-			method : "POST",
-			
-			url : 'saveLabel',
+			method : "DELETE",
+			url : 'note/deleteLabels/'+label.labelId,
 			
 			headers : {
 				
 				'token' : localStorage.getItem('acessToken')
-			},
-			data : label
-})
+			}
+		})
+	}
+	
+	notes.getLabelAllLabels = function() {
+		
+		return $http({
+		
+			method : "GET",
+			url : "note/getLabelAllLabels",
+			
+			headers : {
+				
+				'token' : localStorage.getItem('acessToken')
+			}
+		})
+	}
+	
+	notes.editLabel = function(label) {
+		
+		console.log("IN SERVICE");
+		return $http({
+
+			method : 'POST',
+			data : label,
+			url : 'note/editLabel',
+
+			headers : {
+
+				'token' : localStorage.getItem('acessToken')
+			}
+		});
 	}
 	return notes;
 });
