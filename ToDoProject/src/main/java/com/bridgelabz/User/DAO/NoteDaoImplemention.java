@@ -12,6 +12,7 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.bridgelabz.User.model.Collaborator;
 import com.bridgelabz.User.model.Note;
 import com.bridgelabz.User.model.NoteLabel;
 import com.bridgelabz.User.model.User;
@@ -37,7 +38,7 @@ public class NoteDaoImplemention implements NoteDAO {
 	public void deleteNote(int noteId) {
 
 		Session session = sessionFactory.getCurrentSession();
-		Note persistedNote = session.load(Note.class, noteId);
+		Note persistedNote = session.get(Note.class, noteId);
 		if (persistedNote != null) {
 			session.delete(persistedNote);
 		}
@@ -62,7 +63,9 @@ public class NoteDaoImplemention implements NoteDAO {
 	@Override
 	public Note getNoteById(int noteId) {
 		Session session = sessionFactory.getCurrentSession();
-		return session.load(Note.class, noteId);
+		Note note = session.get(Note.class, noteId);
+		//note.getUser();
+		return note;
 	}
 
 	@Override
@@ -139,6 +142,39 @@ public class NoteDaoImplemention implements NoteDAO {
 		return true;
 
 	} 
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<User> getListOfUser(int noteId) 
+	{
+		Session session = sessionFactory.getCurrentSession();
+		Query querycollab = session.createQuery("select c.shareId from Collaborator c where c.noteId= " + noteId);
+		List<User> listOfSharedCollaborators =  querycollab.getResultList();
+		System.out.println("listOfSharedCollaborators " + listOfSharedCollaborators);
+		return listOfSharedCollaborators;
+		
+	}
+	
+	@Override
+	public int saveCollborator(Collaborator collborate) {
+		
+		int collboratorId = 0;
+		Session session = sessionFactory.getCurrentSession();
+		collboratorId = (Integer) session.save(collborate);
+		return collboratorId;
+	}
+	
+	@Override
+	public int removeCollborator(int shareWith, int noteId)
+	{
+	
+		Session session = sessionFactory.getCurrentSession();
+			Query query = session.createQuery("delete  Collaborator c where c.shareId= " + shareWith + " and c.noteId=" + noteId);
+			int status = query.executeUpdate();
+			return status;
+	}
 }
+
+
 
 

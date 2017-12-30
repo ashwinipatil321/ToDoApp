@@ -3,6 +3,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.bridgelabz.User.model.Collaborator;
 import com.bridgelabz.User.model.Note;
 import com.bridgelabz.User.model.NoteLabel;
 import com.bridgelabz.User.model.User;
@@ -22,4 +23,7 @@ public interface NoteDAO {
 	public List<NoteLabel> getLabels(User user);
 	public boolean deletelabelById(int id);
 	boolean editLabel(NoteLabel label);
+	public List<User> getListOfUser(int noteId) ;
+	public int saveCollborator(Collaborator collborate);
+	public int removeCollborator(int shareWith, int noteId);
 }

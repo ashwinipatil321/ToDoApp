@@ -1,5 +1,0 @@
-package com.bridgelabz.User.DAO;
-
-public interface LabelDao {
-
-}

@@ -10,7 +10,6 @@
 <fullyQualifiedTypeName name="com.bridgelabz.User.Utility.SendMail"/>
 <fullyQualifiedTypeName name="javax.ws.rs.core.Request"/>
 <fullyQualifiedTypeName name="org.hibernate.query.Query"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="com.sun.org.apache.xml.internal.security.algorithms.SignatureAlgorithm"/>
 <fullyQualifiedTypeName name="io.jsonwebtoken.ExpiredJwtException"/>
@@ -30,10 +29,7 @@
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
 <fullyQualifiedTypeName name="javax.persistence.ManyToOne"/>
 <fullyQualifiedTypeName name="javax.persistence.OneToMany"/>
-<fullyQualifiedTypeName name="javax.persistence.FetchType"/>
-<fullyQualifiedTypeName name="javax.persistence.CascadeType"/>
 <fullyQualifiedTypeName name="org.hibernate.annotations.GeneratorType"/>
-<fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
 <fullyQualifiedTypeName name="com.bridgelabz.User.Utility.Token"/>
@@ -45,4 +41,16 @@
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMethod"/>
 <fullyQualifiedTypeName name="org.springframework.security.core.token.TokenService"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="javax.persistence.Entity"/>
+<fullyQualifiedTypeName name="javax.persistence.Id"/>
+<fullyQualifiedTypeName name="javax.persistence.GenerationType"/>
+<fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
+<fullyQualifiedTypeName name="javax.persistence.Lob"/>
+<fullyQualifiedTypeName name="javax.persistence.Column"/>
+<fullyQualifiedTypeName name="java.util.Set"/>
+<fullyQualifiedTypeName name="java.util.HashSet"/>
+<fullyQualifiedTypeName name="javax.persistence.CascadeType"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonIgnore"/>
+<fullyQualifiedTypeName name="javax.persistence.FetchType"/>
 </qualifiedTypeNameHistroy>

@@ -16209,3 +16209,370 @@ Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: expected ST
 2017-12-27 17:36:21,968 [Worker-218] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
 2017-12-27 17:36:21,968 [Worker-218] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
 2017-12-27 17:36:21,972 [Worker-218] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 16:14:18,788 [Worker-142] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-28 16:14:22,095 [Worker-144] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 16:14:22,101 [Worker-144] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-28 16:14:22,110 [Worker-144] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 16:14:22,111 [Worker-144] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-28 16:14:22,112 [Worker-144] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-28 16:14:22,113 [Worker-144] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-28 16:14:22,179 [Worker-144] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 16:16:17,296 [Worker-1] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-28 16:16:17,735 [Worker-146] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 16:16:17,736 [Worker-146] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-28 16:16:17,737 [Worker-146] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 16:16:17,737 [Worker-146] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-28 16:16:17,738 [Worker-146] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-28 16:16:17,738 [Worker-146] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-28 16:16:17,763 [Worker-146] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 16:39:41,526 [Worker-163] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-28 16:39:41,744 [Worker-161] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 16:39:41,745 [Worker-161] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-28 16:39:41,746 [Worker-161] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 16:39:41,747 [Worker-161] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-28 16:39:41,747 [Worker-161] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-28 16:39:41,747 [Worker-161] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-28 16:39:41,750 [Worker-161] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 16:42:02,920 [Worker-167] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-28 16:42:03,177 [Worker-158] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 16:42:03,178 [Worker-158] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-28 16:42:03,179 [Worker-158] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 16:42:03,180 [Worker-158] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-28 16:42:03,180 [Worker-158] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-28 16:42:03,180 [Worker-158] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-28 16:42:03,183 [Worker-158] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 16:43:50,311 [Worker-168] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-28 16:43:50,708 [Worker-161] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 16:43:50,708 [Worker-161] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-28 16:43:50,710 [Worker-161] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 16:43:50,710 [Worker-161] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-28 16:43:50,710 [Worker-161] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-28 16:43:50,710 [Worker-161] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-28 16:43:50,714 [Worker-161] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 16:54:01,125 [Worker-171] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-28 16:54:01,349 [Worker-172] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 16:54:01,350 [Worker-172] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-28 16:54:01,351 [Worker-172] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 16:54:01,351 [Worker-172] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-28 16:54:01,351 [Worker-172] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-28 16:54:01,351 [Worker-172] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-28 16:54:01,354 [Worker-172] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 17:02:15,521 [Worker-179] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-28 17:02:15,803 [Worker-175] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 17:02:15,804 [Worker-175] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-28 17:02:15,805 [Worker-175] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 17:02:15,805 [Worker-175] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-28 17:02:15,805 [Worker-175] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-28 17:02:15,805 [Worker-175] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-28 17:02:15,808 [Worker-175] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 17:25:40,720 [Worker-190] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-28 17:25:40,920 [Worker-188] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 17:25:40,920 [Worker-188] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-28 17:25:40,921 [Worker-188] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 17:25:40,921 [Worker-188] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-28 17:25:40,922 [Worker-188] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-28 17:25:40,922 [Worker-188] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-28 17:25:40,949 [Worker-188] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 17:35:37,410 [Worker-193] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-28 17:35:37,666 [Worker-195] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 17:35:37,667 [Worker-195] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-28 17:35:37,668 [Worker-195] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 17:35:37,668 [Worker-195] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-28 17:35:37,668 [Worker-195] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-28 17:35:37,668 [Worker-195] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-28 17:35:37,671 [Worker-195] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 17:46:50,092 [Worker-204] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-28 17:46:50,292 [Worker-203] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 17:46:50,293 [Worker-203] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-28 17:46:50,294 [Worker-203] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 17:46:50,294 [Worker-203] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-28 17:46:50,295 [Worker-203] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-28 17:46:50,295 [Worker-203] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-28 17:46:50,298 [Worker-203] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 17:48:00,245 [Worker-202] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-28 17:48:01,315 [Worker-204] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 17:48:01,427 [Worker-204] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-28 17:48:01,460 [Worker-204] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 17:48:01,522 [Worker-204] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-28 17:48:01,522 [Worker-204] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-28 17:48:01,522 [Worker-204] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-28 17:48:01,526 [Worker-204] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 17:53:54,856 [Worker-208] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-28 17:53:55,190 [Worker-210] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 17:53:55,190 [Worker-210] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-28 17:53:55,191 [Worker-210] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 17:53:55,191 [Worker-210] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-28 17:53:55,192 [Worker-210] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-28 17:53:55,192 [Worker-210] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-28 17:53:55,194 [Worker-210] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 17:56:06,822 [Worker-204] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-28 17:56:07,130 [Worker-210] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 17:56:07,131 [Worker-210] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-28 17:56:07,132 [Worker-210] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 17:56:07,132 [Worker-210] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-28 17:56:07,132 [Worker-210] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-28 17:56:07,132 [Worker-210] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-28 17:56:07,134 [Worker-210] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 18:27:28,612 [Worker-229] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-28 18:27:28,931 [Worker-228] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 18:27:28,932 [Worker-228] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-28 18:27:28,933 [Worker-228] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 18:27:28,933 [Worker-228] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-28 18:27:28,933 [Worker-228] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-28 18:27:28,933 [Worker-228] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-28 18:27:28,936 [Worker-228] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 18:30:16,534 [Worker-233] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-28 18:30:16,752 [Worker-230] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 18:30:16,753 [Worker-230] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-28 18:30:16,754 [Worker-230] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 18:30:16,754 [Worker-230] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-28 18:30:16,755 [Worker-230] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-28 18:30:16,755 [Worker-230] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-28 18:30:16,758 [Worker-230] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 18:58:38,967 [Worker-251] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-28 18:58:39,185 [Worker-209] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 18:58:39,185 [Worker-209] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-28 18:58:39,187 [Worker-209] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 18:58:39,188 [Worker-209] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-28 18:58:39,188 [Worker-209] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-28 18:58:39,188 [Worker-209] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-28 18:58:39,191 [Worker-209] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 19:07:18,068 [Worker-251] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-28 19:07:18,249 [Worker-259] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 19:07:18,250 [Worker-259] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-28 19:07:18,250 [Worker-259] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-28 19:07:18,250 [Worker-259] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-28 19:07:18,251 [Worker-259] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-28 19:07:18,251 [Worker-259] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-28 19:07:18,253 [Worker-259] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-29 09:32:00,969 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-29 09:32:01,010 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-29 09:32:01,018 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-29 09:32:01,019 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-29 09:37:55,676 [Worker-15] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-29 09:37:55,707 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-29 09:37:55,709 [Worker-15] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-29 09:37:55,710 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-29 10:59:50,959 [Worker-63] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-29 10:59:53,635 [Worker-66] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-29 10:59:53,635 [Worker-66] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-29 10:59:53,670 [Worker-66] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-29 10:59:53,670 [Worker-66] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-29 10:59:53,671 [Worker-66] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-29 10:59:53,671 [Worker-66] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-29 10:59:53,733 [Worker-66] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 10:03:29,352 [Worker-2] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-30 10:03:33,477 [Worker-9] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 10:03:33,484 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-30 10:03:33,492 [Worker-9] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 10:03:33,493 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-30 10:03:33,499 [Worker-9] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-30 10:03:33,499 [Worker-9] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-30 10:03:33,554 [Worker-9] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 10:09:48,953 [Worker-11] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-30 10:09:49,319 [Worker-7] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 10:09:49,322 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-30 10:09:49,324 [Worker-7] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 10:09:49,324 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-30 10:09:49,324 [Worker-7] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-30 10:09:49,325 [Worker-7] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-30 10:09:49,349 [Worker-7] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 10:14:47,175 [Worker-16] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-30 10:14:47,437 [Worker-12] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 10:14:47,438 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-30 10:14:47,439 [Worker-12] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 10:14:47,439 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-30 10:14:47,440 [Worker-12] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-30 10:14:47,440 [Worker-12] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-30 10:14:47,443 [Worker-12] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 10:44:44,434 [Worker-31] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-30 10:44:44,658 [Worker-23] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 10:44:44,659 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-30 10:44:44,660 [Worker-23] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 10:44:44,661 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-30 10:44:44,661 [Worker-23] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-30 10:44:44,661 [Worker-23] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-30 10:44:44,665 [Worker-23] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 10:48:31,354 [Worker-26] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-30 10:48:31,608 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 10:48:31,609 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-30 10:48:31,611 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 10:48:31,611 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-30 10:48:31,611 [Worker-11] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-30 10:48:31,611 [Worker-11] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-30 10:48:31,614 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 11:20:12,982 [Worker-39] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-30 11:20:13,319 [Worker-45] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 11:20:13,320 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-30 11:20:13,321 [Worker-45] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 11:20:13,322 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-30 11:20:13,322 [Worker-45] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-30 11:20:13,322 [Worker-45] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-30 11:20:13,326 [Worker-45] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 11:51:51,864 [Worker-52] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-30 11:51:52,115 [Worker-48] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 11:51:52,115 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-30 11:51:52,116 [Worker-48] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 11:51:52,116 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-30 11:51:52,117 [Worker-48] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-30 11:51:52,117 [Worker-48] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-30 11:51:52,119 [Worker-48] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 12:09:35,316 [Worker-62] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-30 12:09:35,596 [Worker-58] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 12:09:35,597 [Worker-58] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-30 12:09:35,598 [Worker-58] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 12:09:35,598 [Worker-58] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-30 12:09:35,598 [Worker-58] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-30 12:09:35,598 [Worker-58] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-30 12:09:35,601 [Worker-58] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 12:16:38,254 [Worker-67] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-30 12:16:38,556 [Worker-68] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 12:16:38,557 [Worker-68] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-30 12:16:38,558 [Worker-68] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 12:16:38,558 [Worker-68] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-30 12:16:38,559 [Worker-68] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-30 12:16:38,559 [Worker-68] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-30 12:16:38,562 [Worker-68] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 13:14:17,050 [Worker-94] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-30 13:14:17,294 [Worker-99] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 13:14:17,295 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-30 13:14:17,296 [Worker-99] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 13:14:17,296 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-30 13:14:17,296 [Worker-99] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-30 13:14:17,296 [Worker-99] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-30 13:14:17,374 [Worker-99] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 14:40:30,790 [Worker-126] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-30 14:40:30,946 [Worker-121] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 14:40:30,946 [Worker-121] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-30 14:40:30,947 [Worker-121] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 14:40:30,947 [Worker-121] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-30 14:40:30,948 [Worker-121] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-30 14:40:30,948 [Worker-121] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-30 14:40:30,950 [Worker-121] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 14:43:38,253 [Worker-99] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-30 14:43:38,417 [Worker-124] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 14:43:38,417 [Worker-124] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-30 14:43:38,418 [Worker-124] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 14:43:38,419 [Worker-124] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-30 14:43:38,419 [Worker-124] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-30 14:43:38,419 [Worker-124] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-30 14:43:38,422 [Worker-124] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 14:46:50,794 [Worker-132] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 14:46:50,899 [Worker-132] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-30 14:46:50,900 [Worker-132] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 14:46:50,901 [Worker-132] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-30 15:05:25,501 [Worker-140] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-30 15:05:25,658 [Worker-138] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 15:05:25,658 [Worker-138] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-30 15:05:25,659 [Worker-138] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 15:05:25,659 [Worker-138] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-30 15:05:25,659 [Worker-138] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-30 15:05:25,660 [Worker-138] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-30 15:05:25,662 [Worker-138] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 15:13:12,452 [Worker-147] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-30 15:13:12,754 [Worker-142] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 15:13:12,755 [Worker-142] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-30 15:13:12,757 [Worker-142] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 15:13:12,757 [Worker-142] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-30 15:13:12,757 [Worker-142] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-30 15:13:12,757 [Worker-142] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-30 15:13:12,760 [Worker-142] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 15:19:27,816 [Worker-152] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-30 15:19:27,978 [Worker-151] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 15:19:27,979 [Worker-151] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-30 15:19:27,980 [Worker-151] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 15:19:27,980 [Worker-151] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-30 15:19:27,980 [Worker-151] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-30 15:19:27,980 [Worker-151] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-30 15:19:27,983 [Worker-151] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 15:23:26,943 [Worker-152] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.bridgelabz:ToDoProject:0.0.1-SNAPSHOT @ /home/bridgeit/Ashwini/ToDoApp/ToDoProject/pom.xml.
+2017-12-30 15:23:30,647 [Worker-152] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-30 15:23:31,781 [Worker-150] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 15:23:31,784 [Worker-150] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-30 15:23:31,799 [Worker-150] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 15:23:31,807 [Worker-150] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-30 15:23:31,808 [Worker-150] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-30 15:23:31,808 [Worker-150] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-30 15:23:31,811 [Worker-150] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 15:23:50,404 [Worker-152] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-12-30 15:23:50,707 [Worker-152] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.bridgelabz:ToDoProject:0.0.1-SNAPSHOT @ /home/bridgeit/Ashwini/ToDoApp/ToDoProject/pom.xml.
+2017-12-30 15:23:51,627 [Worker-152] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ToDoProject/src/main/java
+2017-12-30 15:23:51,628 [Worker-152] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ToDoProject/src/main/resources
+2017-12-30 15:23:51,628 [Worker-152] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ToDoProject/src/test/java
+2017-12-30 15:23:52,255 [Worker-152] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-30 15:23:52,280 [Worker-152] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2017-12-30 15:28:29,082 [Worker-159] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.bridgelabz:ToDoProject:0.0.1-SNAPSHOT @ /home/bridgeit/Ashwini/ToDoApp/ToDoProject/pom.xml.
+2017-12-30 15:28:29,700 [Worker-159] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-30 15:28:30,473 [Worker-155] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 15:28:30,474 [Worker-155] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-30 15:28:30,480 [Worker-155] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 15:28:30,481 [Worker-155] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-30 15:28:30,481 [Worker-155] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-30 15:28:30,481 [Worker-155] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-30 15:28:30,484 [Worker-155] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 15:30:13,539 [Worker-155] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.bridgelabz:ToDoProject:0.0.1-SNAPSHOT @ /home/bridgeit/Ashwini/ToDoApp/ToDoProject/pom.xml.
+2017-12-30 15:30:14,040 [Worker-155] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-30 15:30:15,065 [Worker-146] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 15:30:15,822 [Worker-146] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-30 15:30:15,829 [Worker-146] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 15:30:15,830 [Worker-146] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-30 15:30:15,830 [Worker-146] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-30 15:30:15,830 [Worker-146] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-30 15:30:15,834 [Worker-146] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 15:30:58,867 [Worker-146] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-30 15:30:59,098 [Worker-166] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 15:30:59,099 [Worker-166] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-30 15:30:59,100 [Worker-166] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 15:30:59,100 [Worker-166] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-30 15:30:59,100 [Worker-166] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-30 15:30:59,101 [Worker-166] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-30 15:30:59,104 [Worker-166] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 15:32:01,981 [Worker-146] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.bridgelabz:ToDoProject:0.0.1-SNAPSHOT @ /home/bridgeit/Ashwini/ToDoApp/ToDoProject/pom.xml.
+2017-12-30 15:32:02,513 [Worker-146] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-30 15:32:03,340 [Worker-150] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 15:32:03,341 [Worker-150] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-30 15:32:03,360 [Worker-150] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 15:32:03,360 [Worker-150] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-30 15:32:03,361 [Worker-150] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-30 15:32:03,361 [Worker-150] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-30 15:32:03,363 [Worker-150] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 15:53:11,923 [Worker-199] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-30 15:53:12,248 [Worker-201] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 15:53:12,249 [Worker-201] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-30 15:53:12,250 [Worker-201] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 15:53:12,250 [Worker-201] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-30 15:53:12,250 [Worker-201] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-30 15:53:12,250 [Worker-201] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-30 15:53:12,255 [Worker-201] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 15:55:35,263 [Worker-200] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-30 15:55:35,492 [Worker-201] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 15:55:35,492 [Worker-201] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-30 15:55:35,493 [Worker-201] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 15:55:35,494 [Worker-201] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-30 15:55:35,494 [Worker-201] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-30 15:55:35,494 [Worker-201] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-30 15:55:35,497 [Worker-201] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 17:09:34,897 [Worker-232] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-30 17:09:35,121 [Worker-233] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 17:09:35,121 [Worker-233] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-30 17:09:35,122 [Worker-233] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 17:09:35,122 [Worker-233] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-30 17:09:35,123 [Worker-233] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-30 17:09:35,123 [Worker-233] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-30 17:09:35,129 [Worker-233] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 17:18:04,443 [Worker-260] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-30 17:18:04,721 [Worker-258] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 17:18:04,722 [Worker-258] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-30 17:18:04,722 [Worker-258] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 17:18:04,723 [Worker-258] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-30 17:18:04,723 [Worker-258] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-30 17:18:04,723 [Worker-258] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-30 17:18:04,725 [Worker-258] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 18:13:57,672 [Worker-306] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ToDoProject
+2017-12-30 18:13:57,985 [Worker-312] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 18:13:58,029 [Worker-312] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-12-30 18:13:58,030 [Worker-312] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-12-30 18:13:58,030 [Worker-312] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/bridgeit/Ashwini/ToDoApp/ToDoProject/src/test/resources
+2017-12-30 18:13:58,030 [Worker-312] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ToDoProject
+2017-12-30 18:13:58,030 [Worker-312] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ToDoProject
+2017-12-30 18:13:58,033 [Worker-312] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!

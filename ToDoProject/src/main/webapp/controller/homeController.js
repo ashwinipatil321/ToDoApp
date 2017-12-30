@@ -84,15 +84,8 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		$scope.topNavBarColor = "#3e50b4";
 	}
 
-//	logout
 
-	$scope.signout = function() {
-
-		localStorage.removeItem('token');
-		$location.path("/login");
-	}
-
-//	side nav bar
+	//	side nav bar
 	
 	$scope.defaultMargin = function() {
 		
@@ -113,7 +106,7 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		}
 	}
 
-//	add the notes
+	//	add the notes
 
 	$scope.saveNote =function(){
 		var message= homeService.service('POST','user/saveNote',$scope.note);
@@ -132,7 +125,7 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		});
 	}
 
-//	gets the all notes
+	//	gets the all notes
 
 	var getAllNotes = function() {
 
@@ -159,7 +152,7 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 	}
 	getAllNotes();
 
-//	delete the notes
+	//	delete the notes
 
 	$scope.deleteNotes = function(note) {
 		console.log("note id" + note.noteId);
@@ -238,6 +231,7 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 			console.log("its coming here......")
 			getUser();
 			$scope.labels = response.data;
+			console.log("labels",$scope.labels);
 		}, function(response) {
 			if (response.status == '400')
 				$location.path('/login')
@@ -476,18 +470,171 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 			console.log($scope.reminder);
 			note.reminder = $scope.reminder;
 			console.log("hinside reminder",note);
-
 			$scope.updateNotes(note);
-
 			$scope.reminder = "";
 		}
 	}
-
+	
+	// show reminder
+	
 	$scope.removeReminder = function(note) {
 
 		note.reminder = null;
 		$scope.updateNotes(note);
 		toastr.success('Remainder check notes!!!'+"title:"+note.title+"\n "+"desription:"+note.description);
+	}
+	
+	// show labels
+	
+	$scope.removeLabel = function(note,label)
+	{
+		$scope.note = note;
+		var lenght;
+		if(angular.isArray($scope.note.labels)){
+			for(var i=$scope.note.labels.length;i--;){
+				if(angular.equals($scope.note.labels[i],item))
+					{
+					$scope.note.labels.splice(i,1);
+					break;
+					}
+			}
+		}
+		homeService.updateNotes(note);
+	}
+	
+	$scope.checkboxCheck = function(note,label)
+	{
+		console.log("label name",label);
+		for(var i=0;i<note.allLabels.length;i++){
+			if(note.allLabels[i].labelName===label.labelName){
+				return true;
+			}
+		}
+		return false;
+	}
+	// Add labels in notes
+	
+	$scope.toggleLabelOfNote = function(note, label) {
+		
+		console.log("allLabels",note);
+		var index = -1;
+		var i = 0;
+		for (i = 0; i < note.allLabels.length; i++) {
+			if (note.allLabels[i].labelName === label.labelName) {
+				index = i;
+				break;
+			}
+		}
+		if (index == -1) {
+			
+			note.allLabels.push(label);
+			
+		} else {
+			
+			note.allLabels.splice(index, 1);
+		}
+		homeService.updateNotes(note);
+
+}
+	//open collaborator
+	
+	$scope.openCollboarate = function(note, user, index) {
+		$scope.note = note;
+		$scope.user = user;
+		$scope.indexOfNote = index;
+		modalInstance = $uibModal.open({
+			templateUrl : 'htmlpages/collaborator.html',
+			scope : $scope,
+			size : 'md'
+		});
+}
+//open collaborator
+	
+	$scope.openCollboarate = function(note, user, index) {
+		$scope.note = note;
+		$scope.user = user;
+		$scope.indexOfNote = index;
+		modalInstance = $uibModal.open({
+			templateUrl : 'htmlpages/collaborator.html',
+			scope : $scope,
+			size : 'md'
+		});
+}
+	
+	
+	$scope.getUserlist = function(note, user, index) {
+		var obj = {};
+		obj.noteId = note;
+		obj.ownerId = user;
+		obj.shareId = {};
+
+		var userDetails = homeService.getUserlist(obj);
+		userDetails.then(function(response) {
+
+			console.log(response.data);
+			$scope.users = response.data;
+			note.collabratorUsers = response.data;
+
+		}, function(response) {
+			$scope.user = {};
+
+		});
+		console.log(user);
+	}
+
+	$scope.getOwner = function(note) {
+		
+		var user = homeService.getOwner(note);
+		
+		user.then(function(response) {
+			
+			$scope.owner = response.data;
+
+		}, function(response) {
+			$scope.users = {};
+		});
+}
+	$scope.collborate = function(note, user, index) {
+		var obj = {};
+		console.log(note);
+		obj.noteId = note;
+		obj.ownerId = user;
+		obj.shareId = $scope.shareWith;
+
+		
+		var userDetails = homeService.collborate(obj);
+		userDetails.then(function(response) {
+
+			console.log(response.data);
+			$scope.users = response.data;
+			note.collabratorUsers = response.data;
+
+		}, function(response) {
+			$scope.user = {};
+
+		});
+		console.log(user);
+}
+
+	
+	$scope.removeCollborator = function(note, user, index) {
+		var obj = {};
+		obj.noteId = note;
+		obj.ownerId = {
+			'email' : ''
+		};
+		obj.shareId = user;
+		
+		var user = homeService.removeCollborator(obj);
+		user.then(function(response) {
+			$scope.collborate(note, $scope.owner);
+
+			console.log(response.data);
+
+		}, function(response) {
+			console.log(response.data);
+
+		});
 	}
 
 //	compare date with 
@@ -495,6 +642,7 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 	function remainderCheck() {
 
 		$interval(function() {
+			
 			var currentDate = $filter('date')(new Date(),
 			'MM/dd/yyyy h:mm a');
 			console.log("currentDate::::" + currentDate);
@@ -508,6 +656,7 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 						new Date(dateString2),
 				'MM/dd/yyyy h:mm a');
 				if (dateString3 === currentDate) {
+					
 					$scope.mypicker = dateString2;
 					console.log("reminder !!!!! ");
 					toastr.success('Remainder check notes!!!'+note);
@@ -515,15 +664,26 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 					var token = localStorage.getItem('acessToken');
 					var notes1 = homeService.updateNotes(token,
 							$scope.note[i]);
+					
 				} else {
+					
 					console.log("no remainder");
 				}
 			}
 		}, 200000);
 	}
 	remainderCheck();
+	
 
-//	uploading images
+	//	logout
+
+	$scope.signout = function() {
+
+		localStorage.removeItem('token');
+		$location.path("/login");
+	}
+
+	//	uploading images
 
 	$scope.imageSrc = "";
 
@@ -548,6 +708,8 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		});
 	}
 
+	// Add images
+	
 	$scope.removeImage = function() {
 		$scope.AddNoteBox = false;
 		$scope.addimg = undefined;

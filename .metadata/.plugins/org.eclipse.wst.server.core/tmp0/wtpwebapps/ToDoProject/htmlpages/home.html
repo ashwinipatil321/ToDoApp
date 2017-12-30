@@ -1,7 +1,8 @@
 <div>
 	<top-nav-bar></top-nav-bar>
 	<side-nav-bar></side-nav-bar>
-
+<div>
+<div>
 	<div id="content-wrapper" class="container-fluid">
 		<div class="row" style="padding-top: 40px;ng-init=;margin-left: 250px;">
 		<div class=" col-lg-3col-md-3"></div>
@@ -19,30 +20,24 @@
 					<img src="images/reminder.svg" width="32px" height="32px"
 						data-toggle="dropdown"> <img src="images/collaborator.svg"
 						height="25px">
-
 					<!-- ADD COLORS WITH COLORPALLETES -->
-
 					<div class="btn-group dropup colorDiv" uib-dropdown>
 						<img id="dropdown" class="dropdown-toggle" data-toggle="dropdown"
 							alt="color" src="images/colorpallet.svg" uib-dropdown-toggle
 							height="25px">
-
 						<ul class="dropdown-menu" uib-dropdown-menu role="menu"
 							aria-labelledby="btn-append-to-body"
 							style="background-color: #f9fbff">
-
 							<a data-ng-repeat="color in colors" role="menuitem"> <img
 								data-ng-src="{{color.path}}" height="25px"
 								data-ng-click="note.color =color.color;updateNotes(note)">
 							</a>
 						</ul>
 					</div>
-
 					<span data-ng-click="addToArchive(note)"> <img
 						src="images/archive.svg" height="25px">
 					</span> <img alt="image" src="images/image.svg" height="25px"
 						aria-label="Image Upload" ng-click="openImageUploader(note)">
-
 					<span class="btn dropdown-toggle" id="menu1" data-toggle="dropdown">
 						<span class="glyphicon glyphicon-option-vertical"
 						style="float: right;height:2px"></span>
@@ -66,11 +61,11 @@
 				<br>
 				 <br> 
 				 <br>
- <br>
+ 				<br>
 				<div>
 
-					<div class='row' data-ng-show="pinned.length" style="width: 1020px;word-break: break-all;padding-top: 30px;">
-					<h4>Pinned</h4>
+					<div class='row' data-ng-show="pinned.length" style="width: 1020px; word-break: break-all;">
+					<h4>pinned</h4>
 					<div>
 						<input ng-show="false" id="image" type='file' ng-model-instant
 							ng-model="file"
@@ -106,16 +101,17 @@
 
 								<!-- SHOW REMINDER -->
 
-							<div id="reminder" ng-if="note.reminder!=null"
-						style="padding-bottom: 20px;">
-						{{note.reminder}}<span class="closebtn"
-							data-ng-click="removeReminder(note)"></span>
-					</div>
+								
+							<div id="reminder" ng-if="note.reminder!=null" style="padding-bottom: 20px;">
+								{{note.reminder}}<span class="closebtn"
+								data-ng-click="removeReminder(note)"></span>
+						</div>
+
 					<!-- SHOW LABELS -->
-						<div ng-repeat="label in note.labels">
-							<div id="label" ng-if="label.labelName!=null">
+						<div ng-repeat="label in note.allLabels">
+							<div id="label" ng-if="label.labelName!=null" style=" font-size: 15px; padding-bottom: 20px;">
 								{{label.labelName}}<span class="closebtn"
-									ng-click="removeLabel(note,label)">&#274C;</span>
+									ng-click="removeLabel(note,label)"></span>
 							</div>
 						</div>
 							<div class="moreOptions"> 
@@ -142,7 +138,9 @@
 
 									<!-- ADD COLLABRATOR -->
 
-									<img src="images/collaborator.svg" height="25px">
+									<img alt="collaborator" class="btn"
+											ng-click="openCollboarate(note,User,$index)"
+											src="images/collaborator.svg" height="35px">
 
 
 									<!-- ADD COLORS WITH COLORPALLETES -->
@@ -274,11 +272,11 @@
 								data-ng-click="removeReminder(note)"></span>
 						</div>
 
-					<!-- SHOW LABELS -->
-						<div ng-repeat="label in note.labels">
-							<div id="label" ng-if="label.labelName!=null">
+							<!-- SHOW LABELS -->
+						<div ng-repeat="label in note.allLabels">
+							<div id="label" ng-if="label.labelName!=null" style=" font-size: 15px; padding-bottom: 20px;">
 								{{label.labelName}}<span class="closebtn"
-									ng-click="removeLabel(note,label)">&#274C;</span>
+									ng-click="removeLabel(note,label)"></span>
 							</div>
 						</div>
 							<div class="moreOptions"> 
@@ -305,7 +303,9 @@
 
 									<!-- ADD COLLABRATOR -->
 
-									<img src="images/collaborator.svg" height="25px">
+									<img alt="collaborator" class="btn"
+											ng-click="openCollboarate(note,User,$index)"
+											src="images/collaborator.svg" height="35px">
 
 
 									<!-- ADD COLORS WITH COLORPALLETES -->
@@ -394,29 +394,6 @@
 				</div>
 			</div>
 		</div>
-
 </div>
 </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

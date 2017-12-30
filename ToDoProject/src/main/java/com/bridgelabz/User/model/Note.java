@@ -1,4 +1,5 @@
 package com.bridgelabz.User.model;
+
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -15,62 +16,60 @@ import javax.persistence.JoinTable;
 import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-import org.hibernate.annotations.GeneratorType;
-import org.hibernate.annotations.GenericGenerator;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name="NoteTable")
+@Table(name = "NoteTable")
 public class Note {
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int noteId;
 
-	@ManyToMany
-	@JoinTable(name = "note_label", joinColumns = { @JoinColumn(name = "id") }, inverseJoinColumns = {
-	@JoinColumn(name = "label_id") })
-	@JsonIgnore
+	@ManyToMany(fetch = FetchType.EAGER)
+	@JoinTable(name = "note_label", joinColumns = { @JoinColumn(name = "noteId") }, inverseJoinColumns = {
+			@JoinColumn(name = "label_id") })
 	private Set<NoteLabel> allLabels = new HashSet<>();
-	
+
 	@Column(name = "note_title")
 	private String title;
 
-	@Column(name= "note_description")
+	@Column(name = "note_description")
 	private String description;
 
-	@Column(name= "note_cretedDate")
+	@Column(name = "note_cretedDate")
 	private Date createdDate;
 
-	@Column(name= "note_modifiedDate")
+	@Column(name = "note_modifiedDate")
 	private Date modifiedDate;
 
-	@Column(name= "reminderDate")
+	@Column(name = "reminderDate")
 	private String reminder;
 
 	@Column(name = "isArchive")
 	private boolean isArchive;
 
-	@Column(name="emptyTrash")
+	@Column(name = "emptyTrash")
 	private boolean emptyTrash;
 
-	@Column(name="isPin")
+	@Column(name = "isPin")
 	private boolean isPin;
 
-	@Column(name="colors")
+	@Column(name = "colors")
 	private String color;
 
 	@Lob
-	@Column(name="noteImage",columnDefinition="LONGBLOB")
-	private String	noteImage;
+	@Column(name = "noteImage", columnDefinition = "LONGBLOB")
+	private String noteImage;
+
+	
 	
 	@JsonIgnore
-	@JoinColumn(name="userId")
-	@ManyToOne(fetch = FetchType.LAZY, cascade ={CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})	
+	@JoinColumn(name = "userId")
+	@ManyToOne(fetch = FetchType.EAGER, cascade = { CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST,
+			CascadeType.REFRESH })
 	private User user;
 
 	public int getNoteId() {
@@ -133,6 +132,7 @@ public class Note {
 		return user;
 	}
 
+	
 	public void setUser(User user) {
 		this.user = user;
 	}
@@ -144,7 +144,6 @@ public class Note {
 	public void setArchive(boolean isArchive) {
 		this.isArchive = isArchive;
 	}
-
 
 	public boolean isEmptyTrash() {
 		return emptyTrash;
@@ -162,8 +161,6 @@ public class Note {
 		this.isPin = isPin;
 	}
 
-
-
 	public String getColor() {
 		return color;
 	}
@@ -172,7 +169,15 @@ public class Note {
 		this.color = color;
 	}
 
-	public void copy(Note note){
+	public Set<NoteLabel> getAllLabels() {
+		return allLabels;
+	}
+
+	public void setAllLabels(Set<NoteLabel> allLabels) {
+		this.allLabels = allLabels;
+	}
+
+	public void copy(Note note) {
 
 		this.color = note.getColor();
 		this.description = note.getDescription();
@@ -189,5 +194,3 @@ public class Note {
 				+ createdDate + ", modifiedDate=" + modifiedDate + "]";
 	}
 }
-
-

@@ -12,6 +12,8 @@ import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "users")
 public class User {
@@ -29,7 +31,16 @@ public class User {
 	@Column(name="profile_url",columnDefinition="LONGBLOB")
 	private String profileUrl;
 	
+	@OneToMany(mappedBy = "user")
+	@JsonIgnore
+	private List<NoteLabel> alLabels;
 
+	public List<NoteLabel> getAlLabels() {
+		return alLabels;
+	}
+	public void setAlLabels(List<NoteLabel> alLabels) {
+		this.alLabels = alLabels;
+	}
 	public String getProfileUrl() {
 		return profileUrl;
 	}

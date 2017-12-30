@@ -1,5 +1,6 @@
 package com.bridgelabz.User.Controller;
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.bridgelabz.User.Service.NoteServices;
 import com.bridgelabz.User.Service.UserService;
 import com.bridgelabz.User.Utility.Token;
+import com.bridgelabz.User.model.Collaborator;
 import com.bridgelabz.User.model.CustomeResponse;
 import com.bridgelabz.User.model.Note;
 import com.bridgelabz.User.model.NoteLabel;
@@ -262,59 +264,160 @@ public class NoteController {
 			return ResponseEntity.status(HttpStatus.BAD_GATEWAY).body(response);		
 		}
 	}
-	
+
 	@RequestMapping(value = "/note/getLabelAllLabels", method = RequestMethod.GET)
 	public List<NoteLabel> getLabels( HttpServletRequest request) {
 
 		System.out.println("inside the labels.......");
 
-	String	token = request.getHeader("token");
-	int	id = Token.verify(token);
+		String	token = request.getHeader("token");
+		int	id = Token.verify(token);
 
 		User user = UserService.getUserById(id);
 		List<NoteLabel> allLabels = noteService.getLabels(user);
 		System.out.println("list of note label "+allLabels);
 		return allLabels;
 	}
-	
-	
-	
-		@RequestMapping(value = "/note/deleteLabels/{id}", method = RequestMethod.DELETE)
-		public ResponseEntity<Response> deleteLabel(@PathVariable int id) {
-			Response response = new Response();
 
-			boolean isDeleted = noteService.deleteLabelById(id);
-			if (isDeleted) {
-				response.setResponseMessage("deleted successfully");
-				return ResponseEntity.ok(response);
-			} else {
-				response.setResponseMessage("unable to delete");
-				return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
-			}
+
+
+	@RequestMapping(value = "/note/deleteLabels/{id}", method = RequestMethod.DELETE)
+	public ResponseEntity<Response> deleteLabel(@PathVariable int id) {
+		Response response = new Response();
+
+		boolean isDeleted = noteService.deleteLabelById(id);
+		if (isDeleted) {
+			response.setResponseMessage("deleted successfully");
+			return ResponseEntity.ok(response);
+		} else {
+			response.setResponseMessage("unable to delete");
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
+		}
 	}
+
+	@RequestMapping(value = "/note/editLabel", method = RequestMethod.POST)
+	public ResponseEntity<Response> editLabel(@RequestBody NoteLabel label, HttpServletRequest request) {
+
+		System.out.println("inside the edit controller");
+		Response response = new Response();
+
+		String token = request.getHeader("token");
+		int id = Token.verify(token);
+		User user = UserService.getUserById(id);
+		label.setUser(user);
+		System.out.println("edited label name " + label.getLabelName());
+		boolean isEdited;
+
+		isEdited = noteService.editLabel(label);
+		if (isEdited) {
+			response.setResponseMessage(" Notes are edited successfull.....");
+			return ResponseEntity.ok(response);
+		} else {
+			response.setResponseMessage("Notes editing is not possible.....");
+			return ResponseEntity.status(HttpStatus.BAD_GATEWAY).body(response);
+		}
+	}
+
+	@RequestMapping(value="/note/collaborator",method=  RequestMethod.POST)
+	public ResponseEntity<List<User>> collaborator(@RequestBody Collaborator collaborator,HttpServletRequest request)
+	{
+		List<User> userList= new ArrayList<User>();
+		Collaborator collaborator2= new Collaborator();
+		Note note=collaborator.getNoteId();
+		System.out.println("inside collaborator....................."+note);
+		User shareUser = collaborator.getShareId();
+		System.out.println("share user...."+shareUser);
+		User ownerUser=collaborator.getOwnerId();
+		System.out.println("owner user..."+ownerUser);
+		User user = UserService.getUserByEmail(shareUser.getEmail());
+		System.out.println("");
+		String token = request.getHeader("token");
+		int id = Token.verify(token);
+		userList = noteService.getListOfUser(note.getNoteId());
+		if(user  != null)
+		{
+			if(shareUser !=null && shareUser.getUserId()!=ownerUser.getUserId())
+			{
+				int i = 0;
+				int variable = 0;
+				while (userList.size() > i) {
+					if (userList.get(i).getUserId() == shareUser.getUserId()) {
+						variable = 1;
+					}
+					i++;
+				}
+				if (variable == 0) {
+					collaborator2.setNoteId(note);
+					collaborator2.setOwnerId(ownerUser);
+					collaborator2.setShareId(user);
+					if (noteService.saveCollborator(collaborator2) > 0) {
+						userList.add(user);
+					} else {
+						ResponseEntity.ok(userList);
+					}
+				}
+			}
+		}
+		return ResponseEntity.ok(userList);
+	}
+
+	@RequestMapping(value="/note/getOwner", method = RequestMethod.POST)	
+	public ResponseEntity<User> getOwner(@RequestBody Note note ,HttpServletRequest request)
+	{
+		System.out.println("inside getowner");
+		String token = request.getHeader("token");
+		int id = Token.verify(token);
+		User user =UserService.getUserById(id);
 		
-		@RequestMapping(value = "/note/editLabel", method = RequestMethod.POST)
-		public ResponseEntity<Response> editLabel(@RequestBody NoteLabel label, HttpServletRequest request) {
-			
-			System.out.println("inside the edit controller");
-			Response response = new Response();
-
-			 String token = request.getHeader("token");
-			int id = Token.verify(token);
-			User user = UserService.getUserById(id);
-			label.setUser(user);
-			System.out.println("edited label name " + label.getLabelName());
-			boolean isEdited;
-			
-			isEdited = noteService.editLabel(label);
-			if (isEdited) {
-				response.setResponseMessage(" Notes are edited successfull.....");
-				return ResponseEntity.ok(response);
-			} else {
-				response.setResponseMessage("Notes editing is not possible.....");
-				return ResponseEntity.status(HttpStatus.BAD_GATEWAY).body(response);
-			}
+		System.out.println("inside getowner....."+user);
+		if (user != null) {
+			Note noteComplete = noteService.getNoteById(note.getNoteId());
+		/*	noteComplete.setUser(user);*/
+			System.out.println("noteComplete........"+noteComplete);
+			User ownerUser = noteComplete.getUser();
+			return ResponseEntity.ok(ownerUser);
+		} else {
+			return ResponseEntity.ok(null);
+		}
 	}
-	
+
+	@RequestMapping(value = "/note/removeCollborator", method = RequestMethod.POST)
+	public ResponseEntity<CustomeResponse> removeCollborator(@RequestBody Collaborator collborator,
+			HttpServletRequest request) {
+		CustomeResponse response= new CustomeResponse();
+		int shareWith = collborator.getShareId().getUserId();
+		int noteId = collborator.getNoteId().getNoteId();
+		Note note = noteService.getNoteById(noteId);
+		System.out.println("getowner....."+note);
+		User owner = note.getUser();
+		String token = request.getHeader("token");
+		int id = Token.verify(token);
+
+		User user = UserService.getUserById(id);
+		if (user != null) {
+			if (owner.getUserId() != shareWith) {
+				if (noteService.removeCollborator(shareWith, noteId) > 0) {
+					response.setMessage("Collborator removed");
+					return ResponseEntity.ok(response);
+
+				} else {
+					response.setMessage("Database problem");
+					return ResponseEntity.ok(response);
+				}
+			}
+
+			else {
+				response.setMessage("Can not remove owner");
+				return ResponseEntity.ok(response);
+			}
+		}
+
+		else {
+			response.setMessage("Token expired");
+			return ResponseEntity.ok(response);
+		}
+	}
+
 }
+
 
