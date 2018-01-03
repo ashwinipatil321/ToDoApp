@@ -125,21 +125,35 @@ public class NoteController {
 	}
 
 	@RequestMapping(value = "/user/getAllNotes", method = RequestMethod.GET)
-	public ResponseEntity<List<Note>> getAllNotes(HttpServletRequest request) {
-
-		//Token tokenObject = new Token();
+	public List<Note> getAllNotes(HttpServletRequest request) {
 		String token = request.getHeader("token");
 		int id = Token.verify(token);
 		User user = UserService.getUserById(id);
-		List<Note> allNotes = null;
+		List<Note> notes = noteService.getAllNotes(user);
+		List<Note> noteCollabortor = noteService.getCollboratedNotes(user.getUserId());
+		List<Note> noteList = new ArrayList<>();
+		
+		for (int i = 0; i < notes.size(); i++) {
+			noteList.add(notes.get(i));
+		}
 
+		for (int i = 0; i < noteCollabortor.size(); i++) {
+			noteList.add(noteCollabortor.get(i));
+		}
+	
+		return noteList;
+	}		
+		
+/*
 		if (user != null) {
 
-			allNotes = noteService.getallNotes();
+			allNotes = noteService.getallNotes(id);
 			System.out.println(allNotes);
 			myResponse.setMessage("Got all the notes");
 			myResponse.setStatus(1);
 			return new ResponseEntity<List<Note>>(allNotes, HttpStatus.OK);
+			
+			
 		}
 
 		else {
@@ -148,7 +162,7 @@ public class NoteController {
 			myResponse.setStatus(1);
 			return new ResponseEntity<List<Note>>(HttpStatus.CONFLICT);
 		}
-	}
+	}*/
 
 	@RequestMapping(value = "/isArchive/{noteId}", method = RequestMethod.POST)
 	public ResponseEntity<CustomeResponse> updateArchive(@PathVariable("noteId") int noteId) {
@@ -372,7 +386,7 @@ public class NoteController {
 		System.out.println("inside getowner....."+user);
 		if (user != null) {
 			Note noteComplete = noteService.getNoteById(note.getNoteId());
-		/*	noteComplete.setUser(user);*/
+		
 			System.out.println("noteComplete........"+noteComplete);
 			User ownerUser = noteComplete.getUser();
 			return ResponseEntity.ok(ownerUser);

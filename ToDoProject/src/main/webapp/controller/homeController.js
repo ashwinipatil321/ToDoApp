@@ -83,7 +83,9 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		
 		$scope.topNavBarColor = "#3e50b4";
 	}
-
+else  {
+		$scope.topNavBarColor = "#669999";
+}
 
 	//	side nav bar
 	
@@ -134,7 +136,7 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 
 		notes.then(function(response) {
 			console.log("in coming here also");
-
+			
 			console.log(response.data);
 			$scope.notes = response.data;
 		}, function(response) {
@@ -151,6 +153,7 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		$scope.newnote = false;
 	}
 	getAllNotes();
+
 
 	//	delete the notes
 
@@ -227,11 +230,8 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		console.log("save label data " + label);
 		var saveLabel = homeService.saveLabel(data);
 		saveLabel.then(function(response) {
+			getlabels();
 			
-			console.log("its coming here......")
-			getUser();
-			$scope.labels = response.data;
-			console.log("labels",$scope.labels);
 		}, function(response) {
 			if (response.status == '400')
 				$location.path('/login')
@@ -534,7 +534,6 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 			note.allLabels.splice(index, 1);
 		}
 		homeService.updateNotes(note);
-
 }
 	//open collaborator
 	
@@ -551,6 +550,7 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 //open collaborator
 	
 	$scope.openCollboarate = function(note, user, index) {
+		
 		$scope.note = note;
 		$scope.user = user;
 		$scope.indexOfNote = index;
@@ -561,6 +561,7 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		});
 }
 	
+	//show list of user in modal
 	
 	$scope.getUserlist = function(note, user, index) {
 		var obj = {};
@@ -576,12 +577,15 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 			note.collabratorUsers = response.data;
 
 		}, function(response) {
+			
 			$scope.user = {};
 
 		});
 		console.log(user);
 	}
-
+	
+	// get the owner of user 
+	
 	$scope.getOwner = function(note) {
 		
 		var user = homeService.getOwner(note);
@@ -594,6 +598,8 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 			$scope.users = {};
 		});
 }
+	// collaborate the owner and share user
+	
 	$scope.collborate = function(note, user, index) {
 		var obj = {};
 		console.log(note);
@@ -616,6 +622,7 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		console.log(user);
 }
 
+	// delete the collaborator
 	
 	$scope.removeCollborator = function(note, user, index) {
 		var obj = {};
@@ -635,6 +642,12 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 			console.log(response.data);
 
 		});
+	}
+	
+	// hide collaborator
+	
+	$scope.cancelModel = function(){
+		  $("#myModal").hide();
 	}
 
 //	compare date with 

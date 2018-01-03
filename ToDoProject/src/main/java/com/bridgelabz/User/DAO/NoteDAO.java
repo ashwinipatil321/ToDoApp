@@ -14,7 +14,7 @@ public interface NoteDAO {
 	public int saveNotes(Note note) ;
 	public void deleteNote(int noteId);
 	public void updateNote(Note updatedNote);
-	public List<Note> getallNotes();
+	public List<Note> getAllNotes(User user);	
 	public Note getNoteById(int noteId);
 	public boolean updateArchive(int noteId);
 	public boolean updateTrash(int noteId);
@@ -26,4 +26,5 @@ public interface NoteDAO {
 	public List<User> getListOfUser(int noteId) ;
 	public int saveCollborator(Collaborator collborate);
 	public int removeCollborator(int shareWith, int noteId);
+	public List<Note> getCollboratedNotes(int userId);
 }

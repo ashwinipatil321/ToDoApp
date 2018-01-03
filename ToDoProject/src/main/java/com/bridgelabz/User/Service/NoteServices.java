@@ -13,7 +13,7 @@ public interface NoteServices {
 	public int saveNotes(Note note) ;
 	public void deleteNote(int noteId);
 	public void updateNote(Note updatedNote);
-	public List<Note> getallNotes();
+	public List<Note> getAllNotes(User user);
 	public boolean updateArchive(int noteId);
 	public boolean updateTrash(int NoteId);
 	public void updatePin(int noteId, boolean isPinned);
@@ -26,5 +26,6 @@ public interface NoteServices {
 	public List<User> getListOfUser(int noteId) ;
 	public int saveCollborator(Collaborator collborate);
 	public int removeCollborator(int shareWith, int noteId);
+	public List<Note> getCollboratedNotes(int userId);
 }
 

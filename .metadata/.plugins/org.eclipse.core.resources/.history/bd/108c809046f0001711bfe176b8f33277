@@ -1,0 +1,141 @@
+<div>
+	<top-nav-bar></top-nav-bar>
+</div>
+<div>
+	<side-nav-bar></side-nav-bar>
+</div>
+<div>
+	<div id="content-wrapper">
+		<div id="note-input" class="form-group" style="margin-left: 210px;">
+				
+			<div align="center"  style= "margin-right: 235px"><h5>Notes in Trash are deleted after 7 days.</h5>
+			<div ng-click=delAllNote>EMPTY TRASH NOW</div>
+			</div>
+				<div class="card col-md-4 a"
+					data-ng-repeat="note in notes | filter : {archive:false,emptyTrash:true,pin:false}"
+					class="container" style="background-color: {{note.color}};">
+
+
+				<!-- Pinned note -->
+
+				<div style="margin: 5px">
+					<div style="float: right">
+						<span style="cursor: pointer" data-ng-click="addTopin(note)">
+							<img class="pull-right" src="images/pinned.svg" height="17px"></img>
+						</span>
+					</div>
+
+
+					<!--Edit Notes-->
+
+					<div data-ng-click="showModal(note)">
+						<a><img data-ng-src="{{note.noteImage}}" style="width: 100%" /></a>
+
+						<div contenteditable="true" ng-bind-html="note.title"
+							style="padding-bottom: 10px; font-size: 16px;"></div>
+						<br>
+						<div contenteditable="true" ng-bind-html="note.description"
+							style="padding-bottom: 80px; font-size: 25px;"></div>
+					</div>
+
+					<!-- SHOW REMINDER -->
+
+
+					<div id="reminder" ng-if="note.reminder!=null"
+						style="padding-bottom: 20px;">
+						{{note.reminder}}<span class="closebtn"
+							data-ng-click="removeReminder(note)"></span>
+					</div>
+
+					<!-- SHOW LABELS -->
+					<div ng-repeat="label in note.labels">
+						<div id="label" ng-if="label.labelName!=null">
+							{{label.labelName}}<span class="closebtn"
+								ng-click="removeLabel(note,label)">&#274C;</span>
+						</div>
+					</div>
+					<div class="moreOptions">
+						<div class="note-icon"
+							style="float: left; float: initial; width: 320px; margin: -20px;">
+
+
+							<!--INPUT REMINDER  -->
+
+							<span class="btn dropdown-toggle" id="menu2"
+								data-toggle="dropdown"> <img alt="reminder"
+								src="images/reminder.svg" height="22px">
+							</span>
+
+							<ul class="dropdown-menu" role="menu" aria-labelledby="menu2">
+								<li><input type="text"
+									ng-attr-id="datepicker{{note.noteId}}" class="reminder"></li>
+								<li>
+									<button ng-click="openReminder(note)">
+										<span class="glyphicon glyphicon-calendar"></span>
+									</button>
+								</li>
+							</ul>
+
+							<!-- ADD COLLABRATOR -->
+
+							<img src="images/collaborator.svg" height="25px">
+
+
+							<!-- ADD COLORS WITH COLORPALLETES -->
+
+							<div class="btn-group dropup colorDiv" uib-dropdown>
+								<img id="dropdown" class="dropdown-toggle"
+									data-toggle="dropdown" alt="color" src="images/colorpallet.svg"
+									uib-dropdown-toggle height="20px">
+
+								<!----ADD MORE OPTIONS -->
+
+								<ul class="dropdown-menu" uib-dropdown-menu role="menu"
+									aria-labelledby="btn-append-to-body"
+									style="background-color: #f9fbff">
+
+									<a data-ng-repeat="color in colors" role="menuitem"> <img
+										data-ng-src="{{color.path}}" height="25px"
+										data-ng-click="note.color =color.color;updateNotes(note)">
+									</a>
+								</ul>
+							</div>
+
+							<!-- ADD IMAGE -->
+
+							<img alt="image" src="images/image.svg" height="20px"
+								aria-label="Image Upload" ng-click="openImageUploader(note)">
+
+							<!-- ADD ARCHIVE -->
+
+							<span data-ng-click="addToArchive(note)"> <img
+								src="images/archive.svg" height="25px">
+							</span>
+
+
+							<!-- ADD MORE OPTIONS -->
+
+							<span class="btn dropdown-toggle" id="menu1"
+								data-toggle="dropdown"> <span
+								class="glyphicon glyphicon-option-vertical" style="float: right"></span></span>
+
+							<ul class="dropdown-menu multi-level" role="menu"
+								aria-labelledby="menu1" style="margin-left: 140px">
+
+								
+									<li><a data-ng-click="deleteNotes(note)">Delete
+											forever</a></li>
+									<li><a data-ng-click="restoreToNotes(note)">Restore
+											note</a></li>
+
+							</ul>
+						</div>
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+ 

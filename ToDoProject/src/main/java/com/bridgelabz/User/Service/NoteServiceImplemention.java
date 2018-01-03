@@ -45,9 +45,9 @@ public class NoteServiceImplemention implements NoteServices {
 	}
 
 	@Transactional
-	public List<Note> getallNotes() {
-		return noteDao.getallNotes();
-	} 
+	public List<Note> getAllNotes(User user) {
+		return noteDao.getAllNotes(user);
+} 
 
 	@Transactional
 	public Note getNoteById(int noteId) {
@@ -123,5 +123,14 @@ public class NoteServiceImplemention implements NoteServices {
 
 		return noteDao.removeCollborator(shareWith, noteId);
 	}
+	
+	@Transactional
+	public List<Note> getCollboratedNotes(int userId)
+	{
+			return noteDao.getCollboratedNotes(userId);
+	}
+	
+	}
 
-}
+	
+

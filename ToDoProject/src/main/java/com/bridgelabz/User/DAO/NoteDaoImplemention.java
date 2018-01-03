@@ -1,10 +1,8 @@
 package com.bridgelabz.User.DAO;
 import java.util.List;
-import java.util.logging.LogManager;
 
 import javax.persistence.Query;
 
-import org.apache.log4j.Logger;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -51,7 +49,7 @@ public class NoteDaoImplemention implements NoteDAO {
 		session.saveOrUpdate(note);
 	}
 
-	@SuppressWarnings("unchecked")
+	/*@SuppressWarnings("unchecked")
 	@Override
 	public List<Note> getallNotes() {
 
@@ -59,7 +57,7 @@ public class NoteDaoImplemention implements NoteDAO {
 		Query query = session.createQuery("FROM Note ");
 		List<Note> ls = query.getResultList();
 		return ls;
-	}
+	}*/
 	@Override
 	public Note getNoteById(int noteId) {
 		Session session = sessionFactory.getCurrentSession();
@@ -138,7 +136,7 @@ public class NoteDaoImplemention implements NoteDAO {
 	public boolean editLabel(NoteLabel label) {
 
 		Session session = sessionFactory.getCurrentSession();
-		session.update(label);			
+		session.saveOrUpdate(label);			
 		return true;
 
 	} 
@@ -167,13 +165,38 @@ public class NoteDaoImplemention implements NoteDAO {
 	@Override
 	public int removeCollborator(int shareWith, int noteId)
 	{
-	
+	System.out.println("shared in DAO "+shareWith);
+	System.out.println("noteId....."+noteId);
 		Session session = sessionFactory.getCurrentSession();
 			Query query = session.createQuery("delete  Collaborator c where c.shareId= " + shareWith + " and c.noteId=" + noteId);
 			int status = query.executeUpdate();
 			return status;
 	}
-}
+
+	@Override
+	public List<Note> getCollboratedNotes(int userId)
+	{
+		Session session = sessionFactory.getCurrentSession();
+				Query query = session.createQuery("select c.noteId from Collaborator c where c.shareId= " + userId);
+				List<Note> colllboratedNotes = query.getResultList();
+				return colllboratedNotes;
+	}
+	
+	@Override
+	public List<Note> getAllNotes(User user)
+	{
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("FROM Note where userId = :userId");
+		query.setParameter("userId", user.getUserId());
+		List<Note>notes = query.getResultList();
+		return notes;
+	}
+
+	
+	}
+
+	
+
 
 
 

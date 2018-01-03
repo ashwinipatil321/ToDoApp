@@ -64,7 +64,7 @@
  				<br>
 				<div>
 
-					<div class='row' data-ng-show="pinned.length" style="width: 1020px; word-break: break-all;">
+					<div class='row' data-ng-show="pinned.length" style="width: 1020px; word-break: break-all;padding-top:35px">
 					<h4>pinned</h4>
 					<div>
 						<input ng-show="false" id="image" type='file' ng-model-instant
@@ -109,14 +109,14 @@
 
 					<!-- SHOW LABELS -->
 						<div ng-repeat="label in note.allLabels">
-							<div id="label" ng-if="label.labelName!=null" style=" font-size: 15px; padding-bottom: 20px;">
+							<div id="label" ng-if="label.labelName!=null" style=" font-size: 15px;">
 								{{label.labelName}}<span class="closebtn"
 									ng-click="removeLabel(note,label)"></span>
 							</div>
 						</div>
 							<div class="moreOptions"> 
 								<div class="note-icon"
-									style="float: left; float: initial; width: 320px; margin: -20px;">
+									style="float: left; float: initial; width: 320px; margin: -20px;padding-top: 20px">
 								
 
 									<!--INPUT REMINDER  -->
@@ -138,9 +138,8 @@
 
 									<!-- ADD COLLABRATOR -->
 
-									<img alt="collaborator" class="btn"
-											ng-click="openCollboarate(note,User,$index)"
-											src="images/collaborator.svg" height="35px">
+									<img ng-click="openCollboarate(note,User,$index)"
+											src="images/collaborator.svg" height="25px">
 
 
 									<!-- ADD COLORS WITH COLORPALLETES -->
@@ -229,7 +228,7 @@
 					</div>
 				</div>
 				
-				<div class='row' data-ng-show="others.length" style="width: 1020px; word-break: break-all;">
+				<div class='row' data-ng-show="others.length" style="width: 1020px; word-break: break-all;padding-top:35px">
 					<h4>others</h4>
 					<div>
 						<input ng-show="false" id="image" type='file' ng-model-instant
@@ -242,7 +241,7 @@
 
 							<!-- Pinned note -->
 							
-							<div style="margin: 5px">
+							<div>
 								<div style="float: right">
 									<span style="cursor: pointer" data-ng-click="addTopin(note)">
 										<img class="pull-right" src="images/unpinned.svg"
@@ -266,22 +265,22 @@
 
 								<!-- SHOW REMINDER -->
 
-								
-							<div id="reminder" ng-if="note.reminder!=null" style="padding-bottom: 20px;">
+								<div id="reminder" ng-if="note.reminder!=null" style="padding-bottom: 20px;">
 								{{note.reminder}}<span class="closebtn"
 								data-ng-click="removeReminder(note)"></span>
 						</div>
-
+								
+							
 							<!-- SHOW LABELS -->
-						<div ng-repeat="label in note.allLabels">
-							<div id="label" ng-if="label.labelName!=null" style=" font-size: 15px; padding-bottom: 20px;">
+						<div ng-repeat="label in note.allLabels" >
+							<div id="label" ng-if="label.labelName!=null" style=" font-size: 15px;word-break: break-all">
 								{{label.labelName}}<span class="closebtn"
 									ng-click="removeLabel(note,label)"></span>
 							</div>
 						</div>
 							<div class="moreOptions"> 
 								<div class="note-icon"
-									style="float: left; float: initial; width: 320px; margin: -20px;">
+									style="float: left; float: initial; width: 320px; margin: -20px;padding-top: 20px">
 								
 
 									<!--INPUT REMINDER  -->
@@ -303,9 +302,8 @@
 
 									<!-- ADD COLLABRATOR -->
 
-									<img alt="collaborator" class="btn"
-											ng-click="openCollboarate(note,User,$index)"
-											src="images/collaborator.svg" height="35px">
+									<img ng-click="openCollboarate(note,User,$index)"
+											src="images/collaborator.svg" height="25px">
 
 
 									<!-- ADD COLORS WITH COLORPALLETES -->
