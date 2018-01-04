@@ -17,6 +17,9 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		});
 	});
 
+
+	var allnotes=[];
+
 	//colors added in notes 
 
 	$scope.AddNoteColor = "#ffffff";
@@ -64,33 +67,33 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		} ];
 
 	if ($state.current.name == "home") {
-		
+
 		$scope.topNavBarColor = "#ffbb33";
-		
+
 	} else if ($state.current.name == "archive") {
-		
+
 		$scope.topNavBarColor = "#669999";
-		
+
 	} else if ($state.current.name == "trash") {
-		
+
 		$scope.topNavBarColor = "#636363";
 	}
 	else if ($state.current.name == "reminder") {
-		
+
 		$scope.topNavBarColor = "#669999";
-		
+
 	} else if ($state.current.name == "searchbar") {
-		
+
 		$scope.topNavBarColor = "#3e50b4";
 	}
-else  {
+	else  {
 		$scope.topNavBarColor = "#669999";
-}
+	}
 
 	//	side nav bar
-	
+
 	$scope.defaultMargin = function() {
-		
+
 		document.getElementById("sideToggle").style.width = "250px";
 		document.getElementById("content-wrapper").style.marginLeft = "350px";
 	}
@@ -136,9 +139,10 @@ else  {
 
 		notes.then(function(response) {
 			console.log("in coming here also");
-			
+
 			console.log(response.data);
 			$scope.notes = response.data;
+			allnotes= response.data;
 		}, function(response) {
 
 			$scope.error = response.data.message;
@@ -214,47 +218,6 @@ else  {
 	}
 
 
-	$scope.saveLabel = function(label){
-		
-		console.log("save label " + label);
-		
-		var data = {};
-		
-		if (label == undefined) {
-			
-			data.labelName = $scope.newLabel;
-		} else {
-			
-			data.labelName = label.labelName;
-		}
-		console.log("save label data " + label);
-		var saveLabel = homeService.saveLabel(data);
-		saveLabel.then(function(response) {
-			getlabels();
-			
-		}, function(response) {
-			if (response.status == '400')
-				$location.path('/login')
-		});
-	}
-	
-	$scope.deleteLabel = function(label) {
-	
-		homeService.deleteLabel(label);
-		getlabels();
-    }
-	
-	var getlabels = function() {
-		var httpGetLabels = homeService.getLabelAllLabels();
-		httpGetLabels.then(function(response) {
-			console.log("data labels",httpGetLabels)
-			console.log("response data "+response.data);
-			$scope.labels = response.data;
-		}, function(response) {
-			if (response.status == '400')
-				$location.path('/login')
-		});
-	}
 
 	$scope.addToArchive = function(note) {
 		note.archive = true;
@@ -282,7 +245,7 @@ else  {
 	/* trash notes */
 
 	$scope.addToTrash = function(note) {
-		
+
 		note.archive = false;
 		note.pin = false;
 		note.emptyTrash = true;
@@ -350,26 +313,6 @@ else  {
 
 	};
 
-
-	$scope.editLabel = function(label) {
-		
-		console.log("inside edit labels....");
-		homeService.editLabel(label);
-		getlabels();
-	}
-
-	//open list of labels
-	
-	$scope.showLabelList = function() {
-		getlabels();
-		modalInstance = $uibModal.open({
-
-			templateUrl : 'htmlpages/label-list.html',
-			scope : $scope,
-			windowClass : 'app-modal-window',
-		});
-
-	};
 
 	// social share
 
@@ -440,7 +383,6 @@ else  {
 	}
 
 	//	Add Reminder
-
 	$scope.AddReminder = '';
 	$scope.openAddReminder = function() {
 
@@ -474,7 +416,16 @@ else  {
 			$scope.reminder = "";
 		}
 	}
-	
+	$scope.addReminderToNote = function(note, time) {
+		if (note.reminderDate == 0 && note.reminderTime == "") {
+			note.reminderDate = null;
+			note.reminderTime = null;
+		}
+		ga('send','event','Reminders','Reminder Added To Note');
+		note.reminderTime = time;
+		note.reminder = true;
+		$scope.updateNotes(note);
+	}
 	// show reminder
 	
 	$scope.removeReminder = function(note) {
@@ -484,8 +435,85 @@ else  {
 		toastr.success('Remainder check notes!!!'+"title:"+note.title+"\n "+"desription:"+note.description);
 	}
 	
-	// show labels
-	
+
+	//open list of labels
+
+	$scope.showLabelList = function() {
+		getlabels();
+		modalInstance = $uibModal.open({
+
+			templateUrl : 'htmlpages/label-list.html',
+			controller:'homeController',
+			scope : $scope,
+			windowClass : 'app-modal-window',
+		});
+
+	};
+
+	//save labels
+
+	$scope.saveLabel = function(label){
+		
+		var data = {};
+		if (label == undefined) {
+			data.labelName = $scope.newLabel;
+		} else {
+			data.labelName = label.labelName;
+		}
+		console.log("save label data " + label);
+		var saveLabel = homeService.saveLabel(data);
+		saveLabel.then(function(response) {
+			getlabels();
+
+		}, function(response) {
+			if (response.status == '400')
+				$location.path('/login')
+		});
+	}
+
+	// delete labels
+
+	$scope.deleteLabel = function(label) {
+
+		homeService.deleteLabel(label);
+		getlabels();
+	}
+
+	//getAll Labels
+
+	var getlabels = function() {
+		var httpGetLabels = homeService.getLabelAllLabels();
+		httpGetLabels.then(function(response) {
+			$scope.labels = response.data;
+			allLabels = response.data;
+		}, function(response) {
+			if (response.status == '400')
+				$location.path('/login')
+		});
+	}
+
+	//get Note By label Name
+
+	$scope.getNoteByLabel = function(labelName){
+		
+		$scope.allNotesByLabel=[];
+		var index=0;
+		$scope.matchLabel=labelName;
+		for(var i=0;i<allnotes.length;i++){
+			if(allnotes[i].allLabels){
+				var allLabel=allnotes[i].allLabels;
+				for(var j=0;j<allLabel.length;j++){
+					if(allLabel[j].labelName == labelName){
+						$scope.allNotesByLabel[index++]=allnotes[i];
+
+					}
+				}
+			}
+		}
+	}
+
+	//show labels
+
 	$scope.removeLabel = function(note,label)
 	{
 		$scope.note = note;
@@ -493,15 +521,17 @@ else  {
 		if(angular.isArray($scope.note.labels)){
 			for(var i=$scope.note.labels.length;i--;){
 				if(angular.equals($scope.note.labels[i],item))
-					{
+				{
 					$scope.note.labels.splice(i,1);
 					break;
-					}
+				}
 			}
 		}
 		homeService.updateNotes(note);
 	}
-	
+
+	//input check for labels
+
 	$scope.checkboxCheck = function(note,label)
 	{
 		console.log("label name",label);
@@ -513,10 +543,9 @@ else  {
 		return false;
 	}
 	// Add labels in notes
-	
+
 	$scope.toggleLabelOfNote = function(note, label) {
-		
-		console.log("allLabels",note);
+
 		var index = -1;
 		var i = 0;
 		for (i = 0; i < note.allLabels.length; i++) {
@@ -526,18 +555,28 @@ else  {
 			}
 		}
 		if (index == -1) {
-			
 			note.allLabels.push(label);
-			
 		} else {
-			
 			note.allLabels.splice(index, 1);
 		}
 		homeService.updateNotes(note);
-}
-	//open collaborator
-	
+	}
+
+	// Edit labels
+
+	$scope.editLabel = function(label) {
+
+		console.log("inside edit labels....");
+		homeService.editLabel(label);
+		getlabels();
+	}
+
+
+
+//	open collaborator
+
 	$scope.openCollboarate = function(note, user, index) {
+
 		$scope.note = note;
 		$scope.user = user;
 		$scope.indexOfNote = index;
@@ -546,24 +585,12 @@ else  {
 			scope : $scope,
 			size : 'md'
 		});
-}
-//open collaborator
-	
-	$scope.openCollboarate = function(note, user, index) {
-		
-		$scope.note = note;
-		$scope.user = user;
-		$scope.indexOfNote = index;
-		modalInstance = $uibModal.open({
-			templateUrl : 'htmlpages/collaborator.html',
-			scope : $scope,
-			size : 'md'
-		});
-}
-	
+	}
+
 	//show list of user in modal
-	
+
 	$scope.getUserlist = function(note, user, index) {
+		
 		var obj = {};
 		obj.noteId = note;
 		obj.ownerId = user;
@@ -577,38 +604,34 @@ else  {
 			note.collabratorUsers = response.data;
 
 		}, function(response) {
-			
 			$scope.user = {};
-
 		});
 		console.log(user);
 	}
-	
+
 	// get the owner of user 
-	
+
 	$scope.getOwner = function(note) {
 		
 		var user = homeService.getOwner(note);
-		
 		user.then(function(response) {
-			
 			$scope.owner = response.data;
-
 		}, function(response) {
 			$scope.users = {};
 		});
-}
-	// collaborate the owner and share user
+	}
 	
+	// collaborate the owner and share user
+
 	$scope.collborate = function(note, user, index) {
+		
 		var obj = {};
 		console.log(note);
 		obj.noteId = note;
 		obj.ownerId = user;
 		obj.shareId = $scope.shareWith;
-
-		
 		var userDetails = homeService.collborate(obj);
+		
 		userDetails.then(function(response) {
 
 			console.log(response.data);
@@ -620,18 +643,18 @@ else  {
 
 		});
 		console.log(user);
-}
+	}
 
 	// delete the collaborator
-	
+
 	$scope.removeCollborator = function(note, user, index) {
+		
 		var obj = {};
 		obj.noteId = note;
 		obj.ownerId = {
-			'email' : ''
+				'email' : ''
 		};
 		obj.shareId = user;
-		
 		var user = homeService.removeCollborator(obj);
 		user.then(function(response) {
 			$scope.collborate(note, $scope.owner);
@@ -643,11 +666,11 @@ else  {
 
 		});
 	}
-	
+
 	// hide collaborator
-	
+
 	$scope.cancelModel = function(){
-		  $("#myModal").hide();
+		$("#myModal").hide();
 	}
 
 //	compare date with 
@@ -655,7 +678,7 @@ else  {
 	function remainderCheck() {
 
 		$interval(function() {
-			
+
 			var currentDate = $filter('date')(new Date(),
 			'MM/dd/yyyy h:mm a');
 			console.log("currentDate::::" + currentDate);
@@ -669,7 +692,7 @@ else  {
 						new Date(dateString2),
 				'MM/dd/yyyy h:mm a');
 				if (dateString3 === currentDate) {
-					
+
 					$scope.mypicker = dateString2;
 					console.log("reminder !!!!! ");
 					toastr.success('Remainder check notes!!!'+note);
@@ -677,16 +700,16 @@ else  {
 					var token = localStorage.getItem('acessToken');
 					var notes1 = homeService.updateNotes(token,
 							$scope.note[i]);
-					
+
 				} else {
-					
+
 					console.log("no remainder");
 				}
 			}
 		}, 200000);
 	}
 	remainderCheck();
-	
+
 
 	//	logout
 
@@ -722,7 +745,7 @@ else  {
 	}
 
 	// Add images
-	
+
 	$scope.removeImage = function() {
 		$scope.AddNoteBox = false;
 		$scope.addimg = undefined;

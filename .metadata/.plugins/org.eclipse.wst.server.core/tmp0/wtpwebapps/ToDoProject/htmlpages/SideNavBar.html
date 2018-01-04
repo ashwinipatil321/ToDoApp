@@ -11,7 +11,7 @@
 <div><span id="font" style="font-size:19px">Labels<a id="font" ng-click="showLabelList()"   style=" margin-left: 52px;height: 32px;
     width: 70px;"">Edit</a></span></div>
 		<div ng-repeat="label in labels">
-			<a id="labelList" ui-sref="labels({id:label.labelName})"><img src="images/label.svg" height="25px">{{label.labelName}}</a>
+			<a id="labelList" ui-sref="notelabels({id:label.labelName})"  ng-click="getNoteByLabel(label.labelName)"><img src="images/label.svg" height="25px">{{label.labelName}}</a>
 		</div>
 		<div>
 		<a id="font" ng-click="showLabelList()">create new label</a>s

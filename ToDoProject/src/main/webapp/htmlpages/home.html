@@ -120,21 +120,69 @@
 								
 
 									<!--INPUT REMINDER  -->
-
-									<span class="btn dropdown-toggle" id="menu2"
+					
+									<div class="dropdown inline">
+								<span class="btn dropdown-toggle" id="menu2"
 										data-toggle="dropdown"> <img alt="reminder"
 										src="images/reminder.svg" height="22px">
 									</span>
 
-									<ul class="dropdown-menu" role="menu" aria-labelledby="menu2">
-										<li><input type="text"
-											ng-attr-id="datepicker{{note.noteId}}" class="reminder"></li>
+									<ul class="dropdown-menu" role="menu" aria-labelledby="menu2" style="height: 225px;  width: 270px; padding-left: 20px;padding-top:15px">
+									<h4>Select Date and Time</h4>
+										<li><input type="text" ng-attr-id="datepicker{{note.noteId}}" class="reminder"></li>
 										<li>
 											<button ng-click="openReminder(note)">
 												<span class="glyphicon glyphicon-calendar"></span>
 											</button>
 										</li>
-									</ul>
+										<li><div class="input-group" data-toggle="collapse"data-target="#inputreminder{{note.noteId}}" style="font-size: 19px; padding-bottom: 5px;">Click To Add Time<span class="caret"></span>
+							</div>
+									<div id="inputreminder{{note.noteId}}" class="collapse">
+										<div data-ng-model="note.reminderDate"
+											data-ng-click="addReminderToNote(note,'8:00 AM')">Morning
+										8:00 AM</div>
+										<div data-ng-model="note.reminderTime"
+										data-ng-click="addReminderToNote(note,'1:00 PM')">AfterNoon
+										1:00 PM</div>
+										<div data-ng-model="note.reminderTime"
+											data-ng-click="addReminderToNote(note,'6:00 PM')">Evening
+											6:00 PM</div>
+										<div data-ng-model="note.reminderTime"
+												data-ng-click="addReminderToNote(note,'8:00 PM')">Night
+										8:00 PM</div>
+							</div>
+			</li>
+			</ul>
+					</div>
+								
+					<!-- 				
+					<div class="dropdown inline">
+						`<img src="images/reminder.svg" width="25px" height="25px" data-toggle="dropdown">
+							<ul class="dropdown-menu">
+									<li><div style="padding-left: 2px;">Reminder:</div> <br></li>
+										<li><div>
+												<input type="text" ng-attr-id="datepicker{{note.noteId}}" class="reminder">
+											</div> 
+										<br>
+									</li>
+									<li>
+									<div class="well">
+  										<div id="datetimepicker3" class="input-append">
+   									 			<input data-format="hh:mm:ss" type="text"></input>
+   													 <span class="add-on" ng-click="rem(note)">
+     											 <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+     											 </i>
+   										 </span>
+  								</div>
+					</div>
+					</li>
+							</ul>
+					</div>		
+					 -->
+					
+			
+		
+
 
 									<!-- ADD COLLABRATOR -->
 

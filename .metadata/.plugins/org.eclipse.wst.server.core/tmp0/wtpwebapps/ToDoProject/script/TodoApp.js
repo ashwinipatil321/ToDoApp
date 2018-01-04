@@ -60,11 +60,18 @@ app.config([ '$stateProvider', '$urlRouterProvider',
 		controller : 'homeController'
 	});
 	
-	$stateProvider.state('labels', {
+	/*$stateProvider.state('labels', {
 		url : "/labels/:id",
 		templateUrl : 'htmlpages/home.html',
 		controller : 'homeController'
+});*/
+	
+	$stateProvider.state('notelabels', {
+		url : "/labels/:id",
+		templateUrl : 'htmlpages/notelabels.html',
+		controller : 'homeController'
 });
+	
 	
 	$urlRouterProvider.otherwise('/login');
 }]);
