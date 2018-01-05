@@ -44,20 +44,11 @@ public class NoteDaoImplemention implements NoteDAO {
 
 	@Override
 	public void updateNote(Note note) {
-		System.out.println("noteId=" + note.getNoteId() + ", title=" + note.getTitle() + ", description=" + note.getDescription() + ", createdDate="+ note.getCreatedDate() + ", modifiedDate=" + note.getModifiedDate()+"reminder"+note.getReminder());
+		System.out.println("noteId=" + note.getNoteId() + ", title=" + note.getTitle() + ", description=" + note.getDescription() + ", createdDate="+ note.getCreatedDate() + ", modifiedDate=" + note.getModifiedDate()+"reminder"+note.getReminderTime());
 		Session session = sessionFactory.getCurrentSession();
 		session.saveOrUpdate(note);
 	}
 
-	/*@SuppressWarnings("unchecked")
-	@Override
-	public List<Note> getallNotes() {
-
-		Session session = sessionFactory.getCurrentSession();
-		Query query = session.createQuery("FROM Note ");
-		List<Note> ls = query.getResultList();
-		return ls;
-	}*/
 	@Override
 	public Note getNoteById(int noteId) {
 		Session session = sessionFactory.getCurrentSession();

@@ -6,7 +6,7 @@
 	<div id="content-wrapper" class="container-fluid">
 		<div class="row" style="padding-top: 40px;ng-init=;margin-left: 250px;">
 		<div class=" col-lg-3col-md-3"></div>
-		<div id="note" class=" col-sm-12 col-md-6 col-xs-12 col-lg-4"
+		<div id="note" class=" col-sm-12 col-md-6 col-xs-12 col-lg-8"
 			style="background-color: {{note.color}}">
 
 			<div contenteditable="true" data-text="Title"
@@ -99,29 +99,34 @@
 										style="padding-bottom: 80px; font-size: 25px;"></div>
 								</div>
 
-								<!-- SHOW REMINDER -->
+						<!-- SHOW REMINDER -->
 
-								
-							<div id="reminder" ng-if="note.reminder!=null" style="padding-bottom: 20px;">
-								{{note.reminder}}<span class="closebtn"
-								data-ng-click="removeReminder(note)"></span>
-						</div>
+						
+						<button type="button" class="btn btn-xs"
+									data-ng-show="note.reminderDate&&note.reminderTime">
+									{{note.reminderDate | date : 'MMM dd'}},{{note.reminderTime}}<span
+									class="badge" style="color: white;"><span
+									class="glyphicon glyphicon-remove"
+									data-ng-click="deleteReminderOfNote(note)"></span></span>
+						</button>
 
 					<!-- SHOW LABELS -->
+					
 						<div ng-repeat="label in note.allLabels">
-							<div id="label" ng-if="label.labelName!=null" style=" font-size: 15px;">
+							<button type="button"  id="label" ng-if="label.labelName!=null" style=" font-size: 15px;">
 								{{label.labelName}}<span class="closebtn"
 									ng-click="removeLabel(note,label)"></span>
-							</div>
-						</div>
-							<div class="moreOptions"> 
+							</button>
+					</div>
+						
+					<div class="moreOptions"> 
 								<div class="note-icon"
-									style="float: left; float: initial; width: 320px; margin: -20px;padding-top: 20px">
+									style="float: left; float: initial; width: 328px; margin: -20px;padding-top: 20px">
 								
 
-									<!--INPUT REMINDER  -->
+							<!--INPUT REMINDER  -->
 					
-									<div class="dropdown inline">
+							<div class="dropdown inline">
 								<span class="btn dropdown-toggle" id="menu2"
 										data-toggle="dropdown"> <img alt="reminder"
 										src="images/reminder.svg" height="22px">
@@ -129,70 +134,32 @@
 
 									<ul class="dropdown-menu" role="menu" aria-labelledby="menu2" style="height: 225px;  width: 270px; padding-left: 20px;padding-top:15px">
 									<h4>Select Date and Time</h4>
-										<li><input type="text" ng-attr-id="datepicker{{note.noteId}}" class="reminder"></li>
-										<li>
-											<button ng-click="openReminder(note)">
-												<span class="glyphicon glyphicon-calendar"></span>
-											</button>
+										<li><div>
+											<input type="date" data-ng-model="note.reminderDate">
+										</div> 
+											<br>
 										</li>
 										<li><div class="input-group" data-toggle="collapse"data-target="#inputreminder{{note.noteId}}" style="font-size: 19px; padding-bottom: 5px;">Click To Add Time<span class="caret"></span>
+										</div>
+											<div id="inputreminder{{note.noteId}}" class="collapse">
+													<div data-ng-model="note.reminderDate" data-ng-click="addReminderToNote(note,'8:00 AM')">Morning 8:00 AM</div>
+													<div data-ng-model="note.reminderTime" data-ng-click="addReminderToNote(note,'1:00 PM')">AfterNoon 1:00 PM</div>
+													<div data-ng-model="note.reminderTime" data-ng-click="addReminderToNote(note,'6:00 PM')">Evening 6:00 PM</div>
+													<div data-ng-model="note.reminderTime" data-ng-click="addReminderToNote(note,'8:00 PM')">Night 8:00 PM</div>
+											</div>
+										</li>
+									</ul>
 							</div>
-									<div id="inputreminder{{note.noteId}}" class="collapse">
-										<div data-ng-model="note.reminderDate"
-											data-ng-click="addReminderToNote(note,'8:00 AM')">Morning
-										8:00 AM</div>
-										<div data-ng-model="note.reminderTime"
-										data-ng-click="addReminderToNote(note,'1:00 PM')">AfterNoon
-										1:00 PM</div>
-										<div data-ng-model="note.reminderTime"
-											data-ng-click="addReminderToNote(note,'6:00 PM')">Evening
-											6:00 PM</div>
-										<div data-ng-model="note.reminderTime"
-												data-ng-click="addReminderToNote(note,'8:00 PM')">Night
-										8:00 PM</div>
-							</div>
-			</li>
-			</ul>
-					</div>
-								
-					<!-- 				
-					<div class="dropdown inline">
-						`<img src="images/reminder.svg" width="25px" height="25px" data-toggle="dropdown">
-							<ul class="dropdown-menu">
-									<li><div style="padding-left: 2px;">Reminder:</div> <br></li>
-										<li><div>
-												<input type="text" ng-attr-id="datepicker{{note.noteId}}" class="reminder">
-											</div> 
-										<br>
-									</li>
-									<li>
-									<div class="well">
-  										<div id="datetimepicker3" class="input-append">
-   									 			<input data-format="hh:mm:ss" type="text"></input>
-   													 <span class="add-on" ng-click="rem(note)">
-     											 <i data-time-icon="icon-time" data-date-icon="icon-calendar">
-     											 </i>
-   										 </span>
-  								</div>
-					</div>
-					</li>
-							</ul>
-					</div>		
-					 -->
-					
-			
-		
+							
+							<!-- ADD COLLABRATOR -->
 
-
-									<!-- ADD COLLABRATOR -->
-
-									<img ng-click="openCollboarate(note,User,$index)"
+							<img ng-click="openCollboarate(note,User,$index)"
 											src="images/collaborator.svg" height="25px">
 
 
-									<!-- ADD COLORS WITH COLORPALLETES -->
+							<!-- ADD COLORS WITH COLORPALLETES -->
 
-								<div class="btn-group dropup colorDiv" uib-dropdown>
+							<div class="btn-group dropup colorDiv" uib-dropdown>
 									<img id="dropdown" class="dropdown-toggle"
 										data-toggle="dropdown" alt="color"
 										src="images/colorpallet.svg" uib-dropdown-toggle height="20px">
@@ -208,26 +175,22 @@
 											data-ng-click="note.color =color.color;updateNotes(note)">
 										</a>
 									</ul>
-								</div>
+							</div>
 
-									<!-- ADD IMAGE -->
+							<!-- ADD IMAGE -->
 
-									<img alt="image" src="images/image.svg" height="20px"
+							<img alt="image" src="images/image.svg" height="20px"
 										aria-label="Image Upload" ng-click="openImageUploader(note)">
 
-									<!-- ADD ARCHIVE -->
+							<!-- ADD ARCHIVE -->
 
-									<span data-ng-click="addToArchive(note)"> <img
-										src="images/archive.svg" height="25px">
-									</span>
+							<span data-ng-click="addToArchive(note)">
+							 <img src="images/archive.svg" height="25px"></span>
 
+							<!-- ADD MORE OPTIONS -->
 
-									<!-- ADD MORE OPTIONS -->
-
-									<span class="btn dropdown-toggle" id="menu1"
-										data-toggle="dropdown"> <span
-										class="glyphicon glyphicon-option-vertical"
-										style="float: right"></span></span>
+							<span class="btn dropdown-toggle" id="menu1" data-toggle="dropdown"> <span
+								class="glyphicon glyphicon-option-vertical" style="float: right"></span></span>
 
 									<ul class="dropdown-menu multi-level" role="menu"
 										aria-labelledby="menu1" style="margin-left: 140px">
@@ -258,7 +221,8 @@
 															Create <b>"{{label.labelName}}"</b>
 														</div>
 													</li>
-												</ul></li>
+												</ul>
+											</li>
 
 										<!-- Make a copy --> 
 
@@ -312,42 +276,53 @@
 								</div>
 
 								<!-- SHOW REMINDER -->
-
-								<div id="reminder" ng-if="note.reminder!=null" style="padding-bottom: 20px;">
-								{{note.reminder}}<span class="closebtn"
-								data-ng-click="removeReminder(note)"></span>
-						</div>
+							<button type="button" class="btn btn-xs"
+									data-ng-show="note.reminderDate&&note.reminderTime">
+									{{note.reminderDate | date : 'MMM dd'}},{{note.reminderTime}}<span
+									class="badge" style="color: white;"><span
+									class="glyphicon glyphicon-remove"
+									data-ng-click="deleteReminderOfNote(note)"></span></span>
+								</button>
 								
 							
-							<!-- SHOW LABELS -->
+						<!-- SHOW LABELS -->
+							
 						<div ng-repeat="label in note.allLabels" >
-							<div id="label" ng-if="label.labelName!=null" style=" font-size: 15px;word-break: break-all">
-								{{label.labelName}}<span class="closebtn"
-									ng-click="removeLabel(note,label)"></span>
-							</div>
+							<button type="button" class="btn btn-xs" id="label" ng-if="label.labelName!=null" style=" font-size: 15px;word-break: break-all">
+								{{label.labelName}}<span class="closebtn"ssng-click="removeLabel(note,label)"></span>
+							</button>
 						</div>
 							<div class="moreOptions"> 
 								<div class="note-icon"
-									style="float: left; float: initial; width: 320px; margin: -20px;padding-top: 20px">
+									style="float: left; float: initial; width: 328px; margin: -20px;padding-top: 20px">
 								
 
 									<!--INPUT REMINDER  -->
 
-									<span class="btn dropdown-toggle" id="menu2"
+									<div class="dropdown inline">
+										<span class="btn dropdown-toggle" id="menu2"
 										data-toggle="dropdown"> <img alt="reminder"
 										src="images/reminder.svg" height="22px">
-									</span>
+										</span>
 
-									<ul class="dropdown-menu" role="menu" aria-labelledby="menu2">
-										<li><input type="text"
-											ng-attr-id="datepicker{{note.noteId}}" class="reminder"></li>
-										<li>
-											<button ng-click="openReminder(note)">
-												<span class="glyphicon glyphicon-calendar"></span>
-											</button>
+									<ul class="dropdown-menu" role="menu" aria-labelledby="menu2" style="height: 225px;  width: 270px; padding-left: 20px;padding-top:15px">
+									<h4>Select Date and Time</h4>
+										<li><div>
+											<input type="date" data-ng-model="note.reminderDate">
+										</div> 
+											<br>
+										</li>
+										<li><div class="input-group" data-toggle="collapse"data-target="#inputreminder{{note.noteId}}" style="font-size: 19px; padding-bottom: 5px;">Click To Add Time<span class="caret"></span>
+										</div>
+											<div id="inputreminder{{note.noteId}}" class="collapse">
+													<div data-ng-model="note.reminderDate"data-ng-click="addReminderToNote(note,'8:00 AM')">Morning 8:00 AM</div>
+													<div data-ng-model="note.reminderTime" data-ng-click="addReminderToNote(note,'1:00 PM')">AfterNoon 1:00 PM</div>
+													<div data-ng-model="note.reminderTime"data-ng-click="addReminderToNote(note,'6:00 PM')">Evening 6:00 PM</div>
+													<div data-ng-model="note.reminderTime" data-ng-click="addReminderToNote(note,'8:00 PM')">Night 8:00 PM</div>
+											</div>
 										</li>
 									</ul>
-
+								</div>
 									<!-- ADD COLLABRATOR -->
 
 									<img ng-click="openCollboarate(note,User,$index)"

@@ -1,0 +1,6 @@
+$scope.openReminder=function(note){
+			
+			$('#datepicker').datetimepicker();
+			$scope.timecheck=$("#datepicker").val();
+			console.log($scope.timecheck);
+		}

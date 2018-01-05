@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.bridgelabz.User.DAO.UserDao;
+import com.bridgelabz.User.model.Note;
 import com.bridgelabz.User.model.NoteLabel;
 import com.bridgelabz.User.model.User;
 
@@ -52,4 +53,10 @@ public class UserServiceImplemention implements UserService {
 		System.out.println("inside the update user:"+oldUser);;
 		userDao.updateUser(oldUser);
 }
+
+	@Override
+	public Note getAllNotes(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

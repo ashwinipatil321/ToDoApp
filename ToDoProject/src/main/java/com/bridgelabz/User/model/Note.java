@@ -45,9 +45,16 @@ public class Note {
 	@Column(name = "note_modifiedDate")
 	private Date modifiedDate;
 
-	@Column(name = "reminderDate")
-	private String reminder;
 
+	@Column(name = "Is_Reminded", nullable = false)
+	private boolean reminder;
+	
+	@Column(name = "Reminder_Date", nullable = true)
+	private Date reminderDate;
+
+	@Column(name = "Reminder_Time", nullable = true)
+	private String reminderTime;
+	
 	@Column(name = "isArchive")
 	private boolean isArchive;
 
@@ -120,13 +127,6 @@ public class Note {
 		this.modifiedDate = modifiedDate;
 	}
 
-	public String getReminder() {
-		return reminder;
-	}
-
-	public void setReminder(String reminder) {
-		this.reminder = reminder;
-	}
 
 	public User getUser() {
 		return user;
@@ -177,6 +177,30 @@ public class Note {
 		this.allLabels = allLabels;
 	}
 
+	public Date getReminderDate() {
+		return reminderDate;
+	}
+
+	public void setReminderDate(Date reminderDate) {
+		this.reminderDate = reminderDate;
+	}
+
+	public String getReminderTime() {
+		return reminderTime;
+	}
+
+	public void setReminderTime(String reminderTime) {
+		this.reminderTime = reminderTime;
+	}
+	public boolean isReminder() {
+		return reminder;
+	}
+
+	public void setReminder(boolean reminder) {
+		this.reminder = reminder;
+	}
+
+
 	public void copy(Note note) {
 
 		this.color = note.getColor();
@@ -186,11 +210,5 @@ public class Note {
 		this.isPin = note.isPin();
 		this.modifiedDate = note.getModifiedDate();
 		this.title = note.getTitle();
-	}
-
-	@Override
-	public String toString() {
-		return "Note [noteId=" + noteId + ", title=" + title + ", description=" + description + ", createdDate="
-				+ createdDate + ", modifiedDate=" + modifiedDate + "]";
 	}
 }

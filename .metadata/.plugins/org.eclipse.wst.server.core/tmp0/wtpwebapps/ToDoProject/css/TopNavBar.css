@@ -15,7 +15,9 @@
     transition: margin-left .5s;
     padding: 16px;
 }
-
+.glyphicon {
+    font-size: 20px;
+}
 .glyphicon-pic {
 	top: 20px;
 } 

@@ -3,13 +3,6 @@ var todoApp = angular.module('ToDo');
 todoApp.controller('homeController', function($scope, toastr, $interval,homeService,$filter, $uibModal,
 		loginService,$state,$http,$location,fileReader) {
 
-	$scope.noteFilter = null;
-
-	$scope.searchFilter = function (note) {
-		var re = new RegExp($scope.nameFilter, 'i');
-		return !$scope.nameFilter || re.test(note.title) || re.test(note.description);
-	};
-
 	$(document).ready(function(){
 
 		$("button").click(function(){
@@ -19,8 +12,9 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 
 
 	var allnotes=[];
+	
+	/*------------------------colors added in notes------------------------------------------------*/
 
-	//colors added in notes 
 
 	$scope.AddNoteColor = "#ffffff";
 
@@ -90,14 +84,14 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		$scope.topNavBarColor = "#669999";
 	}
 
-	//	side nav bar
+	/*------------------------SideBar Taggle------------------------------------------------*/
 
 	$scope.defaultMargin = function() {
 
 		document.getElementById("sideToggle").style.width = "250px";
 		document.getElementById("content-wrapper").style.marginLeft = "350px";
 	}
-
+	
 	$scope.toggleSideBar = function() {
 
 		var width = $('#sideToggle').width();
@@ -111,7 +105,7 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		}
 	}
 
-	//	add the notes
+	/*------------------------Add Notes------------------------------------------------*/
 
 	$scope.saveNote =function(){
 		var message= homeService.service('POST','user/saveNote',$scope.note);
@@ -130,7 +124,7 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		});
 	}
 
-	//	gets the all notes
+	/*------------------------Get All Notes------------------------------------------------*/
 
 	var getAllNotes = function() {
 
@@ -143,6 +137,7 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 			console.log(response.data);
 			$scope.notes = response.data;
 			allnotes= response.data;
+			$scope.changeToDateObject($scope.notes);
 		}, function(response) {
 
 			$scope.error = response.data.message;
@@ -158,8 +153,8 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 	}
 	getAllNotes();
 
+	/*------------------------Delete Notes------------------------------------------------*/
 
-	//	delete the notes
 
 	$scope.deleteNotes = function(note) {
 		console.log("note id" + note.noteId);
@@ -172,7 +167,8 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		};
 	}
 
-//	update notes
+	/*------------------------Update Notes------------------------------------------------*/
+
 
 	$scope.updateNotes = function(note) {
 		console.log("inside update controller",note.noteId)
@@ -187,6 +183,9 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		});
 	}
 
+
+	/*------------------------List and Grid view of Notes------------------------------------------------*/
+
 	$scope.ListView = true;
 	$scope.ListViewToggle = function() {
 		if ($scope.ListView == true) {
@@ -197,8 +196,6 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 			listGrideView();
 		}
 	}
-
-//	list view of notes
 
 	listGrideView();
 
@@ -217,6 +214,7 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		}
 	}
 
+	/*------------------------Archive Notes-----------------------------------------------*/
 
 
 	$scope.addToArchive = function(note) {
@@ -230,7 +228,7 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		});
 	}
 
-	/* unarchive notes */
+	/*------------------------Unarchieve Notes------------------------------------------------*/
 
 	$scope.unarchiveNote = function(note) {
 		note.archive= false;
@@ -242,7 +240,7 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		});
 	}
 
-	/* trash notes */
+	/*------------------------Add Note in Trrash------------------------------------------------*/
 
 	$scope.addToTrash = function(note) {
 
@@ -257,7 +255,8 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		});
 	}
 
-	//restore notes to notes
+	/*------------------------Restore note in notes------------------------------------------------*/
+
 
 	$scope.restoreToNotes = function(note) {
 
@@ -277,8 +276,8 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 
 		});
 	}
-
-	//pin and unpinned
+	
+	/*----------------------pinned Notes-----------------------------------------------*/
 
 	$scope.addTopin = function(note) {
 
@@ -298,7 +297,8 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		});
 	}
 
-	//Edit note
+	/*------------------------Edit Note------------------------------------------------*/
+
 
 	$scope.showModal = function(note) {
 
@@ -313,8 +313,8 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 
 	};
 
+	/*------------------------social share-----------------------------------------------*/
 
-	// social share
 
 	$scope.fbShareInit = function(note) {
 
@@ -354,7 +354,9 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		});
 	};
 
-	// Make a copy
+	
+	/*------------------------Make a copy------------------------------------------------*/
+
 
 	$scope.copy = function(note) {
 
@@ -370,6 +372,13 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 	}
 
 	getUser();
+	
+	
+	/*------------------------get user-------------------------------------------------*/
+
+	
+/*	toastr.success('Remainder check notes!!!'+"title:"+note.title+"\n "+"desription:"+note.description);
+*/
 
 	function getUser() {
 
@@ -382,61 +391,8 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		});
 	}
 
-	//	Add Reminder
-	$scope.AddReminder = '';
-	$scope.openAddReminder = function() {
+	/*------------------------open list of labels-------------------------------------------------*/
 
-		$('#datepicker').datetimepicker();
-
-		$scope.AddReminder = $('#datepicker').val();
-	}
-
-	// reminder
-
-	$scope.reminder = "";
-	$scope.openReminder = function(note) {
-
-		$('.reminder').datetimepicker();
-
-		var id = '#datepicker' + note.noteId;
-
-		$scope.reminder = $(id).val();
-
-		if ($scope.reminder === "" || $scope.reminder === undefined) {
-
-			console.log(note);
-			console.log($scope.reminder);
-
-		} else {
-
-			console.log($scope.reminder);
-			note.reminder = $scope.reminder;
-			console.log("hinside reminder",note);
-			$scope.updateNotes(note);
-			$scope.reminder = "";
-		}
-	}
-	$scope.addReminderToNote = function(note, time) {
-		if (note.reminderDate == 0 && note.reminderTime == "") {
-			note.reminderDate = null;
-			note.reminderTime = null;
-		}
-		ga('send','event','Reminders','Reminder Added To Note');
-		note.reminderTime = time;
-		note.reminder = true;
-		$scope.updateNotes(note);
-	}
-	// show reminder
-	
-	$scope.removeReminder = function(note) {
-
-		note.reminder = null;
-		$scope.updateNotes(note);
-		toastr.success('Remainder check notes!!!'+"title:"+note.title+"\n "+"desription:"+note.description);
-	}
-	
-
-	//open list of labels
 
 	$scope.showLabelList = function() {
 		getlabels();
@@ -450,7 +406,9 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 
 	};
 
-	//save labels
+	
+	/*------------------------save labels-------------------------------------------------*/
+
 
 	$scope.saveLabel = function(label){
 		
@@ -471,7 +429,8 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		});
 	}
 
-	// delete labels
+	/*------------------------delete labels-------------------------------------------------*/
+
 
 	$scope.deleteLabel = function(label) {
 
@@ -479,7 +438,8 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		getlabels();
 	}
 
-	//getAll Labels
+	/*------------------------getAll Labels-------------------------------------------------*/
+
 
 	var getlabels = function() {
 		var httpGetLabels = homeService.getLabelAllLabels();
@@ -492,7 +452,9 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		});
 	}
 
-	//get Note By label Name
+	
+	/*------------------------get Note By label Name-------------------------------------------------*/
+
 
 	$scope.getNoteByLabel = function(labelName){
 		
@@ -512,7 +474,9 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		}
 	}
 
-	//show labels
+	
+	/*------------------------ show labels-------------------------------------------------*/
+
 
 	$scope.removeLabel = function(note,label)
 	{
@@ -530,7 +494,9 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		homeService.updateNotes(note);
 	}
 
-	//input check for labels
+	
+	/*------------------------ input checkbox for labels--------------------------------------------------*/
+
 
 	$scope.checkboxCheck = function(note,label)
 	{
@@ -542,7 +508,8 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		}
 		return false;
 	}
-	// Add labels in notes
+	
+	/*------------------------ Add labels in notes--------------------------------------------------*/
 
 	$scope.toggleLabelOfNote = function(note, label) {
 
@@ -562,7 +529,9 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		homeService.updateNotes(note);
 	}
 
-	// Edit labels
+	
+	/*------------------------  Edit labels--------------------------------------------------*/
+
 
 	$scope.editLabel = function(label) {
 
@@ -571,9 +540,8 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		getlabels();
 	}
 
+	/*------------------------ open collaborator --------------------------------------------------*/
 
-
-//	open collaborator
 
 	$scope.openCollboarate = function(note, user, index) {
 
@@ -587,7 +555,9 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		});
 	}
 
-	//show list of user in modal
+	
+	/*------------------------ show list of user in modal --------------------------------------------------*/
+
 
 	$scope.getUserlist = function(note, user, index) {
 		
@@ -609,7 +579,8 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		console.log(user);
 	}
 
-	// get the owner of user 
+	/*------------------------ get the owner  --------------------------------------------------*/
+
 
 	$scope.getOwner = function(note) {
 		
@@ -621,7 +592,9 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		});
 	}
 	
-	// collaborate the owner and share user
+	
+	/*------------------------ collaborate the owner and share user--------------------------------------------------*/
+
 
 	$scope.collborate = function(note, user, index) {
 		
@@ -645,7 +618,9 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		console.log(user);
 	}
 
-	// delete the collaborator
+
+	/*------------------------ delete the collaborator--------------------------------------------------*/
+
 
 	$scope.removeCollborator = function(note, user, index) {
 		
@@ -667,60 +642,81 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		});
 	}
 
-	// hide collaborator
+	
+	/*------------------------hide collaborator modal--------------------------------------------------*/
 
+	
 	$scope.cancelModel = function(){
 		$("#myModal").hide();
 	}
 
-//	compare date with 
+	/*------------------------reminder interval function--------------------------------------------------*/
 
-	function remainderCheck() {
-
-		$interval(function() {
-
-			var currentDate = $filter('date')(new Date(),
-			'MM/dd/yyyy h:mm a');
-			console.log("currentDate::::" + currentDate);
-			var i = 0;
-			for (i; i < $scope.notes.length; i++) {
-				console.log($scope.notes);
-				var dateString2 = (new Date(
-						$scope.notes[i].reminder));
-
-				var dateString3 = $filter('date')(
-						new Date(dateString2),
-				'MM/dd/yyyy h:mm a');
-				if (dateString3 === currentDate) {
-
-					$scope.mypicker = dateString2;
-					console.log("reminder !!!!! ");
-					toastr.success('Remainder check notes!!!'+note);
-					$scope.note[i].reminder = true;
-					var token = localStorage.getItem('acessToken');
-					var notes1 = homeService.updateNotes(token,
-							$scope.note[i]);
-
-				} else {
-
-					console.log("no remainder");
-				}
-			}
-		}, 200000);
+	var intervalFunction = function() {
+		$interval(
+				function() {
+					notes = $scope.notes;
+					for (var noteCount = 0; noteCount < notes.length; noteCount++) {
+						if (notes[noteCount].reminderDate != 0
+								&& notes[noteCount].reminderTime != "") {
+							var currentDate = $filter('date')(
+									new Date(), 'yyyy-MM-dd');
+							var remindedDate = $filter('date')(new Date(notes[noteCount].reminderDate),'yyyy-MM-dd');
+							var currentTime = $filter('date')(new Date(), 'h:mm a');
+							if (currentDate == remindedDate
+									&& currentTime == notes[noteCount].reminderTime) {
+								toastr.sucess(notes[noteCount].noteTitle,'Reminder');
+								$scope.notes[noteCount].reminder = false;
+								$scope.notes[noteCount].reminderDate = null;
+								$scope.notes[noteCount].reminderTime = null;
+								$scope.updateNotes($scope.notes[noteCount]);
+							}
+						}
+					}
+				}, 30000);
 	}
-	remainderCheck();
+	
+	/*------------------------Add reminder To Note--------------------------------------------------*/
+	
+	$scope.addReminderToNote = function(note, time) {
+		
+		if (note.reminderDate == 0 && note.reminderTime == "") {
+			note.reminderDate = null;
+			note.reminderTime = null;
+		}
+		note.reminderTime = time;
+		console.log("note reminder:",note.reminderTime )
+		note.reminder = true;
+		$scope.updateNotes(note);
+	}
 
+	/*------------------------remove reminder from Note--------------------------------------------------*/
+	
+	$scope.deleteReminderOfNote = function(note) {
+		note.reminderDate = null;
+		note.reminderTime = null;
+		note.reminder = false;
+		$scope.updateNotes(note);
+	}
+	
+	/*------------------------change millisecond time to actual time--------------------------------------------------*/
 
-	//	logout
+	$scope.changeToDateObject = function(notes) {
+		for (var noteCount = 0; noteCount < notes.length; noteCount++) {
+			notes[noteCount].reminderDate = new Date(notes[noteCount].reminderDate);
+		}
+	}
 
+	/*-----------------------logout--------------------------------------------------*/
+	
 	$scope.signout = function() {
 
 		localStorage.removeItem('token');
 		$location.path("/login");
 	}
 
-	//	uploading images
-
+	/*-----------------------uploading images--------------------------------------------------*/
+	
 	$scope.imageSrc = "";
 
 	$scope.$on("fileProgress", function(e, progress) {
@@ -744,7 +740,8 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 		});
 	}
 
-	// Add images
+	/*----------------------- Add images--------------------------------------------------*/
+
 
 	$scope.removeImage = function() {
 		$scope.AddNoteBox = false;
@@ -772,4 +769,7 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 				}
 			});
 	getlabels();
+	
+	intervalFunction();
+
 });
