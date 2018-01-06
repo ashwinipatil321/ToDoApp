@@ -1,4 +1,5 @@
 package com.bridgelabz.User.DAO;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Query;
@@ -89,6 +90,8 @@ public class NoteDaoImplemention implements NoteDAO {
 
 	}
 
+
+
 	@Override
 	public 	NoteLabel getLabelByName(String labelName)
 	{
@@ -131,7 +134,7 @@ public class NoteDaoImplemention implements NoteDAO {
 		return true;
 
 	} 
-	
+
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<User> getListOfUser(int noteId) 
@@ -141,38 +144,38 @@ public class NoteDaoImplemention implements NoteDAO {
 		List<User> listOfSharedCollaborators =  querycollab.getResultList();
 		System.out.println("listOfSharedCollaborators " + listOfSharedCollaborators);
 		return listOfSharedCollaborators;
-		
+
 	}
-	
+
 	@Override
 	public int saveCollborator(Collaborator collborate) {
-		
+
 		int collboratorId = 0;
 		Session session = sessionFactory.getCurrentSession();
 		collboratorId = (Integer) session.save(collborate);
 		return collboratorId;
 	}
-	
+
 	@Override
 	public int removeCollborator(int shareWith, int noteId)
 	{
-	System.out.println("shared in DAO "+shareWith);
-	System.out.println("noteId....."+noteId);
+		System.out.println("shared in DAO "+shareWith);
+		System.out.println("noteId....."+noteId);
 		Session session = sessionFactory.getCurrentSession();
-			Query query = session.createQuery("delete  Collaborator c where c.shareId= " + shareWith + " and c.noteId=" + noteId);
-			int status = query.executeUpdate();
-			return status;
+		Query query = session.createQuery("delete  Collaborator c where c.shareId= " + shareWith + " and c.noteId=" + noteId);
+		int status = query.executeUpdate();
+		return status;
 	}
 
 	@Override
 	public List<Note> getCollboratedNotes(int userId)
 	{
 		Session session = sessionFactory.getCurrentSession();
-				Query query = session.createQuery("select c.noteId from Collaborator c where c.shareId= " + userId);
-				List<Note> colllboratedNotes = query.getResultList();
-				return colllboratedNotes;
+		Query query = session.createQuery("select c.noteId from Collaborator c where c.shareId= " + userId);
+		List<Note> colllboratedNotes = query.getResultList();
+		return colllboratedNotes;
 	}
-	
+
 	@Override
 	public List<Note> getAllNotes(User user)
 	{
@@ -183,10 +186,27 @@ public class NoteDaoImplemention implements NoteDAO {
 		return notes;
 	}
 
-	
-	}
+	@Override
+	public void deleteScheduleNote() {
 
-	
+		Session session = sessionFactory.getCurrentSession();
+
+		System.out.println("jhdbvj ");
+
+		Date deleteTime = new Date(System.currentTimeMillis() - 7 * 24 * 60 * 60 * 1000);
+		boolean emptyTrash = true;
+		Query deleteNote = session.createQuery("delete from Note where modifiedDate<:deleteTime and emptyTrash=:emptyTrash");
+		deleteNote.setParameter("deleteTime", deleteTime);
+		deleteNote.setParameter("emptyTrash", emptyTrash);
+		int count = deleteNote.executeUpdate();
+		System.out.println("Number of notes deleted: " + count);
+	}
+}
+
+
+
+
+
 
 
 

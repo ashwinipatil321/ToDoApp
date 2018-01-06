@@ -133,8 +133,15 @@ public class NoteServiceImplemention implements NoteServices {
 	{
 			return noteDao.getCollboratedNotes(userId);
 	}
+
+	@Override
+	public void deleteScheduleNote() {
 	
+				noteDao.deleteScheduleNote();
+			}
 	}
+	
+	
 
 	
 

@@ -6,20 +6,20 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="openReminder" key="selection"/>
+		<item value="reminder" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="reminder"/>
+			<item value="deleteReminderOfNote"/>
+			<item value="deleteReminderOfNote(note)"/>
+			<item value="updateNotes"/>
 			<item value="openReminder"/>
 			<item value="search"/>
 			<item value="labels"/>
 			<item value="remove"/>
-			<item value="checkboxCheck"/>
-			<item value="add"/>
-			<item value="jquery"/>
-			<item value="label"/>
 		</list>
 		<list key="replacehistory">
 			<item value="console"/>

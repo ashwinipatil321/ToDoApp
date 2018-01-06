@@ -27,5 +27,7 @@ public interface NoteServices {
 	public int saveCollborator(Collaborator collborate);
 	public int removeCollborator(int shareWith, int noteId);
 	public List<Note> getCollboratedNotes(int userId);
+	public void deleteScheduleNote();
+	
 }
 

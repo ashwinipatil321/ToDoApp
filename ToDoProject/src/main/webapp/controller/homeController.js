@@ -3,13 +3,6 @@ var todoApp = angular.module('ToDo');
 todoApp.controller('homeController', function($scope, toastr, $interval,homeService,$filter, $uibModal,
 		loginService,$state,$http,$location,fileReader) {
 
-	$(document).ready(function(){
-
-		$("button").click(function(){
-			$("#toggleNote").toggle();
-		});
-	});
-
 
 	var allnotes=[];
 	
@@ -59,6 +52,8 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 			"color" : '#bfbfbf',
 			"path" : 'images/grey.png'
 		} ];
+	
+	/*------------------------Gives color to topNavBar------------------------------------------------*/
 
 	if ($state.current.name == "home") {
 
@@ -86,11 +81,6 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 
 	/*------------------------SideBar Taggle------------------------------------------------*/
 
-	$scope.defaultMargin = function() {
-
-		document.getElementById("sideToggle").style.width = "250px";
-		document.getElementById("content-wrapper").style.marginLeft = "350px";
-	}
 	
 	$scope.toggleSideBar = function() {
 
@@ -101,7 +91,8 @@ todoApp.controller('homeController', function($scope, toastr, $interval,homeServ
 			document.getElementById("content-wrapper").style.marginLeft = "270px";
 		} else {
 			document.getElementById("sideToggle").style.width = "250px";
-			document.getElementById("content-wrapper").style.marginLeft = "350px";
+			document.getElementById("content-wrapper").style.marginLeft = "450px";
+			
 		}
 	}
 

@@ -57,6 +57,8 @@
 	</bean>
 
 	<bean id="sendMail" class="com.bridgelabz.User.Utility.SendMail" />
+		<bean id="noteSchedule" class="com.bridgelabz.User.Scheduler.ScheduleNote"/>
+	
 
 
 	<bean id="transactionManeger"
