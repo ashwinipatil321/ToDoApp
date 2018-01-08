@@ -6,20 +6,20 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="reminder" key="selection"/>
+		<item value="create" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="create"/>
+			<item value="img"/>
+			<item value="s"/>
 			<item value="reminder"/>
 			<item value="deleteReminderOfNote"/>
 			<item value="deleteReminderOfNote(note)"/>
 			<item value="updateNotes"/>
 			<item value="openReminder"/>
-			<item value="search"/>
-			<item value="labels"/>
-			<item value="remove"/>
 		</list>
 		<list key="replacehistory">
 			<item value="console"/>
@@ -29,7 +29,7 @@
 		<item value="338" key="DIALOG_WIDTH"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		<item value="406" key="DIALOG_HEIGHT"/>
-		<item value="963" key="DIALOG_X_ORIGIN"/>
-		<item value="338" key="DIALOG_Y_ORIGIN"/>
+		<item value="111" key="DIALOG_X_ORIGIN"/>
+		<item value="31" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

@@ -3,6 +3,7 @@ package com.bridgelabz.User.Service;
 import java.util.List;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import com.bridgelabz.User.DAO.NoteDAO;
@@ -134,9 +135,11 @@ public class NoteServiceImplemention implements NoteServices {
 			return noteDao.getCollboratedNotes(userId);
 	}
 
-	@Override
+	@Transactional
+	@Scheduled(fixedDelay=30*60*1000)
 	public void deleteScheduleNote() {
 	
+		System.out.println("inside delete schedular service");
 				noteDao.deleteScheduleNote();
 			}
 	}

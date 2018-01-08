@@ -18,6 +18,8 @@ toDo.factory('homeService', function($http) {
 			}
 		});
 	}
+/*-----------------------------------------Add Notes------------------------------------------------*/
+
 
 	notes.saveNotes = function(note) {
 
@@ -34,7 +36,7 @@ toDo.factory('homeService', function($http) {
 		})
 	}
 
-	// get all notes
+	/*------------------------Get All Notes------------------------*/
 
 	notes.getAllNotes = function() {
 
@@ -50,7 +52,7 @@ toDo.factory('homeService', function($http) {
 		});
 	}
 
-	// DELETE NOTE
+	/*------------------------Delete Notes------------------------*/
 
 	notes.deleteNotes = function(note) {
 
@@ -69,8 +71,26 @@ toDo.factory('homeService', function($http) {
 
 		})
 	}
+	
+	/*------------------------Update Notes---------------------------*/
 
-	// Restore note to Notes
+	notes.updateNote = function(token, note) {
+
+		console.log("IN SERVICE");
+		return $http({
+
+			method : 'POST',
+			data : note,
+			url : 'user/update',
+
+			headers : {
+
+				'token' : localStorage.getItem('acessToken')
+			}
+		});
+	}
+	
+/*----------------------------------------- Restore note to Notes----------------------------------------------*/
 
 	notes.updateNotes = function(note) {
 
@@ -89,7 +109,7 @@ toDo.factory('homeService', function($http) {
 		})
 	}
 
-	// add pin and unpin
+/*-----------------------------------------pinned Notes-----------------------------------------------*/
 
 	notes.addTopin = function(noteid, pin) {
 
@@ -110,23 +130,7 @@ toDo.factory('homeService', function($http) {
 		})
 	}
 
-	notes.updateNote = function(token, note) {
-
-		console.log("IN SERVICE");
-		return $http({
-
-			method : 'POST',
-			data : note,
-			url : 'user/update',
-
-			headers : {
-
-				'token' : localStorage.getItem('acessToken')
-			}
-		});
-	}
-
-	// get User
+/*---------------------------------------------get user-------------------------------------------------*/
 
 	notes.getUser = function() {
 
@@ -141,6 +145,158 @@ toDo.factory('homeService', function($http) {
 			}
 		})
 	}
+	
+/*-------------------------------------save labels------------------------------------------------------*/
+	
+	notes.saveLabel = function(label) {
+
+		return $http({
+
+			method : 'POST',
+			url : 'note/addLabels',
+			data : label,
+
+			headers : {
+
+				'token' : localStorage.getItem('acessToken')
+			}
+		})
+	}
+	
+	/*------------------------delete labels-------------------------*/
+
+	notes.deleteLabel = function(label) {
+
+		return $http({
+
+			method : "DELETE",
+			url : 'note/deleteLabels/'+label.labelId,
+
+			headers : {
+
+				'token' : localStorage.getItem('acessToken')
+			}
+		})
+	}
+	
+	/*------------------------getAll Labels--------------------------*/
+
+	notes.getAllLabels = function() {
+
+		return $http({
+
+			method : "GET",
+			url : "note/getLabelAllLabels",
+
+			headers : {
+
+				'token' : localStorage.getItem('acessToken')
+			}
+		})
+	}
+	
+	/*------------------------  Edit labels-------------------------*/
+
+
+	notes.editLabel = function(label) {
+
+		console.log("IN SERVICE",label);
+	
+		return $http({
+
+			method : 'POST',
+			data : label,
+			url : 'note/editLabel',
+
+			headers : {
+
+				'token' : localStorage.getItem('acessToken')
+			}
+		});
+	}
+	
+	/*------------------------get Labels on Notes--------------------------*/
+	
+	notes.getLabelNotes = function(labelName) {
+
+		return $http({
+
+			method : "GET",
+
+			url : "getLabelNotes/" + labelName,
+
+			headers : {
+
+				'token' : localStorage.getItem('acessToken')
+			}
+		})
+	}
+	
+/*---------------------------- show collaborator modal-----------------------------------------------------*/
+
+	notes.getUserlist = function(note) {
+
+		return $http({
+
+			method : 'POST',
+			url : 'note/collaborator',
+			data : note,
+			headers : {
+
+				'token' : localStorage.getItem('acessToken')
+			}
+		});
+	}
+	
+	/*------------------------ get the owner  ---------------------------*/
+	
+	notes.getOwner =function(note)
+	{
+		return $http({
+
+			method : 'POST',
+			url : 'note/getOwner',
+			data : note,
+			headers : {
+
+				'token' : localStorage.getItem('acessToken')
+			}
+		});
+	}
+	/*----------------- collaborate the owner and share user------------*/
+	
+	notes.collborate = function(note)
+	{
+
+		return $http({
+
+			method : 'POST',
+			url : 'note/collaborator',
+			data : note,
+			headers : {
+
+				'token' : localStorage.getItem('acessToken')
+			}
+		});
+	}
+	
+	/*------------------------ delete the collaborator------------*/
+
+	notes.removeCollborator=function(note)
+	{
+		return $http({
+
+			method : 'POST',
+			url : 'note/removeCollborator',
+			data : note,
+			headers : {
+
+				'token' : localStorage.getItem('acessToken')
+			}
+		});
+	}
+	
+/*----------------------------------------uploading images--------------------------------------------------*/
 
 	notes.changeProfile = function(User) {
 
@@ -158,138 +314,6 @@ toDo.factory('homeService', function($http) {
 			data : User
 		})
 	}
-	notes.getUserlist = function(note) {
-
-		return $http({
-
-			method : 'POST',
-			url : 'note/collaborator',
-			data : note,
-			headers : {
-
-				'token' : localStorage.getItem('acessToken')
-			}
-		});
-	}
-
-	notes.getOwner =function(note)
-	{
-		return $http({
-
-			method : 'POST',
-			url : 'note/getOwner',
-			data : note,
-			headers : {
-
-				'token' : localStorage.getItem('acessToken')
-			}
-		});
-	}
 	
-	notes.collborate = function(note)
-	{
-
-		return $http({
-
-			method : 'POST',
-			url : 'note/collaborator',
-			data : note,
-			headers : {
-
-				'token' : localStorage.getItem('acessToken')
-			}
-		});
-	}
-
-	
-	notes.removeCollborator=function(note)
-	{
-		return $http({
-
-			method : 'POST',
-			url : 'note/removeCollborator',
-			data : note,
-			headers : {
-
-				'token' : localStorage.getItem('acessToken')
-			}
-		});
-	}
-	
-	
-	notes.getLabelNotes = function(labelName) {
-
-		return $http({
-
-			method : "GET",
-
-			url : "getLabelNotes/" + labelName,
-
-			headers : {
-
-				'token' : localStorage.getItem('acessToken')
-			}
-		})
-	}
-	
-	
-	notes.saveLabel = function(label) {
-
-		return $http({
-
-			method : 'POST',
-			url : 'note/addLabels',
-			data : label,
-
-			headers : {
-
-				'token' : localStorage.getItem('acessToken')
-			}
-		})
-	}
-
-	notes.deleteLabel = function(label) {
-
-		return $http({
-
-			method : "DELETE",
-			url : 'note/deleteLabels/'+label.labelId,
-
-			headers : {
-
-				'token' : localStorage.getItem('acessToken')
-			}
-		})
-	}
-
-	notes.getLabelAllLabels = function() {
-
-		return $http({
-
-			method : "GET",
-			url : "note/getLabelAllLabels",
-
-			headers : {
-
-				'token' : localStorage.getItem('acessToken')
-			}
-		})
-	}
-
-	notes.editLabel = function(label) {
-
-		console.log("IN SERVICE");
-		return $http({
-
-			method : 'POST',
-			data : label,
-			url : 'note/editLabel',
-
-			headers : {
-
-				'token' : localStorage.getItem('acessToken')
-			}
-		});
-	}
 	return notes;
 });
