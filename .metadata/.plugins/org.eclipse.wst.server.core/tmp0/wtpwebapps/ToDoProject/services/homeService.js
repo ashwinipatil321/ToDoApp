@@ -146,6 +146,19 @@ toDo.factory('homeService', function($http) {
 		})
 	}
 	
+/*-------------------------------------get url------------------------------------------------------*/
+
+	notes.getUrl=function(urlToSend){
+		return $http({
+		    method: 'POST',
+		    url: 'getUrlData',
+		    headers: {
+		        'url': urlToSend
+		    }
+		
+		});
+	}
+
 /*-------------------------------------save labels------------------------------------------------------*/
 	
 	notes.saveLabel = function(label) {
@@ -230,6 +243,12 @@ toDo.factory('homeService', function($http) {
 				'token' : localStorage.getItem('acessToken')
 			}
 		})
+	}
+	
+	/*------------------------get Author--------------------------*/
+	
+	notes.getAuthor = function(){
+		return localStorage.getItem('acessToken');
 	}
 	
 /*---------------------------- show collaborator modal-----------------------------------------------------*/

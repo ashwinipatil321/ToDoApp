@@ -81,6 +81,7 @@ todoApp
 
 /*-----------------------------------SideBar Taggle------------------------------------------------*/
 
+
 			$scope.toggleSideBar = function() {
 
 				var width = $('#sideToggle').width();
@@ -128,6 +129,15 @@ todoApp
 					console.log(response.data);
 					$scope.notes = response.data;
 					allnotes = response.data;
+					/*if($scope.ListViewToggle == false)
+						{
+						
+						localStorage.setItem('ListViewToggle',true);
+						}
+					else
+						{
+						localStorage.setItem('ListViewToggle',$scope.ListView);
+						}*/
 					$scope.changeToDateObject($scope.notes);
 				}, function(response) {
 
@@ -143,7 +153,17 @@ todoApp
 				$scope.newnote = false;
 			}
 			getAllNotes();
+			
+	/*------------------------get Author------------------------*/		
 
+			var getAuthor = function(){
+				$scope.author = homeService.getAuthor();
+				if($scope.author==null){
+					$location.path('login');
+				}
+			}
+			getAuthor();
+			
 	/*------------------------Delete Notes------------------------*/
 
 			$scope.deleteNotes = function(note) {
@@ -173,7 +193,6 @@ todoApp
 			}
 
 
-
 	/*-----------------------------Edit Note Modal---------------------------*/
 
 			$scope.showModal = function(note) {
@@ -191,8 +210,10 @@ todoApp
 
 /*--------------------------------------List and Grid view of Notes------------------------------------------------*/
 
-			$scope.ListView = true;
+			$scope.ListView = localStorage.getItem('ListViewToggle');
 			$scope.ListViewToggle = function() {
+				var ListView = localStorage.getItem('ListViewToggle');
+
 				if ($scope.ListView == true) {
 					$scope.ListView = false;
 					listGrideView();
@@ -206,20 +227,23 @@ todoApp
 
 			function listGrideView() {
 				if ($scope.ListView) {
-					var element = document
-					.getElementsByClassName('card');
+					var element = document.getElementsByClassName('card');
 					for (var i = 0; i < element.length; i++) {
 						element[i].style.width = "900px";
 					}
+					localStorage.setItem('ListViewToggle',$scope.ListView);
+
 				} else {
 					var element = document
 					.getElementsByClassName('card');
 					for (var i = 0; i < element.length; i++) {
 						element[i].style.width = "300px";
 					}
+					localStorage.setItem('ListViewToggle',$scope.ListView);
+
 				}
 			}
-
+			
 /*-------------------------------------Archive Notes-----------------------------------------------*/
 
 			$scope.addToArchive = function(note) {
@@ -371,6 +395,47 @@ todoApp
 				});
 			}
 
+			
+/*---------------------------Url sripping on notes--------------------------------------------------*/
+			
+			urls = [];
+			
+			$scope.checkUrlList = function(note) {
+				console.log("checkUrlList")
+				var urlPattern = /(http|ftp|https):\/\/[\w-]+(\.[\w-]+)+([\w.,@?^=%&amp;:\/~+#-]*[\w@?^=%&amp;\/~+#-])?/gi;
+				var url = note.description.match(urlPattern);
+				var link = [];
+				var j = 0;
+				note.url = [];
+				note.link = [];
+				console.log(url);
+				if (url != null || url != undefined) {
+					for (var i = 0; i < url.length; i++) {
+						console.log("url length");
+						console.log(url.length);
+						note.url[i] = url[i];
+						saveLabel = homeService.getUrl(url[i]);
+						saveLabel.then(function(response) {
+							j++;
+							if (note.size == undefined) {
+								note.size = 0;
+							}
+							console.log(note.size);
+							var responseData = response.data;
+							link[note.size] = {
+								title : responseData.title,
+								url : note.url[note.size],
+								imageUrl : responseData.imageUrl,
+								domain : responseData.domain
+							}
+							note.link[note.size] = link[note.size];
+							note.size = note.size + 1;
+							console.log(note.link);
+						}, function(response) {
+						});
+					}
+				}
+			}
 /*-----------------------------------open list of labels-------------------------------------------------*/
 
 			
@@ -677,7 +742,7 @@ todoApp
 
 			$scope.signout = function() {
 
-				localStorage.removeItem('token');
+				localStorage.removeItem('acessToken');
 				$location.path("/login");
 			}
 

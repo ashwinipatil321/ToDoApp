@@ -103,7 +103,7 @@
 			<artifactId>spring-context-support</artifactId>
 			<version>4.3.10.RELEASE</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt</artifactId>
@@ -133,6 +133,12 @@
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-jwt</artifactId>
 			<version>1.0.4.RELEASE</version>
+		</dependency>
+		<!--url scripping  -->
+		<dependency>
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>1.8.3</version>
 		</dependency>
 		<dependency>
 			<groupId>com.nimbusds</groupId>

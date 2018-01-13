@@ -6,6 +6,7 @@ $(document).mouseup(function (e)
 
 	if(!$('#note-body').is(e.target)){
 		$.each(container, function(key, value) {
+			
 			if (!$(value).is(e.target) && !$(e.target).parents('#note').length) // if the target of the click isn't the container...
 				$(value).hide();
 			else

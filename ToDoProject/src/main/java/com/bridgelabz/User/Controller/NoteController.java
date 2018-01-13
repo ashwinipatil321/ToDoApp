@@ -1,4 +1,5 @@
 package com.bridgelabz.User.Controller;
+import java.io.IOException;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,12 +15,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import com.bridgelabz.User.Service.NoteServices;
 import com.bridgelabz.User.Service.UserService;
+import com.bridgelabz.User.Utility.LinkScrapper;
 import com.bridgelabz.User.Utility.Token;
 import com.bridgelabz.User.model.Collaborator;
 import com.bridgelabz.User.model.CustomeResponse;
 import com.bridgelabz.User.model.Note;
 import com.bridgelabz.User.model.NoteLabel;
 import com.bridgelabz.User.model.Response;
+import com.bridgelabz.User.model.UrlData;
 import com.bridgelabz.User.model.User;
 
 @RestController
@@ -132,7 +135,7 @@ public class NoteController {
 		List<Note> notes = noteService.getAllNotes(user);
 		List<Note> noteCollabortor = noteService.getCollboratedNotes(user.getUserId());
 		List<Note> noteList = new ArrayList<>();
-		
+
 		for (int i = 0; i < notes.size(); i++) {
 			noteList.add(notes.get(i));
 		}
@@ -140,11 +143,11 @@ public class NoteController {
 		for (int i = 0; i < noteCollabortor.size(); i++) {
 			noteList.add(noteCollabortor.get(i));
 		}
-	
+
 		return noteList;
 	}		
-		
-/*
+
+	/*
 		if (user != null) {
 
 			allNotes = noteService.getallNotes(id);
@@ -152,8 +155,8 @@ public class NoteController {
 			myResponse.setMessage("Got all the notes");
 			myResponse.setStatus(1);
 			return new ResponseEntity<List<Note>>(allNotes, HttpStatus.OK);
-			
-			
+
+
 		}
 
 		else {
@@ -382,11 +385,11 @@ public class NoteController {
 		String token = request.getHeader("token");
 		int id = Token.verify(token);
 		User user =UserService.getUserById(id);
-		
+
 		System.out.println("inside getowner....."+user);
 		if (user != null) {
 			Note noteComplete = noteService.getNoteById(note.getNoteId());
-		
+
 			System.out.println("noteComplete........"+noteComplete);
 			User ownerUser = noteComplete.getUser();
 			return ResponseEntity.ok(ownerUser);
@@ -431,7 +434,23 @@ public class NoteController {
 			return ResponseEntity.ok(response);
 		}
 	}
-
+	
+	
+	@RequestMapping(value="/getUrlData", method=RequestMethod.POST)
+	public ResponseEntity<?> getUrlData(HttpServletRequest request)
+	{
+		String url=request.getHeader("url");
+		LinkScrapper link = new LinkScrapper();
+		UrlData data=null;
+		try
+		{
+			data=link.getUrlMetaData(url);
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+		return ResponseEntity.ok(data);
+	}
 }
 
 

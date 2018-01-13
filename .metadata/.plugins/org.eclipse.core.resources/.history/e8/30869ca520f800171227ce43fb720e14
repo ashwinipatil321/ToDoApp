@@ -1,0 +1,8 @@
+package com.bridgelabz.User.model;
+
+public class UrlData {
+	
+	 private String title;
+ private String imageUrl;
+ private String domain;
+}

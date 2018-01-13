@@ -1,0 +1,17 @@
+package com.bridgelabz.User.model;
+
+public class UrlData {
+	
+	 private String title;
+ private String imageUrl;
+ private String domain;
+ 
+public UrlData(String title, String imageUrl, String domain) {
+	super();
+	this.title = title;
+	this.imageUrl = imageUrl;
+	this.domain = domain;
+}
+ 
+ 
+}

@@ -3,9 +3,9 @@
 <!-- 
 <div class="modal-dialog modal-md" style="margin-top: 295px"> -->
 
- <div class="modal-content">
-	<div class="modal-body" style="background-color: {{note.color}};"height: "180px">
-		<div class="form-group">
+ <div class="modal-content" height="300px;">
+	<div class="modal-body" style="background-color: {{note.color}}";>
+		<div class="form-group" >
 		<div>
 	 <a>
 		<img ng-src="{{note.noteImage}}"
@@ -96,15 +96,12 @@
 
 			</div>
 
-			<div style="float: right">
-				<div>
-					<div class="dropdown" style="float: right">
-						<div class="btn-group dropup colorDiv"></div>
-						<span ng-click="updateNotes(note)">DONE</span>
+			<div style="float: right;padding-top: 145px;height: 20px;">
+						<button role="button" style="margin-bottom: 10px"class="btn btn-default" ng-click="updateNotes(note)">DONE</button>
 					</div>
 				</div>
 			</div>
 		</div>
 		</div>
-	</div>
+	
 </div>

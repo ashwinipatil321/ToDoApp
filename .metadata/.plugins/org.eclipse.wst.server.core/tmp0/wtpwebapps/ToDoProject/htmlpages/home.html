@@ -3,16 +3,16 @@
 	<side-nav-bar></side-nav-bar>
 </div>
 <div>
-	<div id="content-wrapper" class="container-fluid" style="padding-top:40px;margin-left: 270px;">
+	<div id="content-wrapper" class="container-fluid" style="padding-top:40px;margin-left:350px;">
 		
 		<div class=" col-lg-3col-md-3"></div>
 		<div id="note" class=" col-sm-12 col-md-6 col-xs-12 col-lg-6"
 			style="background-color: {{note.color}}">
 
-			<div contenteditable="true" data-text="Title"
+			<div  data-text="Title" contenteditable="true"
 				data-ng-model="note.title" id="note-title"></div>
 
-			<div contenteditable="true" data-text="Take a note"
+			<div  data-text="Take a note"contenteditable="true"
 				data-ng-model="note.description" id="note-body"></div>
 
 			<div class="note-icons" id="note_icons">
@@ -96,8 +96,9 @@
 										style="padding-bottom: 10px; font-size: 16px;"></div>
 									<br>
 									<div contenteditable="true" ng-bind-html="note.description"
-										style="padding-bottom: 80px; font-size: 25px;"></div>
+										style="padding-bottom: 25px; font-size: 18px;"></div>
 								</div>
+								
 
 						<!-- SHOW REMINDER -->
 
@@ -118,7 +119,7 @@
 									ng-click="removeLabel(note,label)"></span>
 							</button>
 					</div>
-						
+	
 					<div class="moreOptions"> 
 								<div class="note-icon"
 									style="float: left; float: initial; width: 328px; margin: -20px;padding-top: 20px">
@@ -236,9 +237,31 @@
 								</div>
 								</div>
 							</div>
+						
+								<span ng-init="checkUrlList(note)">
+									<div ng-repeat="urlData in note.link" >
+									<a ng-href="{{urlData.url}}" >
+									<div ng-if="urlData.title">	
+									
+								<hr>		
+									
+								<div class="row" style="padding:10px ;font-size:15px">
+								<div style="margin: 4px">
+									<img ng-src="{{urlData.imageUrl}}" height="80" width="80">		
+									<a ng-bind="urlData.title" ></a>
+									<br>
+									<a ng-bind="urlData.domain"></a>
+								</div>
+							</div>
+							</span>
+						</div>
+						</div>
 						</div>
 					</div>
 				</div>
+				</div>
+			</div>
+		
 				
 				<div class='row' data-ng-show="others.length" style="width: 1020px; word-break: break-all;padding-top:35px">
 					<h4>others</h4>
@@ -249,7 +272,7 @@
 
 						<div class="card col-md-4 a"
 							data-ng-repeat="note in notes | filter : {archive:false,emptyTrash:false,pin:false} as others"
-							class="container" style="background-color: {{note.color}}">
+							class="container" style="background-color: {{note.color}}" >
 
 							<!-- Pinned note -->
 							
@@ -272,8 +295,9 @@
 										style="padding-bottom: 10px; font-size: 16px;"></div>
 									<br>
 									<div contenteditable="true" ng-bind-html="note.description"
-										style="padding-bottom: 80px; font-size: 25px;"></div>
+										style="padding-bottom:25px; font-size:18px;"></div>
 								</div>
+								
 
 								<!-- SHOW REMINDER -->
 							<button type="button" class="btn btn-xs"
@@ -292,6 +316,8 @@
 								{{label.labelName}}<span class="closebtn"ssng-click="removeLabel(note,label)"></span>
 							</button>
 						</div>
+					
+					
 							<div class="moreOptions"> 
 								<div class="note-icon"
 									style="float: left; float: initial; width: 328px; margin: -20px;padding-top: 20px">
@@ -408,13 +434,31 @@
 										<li><a data-ng-click="fbShareInit(note)">Share</a></li>
 
 									</ul>
+									<br>
+									
+									</div>
+				
 								</div>
 							</div>
+								<span ng-init="checkUrlList(note)">
+									<div ng-repeat="urlData in note.link" >
+									<a ng-href="{{urlData.url}}" >
+									<div ng-if="urlData.title">	
+									
+								<hr>		
+									
+								<div class="row" style="padding:10px ;font-size:15px">
+								<div>
+									<img ng-src="{{urlData.imageUrl}}" height="80" width="80">		
+									<a ng-bind="urlData.title" ></a>
+									<br>
+									
+									<a ng-bind="urlData.domain"></a>
+								</div>
+							</div>
+							</span>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-</div>
-</div>
-</div>
