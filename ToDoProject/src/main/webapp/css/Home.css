@@ -182,6 +182,20 @@ img {
 	background-color: white;
 	width: 800px;
 }
+.url
+{
+  cursor: default;
+    margin: 0;
+}
+.url1
+{
+	    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+        font-family: 'Roboto Condensed',arial,sans-serif;
+    font-size: 14px;
+    padding-bottom: 5px;
+}
 
 .modal-footer {
     padding: 8px;

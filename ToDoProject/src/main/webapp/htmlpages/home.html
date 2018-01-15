@@ -237,17 +237,12 @@
 								</div>
 								</div>
 							</div>
-						
-								<span ng-init="checkUrlList(note)">
+					
+								<span  ng-init="checkUrlList(note)"  class ="url">
 									<div ng-repeat="urlData in note.link" >
 									<a ng-href="{{urlData.url}}" >
-									<div ng-if="urlData.title">	
-									
-								<hr>		
-									
-								<div class="row" style="padding:10px ;font-size:15px">
-								<div style="margin: 4px">
-									<img ng-src="{{urlData.imageUrl}}" height="80" width="80">		
+									<div ng-if="urlData.title" >	
+									<img ng-src="{{urlData.imageUrl}}"   height="60" width="60">		
 									<a ng-bind="urlData.title" ></a>
 									<br>
 									<a ng-bind="urlData.domain"></a>
@@ -258,9 +253,10 @@
 						</div>
 						</div>
 					</div>
-				</div>
-				</div>
-			</div>
+	
+			
+		
+	
 		
 				
 				<div class='row' data-ng-show="others.length" style="width: 1020px; word-break: break-all;padding-top:35px">
@@ -326,12 +322,12 @@
 									<!--INPUT REMINDER  -->
 
 									<div class="dropdown inline">
-										<span class="btn dropdown-toggle" id="menu2"
+										<span class=" dropdown-toggle" id="menu2"
 										data-toggle="dropdown"> <img alt="reminder"
 										src="images/reminder.svg" height="22px">
 										</span>
 
-									<ul class="dropdown-menu" role="menu" aria-labelledby="menu2" style="height: 225px;  width: 270px; padding-left: 20px;padding-top:15px">
+									<ul class="dropdown-menu" role="menu" aria-labelledby="menu2" style="height: 225px;  width: 270px">
 									<h4>Select Date and Time</h4>
 										<li><div>
 											<input type="date" data-ng-model="note.reminderDate">
@@ -389,7 +385,7 @@
 
 									<!-- ADD MORE OPTIONS -->
 
-									<span class="btn dropdown-toggle" id="menu1"
+									<span class=" dropdown-toggle" id="menu1"
 										data-toggle="dropdown"> <span
 										class="glyphicon glyphicon-option-vertical"
 										style="float: right"></span></span>
@@ -441,24 +437,29 @@
 								</div>
 							</div>
 								<span ng-init="checkUrlList(note)">
-									<div ng-repeat="urlData in note.link" >
+									<div ng-repeat="urlData in note.link" style="margin-top: 30px">
 									<a ng-href="{{urlData.url}}" >
-									<div ng-if="urlData.title">	
-									
+									<div ng-if="urlData.title"style="
+    margin-top: 30px;">	</div>
+								
 								<hr>		
 									
-								<div class="row" style="padding:10px ;font-size:15px">
+								<div class="row" style="padding:10px ;font-size:13px">
 								<div>
-									<img ng-src="{{urlData.imageUrl}}" height="80" width="80">		
+									<img ng-src="{{urlData.imageUrl}}">		
 									<a ng-bind="urlData.title" ></a>
 									<br>
 									
 									<a ng-bind="urlData.domain"></a>
 								</div>
 							</div>
+							</a>
+							</div>
+								</div>
+						
 							</span>
-						</div>
+					
 					</div>
 				</div>
 			</div>
-		</div>
+		

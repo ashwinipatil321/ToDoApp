@@ -1,4 +1,5 @@
-
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
 <div class="modal-content" id="myModal" ng-init="getUserlist(note,user,indexOfNote)">
 	<div class="modal-header">
 		<font size="5px">Collaborators</font>
@@ -39,12 +40,13 @@
 			<input type="text" class="col-sm-12" id="searchbox" style="border:none;font-size: 18px;"
 				ng-model="$parent.shareWith.email" placeholder="Person or email to share with"  src="images/collaborator.svg" class="img-circle">
 		</div>
-	</div>
-
-	<div class="modal-footer" style="background-color: #ccc;margin-top: -5px;">
+		<div class="modal-footer" style="background-color: #ccc;margin-top: -5px;">
 
 	<button role="button" ng-click="collborate(note,User)"
 				class="btn btn-default" >DONE</button>
 			 <button role="button" id="btn2" class="btn btn-default"  ng-click="cancelModel()" style="margin-bottom: 10px">CANCEL</button>
 	</div>
+	</div>
+</div>
+</div>
 </div>

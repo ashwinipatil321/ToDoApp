@@ -7,6 +7,7 @@ app.config([ '$stateProvider', '$urlRouterProvider',
 		url : '/login',
 		templateUrl : 'htmlpages/Login.html',
 		controller : 'loginController'
+			
 	});
 
 	$stateProvider.state('register', {
