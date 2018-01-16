@@ -1,8 +1,9 @@
-<div>
+
 	<top-nav-bar></top-nav-bar>
+	<div>
 	<side-nav-bar></side-nav-bar>
-</div>
-<div>
+
+
 	<div id="content-wrapper" class="container-fluid" style="padding-top:40px;margin-left:350px;">
 		
 		<div class=" col-lg-3col-md-3"></div>
@@ -62,7 +63,7 @@
 				 <br> 
 				 <br>
  				<br>
-				<div>
+				
 
 					<div class='row' data-ng-show="pinned.length" style="width: 1020px; word-break: break-all;padding-top:35px">
 					<h4>pinned</h4>
@@ -95,8 +96,8 @@
 									<div contenteditable="true" ng-bind-html="note.title"
 										style="padding-bottom: 10px; font-size: 16px;"></div>
 									<br>
-									<div contenteditable="true" ng-bind-html="note.description"
-										style="padding-bottom: 25px; font-size: 18px;"></div>
+									<div contenteditable="true" ng-bind-html="note.description | limitTo:64 | linky "
+										style="padding-bottom: 25px; font-size: -32px;"></div>
 								</div>
 								
 
@@ -122,7 +123,7 @@
 	
 					<div class="moreOptions"> 
 								<div class="note-icon"
-									style="float: left; float: initial; width: 328px; margin: -20px;padding-top: 20px">
+									style="float: left; float: initial; width: 328px; margin: -20px;padding-top: 20px;padding-bottom: 15px;margin: -5px;">
 								
 
 							<!--INPUT REMINDER  -->
@@ -130,7 +131,7 @@
 							<div class="dropdown inline">
 								<span class="btn dropdown-toggle" id="menu2"
 										data-toggle="dropdown"> <img alt="reminder"
-										src="images/reminder.svg" height="22px">
+										src="images/reminder.svg" height="25px">
 									</span>
 
 									<ul class="dropdown-menu" role="menu" aria-labelledby="menu2" style="height: 225px;  width: 270px; padding-left: 20px;padding-top:15px">
@@ -154,7 +155,7 @@
 							
 							<!-- ADD COLLABRATOR -->
 
-							<img ng-click="openCollboarate(note,User,$index)"
+							<img ng-click="openCollboarate(note,User,$index)"  data-target=" myModal"
 											src="images/collaborator.svg" height="25px">
 
 
@@ -163,7 +164,7 @@
 							<div class="btn-group dropup colorDiv" uib-dropdown>
 									<img id="dropdown" class="dropdown-toggle"
 										data-toggle="dropdown" alt="color"
-										src="images/colorpallet.svg" uib-dropdown-toggle height="20px">
+										src="images/colorpallet.svg" uib-dropdown-toggle height="25px">
 
 									<!----ADD MORE OPTIONS -->
 
@@ -252,14 +253,9 @@
 						</div>
 						</div>
 						</div>
-					</div>
-	
-			
-		
-	
-		
 				
-				<div class='row' data-ng-show="others.length" style="width: 1020px; word-break: break-all;padding-top:35px">
+				
+					<div class='row' data-ng-show="others.length" style="width: 1020px; word-break: break-all;padding-top:35px">
 					<h4>others</h4>
 					<div>
 						<input ng-show="false" id="image" type='file' ng-model-instant
@@ -268,11 +264,11 @@
 
 						<div class="card col-md-4 a"
 							data-ng-repeat="note in notes | filter : {archive:false,emptyTrash:false,pin:false} as others"
-							class="container" style="background-color: {{note.color}}" >
+							class="container" style="background-color: {{note.color}}">
 
 							<!-- Pinned note -->
 							
-							<div>
+							<div style="margin: 5px">
 								<div style="float: right">
 									<span style="cursor: pointer" data-ng-click="addTopin(note)">
 										<img class="pull-right" src="images/unpinned.svg"
@@ -291,43 +287,44 @@
 										style="padding-bottom: 10px; font-size: 16px;"></div>
 									<br>
 									<div contenteditable="true" ng-bind-html="note.description"
-										style="padding-bottom:25px; font-size:18px;"></div>
+										style="padding-bottom: 25px; font-size: 18px;"></div>
 								</div>
 								
 
-								<!-- SHOW REMINDER -->
-							<button type="button" class="btn btn-xs"
+						<!-- SHOW REMINDER -->
+
+						
+						<button type="button" class="btn btn-xs"
 									data-ng-show="note.reminderDate&&note.reminderTime">
-									{{note.reminderDate | date : 'MMM dd'}},{{note.reminderTime}}<span
+									{{note.reminderDate | date :'MMM dd'}},{{note.reminderTime}}<span
 									class="badge" style="color: white;"><span
 									class="glyphicon glyphicon-remove"
 									data-ng-click="deleteReminderOfNote(note)"></span></span>
-								</button>
-								
-							
-						<!-- SHOW LABELS -->
-							
-						<div ng-repeat="label in note.allLabels" >
-							<button type="button" class="btn btn-xs" id="label" ng-if="label.labelName!=null" style=" font-size: 15px;word-break: break-all">
-								{{label.labelName}}<span class="closebtn"ssng-click="removeLabel(note,label)"></span>
+						</button>
+
+					<!-- SHOW LABELS -->
+					
+						<div ng-repeat="label in note.allLabels">
+							<button type="button"  id="label" ng-if="label.labelName!=null" style=" font-size: 15px;">
+								{{label.labelName}}<span class="closebtn"
+									ng-click="removeLabel(note,label)"></span>
 							</button>
-						</div>
-					
-					
-							<div class="moreOptions"> 
+					</div>
+	
+					<div class="moreOptions"> 
 								<div class="note-icon"
-									style="float: left; float: initial; width: 328px; margin: -20px;padding-top: 20px">
+									style="float: left; float: initial; width: 328px; margin: -20px;padding-top: 20px;padding-bottom: 15px;margin: -5px;">
 								
 
-									<!--INPUT REMINDER  -->
-
-									<div class="dropdown inline">
-										<span class=" dropdown-toggle" id="menu2"
+							<!--INPUT REMINDER  -->
+					
+							<div class="dropdown inline">
+								<span class="btn dropdown-toggle" id="menu2"
 										data-toggle="dropdown"> <img alt="reminder"
-										src="images/reminder.svg" height="22px">
-										</span>
+										src="images/reminder.svg" height="25px">
+									</span>
 
-									<ul class="dropdown-menu" role="menu" aria-labelledby="menu2" style="height: 225px;  width: 270px">
+									<ul class="dropdown-menu" role="menu" aria-labelledby="menu2" style="height: 225px;  width: 270px; padding-left: 20px;padding-top:15px">
 									<h4>Select Date and Time</h4>
 										<li><div>
 											<input type="date" data-ng-model="note.reminderDate">
@@ -337,26 +334,27 @@
 										<li><div class="input-group" data-toggle="collapse"data-target="#inputreminder{{note.noteId}}" style="font-size: 19px; padding-bottom: 5px;">Click To Add Time<span class="caret"></span>
 										</div>
 											<div id="inputreminder{{note.noteId}}" class="collapse">
-													<div data-ng-model="note.reminderDate"data-ng-click="addReminderToNote(note,'8:00 AM')">Morning 8:00 AM</div>
+													<div data-ng-model="note.reminderDate" data-ng-click="addReminderToNote(note,'8:00 AM')">Morning 8:00 AM</div>
 													<div data-ng-model="note.reminderTime" data-ng-click="addReminderToNote(note,'1:00 PM')">AfterNoon 1:00 PM</div>
-													<div data-ng-model="note.reminderTime"data-ng-click="addReminderToNote(note,'6:00 PM')">Evening 6:00 PM</div>
+													<div data-ng-model="note.reminderTime" data-ng-click="addReminderToNote(note,'6:00 PM')">Evening 6:00 PM</div>
 													<div data-ng-model="note.reminderTime" data-ng-click="addReminderToNote(note,'8:00 PM')">Night 8:00 PM</div>
 											</div>
 										</li>
 									</ul>
-								</div>
-									<!-- ADD COLLABRATOR -->
+							</div>
+							
+							<!-- ADD COLLABRATOR -->
 
-									<img ng-click="openCollboarate(note,User,$index)"
+							<img ng-click="openCollboarate(note,User,$index)"
 											src="images/collaborator.svg" height="25px">
 
 
-									<!-- ADD COLORS WITH COLORPALLETES -->
+							<!-- ADD COLORS WITH COLORPALLETES -->
 
-								<div class="btn-group dropup colorDiv" uib-dropdown>
+							<div class="btn-group dropup colorDiv" uib-dropdown>
 									<img id="dropdown" class="dropdown-toggle"
 										data-toggle="dropdown" alt="color"
-										src="images/colorpallet.svg" uib-dropdown-toggle height="20px">
+										src="images/colorpallet.svg" uib-dropdown-toggle height="25px">
 
 									<!----ADD MORE OPTIONS -->
 
@@ -369,26 +367,22 @@
 											data-ng-click="note.color =color.color;updateNotes(note)">
 										</a>
 									</ul>
-								</div>
+							</div>
 
-									<!-- ADD IMAGE -->
+							<!-- ADD IMAGE -->
 
-									<img alt="image" src="images/image.svg" height="20px"
+							<img alt="image" src="images/image.svg" height="20px"
 										aria-label="Image Upload" ng-click="openImageUploader(note)">
 
-									<!-- ADD ARCHIVE -->
+							<!-- ADD ARCHIVE -->
 
-									<span data-ng-click="addToArchive(note)"> <img
-										src="images/archive.svg" height="25px">
-									</span>
+							<span data-ng-click="addToArchive(note)">
+							 <img src="images/archive.svg" height="25px"></span>
 
+							<!-- ADD MORE OPTIONS -->
 
-									<!-- ADD MORE OPTIONS -->
-
-									<span class=" dropdown-toggle" id="menu1"
-										data-toggle="dropdown"> <span
-										class="glyphicon glyphicon-option-vertical"
-										style="float: right"></span></span>
+							<span class="btn dropdown-toggle" id="menu1" data-toggle="dropdown"> <span
+								class="glyphicon glyphicon-option-vertical" style="float: right"></span></span>
 
 									<ul class="dropdown-menu multi-level" role="menu"
 										aria-labelledby="menu1" style="margin-left: 140px">
@@ -419,7 +413,8 @@
 															Create <b>"{{label.labelName}}"</b>
 														</div>
 													</li>
-												</ul></li>
+												</ul>
+											</li>
 
 										<!-- Make a copy --> 
 
@@ -430,36 +425,25 @@
 										<li><a data-ng-click="fbShareInit(note)">Share</a></li>
 
 									</ul>
-									<br>
-									
-									</div>
-				
+								</div>
 								</div>
 							</div>
-								<span ng-init="checkUrlList(note)">
-									<div ng-repeat="urlData in note.link" style="margin-top: 30px">
+					
+								<span  ng-init="checkUrlList(note)"  class ="url">
+									<div ng-repeat="urlData in note.link" >
 									<a ng-href="{{urlData.url}}" >
-									<div ng-if="urlData.title"style="
-    margin-top: 30px;">	</div>
-								
-								<hr>		
-									
-								<div class="row" style="padding:10px ;font-size:13px">
-								<div>
-									<img ng-src="{{urlData.imageUrl}}">		
+									<div ng-if="urlData.title" >	
+									<img ng-src="{{urlData.imageUrl}}"   height="60" width="60">		
 									<a ng-bind="urlData.title" ></a>
 									<br>
-									
 									<a ng-bind="urlData.domain"></a>
 								</div>
 							</div>
-							</a>
-							</div>
-								</div>
-						
 							</span>
 					
 					</div>
 				</div>
 			</div>
-		
+		</div>
+		</div>
+	

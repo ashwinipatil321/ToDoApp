@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet"
-	href="https://unpkg.com/angular-toastr/dist/angular-toastr.css" />
+<link rel="stylesheet" href="https://unpkg.com/angular-toastr/dist/angular-toastr.css" />
 
-<link
-	href="bower_components/angular-image-preloader/dist/angular-image-preloader.min.js" />
+<link href="bower_components/angular-image-preloader/dist/angular-image-preloader.min.js" />
 
 
 <link rel="stylesheet"

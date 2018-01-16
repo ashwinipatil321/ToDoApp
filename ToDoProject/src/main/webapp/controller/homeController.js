@@ -8,6 +8,7 @@ todoApp
 				fileReader) {
 
 			var allnotes = [];
+			
 
 /*-------------------------------colors added in notes------------------------------------------------*/
 
@@ -429,7 +430,9 @@ todoApp
 								domain : responseData.domain
 							}
 							note.link[note.size] = link[note.size];
+							console.log("link..",note.link[note.size] )
 							note.size = note.size + 1;
+							console.log("link sie...",note.size)
 							console.log(note.link);
 						}, function(response) {
 						});
