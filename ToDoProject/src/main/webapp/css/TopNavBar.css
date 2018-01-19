@@ -1,4 +1,4 @@
-#TopNavBar ul {
+/* #TopNavBar ul {
 	background-color: #ffbb33;
 }
 
@@ -36,7 +36,7 @@
 	font-size: 25px;
 }
 
-/* .search-bar{
+.search-bar{
 	padding-right: 350px;
 	margin-top: 18px;
 	border: none;
@@ -44,7 +44,7 @@
 
 #search-div{
 }
- */
+
 .navigationTop{
 	margin: 20px;
 }
@@ -65,4 +65,209 @@
 		    border-radius: 50%;
 		    width: 100px;
 		    height: 100px;
+		} */
+.profile {
+	padding-right: 65px;
+	height: 250px;
+}
+
+.profile-picture {
+	width: 150px;
+	height: 150px;
+}
+
+.navbar {
+	min-height: 70px;
+}
+/* Top Navigation */
+@media only screen and (max-width: 1014px) {
+	.top-nav {
+		padding: 0 15px;
+		top: -12px;
+		position: absolute;
+	}
+}
+
+.top-nav>li {
+	display: inline-block;
+	float: left;
+}
+
+.top-nav>li>a {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	line-height: 20px;
+	color: #fff;
+}
+
+.top-nav>li>a:hover, .top-nav>li>a:focus, .top-nav>.open>a, .top-nav>.open>a:hover,
+	.top-nav>.open>a:focus {
+	color: #fff;
+	background-color: #1a242f;
+}
+
+.navbar-header {
+	margin-left: 1%;
+	margin-top: 2%;
+}
+
+@media {
+	.divClass {
+		margin-left: 4%;
+		margin-top: 2%;
+	}
+	.top-nav>.open>.dropdown-menu {
+		float: left;
+		position: absolute;
+		margin-top: 0;
+		/*border: 1px solid rgba(0,0,0,.15);*/
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+		background-color: #fff;
+		-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+		box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+	}
+	.top-nav>.open>.dropdown-menu>li>a {
+		white-space: normal;
+	}
+	.navbar-inverse {
+		background-color: #222;
+		border-color: #ffbb33;
+	}
+	.nav {
+		padding-left: 0;
+		margin-bottom: -52px;
+		list-style: none;
+	}
+	.navbar .nav>li>a:hover>.label {
+		top: 10px;
+	}
+	.navbar-brand {
+		padding: 5px 15px;
+	}
+	.form-control {
+		padding-right: 30px;
+		padding-top: 53px;
+		margin-top: 3px;
+	}
+	@media only screen and (max-width:1014px) {
+		.span-a {
+			cursor: pointer;
+			width: 70%;
+			padding-top: 25%;
 		}
+	}
+	.span-a {
+		cursor: pointer;
+		width: 19px;
+		padding-top: 101%;
+	}
+	@media only screen and (max-width: 1014px) {
+		.form-control {
+			padding-top: 10px;
+			margin-top: 0px;
+			margin-left: 101px;
+			margin-top: -3px;
+			max-width: 125px;
+			max-height: 26px
+		}
+	}
+	@media only screen and (max-width: 1014px) {
+		.navbar-toggle {
+			margin-top: -8px;
+		}
+	}
+	.img-circle {
+		float: right;
+		margin-right: 70px;
+		border-radius: 50%;
+		width: 10%;
+		float: right;
+		margin-right: 50px;
+		margin-top: -29px; "
+		margin-top: 20px;
+		margin-left: 35%;
+		margin-top: -10%;
+	}
+	@media only screen and (max-width:1014px) {
+		.img-circle {
+			border-radius: 50%;
+			width: 10%;
+			float: right;
+			margin-top: -32px;
+			margin-right: 18px
+		}
+	}
+	.h4, h4 {
+		margin-top: 20px;
+		font-size: 15px;
+		margin-top: 24px;
+		font-size: 25px;
+		margin-left: 30%;
+		width: 216px;
+	}
+	@media only screen and (max-width: 1014px) {
+		.h4, h4 {
+			font-size: 8px;
+			margin-top: 20px;
+			margin-right: -135px;
+			font-size: 15px;
+		}
+		@media only screen and (max-width: 1014px) {
+			.form-control+.glyphicon {
+				position: absolute;
+				right: 0;
+				padding-top: 5px;
+				/* padding-left: 10px; */
+				padding-right: 3px;
+				margin-right: 125px;
+			}
+		}
+		.form-control+.glyphicon {
+			position: absolute;
+			right: 0;
+			padding-top: 5px;
+			/* padding-left: 10px; */
+			padding-right: 3px;
+			margin-right: 35%
+		}
+		@media only screen and (max-width: 1014px) {
+			#list-gride-View {
+				margin-left: 243px;
+				min-width: 25px;
+				height: 10px;
+				margin-top: -23px;
+			}
+		}
+		@media only screen and (max-width: 1014px) {
+			.navbar {
+				min-height: 40px;
+			}
+		}
+		@media only screen and (max-width: 1014px) .dropdown-menu {
+			background-color
+			:
+			 
+			white
+			;
+			
+	
+			width
+			:
+			30%;
+			 
+	
+			height
+			:
+			305%;
+			
+	
+			margin-right
+			:
+			2%
+			
+	
+
+		}
+	}
+}

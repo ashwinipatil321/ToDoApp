@@ -79,9 +79,12 @@ todoApp
 			} else {
 				$scope.topNavBarColor = "#669999";
 			}
-
+			
+			
 /*-----------------------------------SideBar Taggle------------------------------------------------*/
-
+			$scope.closeNav = function () {
+			    document.getElementById("sideToggle").style.width = "0";
+			}
 
 			$scope.toggleSideBar = function() {
 
@@ -454,7 +457,7 @@ todoApp
 
 			};
 
-	/*------------------------save labels----------------------------*/
+	/*------------------------save get----------------------------*/
 
 			$scope.saveLabel = function(label) {
 
