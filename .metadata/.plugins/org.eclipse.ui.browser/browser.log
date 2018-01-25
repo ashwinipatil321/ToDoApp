@@ -1,0 +1,214 @@
+
+Jan 15, 2018 19:19:20.80 NEW SESSION
+Jan 15, 2018 19:19:20.80 [27530:27569:0115/191920.801102:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Jan 15, 2018 19:19:20.81 Created new window in existing browser session.
+
+Jan 16, 2018 09:34:35.61 NEW SESSION
+Jan 16, 2018 09:34:35.61 [3825:3825:0116/093435.615276:ERROR:account_tracker.cc(328)] OnGetTokenFailure: Invalid credentials.
+Jan 16, 2018 09:34:35.66 [3825:3825:0116/093435.615303:ERROR:account_tracker.cc(328)] OnGetTokenFailure: Invalid credentials.
+Jan 16, 2018 09:51:33.19 [3825:3825:0116/095133.190255:ERROR:account_info_fetcher.cc(58)] OnGetTokenFailure: Invalid credentials.
+Jan 16, 2018 10:28:50.95 [3825:3867:0116/102850.950911:ERROR:service_manager.cc(156)] Connection InterfaceProviderSpec prevented service: content_plugin from binding interface: memory_instrumentation::mojom::Coordinator exposed by: content_browser
+Jan 16, 2018 10:30:18.54 [3825:3825:0116/103018.541172:ERROR:shared_change_processor.cc(210)] Sessions datatype error was encountered: Change processor disconnected.
+Jan 16, 2018 10:30:18.88 [3825:3862:0116/103018.885091:ERROR:shared_change_processor.cc(210)] Autofill Wallet Metadata datatype error was encountered: Change processor disconnected.
+Jan 16, 2018 10:31:17.10 [3825:3825:0116/103117.104737:ERROR:navigation_entry_screenshot_manager.cc(134)] Invalid entry with unique id: 102
+Jan 16, 2018 10:31:18.25 [3825:3825:0116/103118.250986:ERROR:CONSOLE(1)] "Uncaught ReferenceError: inline is not defined", source:  (1)
+Jan 16, 2018 10:33:12.22 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Jan 16, 2018 12:54:35.72 [3825:3867:0116/125435.726512:ERROR:ssl_client_socket_impl.cc(1129)] handshake failed; returned -1, SSL error code 1, net_error -100
+Jan 16, 2018 12:54:42.87 [3825:3867:0116/125442.878175:ERROR:ssl_client_socket_impl.cc(1129)] handshake failed; returned -1, SSL error code 1, net_error -101
+Jan 16, 2018 12:54:42.97 [3825:3867:0116/125442.974170:ERROR:ssl_client_socket_impl.cc(1129)] handshake failed; returned -1, SSL error code 1, net_error -101
+Jan 16, 2018 13:29:58.55 [3874:3874:0116/132958.557995:ERROR:sync_control_vsync_provider.cc(64)] glXGetSyncValuesOML should not return TRUE with a media stream counter of 0.
+Jan 16, 2018 17:10:07.07 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+
+Jan 16, 2018 18:47:31.11 NEW SESSION
+Jan 16, 2018 18:47:31.11 [22240:22280:0116/184731.116983:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Jan 16, 2018 18:47:31.15 Created new window in existing browser session.
+
+Jan 17, 2018 12:16:06.57 NEW SESSION
+Jan 17, 2018 12:16:06.57 [8372:8412:0117/121606.572673:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Jan 17, 2018 12:16:06.60 Created new window in existing browser session.
+
+Jan 17, 2018 15:04:09.00 NEW SESSION
+Jan 17, 2018 15:04:09.00 [12091:12131:0117/150409.008186:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Jan 17, 2018 15:04:09.06 Created new window in existing browser session.
+
+Jan 18, 2018 09:35:28.87 NEW SESSION
+Jan 18, 2018 09:35:28.87 Created new window in existing browser session.
+
+Jan 19, 2018 10:44:13.33 NEW SESSION
+Jan 19, 2018 10:44:13.33 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Jan 19, 2018 11:34:45.99 [6063:6103:0119/113445.996417:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Jan 19, 2018 11:34:46.06 Created new window in existing browser session.
+Jan 19, 2018 11:43:43.02 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Jan 19, 2018 12:00:27.35 [2897:2897:0119/120027.352411:ERROR:gles2_cmd_decoder.cc(17788)] [.DisplayCompositor-0x3af10e91a800]GL ERROR :GL_INVALID_OPERATION : glCreateAndConsumeTextureCHROMIUM: invalid mailbox name
+Jan 19, 2018 12:00:27.35 [2897:2897:0119/120027.353542:ERROR:gles2_cmd_decoder.cc(9798)] [.DisplayCompositor-0x3af10e91a800]RENDER WARNING: texture bound to texture unit 0 is not renderable. It maybe non-power-of-2 and have incompatible texture filtering.
+Jan 19, 2018 12:00:27.35 [2897:2897:0119/120027.354082:ERROR:gles2_cmd_decoder.cc(17788)] [.DisplayCompositor-0x3af10e91a800]GL ERROR :GL_INVALID_OPERATION : glCreateAndConsumeTextureCHROMIUM: invalid mailbox name
+Jan 19, 2018 12:00:27.35 [2897:2897:0119/120027.354263:ERROR:gles2_cmd_decoder.cc(9798)] [.DisplayCompositor-0x3af10e91a800]RENDER WARNING: texture bound to texture unit 0 is not renderable. It maybe non-power-of-2 and have incompatible texture filtering.
+Jan 19, 2018 12:08:39.24 [2897:2897:0119/120839.248311:ERROR:gles2_cmd_decoder.cc(5332)] Error: 3 for Command kBlitFramebufferCHROMIUM
+Jan 19, 2018 12:34:29.40 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+
+Jan 19, 2018 13:25:00.05 NEW SESSION
+Jan 19, 2018 13:25:00.05 [2679:2718:0119/132500.051344:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Jan 19, 2018 13:25:00.17 Created new window in existing browser session.
+Jan 19, 2018 14:46:23.01 [3510:3550:0119/144623.017296:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Jan 19, 2018 14:46:23.05 Created new window in existing browser session.
+Jan 19, 2018 14:47:17.75 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Jan 19, 2018 14:50:06.93 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Jan 19, 2018 14:50:22.79 
+Jan 19, 2018 14:50:22.79 (nautilus:3849): GLib-GIO-CRITICAL **: g_dbus_interface_skeleton_unexport: assertion 'interface_->priv->connections != NULL' failed
+Jan 19, 2018 14:50:22.79 
+Jan 19, 2018 14:50:22.79 (nautilus:3849): GLib-GIO-CRITICAL **: g_dbus_interface_skeleton_unexport: assertion 'interface_->priv->connections != NULL' failed
+Jan 19, 2018 14:50:22.79 
+Jan 19, 2018 14:50:22.79 (nautilus:3849): Gtk-CRITICAL **: gtk_icon_theme_get_for_screen: assertion 'GDK_IS_SCREEN (screen)' failed
+Jan 19, 2018 14:50:22.79 
+Jan 19, 2018 14:50:22.79 (nautilus:3849): GLib-GObject-WARNING **: invalid (NULL) pointer instance
+Jan 19, 2018 14:50:22.79 
+Jan 19, 2018 14:50:22.79 (nautilus:3849): GLib-GObject-CRITICAL **: g_signal_connect_object: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+Jan 19, 2018 14:50:36.35 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Jan 19, 2018 14:50:43.97 
+Jan 19, 2018 14:50:43.97 (nautilus:3941): GLib-GIO-CRITICAL **: g_dbus_interface_skeleton_unexport: assertion 'interface_->priv->connections != NULL' failed
+Jan 19, 2018 14:50:43.97 
+Jan 19, 2018 14:50:43.97 (nautilus:3941): GLib-GIO-CRITICAL **: g_dbus_interface_skeleton_unexport: assertion 'interface_->priv->connections != NULL' failed
+Jan 19, 2018 14:50:43.98 
+Jan 19, 2018 14:50:43.98 (nautilus:3941): Gtk-CRITICAL **: gtk_icon_theme_get_for_screen: assertion 'GDK_IS_SCREEN (screen)' failed
+Jan 19, 2018 14:50:43.98 
+Jan 19, 2018 14:50:43.98 (nautilus:3941): GLib-GObject-WARNING **: invalid (NULL) pointer instance
+Jan 19, 2018 14:50:43.98 
+Jan 19, 2018 14:50:43.98 (nautilus:3941): GLib-GObject-CRITICAL **: g_signal_connect_object: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+Jan 19, 2018 14:52:19.03 [2465:2465:0119/145219.030781:ERROR:gles2_cmd_decoder.cc(5332)] Error: 3 for Command kBlitFramebufferCHROMIUM
+Jan 19, 2018 19:03:26.45 [7903:7943:0119/190326.452070:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Jan 19, 2018 19:03:26.51 Created new window in existing browser session.
+
+Jan 20, 2018 09:40:57.19 NEW SESSION
+Jan 20, 2018 09:40:57.19 [3698:3737:0120/094057.195815:ERROR:simple_index_file.cc(299)] Could not create a directory to hold the index file
+Jan 20, 2018 10:37:34.00 [3698:3698:0120/103734.000708:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:34.11 [3698:3698:0120/103734.116066:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:34.21 [3698:3698:0120/103734.217140:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:34.32 [3698:3698:0120/103734.329273:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:34.43 [3698:3698:0120/103734.430047:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:34.54 [3698:3698:0120/103734.541738:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:34.64 [3698:3698:0120/103734.643084:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:34.75 [3698:3698:0120/103734.758609:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:34.86 [3698:3698:0120/103734.865873:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:34.97 [3698:3698:0120/103734.977218:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:35.07 [3698:3698:0120/103735.078599:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:35.19 [3698:3698:0120/103735.198033:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:35.29 [3698:3698:0120/103735.299713:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:35.41 [3698:3698:0120/103735.412925:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:35.51 [3698:3698:0120/103735.514731:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:35.63 [3698:3698:0120/103735.634110:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:35.73 [3698:3698:0120/103735.738356:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:37.50 [3698:3698:0120/103737.498683:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:37.62 [3698:3698:0120/103737.620661:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:37.72 [3698:3698:0120/103737.723052:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:37.83 [3698:3698:0120/103737.836329:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:37.93 [3698:3698:0120/103737.937914:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:38.04 [3698:3698:0120/103738.042161:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:38.17 [3698:3698:0120/103738.178698:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:38.28 [3698:3698:0120/103738.289218:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:38.39 [3698:3698:0120/103738.392747:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:38.50 [3698:3698:0120/103738.505635:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:38.61 [3698:3698:0120/103738.613270:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:38.72 [3698:3698:0120/103738.724172:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:38.82 [3698:3698:0120/103738.824431:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:38.95 [3698:3698:0120/103738.950785:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:39.05 [3698:3698:0120/103739.058967:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:39.21 [3698:3698:0120/103739.218662:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:39.34 [3698:3698:0120/103739.342978:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:39.45 [3698:3698:0120/103739.458636:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:39.57 [3698:3698:0120/103739.577086:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:39.71 [3698:3698:0120/103739.717349:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:39.84 [3698:3698:0120/103739.842865:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:39.97 [3698:3698:0120/103739.978226:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:40.09 [3698:3698:0120/103740.094687:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:40.43 [3698:3698:0120/103740.434275:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:40.54 [3698:3698:0120/103740.545435:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:40.66 [3698:3698:0120/103740.664965:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:40.78 [3698:3698:0120/103740.780438:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:40.88 [3698:3698:0120/103740.881250:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+Jan 20, 2018 10:37:41.32 [3698:3698:0120/103741.326901:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+
+Jan 20, 2018 12:49:39.95 NEW SESSION
+Jan 20, 2018 12:49:39.95 [6462:6502:0120/124939.953875:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Jan 20, 2018 12:49:40.05 Created new window in existing browser session.
+Jan 20, 2018 14:51:17.03 [7148:7188:0120/145117.036117:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Jan 20, 2018 14:51:17.06 Created new window in existing browser session.
+
+Jan 22, 2018 10:59:51.02 NEW SESSION
+Jan 22, 2018 10:59:51.02 [2790:2830:0122/105951.018509:ERROR:ssl_client_socket_impl.cc(1129)] handshake failed; returned -1, SSL error code 1, net_error -107
+Jan 22, 2018 11:12:24.67 [2790:2830:0122/111224.677714:ERROR:ssl_client_socket_impl.cc(1129)] handshake failed; returned -1, SSL error code 1, net_error -101
+Jan 22, 2018 12:51:47.56 [2790:2830:0122/125147.563539:ERROR:ssl_client_socket_impl.cc(1129)] handshake failed; returned -1, SSL error code 1, net_error -101
+Jan 22, 2018 13:36:40.89 [2849:2849:0122/133640.896865:ERROR:sync_control_vsync_provider.cc(64)] glXGetSyncValuesOML should not return TRUE with a media stream counter of 0.
+
+Jan 22, 2018 17:24:24.90 NEW SESSION
+Jan 22, 2018 17:24:24.90 [2333:2375:0122/172424.899364:ERROR:service_manager.cc(156)] Connection InterfaceProviderSpec prevented service: content_plugin from binding interface: memory_instrumentation::mojom::Coordinator exposed by: content_browser
+Jan 22, 2018 19:26:20.57 [2406:2406:0122/192620.574425:ERROR:sync_control_vsync_provider.cc(64)] glXGetSyncValuesOML should not return TRUE with a media stream counter of 0.
+Jan 22, 2018 19:26:20.57 [2406:2406:0122/192620.575103:ERROR:sync_control_vsync_provider.cc(64)] glXGetSyncValuesOML should not return TRUE with a media stream counter of 0.
+
+Jan 23, 2018 09:41:52.63 NEW SESSION
+Jan 23, 2018 09:41:52.63 [3564:3604:0123/094152.636404:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Jan 23, 2018 09:41:52.76 Created new window in existing browser session.
+Jan 23, 2018 15:58:15.54 [10532:10572:0123/155815.549758:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Jan 23, 2018 15:58:15.61 Created new window in existing browser session.
+Jan 23, 2018 16:00:18.28 [10836:10875:0123/160018.279977:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Jan 23, 2018 16:00:18.28 Created new window in existing browser session.
+Jan 23, 2018 16:04:12.63 [11162:11201:0123/160412.637314:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Jan 23, 2018 16:04:12.70 Created new window in existing browser session.
+Jan 23, 2018 16:08:23.86 [11496:11535:0123/160823.868406:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Jan 23, 2018 16:08:23.87 Created new window in existing browser session.
+Jan 23, 2018 16:12:43.45 [11853:11892:0123/161243.452027:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Jan 23, 2018 16:12:43.48 Created new window in existing browser session.
+Jan 23, 2018 16:14:37.43 [12100:12139:0123/161437.436737:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Jan 23, 2018 16:14:37.44 Created new window in existing browser session.
+Jan 23, 2018 16:17:51.39 [12490:12529:0123/161751.396575:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Jan 23, 2018 16:17:51.43 Created new window in existing browser session.
+Jan 23, 2018 16:33:09.39 [13381:13420:0123/163309.392848:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Jan 23, 2018 16:33:09.43 Created new window in existing browser session.
+Jan 23, 2018 16:35:52.57 [13736:13775:0123/163552.576161:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Jan 23, 2018 16:35:52.61 Created new window in existing browser session.
+Jan 23, 2018 16:38:18.01 [14025:14064:0123/163818.018677:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Jan 23, 2018 16:38:18.05 Created new window in existing browser session.
+
+Jan 23, 2018 17:55:11.84 NEW SESSION
+Jan 23, 2018 17:55:11.84 [2367:2367:0123/175511.841504:ERROR:process_singleton_posix.cc(280)] Failed to create /home/bridgeit/.config/google-chrome/SingletonLock: File exists
+Jan 23, 2018 17:55:21.09 Created new window in existing browser session.
+Jan 23, 2018 18:01:14.51 [3306:3345:0123/180114.516359:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Jan 23, 2018 18:01:14.56 Created new window in existing browser session.
+
+Jan 24, 2018 10:33:51.36 NEW SESSION
+Jan 24, 2018 10:33:51.36 [2905:2948:0124/103351.351125:ERROR:ssl_client_socket_impl.cc(1129)] handshake failed; returned -1, SSL error code 1, net_error -101
+Jan 24, 2018 10:38:41.68 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Jan 24, 2018 10:47:42.12 [2905:2948:0124/104742.120080:ERROR:ssl_client_socket_impl.cc(1129)] handshake failed; returned -1, SSL error code 1, net_error -100
+Jan 24, 2018 12:04:51.24 [2905:2905:0124/120451.239998:ERROR:navigation_entry_screenshot_manager.cc(134)] Invalid entry with unique id: 253
+Jan 24, 2018 12:25:10.76 Created new window in existing browser session.
+Jan 24, 2018 12:52:40.20 [9352:9391:0124/125240.194669:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Jan 24, 2018 12:52:40.23 Created new window in existing browser session.
+Jan 24, 2018 13:14:39.09 [2905:2905:0124/131439.091905:ERROR:navigation_entry_screenshot_manager.cc(134)] Invalid entry with unique id: 476
+Jan 24, 2018 13:15:19.58 [2905:2905:0124/131519.583154:ERROR:navigation_entry_screenshot_manager.cc(134)] Invalid entry with unique id: 480
+Jan 24, 2018 13:30:23.77 [2955:2955:0124/133023.770260:ERROR:sync_control_vsync_provider.cc(64)] glXGetSyncValuesOML should not return TRUE with a media stream counter of 0.
+Jan 24, 2018 14:46:09.09 [10892:10931:0124/144609.090958:ERROR:browser_gpu_channel_host_factory.cc(103)] Failed to launch GPU process.
+Jan 24, 2018 14:46:09.14 Created new window in existing browser session.
+Jan 24, 2018 15:49:45.77 [2905:2905:0124/154945.778088:ERROR:navigation_entry_screenshot_manager.cc(134)] Invalid entry with unique id: 570
+Jan 24, 2018 15:51:14.68 [2905:2905:0124/155114.680009:ERROR:CONSOLE(0)] "Failed to load https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://notifications.google.com/u/0/_/NotificationsOgbUi/idv/&followup=https://notifications.google.com/u/0/_/NotificationsOgbUi/idv/&authuser=0: No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'https://notifications.google.com' is therefore not allowed access.", source: https://notifications.google.com/u/0/widget?sourceid=243&hl=en&origin=https%3A%2F%2Fwww.google.co.in&uc=1&usegapi=1&jsh=m%3B%2F_%2Fscs%2Fabc-static%2F_%2Fjs%2Fk%3Dgapi.gapi.en.QiBse7P5SjM.O%2Fm%3D__features__%2Fam%3DAAE%2Frt%3Dj%2Fd%3D1%2Frs%3DAHpOoo9jYrE1LfQSZTrVx2QGL0mG9OVMow#pid=243&_methods=onError%2ConInfo%2ChideNotificationWidget%2CpostSharedMessage%2Creauth%2CsetNotificationWidgetHeight%2CsetNotificationWidgetSize%2CswitchTo%2CnavigateTo%2CsetNotificationText%2CsetNotificationAnimation%2CgetNotificationText%2CvalidateUser%2C_ready&id=I0_1516789274010&_gfid=I0_1516789274010&parent=https%3A%2F%2Fwww.google.co.in&pfname=&rpctoken=12511234 (0)
+Jan 24, 2018 17:23:47.11 [2905:2905:0124/172347.111900:ERROR:navigation_entry_screenshot_manager.cc(134)] Invalid entry with unique id: 659
+Jan 24, 2018 17:24:35.47 [2905:2905:0124/172435.472858:ERROR:navigation_entry_screenshot_manager.cc(134)] Invalid entry with unique id: 666
+Jan 24, 2018 17:31:22.65 [2905:2905:0124/173122.658822:ERROR:navigation_entry_screenshot_manager.cc(134)] Invalid entry with unique id: 673
+Jan 24, 2018 17:37:35.37 [2905:2905:0124/173735.374819:ERROR:navigation_entry_screenshot_manager.cc(134)] Invalid entry with unique id: 680
+Jan 24, 2018 17:38:04.18 [2905:2905:0124/173804.186071:ERROR:navigation_entry_screenshot_manager.cc(134)] Invalid entry with unique id: 684
+Jan 24, 2018 17:38:26.43 [2905:2905:0124/173826.436840:ERROR:navigation_entry_screenshot_manager.cc(134)] Invalid entry with unique id: 685
+Jan 24, 2018 17:47:47.87 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+
+Jan 25, 2018 09:45:30.28 NEW SESSION
+Jan 25, 2018 09:45:30.28 Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Jan 25, 2018 10:09:40.32 [3485:3530:0125/100940.328346:ERROR:ssl_client_socket_impl.cc(1129)] handshake failed; returned -1, SSL error code 1, net_error -101
+Jan 25, 2018 10:33:15.52 [3485:3485:0125/103315.523626:ERROR:media_internals.cc(107)] Cannot get RenderProcessHost
+Jan 25, 2018 10:33:15.52 [3485:3485:0125/103315.524138:ERROR:media_internals.cc(107)] Cannot get RenderProcessHost
+Jan 25, 2018 11:23:36.55 [1:16:0125/112336.551652:ERROR:adm_helpers.cc(62)] Failed to query stereo recording.
+Jan 25, 2018 12:55:21.37 [3537:3537:0125/125521.373388:ERROR:gles2_cmd_decoder.cc(17788)] [.DisplayCompositor-0x99d58531200]GL ERROR :GL_INVALID_OPERATION : glCreateAndConsumeTextureCHROMIUM: invalid mailbox name
+Jan 25, 2018 12:55:21.37 [3537:3537:0125/125521.373665:ERROR:gles2_cmd_decoder.cc(9798)] [.DisplayCompositor-0x99d58531200]RENDER WARNING: texture bound to texture unit 0 is not renderable. It maybe non-power-of-2 and have incompatible texture filtering.
+Jan 25, 2018 12:55:21.37 [3537:3537:0125/125521.373876:ERROR:gles2_cmd_decoder.cc(17788)] [.DisplayCompositor-0x99d58531200]GL ERROR :GL_INVALID_OPERATION : glCreateAndConsumeTextureCHROMIUM: invalid mailbox name
+Jan 25, 2018 12:55:21.37 [3537:3537:0125/125521.373940:ERROR:gles2_cmd_decoder.cc(9798)] [.DisplayCompositor-0x99d58531200]RENDER WARNING: texture bound to texture unit 0 is not renderable. It maybe non-power-of-2 and have incompatible texture filtering.
+Jan 25, 2018 12:55:21.37 [3537:3537:0125/125521.374019:ERROR:gles2_cmd_decoder.cc(17788)] [.DisplayCompositor-0x99d58531200]GL ERROR :GL_INVALID_OPERATION : glCreateAndConsumeTextureCHROMIUM: invalid mailbox name
+Jan 25, 2018 12:55:21.37 [3537:3537:0125/125521.374104:ERROR:gles2_cmd_decoder.cc(9798)] [.DisplayCompositor-0x99d58531200]RENDER WARNING: texture bound to texture unit 0 is not renderable. It maybe non-power-of-2 and have incompatible texture filtering.
+Jan 25, 2018 12:55:21.37 [3537:3537:0125/125521.374137:ERROR:gles2_cmd_decoder.cc(17788)] [.DisplayCompositor-0x99d58531200]GL ERROR :GL_INVALID_OPERATION : glCreateAndConsumeTextureCHROMIUM: invalid mailbox name
+Jan 25, 2018 12:55:21.37 [3537:3537:0125/125521.374186:ERROR:gles2_cmd_decoder.cc(9798)] [.DisplayCompositor-0x99d58531200]RENDER WARNING: texture bound to texture unit 0 is not renderable. It maybe non-power-of-2 and have incompatible texture filtering.
+Jan 25, 2018 13:25:32.28 [3537:3537:0125/132532.286105:ERROR:sync_control_vsync_provider.cc(64)] glXGetSyncValuesOML should not return TRUE with a media stream counter of 0.

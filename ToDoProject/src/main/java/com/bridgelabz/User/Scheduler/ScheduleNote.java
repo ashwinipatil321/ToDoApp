@@ -1,8 +1,6 @@
 package com.bridgelabz.User.Scheduler;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import com.bridgelabz.User.Service.NoteServices;
-
+import com.bridgelabz.note.service.NoteServices;
 public class ScheduleNote {
 	
 	@Autowired

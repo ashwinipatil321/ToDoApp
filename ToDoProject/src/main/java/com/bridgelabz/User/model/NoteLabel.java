@@ -12,6 +12,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.bridgelabz.note.modal.Note;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 

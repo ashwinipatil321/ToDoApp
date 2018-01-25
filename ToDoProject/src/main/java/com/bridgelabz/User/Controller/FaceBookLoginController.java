@@ -85,7 +85,7 @@ public class FaceBookLoginController {
 			fbUser.setProfileUrl(u);
 			int id = userService.createUser(fbUser);
 			token = Token.generateToken(id);
-			session.setAttribute("token", token);
+			request.setAttribute("token", token);
 			System.out.println("Login with FB done!!");
 			response.sendRedirect("http://localhost:8080/ToDoProject/#!/dummy");
 		} else {
@@ -95,7 +95,7 @@ public class FaceBookLoginController {
 			fbUser.setProfileUrl(url);
 			System.out.println("------------------------------>" + url);
 			token = Token.generateToken(user.getUserId());
-			session.setAttribute("token", token);
+			request.setAttribute("token", token);
 			userService.updateUser(fbUser);
 			response.sendRedirect("http://localhost:8080/ToDoProject/#!/dummy");
 		}

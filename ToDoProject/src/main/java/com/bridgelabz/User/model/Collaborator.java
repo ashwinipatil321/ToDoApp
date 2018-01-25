@@ -8,6 +8,9 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import com.bridgelabz.note.modal.Note;
+
+
 @Entity
 @Table
 public class Collaborator {

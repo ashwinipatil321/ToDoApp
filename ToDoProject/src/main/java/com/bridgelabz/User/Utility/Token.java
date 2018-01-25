@@ -16,7 +16,6 @@ public class Token {
 		long expireTime = currentTime + (60000 * 60 * 24 * 2);
 		Date date = new Date(currentTime);
 		Date expireDate = new Date(expireTime);
-		System.out.println("Id before sending mail is: " + id);
 		token = Jwts.builder().setId(String.valueOf(id)).setIssuedAt(date).signWith(io.jsonwebtoken.SignatureAlgorithm.HS256, Key).setExpiration(expireDate).compact();
 		System.out.println("Token :: " + token);
 		return token;

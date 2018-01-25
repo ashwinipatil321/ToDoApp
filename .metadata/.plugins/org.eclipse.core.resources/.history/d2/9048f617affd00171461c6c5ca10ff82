@@ -1,0 +1,261 @@
+<!--  <div class="collapse navbar-collapse navbar-ex1-collapse" id="sideToggle">
+            <ul class="nav navbar-nav side-nav">
+	<div>
+		<a href="#!/home" data-ng-click="redirectToHome()"><img
+			src="images/notes.svg" class="icon" height="25px">Notes</a>
+	</div>
+	<div>
+		<a href="#!/reminder"><img src="images/reminder.svg" id="font
+			style="height:25px;font-size:45px">Reminders</a>
+	</div>
+	<div>
+		<div class="labelDiv">
+			<span id="font" style="font-size: 19px">Labels<a id="font"
+				ng-click="showLabelList()"
+				style="margin-left: 52px; height: 32px; width: 50px;">Edit</a></span>
+		</div>
+		<div ng-repeat="label in labels">
+			<a id="labelList" ui-sref="notelabels({id:label.labelName})"
+				ng-click="getNoteByLabel(label.labelName)"> <img
+				src="images/label.svg" class="icon" height="25px">{{label.labelName}}
+			</a>
+		</div>
+
+		<div>
+			<a id="font" ng-click="showLabelList()"><img
+				src="images/plus.svg" class="icon" height="25px">create new
+				label</a>
+		</div>
+		<div>
+			<a href="#!/archive"><img src="images/archive.svg" class="icon"
+				height="25px">Archive</a>
+		</div>
+		<div>
+			<a href="#!/trash" data-ng-click=""><img src="images/trash.svg"
+				class="icon" height="25px">Trash</a>
+		</div>
+	</div>
+</div>  -->
+ <!--  <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav side-nav">
+                <li>
+				<div>
+					<a href="#!/home" data-ng-click="redirectToHome()">
+					<img src="images/notes.svg">Notes</a>
+				</div>                    
+                </li>
+                <br>
+                <li>
+				<div>
+					<a href="#!/reminder"><img src="images/reminder.svg" class="icon"
+					height="25px">Reminders</a>
+				</div>                </li>
+                <li>
+				<div class="labelDiv">
+						<span id="font" >Labels<a id="font"
+						ng-click="showLabelList() ">Edit</a></span>
+				</div>
+				<div ng-repeat="label in labels">
+					<a id="labelList" ui-sref="notelabels({id:label.labelName})"
+					ng-click="getNoteByLabel(label.labelName)"> <img
+					src="images/label.svg" >{{label.labelName}}
+					</a>
+				</div>
+
+				<div>
+					<a id="font" ng-click="showLabelList()"><img
+					src="images/plus.svg" >
+					create new label</a>
+				</div>              
+			  </li>
+                <li>
+                   <div>
+						<a href="#!/archive"><img src="images/archive.svg">Archive</a>
+					</div>
+                </li>
+                <li>
+                <div>
+					<a href="#!/trash" data-ng-click="">
+					<img src="images/trash.svg"">Trash</a>
+				</div>
+				</li>
+            </ul>
+        </div> -->
+        
+        
+        <nav class="navbar navbar-default navbar-fixed-top" style="background-color:{{navColor}}" class="col-sm-12 col md-12 col-lg-12">
+
+
+
+
+		
+		<div class=" nav navbar-nav col-sm-2 col-xs-2 col-lg-1 col-md-2" id="sidebarbtn">
+			<!--  //<a href="#!/home"   > -->
+			<span   style="cursor: pointer" class="hidden-sm hidden-xs"
+				ng-click="showSidebar(true)">&#9776;</span>
+			<span   style="cursor: pointer" class="hidden-lg hidden-md"
+				ng-click="showSidebar(false)">&#9776;</span>
+			<!--  </a> -->
+		</div>
+
+		<div class="col-sm-8 col md-3 col-lg-3 col-xs-8">
+
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#!/home"><font color="black"
+					size="5">{{navBrand}}</font></a>
+			</div>
+
+			<!-- <button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+				aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span> 
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button> -->
+
+
+		</div>
+		<a ui-sref="search">
+		<div class="col-lg-1 hidden-sm hidden-xs hidden-md" id="searchbtn">
+
+			<span class="glyphicon glyphicon-search" style="font-size: '25px'"></span>
+		</div>
+
+		<div class="col-lg-3 hidden-sm hidden-xs hidden-md">
+		
+			<input type="text" id="searchbox" placeholder="search"
+				class="nav navbar-nav " ng-model="searchText">
+		</div></a>
+
+<input ng-show="false" id="image" type='file' ng-model-instant ng-model="file" onchange="angular.element(this).scope().imageUpload(this)" />					<div class="note-icons">
+
+
+		<div  class="hidden-sm hidden-xs">
+			<ul class="nav navbar-nav navbar-right">
+			<li><div class="col-lg-2 col-md-2 col-sm-2 " >
+			<img ng-src="{{viewImage}}" width="30" height="30" ng-click="changeview()" class="profile-pic">
+			</div></li>
+				<div class="col-lg-2 col-md-2 col-sm-2 ">
+					<li class="dropdown ">
+					 <img ng-src={{user.profileUrl}}
+							class="img-circle profile-pic dropdown-toggle" data-toggle="dropdown"
+							alt=""{{user.fullName.charAt(0)}}"" >
+					</a>
+						<ul class="dropdown-menu profile-dropdown">
+						<div class="row">
+						     <img ng-src={{user.profileUrl}}
+							class="img-circle col-sm-4" alt="{{user.fullName.charAt(0)}}" width="100" height="100"  ng-click="openImageUploader(user,'user')">
+							<div class="col-sm-6">
+							<font size="5px"><b>{{user.fullName}}</b></font>
+							{{user.email}}
+						</div>
+						<div class="col-sm-1"></div>
+						</div>
+							<li role="separator" class="divider"></li>
+							<li><a href="#!/home" ng-click="signout()">Sign out</a></li>
+
+						</ul>
+						</li>
+				</div>
+			</ul>
+
+		</div>
+
+	
+	</div>
+
+</nav>
+        
+        
+        
+  <!--   
+  <div id="sideToggle"  class="toggled">
+  	<div>
+		<a href="#!/home" data-ng-click="redirectToHome()">
+		<img src="images/notes.svg" class="icon" height="30px">Notes</a>
+	</div>
+	<div>
+		<a href="#!/reminder">
+		<img src="images/reminder.svg" class="icon" id="font" height="30px">Reminders</a>
+	</div>
+	<div>
+		<div class="labelDiv">
+			<span id="font" style="font-size: 19px">Labels<a id="font"
+				ng-click="showLabelList()"
+				style="margin-left: 52px; height: 32px; width: 50px;">Edit</a></span>
+		</div>
+		<div ng-repeat="label in labels">
+			<a id="labelList" ui-sref="notelabels({id:label.labelName})"
+				ng-click="getNoteByLabel(label.labelName)"> <img
+				src="images/label.svg" class="icon" height="25px">{{label.labelName}}
+			</a>
+		</div>
+
+		<div>
+			<a id="font" ng-click="showLabelList()"><img
+				src="images/plus.svg" class="icon" height="25px">create new
+				label</a>
+		</div>
+		<div>
+			<a href="#!/archive"><img src="images/archive.svg" class="icon"
+				height="25px">Archive</a>
+		</div>
+		<div>
+			<a href="#!/trash" data-ng-click=""><img src="images/trash.svg"
+				class="icon" height="25px">Trash</a>
+		</div>
+  </div>
+</div>
+        
+        
+        
+         -->
+        
+        
+        
+        
+        
+        
+        
+        
+   <!--      
+        <div class="SideNavigation" id="sideToggle"
+	style="width: 250px; margin-top: 67px;">
+	<div>
+		<a href="#!/home" data-ng-click="redirectToHome()"><img
+			src="images/notes.svg" class="icon" height="25px">Notes</a>
+	</div>
+	<div>
+		<a href="#!/reminder"><img src="images/reminder.svg" class="icon"
+			height="25px">Reminders</a>
+	</div>
+	<br>
+
+	<div>
+		<div class="labelDiv">
+			<span id="font" style="font-size: 19px">Labels<a id="font"
+				ng-click="showLabelList()"
+				style="margin-left: 52px; height: 32px; width: 70px;"">Edit</a></span>
+		</div>
+		<div ng-repeat="label in labels">
+			<a id="labelList" ui-sref="notelabels({id:label.labelName})"
+				ng-click="getNoteByLabel(label.labelName)"> <img
+				src="images/label.svg" class="icon" height="25px">{{label.labelName}}
+			</a>
+		</div>
+		<div>
+			<a id="font" ng-click="showLabelList()"><img
+				src="images/plus.svg" class="icon" height="25px">create new
+				label</a>
+		</div>
+		<div>
+			<a href="#!/archive"><img src="images/archive.svg" class="icon"
+				height="25px">Archive</a>
+		</div>
+		<div>
+			<a href="#!/trash" data-ng-click=""><img src="images/trash.svg"
+				class="icon" height="25px">Trash</a>
+		</div>
+	</div>
+</div> -->

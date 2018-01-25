@@ -1,0 +1,51 @@
+  <div id="sideToggle"  class="toggled">
+  	<div>
+		<a href="#!/home" data-ng-click="redirectToHome()">
+		<img src="images/notes.svg" class="icon" height="30px">Notes</a>
+	</div>
+	<div>
+		<a href="#!/reminder">
+		<img src="images/reminder.svg" class="icon" id="font" height="30px">Reminders</a>
+	</div>
+	<div>
+		<div class="labelDiv">
+			<span id="font" style="font-size: 19px">Labels<a id="font"
+				ng-click="showLabelList()"
+				style="margin-left: 52px; height: 32px; width: 50px;">Edit</a></span>
+		</div>
+		<div ng-repeat="label in labels">
+			<a id="labelList" ui-sref="notelabels({id:label.labelName})"
+				ng-click="getNoteByLabel(label.labelName)"> <img
+				src="images/label.svg" class="icon" height="25px">{{label.labelName}}
+			</a>
+		</div>
+
+		<div>
+			<a id="font" ng-click="showLabelList()"><img
+				src="images/plus.svg" class="icon" height="25px">create new
+				label</a>
+		</div>
+		<div>
+			<a href="#!/archive"><img src="images/archive.svg" class="icon"
+				height="25px">Archive</a>
+		</div>
+		<div>
+			<a href="#!/trash" data-ng-click=""><img src="images/trash.svg"
+				class="icon" height="25px">Trash</a>
+		</div>
+  </div>
+</div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+</div> -->

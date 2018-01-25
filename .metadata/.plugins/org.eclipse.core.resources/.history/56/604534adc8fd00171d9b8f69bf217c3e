@@ -1,0 +1,57 @@
+
+#sideToggle {
+	
+    height:100%;
+    width: 0; 
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #eee;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+    margin-top:4%;
+}
+@media only screen and (max-width:1014px){
+#sideToggle {
+	
+    height:100%;
+    position: absolute;
+    z-index: 1;
+    top: 4%;
+    background-color: #eee;
+    overflow-x: hidden;
+   max-width:250px;
+    transition: 0.5s;
+}
+}
+#sideToggle a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #434141;
+    display: block;
+    transition: 0.3s;
+}
+
+ #sideToggle a:hover {
+     background-color: #e0dede;
+} 
+
+@media screen and (max-height: 1024px) {
+  #sideToggle {padding-top: 15px;}
+  #sideToggle a {    font-size: 14px;}
+}
+
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+     #sideToggle{padding-top: 15px;}
+     #sideToggle a {font-size: 18px;}
+}
+.icon
+{
+	margin-right: 25px;
+}
+

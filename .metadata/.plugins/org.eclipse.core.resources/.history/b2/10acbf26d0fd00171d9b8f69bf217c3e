@@ -1,0 +1,136 @@
+<!-- 
+    <nav class="navbar navbar-inverse top-navbar" role="navigation"   style="background-color: {{topNavBarColor}};height: 10px;" >
+        <div class="navbar-header">
+        
+         </div>
+         <ul class="nav navbar-left top-nav">
+        <li>
+           	<div ng-click="toggleSideBar()" class="span-a" style="cursor: pointer">&#9776;</div>
+      		</li>
+      			<div><h4>Fundoo Keep</h4></div>
+      		</ul>
+      
+      	<div class="col-md-6">
+  			<input class="form-control" type="search" ng-model="searchText"  class="form-control search-box"  ui-sref="searchbar">
+  			<a class="glyphicon glyphicon-search"></a>
+		</div>
+        Top Menu Items
+       	  <ul class="nav navbar-nav pull-right">
+       	  <li ng-click="ListViewToggle()"  class="navigationTop">
+				<img ng-if="!ListView" alt="gride" id="list-gride-View"src="images/gridlist.svg">
+				<img ng-if="ListView" alt="list" id="list-gride-View" src="images/list1.png">
+			</li>
+               
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <img class="profilepiture"  class="img-circle"  alt="{{User.firstName.charAt(0)}}"  ng-src="{{User.profileUrl}}">
+                    </a>
+                 
+                    <ul class="dropdown-menu" class="menu1;">
+						<li >
+						
+						<img align="middle" alt="{{User.firstName.charAt(0)}}" class="profile" ng-src="{{User.profileUrl}}" ng-click="openImageUploader('user')"  style="padding:2%;height: 80px;" >
+						
+						<img  ng-click="openImageUploader(User)" src="" >
+						
+						 <input id="imageuploader" ng-show="false"  type="file" ng-file-select="onFileSelect($files)" ng-model="imageSrc">
+						
+						</li><br>
+						<li style="$font-size-base:25px;margin-top: 30px;">
+						{{User.userFirstName}} {{User.userLastName}} 
+								<br>
+						<li style="$font-size-base:10px">
+						{{User.email}}
+						</li>
+						<div>
+						<button style="float: right;" ng-click="signout()">Sign out</button>
+						</div>
+						</li>
+					</ul>
+                       
+      </ul>
+      </nav> -->
+        
+       <nav class="navbar navbar-default navbar-fixed-top" style="background-color:{{topNavBarColor}}" class="col-sm-12 col md-12 col-lg-12">
+
+
+
+
+		
+		<div class=" nav navbar-nav col-sm-2 col-xs-2 col-lg-1 col-md-2" id="sidebarbtn">
+			<!--  //<a href="#!/home"   > -->
+			<span   style="cursor: pointer" class="hidden-sm hidden-xs"
+				ng-click="showSidebar(true)">&#9776;</span>
+			<span   style="cursor: pointer" class="hidden-lg hidden-md"
+				ng-click="showSidebar(false)">&#9776;</span>
+			<!--  </a> -->
+		</div>
+
+		<div class="col-sm-8 col md-3 col-lg-3 col-xs-8">
+
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#!/home"><font color="black"
+					size="5">{{navBrand}}</font></a>
+			</div>
+
+			<!-- <button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+				aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span> 
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button> -->
+
+
+		</div>
+		<a ui-sref="search">
+		<div class="col-lg-1 hidden-sm hidden-xs hidden-md" id="searchbtn">
+
+			<span class="glyphicon glyphicon-search" style="font-size: '25px'"></span>
+		</div>
+
+		<div class="col-lg-3 hidden-sm hidden-xs hidden-md">
+		
+			<input type="text" id="searchbox" placeholder="search"
+				class="nav navbar-nav " ng-model="searchText">
+		</div></a>
+
+<input ng-show="false" id="image" type='file' ng-model-instant ng-model="file" onchange="angular.element(this).scope().imageUpload(this)" />					<div class="note-icons">
+
+
+		<div  class="hidden-sm hidden-xs">
+			<ul class="nav navbar-nav navbar-right">
+			<li><div class="col-lg-2 col-md-2 col-sm-2 " >
+			<img ng-src="{{viewImage}}" width="30" height="30" ng-click="changeview()" class="profile-pic">
+			</div></li>
+				<div class="col-lg-2 col-md-2 col-sm-2 ">
+					<li class="dropdown ">
+					 <img ng-src={{user.profileUrl}}
+							class="img-circle profile-pic dropdown-toggle" data-toggle="dropdown"
+							alt=""{{user.fullName.charAt(0)}}"" >
+					</a>
+						<ul class="dropdown-menu profile-dropdown">
+						<div class="row">
+						     <img ng-src={{user.profileUrl}}
+							class="img-circle col-sm-4" alt="{{user.fullName.charAt(0)}}" width="100" height="100"  ng-click="openImageUploader(user,'user')">
+							<div class="col-sm-6">
+							<font size="5px"><b>{{user.fullName}}</b></font>
+							{{user.email}}
+						</div>
+						<div class="col-sm-1"></div>
+						</div>
+							<li role="separator" class="divider"></li>
+							<li><a href="#!/home" ng-click="signout()">Sign out</a></li>
+
+						</ul>
+						</li>
+				</div>
+			</ul>
+
+		</div>
+
+	
+	</div>
+
+</nav>
+

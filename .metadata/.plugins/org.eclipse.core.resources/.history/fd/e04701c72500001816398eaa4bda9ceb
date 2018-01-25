@@ -1,0 +1,5 @@
+package com.bridgelabz.note.model;
+
+public class Note {
+
+}

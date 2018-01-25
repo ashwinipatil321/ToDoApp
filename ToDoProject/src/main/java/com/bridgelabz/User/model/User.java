@@ -1,6 +1,5 @@
 package com.bridgelabz.User.model;
 import java.util.List;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,8 +11,14 @@ import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.bridgelabz.note.modal.Note;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+
+/**
+ * @author Ashwini todoApp
+ *
+ */
 @Entity
 @Table(name = "users")
 public class User {
@@ -41,69 +46,132 @@ public class User {
 	public void setAlLabels(List<NoteLabel> alLabels) {
 		this.alLabels = alLabels;
 	}
+	
+	/**
+	 * @return profileImage
+	 */
 	public String getProfileUrl() {
 		return profileUrl;
 	}
+
+	/**
+	 * @param profileImage
+	 */
 	public void setProfileUrl(String profileUrl) {
 		this.profileUrl = profileUrl;
 	}
+	
+	/**
+	 * @return firstname
+	 */
 	@Column(name = "userFirstName")
 	public String getUserFirstName() {
 		return userFirstName;
 	}
+
+	/**
+	 * @param firstname
+	 */
 	public void setUserFirstName(String userFirstName) {
 		this.userFirstName = userFirstName;
 	}
 
+
+	/**
+	 * @return lastname
+	 */
 	@Column(name = "userLastName")
 	public String getUserLastName() {
 		return userLastName;
 	}
+
+	/**
+	 * @param lastname
+	 */
 	public void setUserLastName(String userLastName) {
 		this.userLastName = userLastName;
 	}
 
+	/**
+	 * @return password
+	 */
 	@Column(name = "userPassword")
 	public String getPassword() {
 		return password;
 	}
+
+	/**
+	 * @param password
+	 */
 	public void setPassword(String password) {
 		this.password = password;
 	}
 	
 
-	@Column(name = "Email")
-	public String getEmail() {
-		return email;
-	}
 	
+	/**
+	 * @return user id
+	 */
 	@Column(name = "id", length = 11 )
 	public int getUserId() {
 		return userId;
 	}
+	
+	/**
+	 * @param user id
+	 */
+
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
+
+	 /* @return email
+	 */
+	@Column(name = "Email")
+	public String getEmail() {
+		return email;
+	}
+
+	/**
+	 * @param email
+	/**/
 	public void setEmail(String email) {
 		this.email = email;
 	}
 
+	/**
+	 * @return mobileno
+	 */
 	@Column(name = "MobileNumber")
 	public String getMobileNumber() {
 		return mobileNumber;
 	}
+
+	/**
+	 * @param mobileno
+	 */
 	public void setMobileNumber(String mobileNumber) {
 		this.mobileNumber = mobileNumber;
 	}
 
+	/**
+	 * @return isActivated
+	 */
 	@Column(name = "isActivated")
 	public boolean getActivated() {
 		return activated;
 	}
+
+	/**
+	 * @param isActivated
+	 */
 	public void setActivated(boolean activated) {
 		activated = this.activated;
 	}
-	
+
+	/**
+	 * @return getNotes
+	 */
 	@OneToMany(fetch = FetchType.EAGER ,cascade =CascadeType.ALL)
 	public List<Note> getNotes() {
 		return null;

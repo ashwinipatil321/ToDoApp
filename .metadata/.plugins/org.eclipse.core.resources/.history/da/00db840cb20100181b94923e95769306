@@ -1,0 +1,56 @@
+package com.bridgelabz.User.Service;
+import com.bridgelabz.User.model.User;
+import com.fasterxml.jackson.core.sym.Name;
+
+
+/**
+ * @author Ashwini todoApp
+ *
+ */
+public interface UserService {
+	
+	/**
+	 * @param user
+	 * @return
+	 * create user
+	 */
+	public int createUser(User user);
+	
+	/**
+	 * @param user
+	 * @return
+	 * check user is valid or not at the time of login
+	 */
+	public User loginUser(User user);
+	
+	/**
+	 * @param email
+	 * @return
+	 * check the mail id is already exist or not
+	 */
+	public  User getUserByEmail(String email) ;
+	
+	/**
+	 * @param id
+	 * @return
+	 * get the user by Id
+	 */
+	public User getUserById(int id);
+	
+	/**
+	 * @param UserId
+	 * @return
+	 * check the user is active or not
+	 */
+	public boolean updateActivation(int id);
+	
+	/**
+	 * @param user
+	 * @return
+	 * update the user
+	 */
+	public void updateUser(User user);
+	public Name getAllNotes(int id);
+}
+
+

@@ -1,0 +1,276 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"  style="background-color: {{topNavBarColor}}">
+    <div class="container-fluid">
+        <div class="navbar-header">
+        
+          <font color="black" size="4">Google Keep</font></a>
+            <a class="navbar-brand" href="#menu-toggle" id="menu-toggle"><span class="glyphicon glyphicon-list" aria-hidden="true"></span></a>
+        </div>
+        
+       	<div class="col-md-6">
+  			<input class="form-control" type="search" ng-model="searchText"  class="form-control search-box"  ui-sref="searchbar">
+  			<a class="glyphicon glyphicon-search"></a>
+		</div>
+       	  <ul class="nav navbar-nav pull-right">
+       	  <li ng-click="ListViewToggle()"  class="navigationTop">
+				<img ng-if="!ListView" alt="gride" id="list-gride-View"src="images/gridlist.svg">
+				<img ng-if="ListView" alt="list" id="list-gride-View" src="images/list1.png">
+			</li>
+               
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <img class="profilepiture"  class="img-circle"  alt="{{User.firstName.charAt(0)}}"  ng-src="{{User.profileUrl}}">
+                    </a>
+                 
+                    <ul class="dropdown-menu" class="menu1;">
+						<li >
+						
+						<img align="middle" alt="{{User.firstName.charAt(0)}}" class="profile" ng-src="{{User.profileUrl}}" ng-click="openImageUploader('user')  style="padding:2%;height: 80px;" >
+						
+						<img  ng-click="openImageUploader(User)" src="" >
+						
+						 <input id="imageuploader" ng-show="false"  type="file" ng-file-select="onFileSelect($files)" ng-model="imageSrc">
+						
+						</li><br>
+						<li style="$font-size-base:25px;margin-top: 30px;">
+						{{User.userFirstName}} {{User.userLastName}} 
+								<br>
+						<li style="$font-size-base:10px">
+						{{User.email}}
+						</li>
+						<div>
+						<button style="float: right;" ng-click="signout()">Sign out</button>
+						</div>
+						</li>
+					</ul>
+                       
+      </ul>
+      </div>
+      </nav>
+
+
+<div id="wrapper" class="toggled">
+    <div class="container-fluid">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+              	<li class="sidebar-brand">
+                    <br>
+                </li>
+                
+                <li>
+                   <a href="#!/home" data-ng-click="redirectToHome()">
+					<img src="images/notes.svg" class="icon" height="30px">Notes</a>
+                </li>
+                 <li>
+                   <a href="#!/reminder">
+					<img src="images/reminder.svg" class="icon" id="font" height="30px">Reminders</a>
+                </li>  
+                
+                <div class="labelDiv">
+					<span id="font" style="font-size: 19px">Labels
+					<a id="font" ng-click="showLabelList()" style="margin-left: 52px; height: 32px; width: 50px;">Edit</a></span>
+				</div>
+				<li>
+				<div ng-repeat="label in labels">
+						<a id="labelList" ui-sref="notelabels({id:label.labelName})" ng-click="getNoteByLabel(label.labelName)"> <img
+						src="images/label.svg" class="icon" height="25px">{{label.labelName}}
+						</a>
+				</div>
+			</li>
+				<li>
+				<div>
+					<a id="font" ng-click="showLabelList()">
+					<img src="images/plus.svg" class="icon" height="25px">create new label</a>
+				</div>
+				</li>
+                <li>
+                   <a href="#!/archive">
+                   <img src="images/archive.svg" class="icon" height="25px">Archive</a>
+                </li>
+              	<li>
+                    <a href="#!/trash" data-ng-click="">
+                    <img src="images/trash.svg" class="icon" height="25px">Trash</a>
+                </li>
+            </ul>
+        </div>
+   
+ 
+ 
+ <div>
+	<div id="content-wrapper">
+					<div>
+						<input ng-show="false" id="image" type='file' ng-model-instant
+							ng-model="file"
+							onchange="angular.element(this).scope().imageUpload(this)" />
+
+						<div class="card col-md-4 a"
+							data-ng-repeat="note in notes | filter : {reminder: true} as others "
+							class="container" style=" margin-left: 260px;background-color: {{note.color}}">
+
+							<!-- Pinned note -->
+							
+							<div>
+								<div style="float: right">
+									<span style="cursor: pointer" data-ng-click="addTopin(note)">
+										<img class="pull-right" src="images/unpinned.svg"
+										height="17px"></img>
+									</span>
+								</div>
+
+
+								<!--Edit Notes-->
+
+								<div data-ng-click="showModal(note)">
+									<a><img data-ng-src="{{note.noteImage}}"
+										style="width: 100%" /></a>
+
+									<div contenteditable="true" ng-bind-html="note.title"
+										style="padding-bottom: 10px; font-size: 16px;"></div>
+									<br>
+									<div contenteditable="true" ng-bind-html="note.description"
+										style="padding-bottom: 80px; font-size: 25px;"></div>
+								</div>
+
+								<!-- SHOW REMINDER -->
+							<button type="button" class="btn btn-xs"
+									data-ng-show="note.reminderDate&&note.reminderTime">
+									{{note.reminderDate | date : 'MMM dd'}},{{note.reminderTime}}<span
+									class="badge" style="color: white;"><span
+									class="glyphicon glyphicon-remove"
+									data-ng-click="deleteReminderOfNote(note)"></span></span>
+								</button>
+								
+							
+							<!-- SHOW LABELS -->
+						<div ng-repeat="label in note.allLabels" >
+							<div id="label" ng-if="label.labelName!=null" style=" font-size: 15px;word-break: break-all">
+								{{label.labelName}}<span class="closebtn"
+									ng-click="removeLabel(note,label)"></span>
+							</div>
+						</div>
+							<div class="moreOptions"> 
+								<div class="note-icon"
+									style="float: left; float: initial; width: 328px; margin: -20px;padding-top: 20px">
+								
+
+									<!--INPUT REMINDER  -->
+
+									<div class="dropdown inline">
+								<span class="btn dropdown-toggle" id="menu2"
+										data-toggle="dropdown"> <img alt="reminder"
+										src="images/reminder.svg" height="22px">
+									</span>
+
+									<ul class="dropdown-menu" role="menu" aria-labelledby="menu2" style="height: 225px;  width: 270px; padding-left: 20px;padding-top:15px">
+									<h4>Select Date and Time</h4>
+										<li><div>
+											<input type="date" data-ng-model="note.reminderDate">
+										</div> 
+											<br>
+										</li>
+										<li><div class="input-group" data-toggle="collapse"data-target="#inputreminder{{note.noteId}}" style="font-size: 19px; padding-bottom: 5px;">Click To Add Time<span class="caret"></span>
+										</div>
+											<div id="inputreminder{{note.noteId}}" class="collapse">
+													<div data-ng-model="note.reminderDate"data-ng-click="addReminderToNote(note,'8:00 AM')">Morning 8:00 AM</div>
+													<div data-ng-model="note.reminderTime"
+														data-ng-click="addReminderToNote(note,'1:00 PM')">AfterNoon 1:00 PM</div>
+													<div data-ng-model="note.reminderTime"data-ng-click="addReminderToNote(note,'6:00 PM')">Evening 6:00 PM</div>
+														<div data-ng-model="note.reminderTime" data-ng-click="addReminderToNote(note,'8:00 PM')">Night 8:00 PM</div>
+											</div>
+										</li>
+									</ul>
+							</div>
+									<!-- ADD COLLABRATOR -->
+
+									<img ng-click="openCollboarate(note,User,$index)"
+											src="images/collaborator.svg" height="25px">
+
+
+									<!-- ADD COLORS WITH COLORPALLETES -->
+
+								<div class="btn-group dropup colorDiv" uib-dropdown>
+									<img id="dropdown" class="dropdown-toggle"
+										data-toggle="dropdown" alt="color"
+										src="images/colorpallet.svg" uib-dropdown-toggle height="20px">
+
+									<!----ADD MORE OPTIONS -->
+
+									<ul class="dropdown-menu" uib-dropdown-menu role="menu"
+										aria-labelledby="btn-append-to-body"
+										style="background-color: #f9fbff">
+
+										<a data-ng-repeat="color in colors" role="menuitem"> <img
+											data-ng-src="{{color.path}}" height="25px"
+											data-ng-click="note.color =color.color;updateNotes(note)">
+										</a>
+									</ul>
+								</div>
+
+									<!-- ADD IMAGE -->
+
+									<img alt="image" src="images/image.svg" height="20px"
+										aria-label="Image Upload" ng-click="openImageUploader(note)">
+
+									<!-- ADD ARCHIVE -->
+
+									<span data-ng-click="addToArchive(note)"> <img
+										src="images/archive.svg" height="25px">
+									</span>
+
+
+									<!-- ADD MORE OPTIONS -->
+
+									<span class="btn dropdown-toggle" id="menu1"
+										data-toggle="dropdown"> <span
+										class="glyphicon glyphicon-option-vertical"
+										style="float: right"></span></span>
+
+									<ul class="dropdown-menu multi-level" role="menu"
+										aria-labelledby="menu1" style="margin-left: 140px">
+
+										<li><a data-ng-click="addToTrash(note)">Trash</a></li>
+
+											<!-- ADD TO LABEL -->
+											
+											<li class="dropdown-submenu"><a tabindex="-1" href="#">Add label</a>
+												<ul class="dropdown-menu">
+													<li><a tabindex="-1" href="#">Create label</a></li>
+													<li><input class="input-label"
+														placeholder="Enter label name" ng-model="$parent.newLabel"
+														ng-blur="saveLabel(label)"></li>
+													<li>
+														<div ng-repeat="label in labels"
+															class="dropdown-submenu-item checkbox">
+															<label> <input type="checkbox"
+																ng-click="toggleLabelOfNote(note,label); updateNotes(note);"
+																ng-checked="checkboxCheck(note,label)">
+																{{label.labelName}}
+															</label>
+														</div>
+													</li>
+													<li style="cursor: pointer; background: rgba(0, 0, 0, .2)"
+														ng-if="label" ng-click="saveLabel(label)">
+														<div>
+															Create <b>"{{label.labelName}}"</b>
+														</div>
+													</li>
+												</ul></li>
+
+										<!-- Make a copy --> 
+
+										<li><a data-ng-click="copy(note) ">Make a Copy</a></li>
+
+										<!-- SOCIAL SHARE -->
+
+										<li><a data-ng-click="fbShareInit(note)">Share</a></li>
+
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					</div>
+					</div>
+					</div>
+					</div>
+					</div>
+					

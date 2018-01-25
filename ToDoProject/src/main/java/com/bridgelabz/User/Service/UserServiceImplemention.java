@@ -7,10 +7,15 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.bridgelabz.User.DAO.UserDao;
-import com.bridgelabz.User.model.Note;
 import com.bridgelabz.User.model.NoteLabel;
 import com.bridgelabz.User.model.User;
+import com.fasterxml.jackson.core.sym.Name;
 
+
+/**
+ * @author Ashwini todoApp
+ *
+ */
 @Service
 @Transactional
 public class UserServiceImplemention implements UserService {
@@ -18,6 +23,10 @@ public class UserServiceImplemention implements UserService {
 	@Autowired
 	UserDao userDao;
 
+	/* (non-Javadoc)
+	 * @see com.bridgelabz.User.Service.UserService#createUser(com.bridgelabz.User.model.UserDetails)
+	 * crate the user and return the no of rows inserted
+	 */
 	public int createUser(User user) {
 		
 		int found = userDao.registration(user);
@@ -31,23 +40,47 @@ public class UserServiceImplemention implements UserService {
 			return found;
 	}
 
+	/* (non-Javadoc)
+	 * @see com.bridgelabz.User.Service.UserService#loginUser(com.bridgelabz.User.model.UserDetails)
+	 * check the user is valid or not
+	 */
 	public User loginUser(User user) {
 		return userDao.login(user);
 	}
 	
+
+	/* (non-Javadoc)
+	 * @see com.bridgelabz.User.Service.UserService#getUserByEmail(java.lang.String)
+	 * get the user by email
+	 */
 	public User getUserByEmail(String email) {
 		User result =  userDao.getUserByEmail(email);
 		return result;
 	}
 
+
+	/* (non-Javadoc)
+	 * @see com.bridgelabz.User.Service.UserService#getUserById(int)
+	 * get the user by id
+	 */
 	public User getUserById(int id) {
 		return userDao.getUserById(id);
 	}
 
+
+	/* (non-Javadoc)
+	 * @see com.bridgelabz.User.Service.UserService#updateActivation(int)
+	 * check the user validate or not
+	 */
 	public boolean updateActivation(int id) {
 		return userDao.updateActivation(id);
 	}
 	
+	
+	/* (non-Javadoc)
+	 * @see com.bridgelabz.User.Service.UserService#updateUser(com.bridgelabz.User.model.User)
+	 * update the user
+	 */
 	@Override
 	public void updateUser(User oldUser) {
 		System.out.println("inside the update user:"+oldUser);;
@@ -55,7 +88,7 @@ public class UserServiceImplemention implements UserService {
 }
 
 	@Override
-	public Note getAllNotes(int id) {
+	public Name getAllNotes(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

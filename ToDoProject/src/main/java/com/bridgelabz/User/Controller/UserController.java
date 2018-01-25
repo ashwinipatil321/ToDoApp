@@ -23,6 +23,11 @@ import com.bridgelabz.User.model.CustomeResponse;
 import com.bridgelabz.User.model.Response;
 import com.bridgelabz.User.model.User;
 
+
+/**
+ * @author Ashwini todoApp
+ *
+ */
 @RestController
 public class UserController {
 
@@ -37,6 +42,13 @@ public class UserController {
 	CustomeResponse customResponse = new CustomeResponse();
 	//Token tokenObject= new Token();
 
+	
+	/**
+	 * @param user
+	 * @param request
+	 * @return
+	 * get all the data from the request of the registration form and and save it
+	 */
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public ResponseEntity<Response> registrationUser(@RequestBody User user, HttpServletRequest request,
 			HttpServletResponse response) {
@@ -83,7 +95,13 @@ public class UserController {
 			return ResponseEntity.status(HttpStatus.ACCEPTED).body(myResponse);
 		}
 	}
-
+	
+	/**
+	 * @param user
+	 * @param session
+	 * @return
+	 * get the username, password , check that those are valid or not. If it is valid then user should go the home page otherwise stay in the login page
+	 */
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public ResponseEntity<Response> loginUser(@RequestBody User user, HttpServletResponse response) {
 		
@@ -120,6 +138,13 @@ public class UserController {
 			}
 		} 
 	
+	/**
+	 * @param activeToken
+	 * @param response
+	 * @return
+	 * @throws IOException
+	 * after registration , one mail will go to the user's mailid to activate the account
+	 */
 	@RequestMapping(value = "/activate/{jwt:.+}", method = RequestMethod.GET)
 	public ResponseEntity<Response> activate(@PathVariable("jwt") String jwt, HttpSession session,
 			HttpServletRequest request) {
@@ -145,7 +170,14 @@ public class UserController {
 		myResponse.setResponseMessage("user not valid!!!!");
 		return ResponseEntity.status(HttpStatus.ACCEPTED).body(myResponse);
 	}
-
+	
+	/**
+	 * @param user
+	 * @param request
+	 * @param session
+	 * @return
+	 * for forgot password , enter mailid to send the reset page link with token
+	 */
 	@RequestMapping(value = "/forgotpassword", method = RequestMethod.POST)
 	public CustomeResponse passwordRestLink(@RequestBody User user, HttpServletRequest request, HttpSession session,
 			HttpServletResponse response) {
@@ -187,6 +219,12 @@ public class UserController {
 		return customResponse;
 	}
 
+	/**
+	 * @param user
+	 * @param session
+	 * @return
+	 * reset password of the user by the userId
+	 */
 	@RequestMapping(value = "/resetpassword/{token:.+}", method = RequestMethod.PUT)
 	public CustomeResponse upatePassword(@PathVariable("token") String token, @RequestBody User user) {
 		String password = user.getPassword();
@@ -221,6 +259,14 @@ public class UserController {
 			return customResponse;
 		}
 	}
+	
+	/**
+	 * @param user
+	 * @param request
+	 * @return
+	 * @throws IOException
+	 * change the profile of the current user
+	 */
 	@RequestMapping(value = "/user/profileChange", method = RequestMethod.POST)
 	public ResponseEntity<String> changeProfile(@RequestBody User user, HttpServletRequest request)
 			throws IOException {
@@ -236,6 +282,11 @@ public class UserController {
 		return ResponseEntity.ok("");
 	}
 
+	/**
+	 * @param session
+	 * @return
+	 * logout the user and clear the session
+	 */
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public ResponseEntity<String> logout(HttpServletRequest request, HttpSession session) {
 		session = request.getSession();

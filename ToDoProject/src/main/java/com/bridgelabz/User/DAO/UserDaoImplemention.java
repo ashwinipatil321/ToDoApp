@@ -11,14 +11,24 @@ import org.springframework.stereotype.Repository;
 
 import com.bridgelabz.User.model.User;
 
+
+/**
+ * @author Ashwini todoApp
+ *
+ */
 @Repository
 public class UserDaoImplemention implements UserDao {
 
 	@Autowired
 	SessionFactory sessionFactory;
 
+
+	/* (non-Javadoc)
+	 * @see com.bridgelabz.User.DAO.UserDAO#registration(com.bridgelabz.User.model.User)
+	 * register the user
+	 */
 	public int registration(User user) {
-		
+
 		Session session = sessionFactory.getCurrentSession();
 		Query<?> query = session.createQuery("from User where email =:email or mobileNumber = :phone");
 		query.setParameter("email", user.getEmail());
@@ -26,15 +36,20 @@ public class UserDaoImplemention implements UserDao {
 		List<?> list = query.list();
 		if (list != null) {
 			session.save(user);
-			
+
 			return 1;
-			
+
 		} else {
-			
+
 			return 0;
 		}
 	}
 
+
+	/* (non-Javadoc)
+	 * @see com.bridgelabz.User.DAO.UserDAO#login(com.bridgelabz.User.model.UserDetails)
+	 * check the user is valid or not at the time of login
+	 */
 	public User login(User user) {
 		Session session = sessionFactory.getCurrentSession();
 
@@ -50,9 +65,14 @@ public class UserDaoImplemention implements UserDao {
 		return null;
 	}
 
+
+	/* (non-Javadoc)
+	 * @see com.bridgelabz.User.DAO.UserDAO#getUserByEmail(java.lang.String)
+	 * get the user by the email id 
+	 */
 	@SuppressWarnings("rawtypes")
 	public User getUserByEmail(String email) {
-		
+
 		Session session = sessionFactory.getCurrentSession();
 
 		Query query = session.createQuery("from User where email =:email");
@@ -67,12 +87,21 @@ public class UserDaoImplemention implements UserDao {
 		return null;
 	}
 
+	/* (non-Javadoc)
+	 * @see com.bridgelabz.User.DAO.UserDAO#getUserById(int)
+	 * get the user by id
+	 */
 	public User getUserById(int id) {
 		Session session = sessionFactory.getCurrentSession();
 		User user = session.get(User.class, id);
 		return user;
 	}
 
+
+	/* (non-Javadoc)
+	 * @see com.bridgelabz.User.DAO.UserDAO#updateActivation(int)
+	 * check the user is activeted or not
+	 */
 	public boolean updateActivation(int id) {
 		System.out.println("id:" + id);
 		System.out.println("id found");
@@ -88,6 +117,12 @@ public class UserDaoImplemention implements UserDao {
 		else
 			return false;
 	}
+
+
+	/* (non-Javadoc)
+	 * @see com.bridgelabz.User.DAO.UserDAO#updateUser(com.bridgelabz.User.model.User)
+	 * update the user
+	 */
 	@Override
 	public void updateUser(User oldUser) {
 		Session session = sessionFactory.getCurrentSession();
